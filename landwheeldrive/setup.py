@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'motorlisten = landwheeldrive.subscriber_motor_action:main'
         ],
     },
 )

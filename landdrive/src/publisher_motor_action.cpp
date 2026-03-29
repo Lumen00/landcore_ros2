@@ -11,13 +11,27 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "std_msgs/msg/int16_multi_array.hpp"
+#include <chrono>
+#include <memory>
+#include <string>
+
+using namespace std::chrono_literals;
 
 class MotorPublisher : public rclcpp::Node {
     public:
         MotorPublisher()
-        : Node("motor_publisher"){
+        : Node("motor_publisher"),  count_(0)
+        {
             // Can publish numbers from -255 to 255
             publisher_ = this->create_publisher<std_msgs::msg::Int16MultiArray>("motor_drive", 10);
+            auto timer_callback =
+            [this]() -> void {
+                auto message = std_msgs::msg::Int16MultiArray();
+                this->publish_motor_array({25, 50, 100, 150});
+            };
+            timer_ = this->create_wall_timer(500ms, timer_callback);
+            
+        
         };
 
         void publish_motor_array(const std::array<int16_t, 4>& values){
@@ -28,19 +42,21 @@ class MotorPublisher : public rclcpp::Node {
             publisher_->publish(msg);
         };
 
+        
+
     private:
         rclcpp::Publisher<std_msgs::msg::Int16MultiArray>::SharedPtr publisher_;
-
+        size_t count_;
+        rclcpp:: TimerBase::SharedPtr timer_;
 };
 
 
 
 int main(int argc, char * argv[]){
     rclcpp::init(argc, argv);
+    
     rclcpp::spin(std::make_shared<MotorPublisher>());
 
-    MotorPublisher motor_publisher = MotorPublisher();
-    motor_publisher.publish_motor_array({100, 100, 100, 100});
 
     rclcpp::shutdown();
     return 0;

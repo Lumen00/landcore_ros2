@@ -5,7 +5,7 @@ from rclpy.node import Node
 import atexit
 
 from std_msgs.msg import Int16MultiArray
-from Emakefun_MotorHAT import Emakefun_MotorHAT, Emakefun_DCMotor, Emakefun_Servo
+from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
 mh = Emakefun_MotorHAT(addr=0x60)
 left_front = mh.getMotor(1)
