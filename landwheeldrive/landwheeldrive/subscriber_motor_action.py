@@ -60,6 +60,7 @@ class MotorSubscriber(Node):
         else: 
             motor.setSpeed(0)
             motor.run(Emakefun_MotorHAT.BRAKE)
+            return
         motor.setSpeed(abs(value))   
 
 def main(args=None):
