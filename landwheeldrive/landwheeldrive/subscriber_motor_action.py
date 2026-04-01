@@ -8,9 +8,9 @@ from std_msgs.msg import Int16MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
 mh = Emakefun_MotorHAT(addr=0x60)
-left_front = mh.getMotor(1)
-left_back = mh.getMotor(2)
-right_front = mh.getMotor(3)
+left_front = mh.getMotor(2)
+left_back = mh.getMotor(3)
+right_front = mh.getMotor(1)
 right_back = mh.getMotor(4)
 
 def turnOffMotors():
@@ -35,6 +35,14 @@ class MotorSubscriber(Node):
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
+
+        if len(msg) > 4:
+            print('Incorrectly sized motor array of size', len(msg))
+            return
+
+        # Apply transformation to account for wheels spinning the other way.
+        msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
+
         print('heard', msg)
         for motor_id, motor_val in enumerate(msg.data):
             motor = mh.getMotor(motor_id+1)
