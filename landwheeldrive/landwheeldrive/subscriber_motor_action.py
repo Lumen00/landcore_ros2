@@ -58,7 +58,11 @@ class MotorSubscriber(Node):
         self.motor_barrier.wait()
         if abs(value) > 255:
             return
-        values = list(range(motor._speed, value))
+        # If going from forward to backwards, use -1.
+        if motor._speed > value:
+            values = list(range(motor._speed, value, -1))
+        else: # Otherwise if going from backwards to forwards, no worries.
+            values = list(range(motor._speed, value))
         for speed in values:
             if (speed < 0) and (speed >= -255): # If the value is negative, going backwards.
                 motor.run(Emakefun_MotorHAT.BACKWARD)
@@ -68,7 +72,7 @@ class MotorSubscriber(Node):
                 motor.setSpeed(0)
                 motor.run(Emakefun_MotorHAT.RELEASE)
             motor.setSpeed(abs(speed))   
-            time.sleep(0.01)
+            time.sleep(0.1)
         return
 
 def main(args=None):
