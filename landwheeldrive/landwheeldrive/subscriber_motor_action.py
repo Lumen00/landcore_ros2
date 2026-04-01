@@ -3,6 +3,7 @@
 import rclpy 
 from rclpy.node import Node
 import atexit
+import threading
 
 from std_msgs.msg import Int16MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
@@ -40,17 +41,25 @@ class MotorSubscriber(Node):
             print('Incorrectly sized motor array of size', len(msg.data))
             return
 
+        print('heard', msg.data)
+
         # Apply transformation to account for wheels spinning the other way.
         msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
+        
+        threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]), daemon=True).start()
+        threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]), daemon=True).start()
+        threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]), daemon=True).start()
+        threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]), daemon=True).start()
 
-        print('heard', msg)
-        for motor_id, motor_val in enumerate(msg.data):
-            motor = mh.getMotor(motor_id+1)
-            if motor_val < 0: # If the value is negative, going backwards.
-                motor.run(Emakefun_MotorHAT.BACKWARD)
-            else: # Otherwise, apply a stop or go forwards. 
-                motor.run(Emakefun_MotorHAT.FORWARD)
-            motor.setSpeed(abs(motor_val))       
+
+    def run_motor(motor, value):
+        if value < 0 and value <= 255: # If the value is negative, going backwards.
+            motor.run(Emakefun_MotorHAT.BACKWARD)
+        elif value > 0 and value >= -255: # Otherwise, apply a stop or go forwards. 
+            motor.run(Emakefun_MotorHAT.FORWARD)
+        else: 
+            motor.run(Emakefun_MotorHAT.BRAKE)
+        motor.setSpeed(abs(value))   
 
 def main(args=None):
     rclpy.init(args=args)
