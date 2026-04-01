@@ -44,7 +44,7 @@ class MotorSubscriber(Node):
         print('heard', msg.data)
 
         # Apply transformation to account for wheels spinning the other way.
-        msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
+        # msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
         
         threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]), daemon=True).start()
