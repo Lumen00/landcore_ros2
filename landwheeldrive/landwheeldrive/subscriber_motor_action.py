@@ -35,6 +35,7 @@ class MotorSubscriber(Node):
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
+        print('heard', msg)
         for motor_id, motor_val in enumerate(msg.data):
             motor = mh.getMotor(motor_id+1)
             if motor_val < 0: # If the value is negative, going backwards.
