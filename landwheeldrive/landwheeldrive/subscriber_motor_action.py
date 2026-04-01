@@ -26,6 +26,8 @@ atexit.register(turnOffMotors)
 
 class MotorSubscriber(Node):
 
+    motor_barrier = threading.Barrier(4)
+
     def __init__(self):
         super().__init__('motor_subscriber')
         self.subscriber_ = self.create_subscription(Int16MultiArray,
@@ -58,11 +60,11 @@ class MotorSubscriber(Node):
         elif (value > 0) and (value <= 255): # Otherwise, apply a stop or go forwards. 
             motor.run(Emakefun_MotorHAT.FORWARD)
         else: 
-            threading.Barrier.wait(4)
+            self.motor_barrier(4)
             motor.setSpeed(0)
             motor.run(Emakefun_MotorHAT.RELEASE)
             return
-        threading.Barrier.wait(4)
+        self.motor_barrier.wait()
         motor.setSpeed(abs(value))   
         return
 
