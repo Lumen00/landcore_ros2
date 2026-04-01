@@ -4,6 +4,7 @@ import rclpy
 from rclpy.node import Node
 import atexit
 import threading
+import time
 
 from std_msgs.msg import Int16MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
@@ -47,7 +48,6 @@ class MotorSubscriber(Node):
 
         # Apply transformation to account for wheels spinning the other way.
         # msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
-
         
         threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]), daemon=True).start()
@@ -56,15 +56,19 @@ class MotorSubscriber(Node):
 
     def run_motor(self, motor, value):
         self.motor_barrier.wait()
-        if (value < 0) and (value >= -255): # If the value is negative, going backwards.
-            motor.run(Emakefun_MotorHAT.BACKWARD)
-        elif (value > 0) and (value <= 255): # Otherwise, apply a stop or go forwards. 
-            motor.run(Emakefun_MotorHAT.FORWARD)
-        else: 
-            motor.setSpeed(0)
-            motor.run(Emakefun_MotorHAT.RELEASE)
+        if abs(value) > 255:
             return
-        motor.setSpeed(abs(value))   
+        values = list(range(motor._speed, value))
+        for speed in values:
+            if (speed < 0) and (speed >= -255): # If the value is negative, going backwards.
+                motor.run(Emakefun_MotorHAT.BACKWARD)
+            elif (speed > 0) and (speed <= 255): # Otherwise, apply a stop or go forwards. 
+                motor.run(Emakefun_MotorHAT.FORWARD)
+            else: 
+                motor.setSpeed(0)
+                motor.run(Emakefun_MotorHAT.RELEASE)
+            motor.setSpeed(abs(speed))   
+            time.sleep(0.01)
         return
 
 def main(args=None):
