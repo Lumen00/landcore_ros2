@@ -59,6 +59,7 @@ class MotorSubscriber(Node):
             motor.run(Emakefun_MotorHAT.FORWARD)
         else: 
             motor.setSpeed(0)
+            motor.run(Emakefun_MotorHAT.RELEASE)
             return
         motor.setSpeed(abs(value))   
         return
