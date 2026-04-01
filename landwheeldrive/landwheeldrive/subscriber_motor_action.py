@@ -45,12 +45,12 @@ class MotorSubscriber(Node):
 
         # Apply transformation to account for wheels spinning the other way.
         # msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
+
         
         threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]), daemon=True).start()
-
 
     def run_motor(self, motor, value):
         if (value < 0) and (value >= -255): # If the value is negative, going backwards.
@@ -58,9 +58,11 @@ class MotorSubscriber(Node):
         elif (value > 0) and (value <= 255): # Otherwise, apply a stop or go forwards. 
             motor.run(Emakefun_MotorHAT.FORWARD)
         else: 
+            threading.Barrier.wait(4)
             motor.setSpeed(0)
             motor.run(Emakefun_MotorHAT.RELEASE)
             return
+        threading.Barrier.wait(4)
         motor.setSpeed(abs(value))   
         return
 
