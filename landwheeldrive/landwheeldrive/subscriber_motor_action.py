@@ -58,8 +58,8 @@ class MotorSubscriber(Node):
         elif (value > 0) and (value <= 255): # Otherwise, apply a stop or go forwards. 
             motor.run(Emakefun_MotorHAT.FORWARD)
         else: 
-            motor.run(Emakefun_MotorHAT.BRAKE)
             motor.setSpeed(0)
+            motor.run(Emakefun_MotorHAT.BRAKE)
         motor.setSpeed(abs(value))   
 
 def main(args=None):
