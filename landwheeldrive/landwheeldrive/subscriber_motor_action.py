@@ -53,12 +53,13 @@ class MotorSubscriber(Node):
 
 
     def run_motor(self, motor, value):
-        if value < 0 and value >= -255: # If the value is negative, going backwards.
+        if (value < 0) and (value >= -255): # If the value is negative, going backwards.
             motor.run(Emakefun_MotorHAT.BACKWARD)
-        elif value > 0 and value <= 255: # Otherwise, apply a stop or go forwards. 
+        elif (value > 0) and (value <= 255): # Otherwise, apply a stop or go forwards. 
             motor.run(Emakefun_MotorHAT.FORWARD)
         else: 
             motor.run(Emakefun_MotorHAT.BRAKE)
+            motor.setSpeed(0)
         motor.setSpeed(abs(value))   
 
 def main(args=None):
