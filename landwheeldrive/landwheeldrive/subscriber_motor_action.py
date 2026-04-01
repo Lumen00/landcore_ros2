@@ -36,8 +36,8 @@ class MotorSubscriber(Node):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
 
-        if len(msg) > 4:
-            print('Incorrectly sized motor array of size', len(msg))
+        if len(msg.data) > 4:
+            print('Incorrectly sized motor array of size', len(msg.data))
             return
 
         # Apply transformation to account for wheels spinning the other way.
