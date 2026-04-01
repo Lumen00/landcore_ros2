@@ -52,7 +52,7 @@ class MotorSubscriber(Node):
         threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]), daemon=True).start()
 
 
-    def run_motor(motor, value):
+    def run_motor(self, motor, value):
         if value < 0 and value <= 255: # If the value is negative, going backwards.
             motor.run(Emakefun_MotorHAT.BACKWARD)
         elif value > 0 and value >= -255: # Otherwise, apply a stop or go forwards. 
