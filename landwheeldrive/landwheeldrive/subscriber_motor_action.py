@@ -60,7 +60,7 @@ class MotorSubscriber(Node):
         t3 = threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]))
         t4 = threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]))
         # print('starting threads')
-        for thread in [t1, t2, t3, t4]:
+        for thread in [t4, t3, t2, t1]:
             thread.start()
 
         # print('joining threads')
@@ -73,13 +73,12 @@ class MotorSubscriber(Node):
     def run_motor(self, motor:DC_Motor, value:int):
         speeds = []
         steps = 100
-        threshold = 60
         # Determine Current state:
         if motor.signed_speed == 0: # If starting from rest.
             if value > 0: # If moving forwards from rest.
-                speeds = range(threshold, value, int(value/steps))
+                speeds = range(0, value, int(value/steps))
             elif value < 0: # If moving backwards from rest.
-                speeds = range(threshold, value, -int(value/steps))
+                speeds = range(0, value, -int(value/steps))
             else: # If do nothing.
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
                 speeds.append(0)
@@ -98,8 +97,7 @@ class MotorSubscriber(Node):
             else: 
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
 
-        motor.mh.setSpeed(threshold)     
-        time.sleep(1.5)   
+        
 
         self.motor_barrier.wait()
         for speed in speeds:
@@ -111,7 +109,7 @@ class MotorSubscriber(Node):
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
             motor.mh.setSpeed(abs(speed))
             motor.signed_speed = speed
-            time.sleep(0.02)
+            time.sleep(0.025)
         motor.mh.setSpeed(abs(value))
         motor.signed_speed = value
         return
