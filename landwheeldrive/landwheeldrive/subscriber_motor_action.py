@@ -76,9 +76,9 @@ class MotorSubscriber(Node):
         # Determine Current state:
         if motor.signed_speed == 0: # If starting from rest.
             if value > 0: # If moving forwards from rest.
-                speeds = range(0, value, value/steps)
+                speeds = range(0, value, int(value/steps))
             elif value < 0: # If moving backwards from rest.
-                speeds = range(0, value, -value/steps)
+                speeds = range(0, value, -int(value/steps))
             else: # If do nothing.
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
                 speeds.append(0)
@@ -110,6 +110,8 @@ class MotorSubscriber(Node):
             motor.mh.setSpeed(speed)
             motor.signed_speed = speed
             time.sleep(0.05)
+        motor.mh.setSpeed(abs(value))
+        motor.signed_speed = value
         return
 
 def main(args=None):
