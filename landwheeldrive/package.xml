@@ -14,9 +14,9 @@
 
   <exec_depend>rclpy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-  <exec_depend>atexit</exec_depend>
-  <exec_depend>Emakefun_MotorHAT</exec_depend>
-  <exec_depend>Emakefun_MotorDriver</exec_depend>
+  <!-- <exec_depend>atexit</exec_depend> -->
+  <!-- <exec_depend>Emakefun_MotorHAT</exec_depend> -->
+  <!-- <exec_depend>Emakefun_MotorDriver</exec_depend> -->
   <exec_depend>time</exec_depend>
 
   <export>

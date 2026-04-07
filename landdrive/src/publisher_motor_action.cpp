@@ -27,7 +27,7 @@ class MotorPublisher : public rclcpp::Node {
             auto timer_callback =
             [this]() -> void {
                 auto message = std_msgs::msg::Int16MultiArray();
-                this->publish_motor_array({0, 0, 100, 100});
+                this->publish_motor_array({100, 100, 100, 100});                
             };
             timer_ = this->create_wall_timer(500ms, timer_callback);
             
