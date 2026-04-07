@@ -114,12 +114,13 @@ class MotorSubscriber(Node):
             print('Instructions for motor speed not understood!', value, motor.signed_speed)
             self.motor_barrier.wait()
             return
-        #
+        
         print('barrier')
         self.motor_barrier.wait()
         print('barrier passed')
 
         for speed in speed_array:
+            motor.signed_speed = speed
             motor.mh.setSpeed(abs(speed))  
             time.sleep(0.01) 
 
