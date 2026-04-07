@@ -73,7 +73,7 @@ class MotorSubscriber(Node):
     def run_motor(self, motor:DC_Motor, value:int):
         speeds = []
         steps = 100
-        threshold = 50
+        threshold = 60
         # Determine Current state:
         if motor.signed_speed == 0: # If starting from rest.
             if value > 0: # If moving forwards from rest.
@@ -99,7 +99,7 @@ class MotorSubscriber(Node):
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
 
         motor.mh.setSpeed(threshold)     
-        time.sleep(0.5)   
+        time.sleep(1.5)   
 
         self.motor_barrier.wait()
         for speed in speeds:
