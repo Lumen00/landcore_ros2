@@ -64,7 +64,7 @@ class MotorSubscriber(Node):
         # print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
-            time.sleep(0.1)
+            # time.sleep(0.1)
 
         # print('joining threads')
         for thread in [t1, t2, t3, t4]:
@@ -72,50 +72,15 @@ class MotorSubscriber(Node):
         print('threads joined')
 
     def run_motor(self, motor:DC_Motor, value:int):
-        speeds = []
-        steps = 100
-        # Determine Current state:
-        if motor.signed_speed == 0: # If starting from rest.
-            if value > 0: # If moving forwards from rest.
-                speeds = range(0, value, int(value/steps))
-            elif value < 0: # If moving backwards from rest.
-                speeds = range(0, value, -int(value/steps))
-            else: # If do nothing.
-                motor.mh.run(Emakefun_MotorHAT.RELEASE)
-                speeds.append(0)
-        elif motor.signed_speed > 0: # If starting from fowards.
-            if value > 0: # If moving forwards from forwards.
-                motor.mh.run(Emakefun_MotorHAT.FORWARD)
-            elif value < 0: # If moving backwards from forwards.
-                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            else: 
-                motor.mh.run(Emakefun_MotorHAT.RELEASE)
-        elif motor.signed_speed < 0: # If starting from backwards.
-            if value > 0: # If moving forwards from rest.
-                motor.mh.run(Emakefun_MotorHAT.FORWARD)
-            elif value < 0: #W If moving backwards from rest.
-                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            else: 
-                motor.mh.run(Emakefun_MotorHAT.RELEASE)
-
-        
-
         self.motor_barrier.wait()
-        # for speed in speeds:
-        #     if speed < 0:
-        #         motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-        #     elif speed > 0:
-        #         motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        #     elif speed == 0:
-        #         motor.mh.run(Emakefun_MotorHAT.RELEASE)
-        #     motor.mh.setSpeed(abs(speed))
-        #     motor.signed_speed = speed
-        #     time.sleep(0.025)
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
         elif value > 0:
             motor.mh.run(Emakefun_MotorHAT.FORWARD)
         elif value == 0:
+            motor.mh.run(Emakefun_MotorHAT.RELEASE)
+            motor.mh.setSpeed(255)
+            motor.mh.run(Emakefun_MotorHAT.FORWARD)
             motor.mh.run(Emakefun_MotorHAT.RELEASE)
         motor.mh.setSpeed(abs(value))
         motor.signed_speed = value
