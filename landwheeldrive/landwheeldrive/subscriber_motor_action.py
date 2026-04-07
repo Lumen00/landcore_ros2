@@ -24,6 +24,9 @@ class DC_Motor(Emakefun_MotorHAT):
         super().__init__(addr=0x60)
         self.signed_speed = 0
         self.mh = self.getMotor(motor_num)
+        self.mh.setSpeed(150)
+        self.mh.run(Emakefun_MotorHAT.FORWARD)
+        self.mh.run(Emakefun_MotorHAT.RELEASE)
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
@@ -53,7 +56,6 @@ class MotorSubscriber(Node):
         print('heard', msg.data)
 
         # Apply transformation to account for wheels spinning the other way.
-        # msg.data = [x * y for x, y in zip(msg.data, [1,1,-1,-1])]
         
         t1 = threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]))
         t2 = threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]))
@@ -68,8 +70,6 @@ class MotorSubscriber(Node):
         for thread in [t1, t2, t3, t4]:
             thread.join()
         print('threads joined')
-        
-
 
     def run_motor(self, motor:DC_Motor, value:int):
         speeds = []
