@@ -23,6 +23,7 @@ class DC_Motor(Emakefun_MotorHAT):
         super().__init__(addr=0x60)
         self.signed_speed = 0
         self.mh = self.getMotor(motor_num)
+        self.mh.setSpeed(50)
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
