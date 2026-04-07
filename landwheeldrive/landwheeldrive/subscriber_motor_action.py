@@ -69,60 +69,20 @@ class MotorSubscriber(Node):
         
 
 
-    def run_motor(self, motor:DC_Motor, value):
-        # What is the current speed of the motor?
-        # Is the motor set to go forward or backwards or in release?
-        # Case 0 - the same speed command is issued.
-        # Case 1 - go backwards or forwards from start.
-        # Case 2 - go faster forwards from forwards.
-        # Case 3 - go faster backwards from backwards.
-        # Case 4 - go slower forwards from forwards.
-        # Case 5 - go slower backwards from backwards.
-        # Case 6 - go backwards from forwards.
-        # Case 7 - go forwards from backwards.
-        # Case 8 - stop. 
-
-        speed_array = []
-        if motor.signed_speed == value: # 0 
-            self.motor_barrier.wait()
-            return # Do not alter the motor speed.
-        elif motor.signed_speed == 0 and value != 0: # 1
-            # Create an array from 0 to speed value.
-            speed_array = range(value)
-            if value < 0:
-                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            else: 
-                motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        elif motor.signed_speed > 0 and value > motor.signed_speed: # 2
-            speed_array = range(motor.signed_speed, value)
-        elif motor.signed_speed < 0 and value < motor.signed_speed: # 3
-            speed_array = range(motor.signed_speed, value, -1)
-        elif motor.signed_speed > 0 and value < motor.signed_speed: # 4
-            speed_array = range(motor.signed_speed, value, -1)
-        elif motor.signed_speed < 0 and value > motor.signed_speed: # 5
-            speed_array = range(motor.signed_speed, value)
-        elif motor.signed_speed > 0 and value < 0: # 6
-            motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            speed_array = range(0, value, -1)
-        elif motor.signed_speed < 0 and value > 0: # 7
+    def run_motor(self, motor:DC_Motor, value:int):
+        # Energise the motors for a set time and then go to the specified value.
+        if value > 0: # If some movement command is issued.
             motor.mh.run(Emakefun_MotorHAT.FORWARD)
-            speed_array = range(value)
+            motor.mh.setSpeed(50)
+        elif value < 0: 
+            motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+            motor.mh.setSpeed(50)
         elif value == 0:
             motor.mh.run(Emakefun_MotorHAT.RELEASE)
-            speed_array.append(0)
-        else: 
-            print('Instructions for motor speed not understood!', value, motor.signed_speed)
-            self.motor_barrier.wait()
+            motor.mh.setSpeed(0)
             return
-        
-        print('barrier')
-        self.motor_barrier.wait()
-        print('barrier passed')
-
-        for speed in speed_array:
-            motor.signed_speed = speed
-            motor.mh.setSpeed(abs(speed))  
-            time.sleep(0.01) 
+        time.sleep(0.1)
+        motor.mh.setSpeed(abs(value))
 
         return
 
