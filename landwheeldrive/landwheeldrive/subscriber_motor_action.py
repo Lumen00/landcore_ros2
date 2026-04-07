@@ -84,6 +84,7 @@ class MotorSubscriber(Node):
 
         speed_array = []
         if motor.signed_speed == value: # 0 
+            self.motor_barrier.wait()
             return # Do not alter the motor speed.
         elif motor.signed_speed == 0 and value != 0: # 1
             # Create an array from 0 to speed value.
@@ -111,6 +112,7 @@ class MotorSubscriber(Node):
             speed_array.append(0)
         else: 
             print('Instructions for motor speed not understood!', value, motor.signed_speed)
+            self.motor_barrier.wait()
             return
         #
         print('barrier')
