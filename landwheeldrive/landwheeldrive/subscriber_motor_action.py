@@ -101,16 +101,22 @@ class MotorSubscriber(Node):
         
 
         self.motor_barrier.wait()
-        for speed in speeds:
-            if speed < 0:
-                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            elif speed > 0:
-                motor.mh.run(Emakefun_MotorHAT.FORWARD)
-            elif speed == 0:
-                motor.mh.run(Emakefun_MotorHAT.RELEASE)
-            motor.mh.setSpeed(abs(speed))
-            motor.signed_speed = speed
-            time.sleep(0.025)
+        # for speed in speeds:
+        #     if speed < 0:
+        #         motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+        #     elif speed > 0:
+        #         motor.mh.run(Emakefun_MotorHAT.FORWARD)
+        #     elif speed == 0:
+        #         motor.mh.run(Emakefun_MotorHAT.RELEASE)
+        #     motor.mh.setSpeed(abs(speed))
+        #     motor.signed_speed = speed
+        #     time.sleep(0.025)
+        if value < 0:
+            motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+        elif value > 0:
+            motor.mh.run(Emakefun_MotorHAT.FORWARD)
+        elif value == 0:
+            motor.mh.run(Emakefun_MotorHAT.RELEASE)
         motor.mh.setSpeed(abs(value))
         motor.signed_speed = value
         return
