@@ -25,6 +25,9 @@ class DC_Motor(Emakefun_MotorHAT):
         self.mh = self.getMotor(motor_num)
         self.threshold = 50
         self.mh.setSpeed(self.threshold)
+        self.mh.run(Emakefun_MotorHAT.FORWARD)
+        self.mh.run(Emakefun_MotorHAT.RELEASE)
+
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
