@@ -23,7 +23,8 @@ class DC_Motor(Emakefun_MotorHAT):
         super().__init__(addr=0x60)
         self.signed_speed = 0
         self.mh = self.getMotor(motor_num)
-        self.mh.setSpeed(50)
+        self.threshold = 50
+        self.mh.setSpeed(self.threshold)
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
@@ -72,18 +73,15 @@ class MotorSubscriber(Node):
 
     def run_motor(self, motor:DC_Motor, value:int):
         # Energise the motors for a set time and then go to the specified value.
-        if value > 0: # If some movement command is issued.
+        if value > motor.threshold: # If some movement command is issued.
             motor.mh.run(Emakefun_MotorHAT.FORWARD)
-            motor.mh.setSpeed(50)
-        elif value < 0: 
+        elif value < -motor.threshold: 
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-            motor.mh.setSpeed(50)
-        elif value == 0:
+        elif abs(value) <= motor.threshold:
             motor.mh.run(Emakefun_MotorHAT.RELEASE)
-            motor.mh.setSpeed(0)
+            motor.mh.setSpeed(motor.threshold)
             return
         self.motor_barrier.wait()
-        time.sleep(0.1)
         motor.mh.setSpeed(abs(value))
 
         return
