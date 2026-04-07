@@ -22,7 +22,7 @@ class DC_Motor(Emakefun_MotorHAT):
     def __init__(self, motor_num):
         super().__init__(addr=0x60)
         self.signed_speed = 0
-        return self.getMotor(motor_num)
+        self.mh = self.getMotor(motor_num)
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
@@ -59,7 +59,7 @@ class MotorSubscriber(Node):
         threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]), daemon=True).start()
         threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]), daemon=True).start()
 
-    def run_motor(self, motor, value):
+    def run_motor(self, motor:DC_Motor, value):
         # What is the current speed of the motor?
         # Is the motor set to go forward or backwards or in release?
         # Case 0 - the same speed command is issued.
@@ -79,9 +79,9 @@ class MotorSubscriber(Node):
             # Create an array from 0 to speed value.
             speed_array = range(value)
             if value < 0:
-                motor.run(Emakefun_MotorHAT.BACKWARD)
+                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
             else: 
-                motor.run(Emakefun_MotorHAT.FORWARD)
+                motor.mh.run(Emakefun_MotorHAT.FORWARD)
         elif motor.signed_speed > 0 and value > motor.signed_speed: # 2
             speed_array = range(motor.signed_speed, value)
         elif motor.signed_speed < 0 and value < motor.signed_speed: # 3
@@ -91,19 +91,19 @@ class MotorSubscriber(Node):
         elif motor.signed_speed < 0 and value > motor.signed_speed: # 5
             speed_array = range(motor.signed_speed, value)
         elif motor.signed_speed > 0 and value < 0: # 6
-            motor.run(Emakefun_MotorHAT.BACKWARD)
+            motor.mh.run(Emakefun_MotorHAT.BACKWARD)
             speed_array = range(0, value, -1)
         elif motor.signed_speed < 0 and value > 0: # 7
-            motor.run(Emakefun_MotorHAT.FORWARD)
+            motor.mh.run(Emakefun_MotorHAT.FORWARD)
             speed_array = range (value)
         elif value == 0:
-            motor.run(Emakefun_MotorHAT.RELEASE)
+            motor.mh.run(Emakefun_MotorHAT.RELEASE)
             speed_array.append(0)
 
         self.motor_barrier.wait()
 
         for speed in speed_array:
-            motor.setSpeed(abs(speed))  
+            motor.mh.setSpeed(abs(speed))  
             time.sleep(0.01) 
 
         return
