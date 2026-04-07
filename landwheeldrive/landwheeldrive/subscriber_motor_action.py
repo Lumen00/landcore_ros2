@@ -11,10 +11,10 @@ from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
 # mh = Emakefun_MotorHAT(addr=0x60)
 def turnOffMotors():
-    left_front.run(Emakefun_MotorHAT.RELEASE)
-    left_back.run(Emakefun_MotorHAT.RELEASE)
-    right_front.run(Emakefun_MotorHAT.RELEASE)
-    right_back.run(Emakefun_MotorHAT.RELEASE) 
+    left_front.mh.run(Emakefun_MotorHAT.RELEASE)
+    left_back.mh.run(Emakefun_MotorHAT.RELEASE)
+    right_front.mh.run(Emakefun_MotorHAT.RELEASE)
+    right_back.mh.run(Emakefun_MotorHAT.RELEASE) 
 
 atexit.register(turnOffMotors)
 
@@ -81,6 +81,7 @@ class MotorSubscriber(Node):
             motor.mh.run(Emakefun_MotorHAT.RELEASE)
             motor.mh.setSpeed(0)
             return
+        self.motor_barrier.wait()
         time.sleep(0.1)
         motor.mh.setSpeed(abs(value))
 
