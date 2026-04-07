@@ -5,6 +5,7 @@ from rclpy.node import Node
 import atexit
 import threading
 import time
+import math
 
 from std_msgs.msg import Int16MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
@@ -23,9 +24,6 @@ class DC_Motor(Emakefun_MotorHAT):
         super().__init__(addr=0x60)
         self.signed_speed = 0
         self.mh = self.getMotor(motor_num)
-        self.threshold = 50
-        self.mh.setSpeed(self.threshold)
-        self.mh.run(Emakefun_MotorHAT.FORWARD)
 
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
@@ -73,18 +71,45 @@ class MotorSubscriber(Node):
 
 
     def run_motor(self, motor:DC_Motor, value:int):
-        # Energise the motors for a set time and then go to the specified value.
-        if value > motor.threshold: # If some movement command is issued.
-            motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        elif value < -motor.threshold: 
-            motor.mh.run(Emakefun_MotorHAT.BACKWARD)
-        elif abs(value) <= motor.threshold:
-            motor.mh.run(Emakefun_MotorHAT.RELEASE)
-            motor.mh.setSpeed(motor.threshold)
-            return
-        self.motor_barrier.wait()
-        motor.mh.setSpeed(abs(value))
+        speeds = []
+        steps = 50
+        # Determine Current state:
+        if motor.signed_speed == 0: # If starting from rest.
+            if value > 0: # If moving forwards from rest.
+                speeds = range(0, value, value/steps)
+            elif value < 0: # If moving backwards from rest.
+                speeds = range(0, value, -value/steps)
+            else: # If do nothing.
+                motor.mh.run(Emakefun_MotorHAT.RELEASE)
+                speeds.append(0)
+        elif motor.signed_speed > 0: # If starting from fowards.
+            if value > 0: # If moving forwards from forwards.
+                motor.mh.run(Emakefun_MotorHAT.FORWARD)
+            elif value < 0: # If moving backwards from forwards.
+                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+            else: 
+                motor.mh.run(Emakefun_MotorHAT.RELEASE)
+        elif motor.signed_speed < 0: # If starting from backwards.
+            if value > 0: # If moving forwards from rest.
+                motor.mh.run(Emakefun_MotorHAT.FORWARD)
+            elif value < 0: #W If moving backwards from rest.
+                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+            else: 
+                motor.mh.run(Emakefun_MotorHAT.RELEASE)
 
+        
+
+        self.motor_barrier.wait()
+        for speed in speeds:
+            if speed < 0:
+                motor.mh.run(Emakefun_MotorHAT.BACKWARD)
+            elif speed > 0:
+                motor.mh.run(Emakefun_MotorHAT.FORWARD)
+            elif speed == 0:
+                motor.mh.run(Emakefun_MotorHAT.RELEASE)
+            motor.mh.setSpeed(speed)
+            motor.signed_speed = speed
+            time.sleep(0.05)
         return
 
 def main(args=None):
