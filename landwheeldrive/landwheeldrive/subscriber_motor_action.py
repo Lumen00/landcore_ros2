@@ -72,7 +72,7 @@ class MotorSubscriber(Node):
 
     def run_motor(self, motor:DC_Motor, value:int):
         speeds = []
-        steps = 10
+        steps = 100
         # Determine Current state:
         if motor.signed_speed == 0: # If starting from rest.
             if value > 0: # If moving forwards from rest.
@@ -109,7 +109,7 @@ class MotorSubscriber(Node):
                 motor.mh.run(Emakefun_MotorHAT.RELEASE)
             motor.mh.setSpeed(speed)
             motor.signed_speed = speed
-            time.sleep(0.1)
+            time.sleep(0.025)
         motor.mh.setSpeed(abs(value))
         motor.signed_speed = value
         return
