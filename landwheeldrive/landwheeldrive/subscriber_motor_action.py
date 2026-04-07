@@ -58,11 +58,14 @@ class MotorSubscriber(Node):
         t2 = threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]))
         t3 = threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]))
         t4 = threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]))
+        print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
 
+        print('joining threads')
         for thread in [t1, t2, t3, t4]:
             thread.join()
+        print('threads joined')
         
 
 
