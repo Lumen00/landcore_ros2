@@ -53,6 +53,10 @@ echo "Installing ROS 2 dependencies..."
 rosdep update
 rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 
+# Install pip dependencies.
+pip install PyQt6 
+apt-get install libxcb-cursor0
+
 # Now apply all the fixes after dependencies are installed
 
 # Fix storage.cpp

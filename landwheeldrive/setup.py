@@ -24,7 +24,9 @@ setup(
     },
     entry_points={
         'console_scripts': [
-            'motorlisten = landwheeldrive.subscriber_motor_action:main'
+            'motorlisten = landwheeldrive.subscriber_motor_action:main',
+            'gui_controller = landwheeldrive.gui_control:main',
+            'cartesian_driver = landwheeldrive.cartesian_drive:main'
         ],
     },
 )

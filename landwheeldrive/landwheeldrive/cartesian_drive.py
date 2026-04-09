@@ -7,7 +7,7 @@ import threading
 import time
 import math
 
-from std_msgs.msg import Int16MultiArray
+from std_msgs.msg import Float32MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
 # mh = Emakefun_MotorHAT(addr=0x60)
@@ -35,11 +35,11 @@ right_back = DC_Motor(4)
 
 # Listen on topic motor_drive for an array of four numbers. 
 
-class MotorSubscriber(Node):
+class Cartesian_Subscriber(Node):
     def __init__(self):
-        super().__init__('motor_subscriber')
-        self.subscriber_ = self.create_subscription(Int16MultiArray,
-                                                     'motor_drive',
+        super().__init__('cartesian_subscriber')
+        self.subscriber_ = self.create_subscription(Float32MultiArray,
+                                                     'cartesian_heading',
                                                       self.listener_callback,
                                                       10)
         self.motor_barrier = threading.Barrier(4)
@@ -48,19 +48,24 @@ class MotorSubscriber(Node):
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
-
-        if len(msg.data) > 4:
-            print('Incorrectly sized motor array of size', len(msg.data))
-            return
+        # Message is in format x, y, rotation.
 
         print('heard', msg.data)
+        x = msg.data[0]
+        y = msg.data[1]
+        rot = msg.data[2]
+        # Use mecanum wheel equations to calculate for motor signals.
+        lf_factor = x - y + rot  
+        rf_factor = x + y - rot 
+        lb_factor = x + y + rot  
+        rb_factor = x - y - rot 
 
         # Apply transformation to account for wheels spinning the other way.
         
-        t1 = threading.Thread(target=self.run_motor, args=(right_front, msg.data[0]))
-        t2 = threading.Thread(target=self.run_motor, args=(left_front, msg.data[1]))
-        t3 = threading.Thread(target=self.run_motor, args=(left_back, -msg.data[2]))
-        t4 = threading.Thread(target=self.run_motor, args=(right_back, -msg.data[3]))
+        t1 = threading.Thread(target=self.run_motor, args=(right_front, 255*rf_factor))
+        t2 = threading.Thread(target=self.run_motor, args=(left_front, 255*lf_factor))
+        t3 = threading.Thread(target=self.run_motor, args=(left_back, 255*lb_factor))
+        t4 = threading.Thread(target=self.run_motor, args=(right_back, 255*rb_factor))
         # print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
@@ -91,7 +96,7 @@ class MotorSubscriber(Node):
 def main(args=None):
     rclpy.init(args=args)
 
-    motor_sub = MotorSubscriber()
+    motor_sub = Cartesian_Subscriber()
 
     rclpy.spin(motor_sub)
 
