@@ -442,10 +442,13 @@ def main():
     window = MainWindow(node=gui_pub)
     window.resize(320, 480)
     window.show()
-    sys.exit(app.exec())
+
+    exit_code = app.exec()
 
     gui_pub.destroy_node()
     rclpy.shutdown()
+
+    sys.exit(exit_code)
 
 if __name__ == "__main__":
     main()

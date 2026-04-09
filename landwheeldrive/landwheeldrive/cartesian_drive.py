@@ -62,10 +62,10 @@ class Cartesian_Subscriber(Node):
 
         # Apply transformation to account for wheels spinning the other way.
         
-        t1 = threading.Thread(target=self.run_motor, args=(right_front, 255*rf_factor))
-        t2 = threading.Thread(target=self.run_motor, args=(left_front, 255*lf_factor))
-        t3 = threading.Thread(target=self.run_motor, args=(left_back, 255*lb_factor))
-        t4 = threading.Thread(target=self.run_motor, args=(right_back, 255*rb_factor))
+        t1 = threading.Thread(target=self.run_motor, args=(right_front, int(255*rf_factor)))
+        t2 = threading.Thread(target=self.run_motor, args=(left_front, int(255*lf_factor)))
+        t3 = threading.Thread(target=self.run_motor, args=(left_back, int(255*lb_factor)))
+        t4 = threading.Thread(target=self.run_motor, args=(right_back, int(255*rb_factor)))
         # print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
