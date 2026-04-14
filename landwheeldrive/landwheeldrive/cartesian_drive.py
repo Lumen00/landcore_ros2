@@ -68,7 +68,7 @@ class Cartesian_Subscriber(Node):
         # Scale if any wheel speed exceeds max speed.
         max_w = max(abs(w) for w in wheels) # Maximum speed command.
         # Scale the other motor command speeds by the max speed or max speed command.
-        scale = min(max_w, w_max) 
+        scale = max(max_w, w_max) 
 
         # Convert to 255 scale 
         pwm = [round((w / scale) * 255) for w in wheels]
@@ -78,8 +78,8 @@ class Cartesian_Subscriber(Node):
 
         t1 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[0])))
         t2 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[1])))
-        t3 = threading.Thread(target=self.run_motor, args=(left_back, int(pwm[2])))
-        t4 = threading.Thread(target=self.run_motor, args=(right_back, int(pwm[3])))
+        t3 = threading.Thread(target=self.run_motor, args=(left_back, -int(pwm[2])))
+        t4 = threading.Thread(target=self.run_motor, args=(right_back, -int(pwm[3])))
         # print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
