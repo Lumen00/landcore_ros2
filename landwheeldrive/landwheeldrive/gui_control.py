@@ -418,7 +418,7 @@ class GuiPublisher(Node):
         # We want to publish: [y/forward, x/strafe, r/rotation]
         self.publisher_ = self.create_publisher(Float32MultiArray, # message type
                                                 'cartesian_heading', # topic name
-                                                10) # QOS
+                                                1) # QOS
         self.timer = self.create_timer(0.1, self.timer_callback)
         self.x = 0
         self.y = 0

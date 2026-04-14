@@ -49,7 +49,8 @@ class Cartesian_Subscriber(Node):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
         # Message is in format x, y, rotation.
-        w_max = 17.8 # Rad/s. From 170 RPM of max power efficiency point
+        # w_max = 17.8 # Rad/s. From 170 RPM of max power efficiency point
+        w_max = 3 # Debug test speed.
         x = msg.data[0]
         y = msg.data[1]
         rot = msg.data[2]
