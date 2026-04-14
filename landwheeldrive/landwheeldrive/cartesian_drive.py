@@ -50,7 +50,7 @@ class Cartesian_Subscriber(Node):
         # If negative, go backwards and apply absolute value.
         # Message is in format x, y, rotation.
         # w_max = 17.8 # Rad/s. From 170 RPM of max power efficiency point
-        w_max = 3 # Debug test speed.
+        w_max = 0.5 # Debug test speed.
         x = msg.data[0]
         y = msg.data[1]
         rot = msg.data[2]
@@ -74,7 +74,7 @@ class Cartesian_Subscriber(Node):
         pwm = [round((w / scale) * 255) for w in wheels]
 
         # Apply transformation to account for wheels spinning the other way.
-        print('heard', msg.data, 'transformed to ', [lf_factor, rf_factor, lb_factor, rb_factor])
+        print('heard', msg.data, 'transformed to ', pwm)
 
         t1 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[0])))
         t2 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[1])))
