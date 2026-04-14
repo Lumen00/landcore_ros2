@@ -76,8 +76,8 @@ class Cartesian_Subscriber(Node):
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', pwm)
 
-        t1 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[0])))
-        t2 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[1])))
+        t1 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[0])))
+        t2 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[1])))
         t3 = threading.Thread(target=self.run_motor, args=(left_back, -int(pwm[2])))
         t4 = threading.Thread(target=self.run_motor, args=(right_back, -int(pwm[3])))
         # print('starting threads')
