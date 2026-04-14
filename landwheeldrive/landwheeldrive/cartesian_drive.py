@@ -68,7 +68,7 @@ class Cartesian_Subscriber(Node):
         # Scale if any wheel speed exceeds max speed.
         max_w = max(abs(w) for w in wheels) # Maximum speed command.
         # Scale the other motor command speeds by the max speed or max speed command.
-        scale = max(max_w, w_max) 
+        scale = min(max_w, w_max) 
 
         # Convert to 255 scale 
         pwm = [round((w / scale) * 255) for w in wheels]
