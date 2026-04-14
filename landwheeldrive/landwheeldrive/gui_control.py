@@ -15,7 +15,7 @@ class JoystickWidget(QWidget):
     moved    = pyqtSignal(float, float)   # x, y in [-1, 1]
     released = pyqtSignal()
 
-    def __init__(self, parent=None, size=230):
+    def __init__(self, parent=None, size=230*2):
         super().__init__(parent)
         self.setFixedSize(size, size)
         cx = cy = size / 2
@@ -23,17 +23,19 @@ class JoystickWidget(QWidget):
         self._knob_pos    = QPointF(cx, cy)
         self._dragging    = False
         self._base_r      = size * 0.44
-        self._knob_r      = size * 0.18
+        self._knob_r      = size * 0.18/2
         self._max_travel  = self._base_r - self._knob_r - 4
 
         self._timer = QTimer(self)
         self._timer.setInterval(16)
         self._timer.timeout.connect(self._snap_back)
 
+        self._speed_limit = 0.712
+
     def get_xy(self):
         dy = (self._center.x() - self._knob_pos.x()) / self._max_travel
         dx = (self._center.y() - self._knob_pos.y()) / self._max_travel
-        return round(max(-1.0, min(1.0, dx)), 3), round(max(-1.0, min(1.0, dy)), 3)
+        return round(max(-self._speed_limit, min(self._speed_limit, dx)), 3), round(max(-self._speed_limit, min(self._speed_limit, dy)), 3)
 
     def mousePressEvent(self, ev):
         if ev.button() == Qt.MouseButton.LeftButton:
@@ -160,7 +162,7 @@ class JoystickWidget(QWidget):
 class RotationSlider(QWidget):
     valueChanged = pyqtSignal(float)
 
-    _TRACK_H = 12
+    _TRACK_H = 24
     _THUMB_R = 13
 
     def __init__(self, parent=None):
@@ -169,12 +171,14 @@ class RotationSlider(QWidget):
         self._drag  = False
         self.setFixedHeight(62)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
+        self._max_speed = 17.8*0.04/(0.1315+0.135)
+
 
     def value(self):
         return self._value
 
     def set_value(self, v):
-        self._value = max(-1.0, min(1.0, v))
+        self._value = max(-self._max_speed, min(self._max_speed, v))
         self.update()
         self.valueChanged.emit(self._value)
 
@@ -185,11 +189,11 @@ class RotationSlider(QWidget):
 
     def _thumb_cx(self):
         tx, ty, tw, th = self._track()
-        return int(tx + (self._value + 1.0) / 2.0 * tw)
+        return int(tx + (self._value + self._max_speed) / (self._max_speed*2) * tw)
 
     def _val_from_x(self, x):
         tx, ty, tw, th = self._track()
-        return max(-1.0, min(1.0, (x - tx) / tw * 2.0 - 1.0))
+        return max(-self._max_speed, min(self._max_speed, (x - tx) / tw * 2.0 - 1.0))
 
     def mousePressEvent(self, ev):
         if ev.button() == Qt.MouseButton.LeftButton:

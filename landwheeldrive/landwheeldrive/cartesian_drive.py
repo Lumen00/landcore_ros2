@@ -49,23 +49,36 @@ class Cartesian_Subscriber(Node):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
         # Message is in format x, y, rotation.
-
+        w_max = 17.8 # Rad/s. From 170 RPM of max power efficiency point
         x = msg.data[0]
         y = msg.data[1]
         rot = msg.data[2]
-        # Use mecanum wheel equations to calculate for motor signals.
-        lf_factor = x - y + rot  
-        rf_factor = x + y - rot 
-        lb_factor = x + y + rot  
-        rb_factor = x - y - rot 
+        # Use mecanum wheel equations to calculate for motor signals. Inverse Kinematics
+        lx = 0.1315 # Distance from centre to wheel on x axis.
+        ly = 0.135 # Distance from centre to wheel on y axis.
+        r = 0.04 # Radius of wheels
+        lf_factor = (x - y - (lx + ly)*rot)/r
+        rf_factor = (x + y + (lx + ly)*rot)/r
+        lb_factor = (x + y - (lx + ly)*rot)/r
+        rb_factor = (x - y + (lx + ly)*rot)/r
+
+        wheels = [lf_factor, rf_factor, lb_factor, rb_factor]
+
+        # Scale if any wheel speed exceeds max speed.
+        max_w = max(abs(w) for w in wheels) # Maximum speed command.
+        # Scale the other motor command speeds by the max speed or max speed command.
+        scale = max(max_w, w_max) 
+
+        # Convert to 255 scale 
+        pwm = [round((w / scale) * 255) for w in wheels]
 
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', [lf_factor, rf_factor, lb_factor, rb_factor])
 
-        t1 = threading.Thread(target=self.run_motor, args=(right_front, int(50*rf_factor)))
-        t2 = threading.Thread(target=self.run_motor, args=(left_front, int(50*lf_factor)))
-        t3 = threading.Thread(target=self.run_motor, args=(left_back, int(50*lb_factor)))
-        t4 = threading.Thread(target=self.run_motor, args=(right_back, int(50*rb_factor)))
+        t1 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[0])))
+        t2 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[1])))
+        t3 = threading.Thread(target=self.run_motor, args=(left_back, int(pwm[2])))
+        t4 = threading.Thread(target=self.run_motor, args=(right_back, int(pwm[3])))
         # print('starting threads')
         for thread in [t1, t2, t3, t4]:
             thread.start()
