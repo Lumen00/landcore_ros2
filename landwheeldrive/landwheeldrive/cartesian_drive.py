@@ -41,7 +41,7 @@ class Cartesian_Subscriber(Node):
         self.subscriber_ = self.create_subscription(Float32MultiArray,
                                                      'cartesian_heading',
                                                       self.listener_callback,
-                                                      10)
+                                                      1)
         self.motor_barrier = threading.Barrier(4)
 
         
