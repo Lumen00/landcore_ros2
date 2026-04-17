@@ -173,6 +173,10 @@ class RotationSlider(QWidget):
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self._max_speed = 17.8*0.04/(0.1315+0.135)
 
+        self._timer = QTimer(self)
+        self._timer.setInterval(16)
+        self._timer.timeout.connect(self._snap_back)
+
 
     def value(self):
         return self._value
@@ -198,6 +202,7 @@ class RotationSlider(QWidget):
     def mousePressEvent(self, ev):
         if ev.button() == Qt.MouseButton.LeftButton:
             self._drag = True
+            self._timer.stop()
             self.set_value(self._val_from_x(int(ev.position().x())))
 
     def mouseMoveEvent(self, ev):
@@ -207,8 +212,12 @@ class RotationSlider(QWidget):
     def mouseReleaseEvent(self, ev):
         if ev.button() == Qt.MouseButton.LeftButton:
             self._drag = False
+            self._timer.start()
 
     def mouseDoubleClickEvent(self, _):
+        self.set_value(0.0)
+
+    def _snap_back(self):
         self.set_value(0.0)
 
     def paintEvent(self, _event):
@@ -419,7 +428,7 @@ class GuiPublisher(Node):
         self.publisher_ = self.create_publisher(Float32MultiArray, # message type
                                                 'cartesian_heading', # topic name
                                                 1) # QOS
-        self.timer = self.create_timer(0.1, self.timer_callback)
+        self.timer = self.create_timer(0.05, self.timer_callback)
         self.x = 0
         self.y = 0
         self.rot = 0

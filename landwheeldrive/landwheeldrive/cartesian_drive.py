@@ -58,6 +58,8 @@ class Cartesian_Subscriber(Node):
         lx = 0.1315 # Distance from centre to wheel on x axis.
         ly = 0.135 # Distance from centre to wheel on y axis.
         r = 0.04 # Radius of wheels
+
+        # These calculate the angular speed of each wheel. 
         lf_factor = (x - y - (lx + ly)*rot)/r
         rf_factor = (x + y + (lx + ly)*rot)/r
         lb_factor = (x + y - (lx + ly)*rot)/r
@@ -66,12 +68,15 @@ class Cartesian_Subscriber(Node):
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]
 
         # Scale if any wheel speed exceeds max speed.
-        max_w = max(abs(w) for w in wheels) # Maximum speed command.
+        cmd_max_w = max(abs(w) for w in wheels) # Maximum speed command.
         # Scale the other motor command speeds by the max speed or max speed command.
-        scale = max(max_w, w_max) 
+        if cmd_max_w >= w_max: # If the command speed is greater than speed limit.
+            scale = cmd_max_w
+        else: # Otherwise if the command speed is lower than speed limit.
+            scale = w_max            
 
         # Convert to 255 scale 
-        pwm = [round((w / scale) * 100) for w in wheels]
+        pwm = [round((w / scale) * 255) for w in wheels]
 
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', pwm)
