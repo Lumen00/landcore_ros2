@@ -79,7 +79,7 @@ class Cartesian_Subscriber(Node):
             scale = w_max            
 
         # Convert to 255 scale 
-        pwm = [round((w / scale) * 100) for w in wheels]
+        pwm = [round((w / scale) * 50) for w in wheels]
 
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', pwm)
