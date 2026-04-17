@@ -44,6 +44,9 @@ class Cartesian_Subscriber(Node):
                                                       1)
         self.motor_barrier = threading.Barrier(4)
 
+        # Begin timeout for messages. 
+        # If not messages received for x time, come to a stop. 
+
         
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
@@ -76,7 +79,7 @@ class Cartesian_Subscriber(Node):
             scale = w_max            
 
         # Convert to 255 scale 
-        pwm = [round((w / scale) * 255) for w in wheels]
+        pwm = [round((w / scale) * 100) for w in wheels]
 
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', pwm)
@@ -98,7 +101,7 @@ class Cartesian_Subscriber(Node):
     def run_motor(self, motor:DC_Motor, value:int):
         # motor.mh.setSpeed(255)
         # motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        time.sleep(0.1)
+        # time.sleep(0.1)
         self.motor_barrier.wait()
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
