@@ -57,6 +57,7 @@ rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 pip install PyQt6 
 pip install smbus3
 apt-get install libxcb-cursor0
+apt install liblgpio-dev
 
 # Now apply all the fixes after dependencies are installed
 

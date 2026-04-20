@@ -7,6 +7,7 @@ import threading
 import time
 import math
 
+from dc_encoder_service.srv import MotorPI
 from std_msgs.msg import Float32MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
@@ -28,10 +29,24 @@ class DC_Motor(Emakefun_MotorHAT):
         self.mh.run(Emakefun_MotorHAT.FORWARD)
         self.mh.run(Emakefun_MotorHAT.RELEASE)
 
+        # Read from GPIO pins of encoders on schematic.
+
 left_front = DC_Motor(2)
 left_back = DC_Motor(3)
 right_front = DC_Motor(1)
 right_back = DC_Motor(4)
+
+class PI_Client(Node):
+    def __init__(self):
+        super().__init__('pi_controller_client')
+        self.PI_client = self.create_client(MotorPI, 'motor_PI_control_server')
+        while not self.PI_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('service not available, waiting again...')
+        self.req = MotorPI.Request()
+
+    def send_request(self, pwm_in):
+        self.req.pwm_in = pwm_in
+        self.future = self.PI_client.call_async(self.req)
 
 # Listen on topic motor_drive for an array of four numbers. 
 
@@ -81,6 +96,11 @@ class Cartesian_Subscriber(Node):
         # Convert to 255 scale 
         pwm = [round((w / scale) * 50) for w in wheels]
 
+        # Apply PI control. Contact dc_encoder_server for calculation.
+        response = pi_control_client.send_request(pwm_in=pwm)
+        if pi_control_client.future.done():
+            print('response from server', response)
+
         # Apply transformation to account for wheels spinning the other way.
         print('heard', msg.data, 'transformed to ', pwm)
 
@@ -103,6 +123,7 @@ class Cartesian_Subscriber(Node):
         # motor.mh.run(Emakefun_MotorHAT.FORWARD)
         # time.sleep(0.1)
         self.motor_barrier.wait()
+        motor.mh.setSpeed(abs(value))
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
         elif value > 0:
@@ -111,9 +132,10 @@ class Cartesian_Subscriber(Node):
             motor.mh.run(Emakefun_MotorHAT.RELEASE)
             motor.signed_speed = 0
             return 
-        motor.mh.setSpeed(abs(value))
         motor.signed_speed = value
         return
+
+pi_control_client = PI_Client()
 
 def main(args=None):
     rclpy.init(args=args)
