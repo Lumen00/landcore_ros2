@@ -24,7 +24,7 @@ apt install liblgpio-dev -y
 # Build the packages
 echo "Building packages..."
 
-colcon build
+colcon build --executor sequential
 source install/setup.bash
 
 echo "Workspace setup completed!"
