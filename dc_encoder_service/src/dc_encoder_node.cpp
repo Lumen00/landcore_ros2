@@ -60,7 +60,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
 
 int openInputGPIO(int pin_no){
   // Open the GPIO
-  int h = lgGpiochipOpen(4);
+  int h = lgGpiochipOpen(0);
   if (h < 0){
     printf("ERROR: %s (%d)\n", lguErrorText(h), h);
   }
