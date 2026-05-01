@@ -98,8 +98,8 @@ class Cartesian_Subscriber(Node):
         pwm = [round((w / scale) * 50) for w in wheels]
 
         # Apply PI control. Contact dc_encoder_server for calculation.
-        response = pi_control_client.send_request(pwm_in=pwm)
-        if pi_control_client.future.done():
+        response = self.pid.send_request(pwm_in=pwm)
+        if self.pid.future.done():
             print('response from server', response)
 
         # Apply transformation to account for wheels spinning the other way.
