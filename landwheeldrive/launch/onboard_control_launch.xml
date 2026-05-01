@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-    <node pkg="landwheeldrive" exec="cartesian_driver" name="cartesian_subscriber"/>
-    <node pkg="landwheeldrive" exec="motorlisten" name="motor_PI_control_server"/>
+    <node pkg="landwheeldrive" exec="cartesian_driver"/>
+    <node pkg="landwheeldrive" exec="motorlisten"/>
 </launch>
