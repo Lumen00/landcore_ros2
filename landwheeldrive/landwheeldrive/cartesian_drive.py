@@ -58,6 +58,7 @@ class Cartesian_Subscriber(Node):
                                                       self.listener_callback,
                                                       1)
         self.motor_barrier = threading.Barrier(4)
+        self.pid = None
 
         # Begin timeout for messages. 
         # If not messages received for x time, come to a stop. 
@@ -135,12 +136,14 @@ class Cartesian_Subscriber(Node):
         motor.signed_speed = value
         return
 
-pi_control_client = PI_Client()
 
 def main(args=None):
     rclpy.init(args=args)
 
     motor_sub = Cartesian_Subscriber()
+
+    motor_sub.pid = PI_Client()
+
 
     rclpy.spin(motor_sub)
 
