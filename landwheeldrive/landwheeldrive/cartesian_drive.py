@@ -39,7 +39,7 @@ right_back = DC_Motor(4)
 class PI_Client(Node):
     def __init__(self):
         super().__init__('pi_controller_client')
-        self.PI_client = self.create_client(MotorPI, 'motor_PI_control_server')
+        self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
         while not self.PI_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.req = MotorPI.Request()
