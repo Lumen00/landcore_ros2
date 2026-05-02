@@ -1,3 +1,9 @@
-int64 pwm_in
+int64 pwm_in_front_left
+int64 pwm_in_front_right
+int64 pwm_in_back_left
+int64 pwm_in_back_right
 ---
-int64 pwm_out
+int64 pwm_out_front_left
+int64 pwm_out_front_right
+int64 pwm_out_back_left
+int64 pwm_out_back_right

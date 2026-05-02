@@ -98,7 +98,11 @@ class Cartesian_Subscriber(Node):
         pwm = [round((w / scale) * 50) for w in wheels]
 
         # Apply PI control. Contact dc_encoder_server for calculation.
-        response = self.pid.send_request(pwm_in=pwm)
+        response = self.pid.send_request(
+            pwm_in_front_left=pwm[0],
+            pwm_in_front_right=pwm[1],
+            pwm_in_back_left=pwm[2],
+            pwm_in_back_right=pwm[3])
         if self.pid.future.done():
             print('response from server', response)
 

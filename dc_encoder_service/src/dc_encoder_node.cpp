@@ -27,7 +27,11 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   - 
   */
 
-  request->pwm_in;
+  request->pwm_in_front_left; 
+  request->pwm_in_front_right; 
+  request->pwm_in_back_left; 
+  request->pwm_in_back_right; 
+
 
   // Read the GPIO pins.
   std::vector<int> left_front_e = {lgGpioRead(pin_handles.at(0), pins.at(0)), lgGpioRead(pin_handles.at(1), pins.at(1))};
@@ -55,7 +59,10 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   // For each wheel, apply PI control with encoder feedback and pwm command. 
 
   // Calculate the response in pwm_out.
-  response->pwm_out = 0; 
+  response->pwm_out_front_left = 0; 
+  response->pwm_out_front_right = 0; 
+  response->pwm_out_back_left = 0; 
+  response->pwm_out_back_right = 0; 
 }
 
 int openInputGPIO(int pin_no){
