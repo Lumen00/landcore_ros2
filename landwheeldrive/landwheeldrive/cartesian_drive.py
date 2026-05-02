@@ -45,7 +45,10 @@ class PI_Client(Node):
         self.req = MotorPI.Request()
 
     def send_request(self, pwm_in):
-        self.req.pwm_in = pwm_in
+        self.req.pwm_in_front_left = pwm_in[0]
+        self.req.pwm_in_front_right = pwm_in[1]
+        self.req.pwm_in_back_left = pwm_in[2]
+        self.req.pwm_in_back_right = pwm_in[3]
         self.future = self.PI_client.call_async(self.req)
 
 # Listen on topic motor_drive for an array of four numbers. 
@@ -98,11 +101,8 @@ class Cartesian_Subscriber(Node):
         pwm = [round((w / scale) * 50) for w in wheels]
 
         # Apply PI control. Contact dc_encoder_server for calculation.
-        response = self.pid.send_request(
-            pwm_in_front_left=pwm[0],
-            pwm_in_front_right=pwm[1],
-            pwm_in_back_left=pwm[2],
-            pwm_in_back_right=pwm[3])
+        # Likely better option to go commanded speed->PID->PWM
+        response = self.pid.send_request(pwm_in=pwm)
         if self.pid.future.done():
             print('response from server', response)
 
