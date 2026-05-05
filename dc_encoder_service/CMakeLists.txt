@@ -19,7 +19,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/MotorPI.srv"
 )
 
-add_executable(dc_encoder_server src/dc_encoder_node.cpp)
+add_executable(dc_encoder_server src/dc_encoder_node.cpp src/timer.cpp)
 ament_target_dependencies(dc_encoder_server rclcpp)
 
 rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")

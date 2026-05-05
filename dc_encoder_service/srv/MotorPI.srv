@@ -1,7 +1,7 @@
-int64 pwm_in_front_left
-int64 pwm_in_front_right
-int64 pwm_in_back_left
-int64 pwm_in_back_right
+float64 speed_in_front_left
+float64 speed_in_front_right
+float64 speed_in_back_left
+float64 speed_in_back_right
 ---
 int64 pwm_out_front_left
 int64 pwm_out_front_right
