@@ -170,6 +170,7 @@ void init_encoder_interrupts(int pin_no, int handle){
   if (e < 0){
     printf("ERROR: %s (%d)\n", lguErrorText(e), e);
   }
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt set on pin number: %i", pin_no);
 
 }
 
