@@ -24,7 +24,7 @@ std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
 std::vector<int> encoder_tick_count = {0,0,0,0};
-int encoder_tick_threshold = 40;
+int encoder_tick_threshold =80;
 std::vector<int> read_pins = {6, 13, 20, 26};
 // std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
 
@@ -59,7 +59,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
 
   // Empty array to carry the speed calculations for each motor. 
   std::vector<double> all_encoders = {};
-  float timeout = 0.1;
+  float timeout = 1;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
   for (auto it = begin(encoder_timers); it != end(encoder_timers); it++){
