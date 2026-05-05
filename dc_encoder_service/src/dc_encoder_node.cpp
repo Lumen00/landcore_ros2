@@ -126,6 +126,7 @@ int openInputGPIO(int pin_no){
 void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // Using the pin number saved to *data, record the time interval for that encoder and restart the timer. 
   int motor_data = *(int*)data;
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered.");
   switch (motor_data)
   {
   case 5: // Right Front
@@ -134,21 +135,25 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     // Record time and reset timer.
     encoder_elapsed_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 5");
     break;
   case 13: // Left Front
     clockwise.at(1) = (lgGpioRead(pin_handles.at(3), pins.at(3)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     encoder_elapsed_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 13");
     break;  
   case 20: // Right Back
     clockwise.at(2) = (lgGpioRead(pin_handles.at(5), pins.at(5)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     encoder_elapsed_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     encoder_timers.at(2).start();
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 20");
     break;  
   case 16: // Left Back
     clockwise.at(3) = (lgGpioRead(pin_handles.at(7), pins.at(7)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 16");
     break;
   default:
     printf("Encoder data not found, %i ", motor_data);
@@ -156,9 +161,6 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     printf("evt->report.gpio: %i", evt->report.gpio);
     break;
   }
-
-  encoder_timers.at(0).start();
-
 }
 
 void init_encoder_interrupts(int pin_no, int handle){
