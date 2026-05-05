@@ -55,14 +55,14 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
 
   // Read the current elapsed time and calculate the current speeds for all motors.
   int iter = 0;
-  for (auto it = begin(encoder_elapsed_times); it != end(encoder_elapsed_times); it++){
+  for (auto it = begin(encoder_timers); it != end(encoder_timers); it++){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
-    if (*it >= timeout){
+    if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
       clockwise.at(iter) = Direction::STOPPED;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      all_encoders.push_back((1/341.2) * (2*M_PI / *it));
+      all_encoders.push_back((1/341.2) * (2*M_PI / it->elapsedSeconds()));
     }
     iter += 1;
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", *it);
@@ -81,7 +81,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       // }
 
       // Debug elapsed time.
-      encoder_log += std::to_string(encoder_elapsed_times[i]);
+      encoder_log += std::to_string(encoder_timers[i].elapsedSeconds());
 
       // Direction String.
       switch (clockwise[i])
@@ -138,25 +138,25 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     // Read GPIO pins for direction.
     clockwise.at(0) = (lgGpioRead(pin_handles.at(1), pins.at(1)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // Record time and reset timer.
-    encoder_elapsed_times.at(0) = encoder_timers.at(0).elapsedSeconds();
+    // encoder_elapsed_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 5");
     break;
   case 13: // Left Front
     clockwise.at(1) = (lgGpioRead(pin_handles.at(3), pins.at(3)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    encoder_elapsed_times.at(1) = encoder_timers.at(1).elapsedSeconds();
+    // encoder_elapsed_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 13");
     break;  
   case 20: // Left Back
     clockwise.at(2) = (lgGpioRead(pin_handles.at(5), pins.at(5)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    encoder_elapsed_times.at(2) = encoder_timers.at(2).elapsedSeconds();
+    // encoder_elapsed_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     encoder_timers.at(2).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 20");
     break;  
   case 16: // Right Back
     clockwise.at(3) = (lgGpioRead(pin_handles.at(7), pins.at(7)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
+    // encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 16");
     break;
