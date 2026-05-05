@@ -76,7 +76,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       // }
 
       // Debug elapsed time.
-      encoder_log += encoder_elapsed_times[i];
+      encoder_log += std::to_string(encoder_elapsed_times[i]);
 
       // Direction String.
       switch (clockwise[i])
