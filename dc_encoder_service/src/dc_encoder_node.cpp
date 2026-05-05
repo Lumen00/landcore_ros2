@@ -50,7 +50,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   // std::vector<std::vector<int>> all_encoders = {left_front_e, right_front_e, left_back_e, right_back_e};
 
   // Empty array to carry the speed calculations for each motor. 
-  std::vector<double> all_encoders = {};
+  std::vector<long> all_encoders = {};
   float timeout = 0.1;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
@@ -81,6 +81,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       // }
 
       // Debug elapsed time.
+      encoder_log += " ";
       encoder_log += std::to_string(encoder_timers[i].elapsedSeconds());
 
       // Direction String.
@@ -136,7 +137,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   {
   case 6: // Right Front
     // Read GPIO pins for direction.
-    clockwise.at(0) = (lgGpioRead(pin_handles.at(1), pins.at(1)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
+    clockwise.at(0) = (lgGpioRead(pin_handles.at(0), pins.at(0)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // Record time and reset timer.
     // encoder_elapsed_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
@@ -155,7 +156,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 20");
     break;  
   case 26: // Right Back
-    clockwise.at(3) = (lgGpioRead(pin_handles.at(7), pins.at(7)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
+    clockwise.at(3) = (lgGpioRead(pin_handles.at(6), pins.at(6)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 16");
