@@ -56,7 +56,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   // Read the current elapsed time and calculate the current speeds for all motors.
   for (auto it = begin(encoder_elapsed_times); it != end(encoder_elapsed_times); it++){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
-    if (*it > timeout){
+    if (*it >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
@@ -74,6 +74,10 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
           // encoder_log += std::to_string(all_encoders[i][j]);
           // if (j + 1 < all_encoders[i].size()) encoder_log += ", ";
       // }
+
+      // Debug elapsed time.
+      encoder_log += encoder_elapsed_times[i];
+
       // Direction String.
       switch (clockwise[i])
       {
