@@ -24,11 +24,11 @@ std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
 std::vector<int> encoder_tick_count = {0,0,0,0};
-int encoder_tick_threshold = 10;
+int encoder_tick_threshold = 40;
 std::vector<int> read_pins = {6, 13, 20, 26};
 // std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
 
-auto to_str = [](double val, int precision = 10) {
+auto to_str = [](double val, int precision = 3) {
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(precision) << val;
     return oss.str();
