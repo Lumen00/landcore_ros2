@@ -50,7 +50,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   // std::vector<std::vector<int>> all_encoders = {left_front_e, right_front_e, left_back_e, right_back_e};
 
   // Empty array to carry the speed calculations for each motor. 
-  std::vector<long> all_encoders = {};
+  std::vector<double> all_encoders = {};
   float timeout = 0.1;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
@@ -62,7 +62,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       clockwise.at(iter) = Direction::STOPPED;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      all_encoders.push_back((1/341.2) * (2*M_PI / it->elapsedSeconds()));
+      all_encoders.push_back((1/341.2) * ((2*M_PI) / (60 * it->elapsedSeconds())));
     }
     iter += 1;
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
