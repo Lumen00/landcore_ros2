@@ -428,7 +428,7 @@ class GuiPublisher(Node):
         self.publisher_ = self.create_publisher(Float32MultiArray, # message type
                                                 'cartesian_heading', # topic name
                                                 1) # QOS
-        self.timer = self.create_timer(0.05, self.timer_callback)
+        self.timer = self.create_timer(0.005, self.timer_callback)
         self.x = 0
         self.y = 0
         self.rot = 0

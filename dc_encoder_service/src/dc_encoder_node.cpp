@@ -27,6 +27,12 @@ std::vector<double> encoder_elapsed_times = {0,0,0,0};
 std::vector<int> read_pins = {6, 13, 20, 26};
 // std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
 
+auto to_str = [](double val, int precision = 10) {
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(precision) << val;
+    return oss.str();
+};
+
 void motor_PI_control(const std::shared_ptr<dc_encoder_service::srv::MotorPI::Request> request,
 std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   /*
@@ -74,7 +80,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   std::vector<std::string> encoder_names = {"right_front", "left_front", "left_back", "right_back"};
   for (size_t i = 0; i < all_encoders.size(); ++i) {
       encoder_log += encoder_names[i] + ": [";
-      encoder_log += std::to_string(all_encoders[i]); // Swap with commented section to check individual GPIO status with speeds. 
+      encoder_log += to_str(all_encoders[i]); // Swap with commented section to check individual GPIO status with speeds. 
       // for (size_t j = 0; j < all_encoders[i].size(); ++j) {
           // encoder_log += std::to_string(all_encoders[i][j]);
           // if (j + 1 < all_encoders[i].size()) encoder_log += ", ";
@@ -82,7 +88,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
 
       // Debug elapsed time.
       encoder_log += " ";
-      encoder_log += std::to_string(encoder_timers[i].elapsedSeconds());
+      encoder_log += to_str(encoder_timers[i].elapsedSeconds());
 
       // Direction String.
       // switch (clockwise[i])
