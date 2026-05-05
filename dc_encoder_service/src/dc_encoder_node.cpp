@@ -65,7 +65,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       all_encoders.push_back((1/341.2) * (2*M_PI / it->elapsedSeconds()));
     }
     iter += 1;
-    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
+    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
   }
 
 
