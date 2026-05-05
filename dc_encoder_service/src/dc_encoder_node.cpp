@@ -6,6 +6,7 @@
 #include <string>
 #include "dc_encoder_service/timer.hpp"
 #include <iterator>
+#include <iomanip>
 /* 
 
 Create a service which responds to clients with
@@ -17,7 +18,7 @@ Encoder details:
   - Encoder 3 -> GPIO20, GPIO21 -> ...
   - Encoder 4 -> GPIO16, GPIO26 -> ...
 */
-enum class Direction {CLOCKWISE = 1, STOPPED = 0, COUNTER_CLOCKWISE = -1};
+// enum class Direction {CLOCKWISE = 1, STOPPED = 0, COUNTER_CLOCKWISE = -1};
 
 std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
@@ -54,7 +55,6 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   float timeout = 0.1;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
-  int iter = 0;
   for (auto it = begin(encoder_timers); it != end(encoder_timers); it++){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
     if (it->elapsedSeconds() >= timeout){
@@ -62,9 +62,9 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       // clockwise.at(iter) = Direction::STOPPED;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      all_encoders.push_back((1/341.2) * ((2*M_PI) / (60 * it->elapsedSeconds())));
+      long double elapsed = static_cast<long double>(it->elapsedSeconds());
+      all_encoders.push_back((1.0L/341.2L) * ((2.0L*M_PI) / elapsed));
     }
-    iter += 1;
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
   }
 
