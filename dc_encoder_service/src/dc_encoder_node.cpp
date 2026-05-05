@@ -111,13 +111,13 @@ int openInputGPIO(int pin_no){
   // Open the GPIO
   int h = lgGpiochipOpen(0);
   if (h < 0){
-    printf("ERROR: %s (%d)\n", lguErrorText(h), h);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"ERROR: %s (%d)\n", lguErrorText(h), h);
   }
 
   // Set to input mode 
   int e = lgGpioClaimInput(h, 0, pin_no);
   if (e < 0){
-    printf("ERROR: %s (%d)\n", lguErrorText(e), e);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"ERROR: %s (%d)\n", lguErrorText(e), e);
     lgGpiochipClose(h);
   }
   return h;
@@ -125,9 +125,9 @@ int openInputGPIO(int pin_no){
 
 void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // Using the pin number saved to *data, record the time interval for that encoder and restart the timer. 
-  int motor_data = *(int*)data;
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered with motordata: %i", motor_data);
-  switch (motor_data)
+  int trigger_pin = evt->report.gpio;
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered with motordata: %i", trigger_pin);
+  switch (trigger_pin)
   {
   case 5: // Right Front
     // Read GPIO pins for direction.
@@ -156,9 +156,9 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 16");
     break;
   default:
-    printf("Encoder data not found, %i ", motor_data);
-    printf("e: %i", e);
-    printf("evt->report.gpio: %i", evt->report.gpio);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", motor_data);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"e: %i", e);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"evt->report.gpio: %i", evt->report.gpio);
     break;
   }
 }
@@ -170,7 +170,7 @@ void init_encoder_interrupts(int pin_no, int handle){
   int e = lgGpioClaimAlert(handle, 0, LG_RISING_EDGE, pin_no, -1);
 
   if (e < 0){
-    printf("ERROR: %s (%d)\n", lguErrorText(e), e);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"ERROR: %s (%d)\n", lguErrorText(e), e);
   }
   RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt set on pin number: %i", pin_no);
 
@@ -188,13 +188,13 @@ int main(int argc, char ** argv)
   }
 
   // Create timers for each encoder pair and start the timers.
-  printf("Creating encoder timers...");
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Creating encoder timers...");
   for (int i=0; i <= 3; i++){
     encoder_timers.push_back(Timer());
     encoder_timers.back().start();
   }
 
-  printf("Starting ROS2 DC Motor Encoder Server...");
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Starting ROS2 DC Motor Encoder Server...");
   rclcpp::init(argc, argv);
 
   std::shared_ptr<rclcpp::Node> node = rclcpp::Node::make_shared("motor_PI_control_server");
@@ -202,8 +202,14 @@ int main(int argc, char ** argv)
   rclcpp::Service<dc_encoder_service::srv::MotorPI>::SharedPtr service =
    node->create_service<dc_encoder_service::srv::MotorPI>("dc_encoder_server", &motor_PI_control);
 
-  printf("ROS2 Encoder Server Up.");
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"ROS2 Encoder Server Up.");
   rclcpp::spin(node);
   rclcpp::shutdown();
+
+  for (auto &&i : pin_handles)
+  {
+    lgGpiochipClose(i);
+  }
+  
 
 }
