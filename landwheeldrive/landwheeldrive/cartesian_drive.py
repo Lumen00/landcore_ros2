@@ -44,11 +44,11 @@ class PI_Client(Node):
             self.get_logger().info('service not available, waiting again...')
         self.req = MotorPI.Request()
 
-    def send_request(self, pwm_in):
-        self.req.pwm_in_front_left = pwm_in[0]
-        self.req.pwm_in_front_right = pwm_in[1]
-        self.req.pwm_in_back_left = pwm_in[2]
-        self.req.pwm_in_back_right = pwm_in[3]
+    def send_request(self, spd_in):
+        self.req.speed_in_front_left = spd_in[0]
+        self.req.speed_in_front_right = spd_in[1]
+        self.req.speed_in_back_left = spd_in[2]
+        self.req.speed_in_back_right = spd_in[3]
         self.future = self.PI_client.call_async(self.req)
 
 # Listen on topic motor_drive for an array of four numbers. 
@@ -102,7 +102,7 @@ class Cartesian_Subscriber(Node):
 
         # Apply PI control. Contact dc_encoder_server for calculation.
         # Likely better option to go commanded speed->PID->PWM
-        response = self.pid.send_request(pwm_in=pwm)
+        response = self.pid.send_request(spd_in=wheels)
         if self.pid.future.done():
             print('response from server', response)
 

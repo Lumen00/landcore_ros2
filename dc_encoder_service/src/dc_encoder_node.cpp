@@ -59,8 +59,8 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     if (*it > timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
     }
-    else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT)
-      all_encoders.push_back((1/341.2) * (60 / *it));
+    else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
+      all_encoders.push_back((1/341.2) * (2*M_PI / *it));
     }
   }
 
