@@ -159,6 +159,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", trigger_pin);
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"e: %i", e);
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"evt->report.gpio: %i", evt->report.gpio);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"data %p", data);
     break;
   }
 }
