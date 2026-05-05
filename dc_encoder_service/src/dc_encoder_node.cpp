@@ -126,7 +126,7 @@ int openInputGPIO(int pin_no){
 void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // Using the pin number saved to *data, record the time interval for that encoder and restart the timer. 
   int motor_data = *(int*)data;
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered.");
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered with motordata: %i", motor_data);
   switch (motor_data)
   {
   case 5: // Right Front
