@@ -62,7 +62,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
       all_encoders.push_back((1/341.2) * (2*M_PI / *it));
     }
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %i", *it);
+  RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", *it);
   }
 
 
