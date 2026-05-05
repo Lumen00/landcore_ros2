@@ -23,7 +23,7 @@ std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
 std::vector<double> encoder_elapsed_times = {0,0,0,0};
-std::vector<int> read_pins = {5, 13, 20, 16};
+std::vector<int> read_pins = {6, 13, 20, 26};
 std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
 
 void motor_PI_control(const std::shared_ptr<dc_encoder_service::srv::MotorPI::Request> request,
@@ -134,7 +134,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered with motordata: %i", trigger_pin);
   switch (trigger_pin)
   {
-  case 5: // Right Front
+  case 6: // Right Front
     // Read GPIO pins for direction.
     clockwise.at(0) = (lgGpioRead(pin_handles.at(1), pins.at(1)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // Record time and reset timer.
@@ -154,7 +154,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_timers.at(2).start();
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 20");
     break;  
-  case 16: // Right Back
+  case 26: // Right Back
     clockwise.at(3) = (lgGpioRead(pin_handles.at(7), pins.at(7)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
