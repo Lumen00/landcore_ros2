@@ -24,8 +24,9 @@ std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
 std::vector<int> encoder_tick_count = {0,0,0,0};
-int encoder_tick_threshold =80;
+int encoder_tick_threshold = 80;
 std::vector<int> read_pins = {6, 13, 20, 26};
+double epsilon = std::exp(-9);
 // std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
 
 auto to_str = [](double val, int precision = 3) {
@@ -67,6 +68,10 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
       // clockwise.at(iter) = Direction::STOPPED;
+    }
+    else if (it->elapsedSeconds() <= epsilon){
+      it--;
+      continue;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
       long double elapsed = static_cast<long double>(it->elapsedSeconds());
