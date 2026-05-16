@@ -28,19 +28,21 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 class PI_Client(Node):
-    def __init__(self):
-        super().__init__('pi_controller_client')
-        self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
-        while not self.PI_client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('service not available, waiting again...')
-        self.req = MotorPI.Request()
+	def __init__(self):
+		super().__init__('pi_controller_client')
+		self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
+		while not self.PI_client.wait_for_service(timeout_sec=1.0):
+			self.get_logger().info('service not available, waiting again...')
+		self.req = MotorPI.Request()
 
-    def send_request(self, spd_in):
-        self.req.speed_cmd_front_left = spd_in[0]
-        self.req.speed_cmd_front_right = spd_in[1]
-        self.req.speed_cmd_back_left = spd_in[2]
-        self.req.speed_cmd_back_right = spd_in[3]
-        self.future = self.PI_client.call_async(self.req)
+	def send_request(self, spd_in):
+		self.req.speed_cmd_front_left = spd_in[0]
+		self.req.speed_cmd_front_right = spd_in[1]
+		self.req.speed_cmd_back_left = spd_in[2]
+		self.req.speed_cmd_back_right = spd_in[3]
+		self.future = self.PI_client.call_async(self.req)
+		rclpy.spin_until_future_complete(self, self.future)
+		return self.future.result()
 
 class PID_Tuner(Node):
 	def __init__(self):
@@ -57,22 +59,22 @@ class PID_Tuner(Node):
 		self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 1.5
+		duration = 0.2
 		while time.perf_counter() - start < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
-			if self.encoder_client.future.done():
+			if response is not None:
 				# Log the speeds and time.
 				self.times.append(time.perf_counter())
 				self.speeds.append(response)
-				self.get_logger().info('collected response: ', response)
+				self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		msg.data = [0, 0, 0]
 		self.speed_publisher.publish(msg)
-		plt.plot(response)
-		# For each graph, mark the time constant at 63.2% of value and annotate.
+		# plt.plot(response)
+		# # For each graph, mark the time constant at 63.2% of value and annotate.
 
-		plt.show()
+		# plt.show()
 
 
 def main(args=None):
@@ -80,7 +82,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=1)
+	pid_pub.pid_tune(speed=0.8)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
