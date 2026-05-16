@@ -1,9 +1,9 @@
-float64 speed_in_front_left
-float64 speed_in_front_right
-float64 speed_in_back_left
-float64 speed_in_back_right
+float64 speed_cmd_front_left
+float64 speed_cmd_front_right
+float64 speed_cmd_back_left
+float64 speed_cmd_back_right
 ---
-int64 pwm_out_front_left
-int64 pwm_out_front_right
-int64 pwm_out_back_left
-int64 pwm_out_back_right
+float64 speed_front_left
+float64 speed_front_right
+float64 speed_back_left
+float64 speed_back_right

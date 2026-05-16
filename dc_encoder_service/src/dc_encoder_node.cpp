@@ -37,26 +37,10 @@ auto to_str = [](double val, int precision = 3) {
 
 void motor_PI_control(const std::shared_ptr<dc_encoder_service::srv::MotorPI::Request> request,
 std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
-  /*
-  Required variables:
-  - PWM applied to all four motors. (4 values)
-  - Encoder values from all four motors (8 values)
-  - 
-  */
-
-  request->speed_in_front_left; 
-  request->speed_in_front_right; 
-  request->speed_in_back_left; 
-  request->speed_in_back_right; 
-
-
-  // Read the GPIO pins.
-  // std::vector<int> right_front_e = {lgGpioRead(pin_handles.at(0), pins.at(0)), lgGpioRead(pin_handles.at(1), pins.at(1))};
-  // std::vector<int> left_front_e = {lgGpioRead(pin_handles.at(2), pins.at(2)), lgGpioRead(pin_handles.at(3), pins.at(3))};
-  // std::vector<int> left_back_e = {lgGpioRead(pin_handles.at(4), pins.at(4)), lgGpioRead(pin_handles.at(5), pins.at(5))};
-  // std::vector<int> right_back_e = {lgGpioRead(pin_handles.at(6), pins.at(6)), lgGpioRead(pin_handles.at(7), pins.at(7))};
-
-  // std::vector<std::vector<int>> all_encoders = {left_front_e, right_front_e, left_back_e, right_back_e};
+  request->speed_cmd_front_left;
+  request->speed_cmd_front_right;
+  request->speed_cmd_back_left;
+  request->speed_cmd_back_right;
 
   // Empty array to carry the speed calculations for each motor. 
   std::vector<double> all_encoders = {};
@@ -80,49 +64,11 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
   }
 
-
-  // Build the log string for all_encoders
-  std::string encoder_log = "";
-  std::vector<std::string> encoder_names = {"right_front", "left_front", "left_back", "right_back"};
-  for (size_t i = 0; i < all_encoders.size(); ++i) {
-      encoder_log += encoder_names[i] + ": [";
-      encoder_log += to_str(all_encoders[i]); // Swap with commented section to check individual GPIO status with speeds. 
-      // for (size_t j = 0; j < all_encoders[i].size(); ++j) {
-          // encoder_log += std::to_string(all_encoders[i][j]);
-          // if (j + 1 < all_encoders[i].size()) encoder_log += ", ";
-      // }
-
-      // Debug elapsed time.
-      encoder_log += " ";
-      encoder_log += to_str(encoder_timers[i].elapsedSeconds());
-
-      // Direction String.
-      // switch (clockwise[i])
-      // {
-      // case Direction::CLOCKWISE:
-      //   encoder_log += " CW";
-      //   break;
-      // case Direction::COUNTER_CLOCKWISE:
-      //   encoder_log += " CCW";
-      //   break;
-      // default:
-      //   encoder_log += " STOP";
-      //   break;
-      // }
-
-      encoder_log += "]";
-      if (i + 1 < all_encoders.size()) encoder_log += " | ";
-  }
-
-  RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Current encoder values: %s", encoder_log.c_str());
-
-  // For each wheel, apply PI control with encoder feedback and pwm command. 
-
-  // Calculate the response in pwm_out.
-  response->pwm_out_front_left = 0; 
-  response->pwm_out_front_right = 0; 
-  response->pwm_out_back_left = 0; 
-  response->pwm_out_back_right = 0; 
+  // Send back the speed of current wheels.
+  response->speed_front_left = all_encoders.at(1); 
+  response->speed_front_right = all_encoders.at(0); 
+  response->speed_back_left = all_encoders.at(2); 
+  response->speed_back_right = all_encoders.at(3); 
 }
 
 int openInputGPIO(int pin_no){

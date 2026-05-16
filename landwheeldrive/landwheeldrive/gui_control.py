@@ -424,7 +424,7 @@ from std_msgs.msg import Float32MultiArray
 class GuiPublisher(Node):
     def __init__(self):
         super().__init__('gui_publisher') # The name of the node
-        # We want to publish: [y/forward, x/strafe, r/rotation]
+        # We want to publish: [x/forward, y/strafe, r/rotation]
         self.publisher_ = self.create_publisher(Float32MultiArray, # message type
                                                 'cartesian_heading', # topic name
                                                 1) # QOS
@@ -436,7 +436,7 @@ class GuiPublisher(Node):
     def timer_callback(self):
         msg = Float32MultiArray()
         
-        msg.data = [self.x, self.y, self.rot] # 3 values of y/forward, x/strafe, r/rotation. 
+        msg.data = [self.x, self.y, self.rot] # 3 values of x/forward, y/strafe, r/rotation. 
         self.publisher_.publish(msg)
         print('published cartesian command:', msg.data)
 
