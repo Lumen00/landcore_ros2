@@ -1,0 +1,251 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-b92b83bb9c465bd83a03.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "dc_encoder_service__py",
+					"jsonFile" : "directory-dc_encoder_service__py-5312da2072ac155fc22c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "dc_encoder_service",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_dc_encoder_service_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_dc_encoder_service_egg-11b7b166b3795daf4154.json",
+					"name" : "ament_cmake_python_build_dc_encoder_service_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_dc_encoder_service::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_dc_encoder_service-e13393177b3ef9c78a05.json",
+					"name" : "ament_cmake_python_copy_dc_encoder_service",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_server-42cad11f13267cc778f2.json",
+					"name" : "dc_encoder_server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service-7f208272483fa432ad58.json",
+					"name" : "dc_encoder_service",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__cpp-f90df35fef40900d71da.json",
+					"name" : "dc_encoder_service__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "dc_encoder_service__py::@af80685998c96bf94ca2",
+					"jsonFile" : "target-dc_encoder_service__py-0dd71ea545bac33cbbd6.json",
+					"name" : "dc_encoder_service__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_generator_c-9bbf6421feacef37b892.json",
+					"name" : "dc_encoder_service__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_generator_py-56b5ec45df5cfeda1056.json",
+					"name" : "dc_encoder_service__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_generator_type_description-ba9bceb16bbe80faf6de.json",
+					"name" : "dc_encoder_service__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_c-35782aeb69c74147e681.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_cpp-58ed9bac1d93f598309a.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_fastrtps_c-3af60af365f6dfe55558.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_fastrtps_cpp-e06d096b71cdfd072164.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_introspection_c-c1465ec1fb6e4a14538a.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service__rosidl_typesupport_introspection_cpp-7fd14f6dc4c1e156c193.json",
+					"name" : "dc_encoder_service__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service_s__rosidl_typesupport_c-a5fee64d3ee67ba8030c.json",
+					"name" : "dc_encoder_service_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service_s__rosidl_typesupport_fastrtps_c-526f31f38b5348706685.json",
+					"name" : "dc_encoder_service_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service_s__rosidl_typesupport_introspection_c-3ba01fd52bff7d28f76f.json",
+					"name" : "dc_encoder_service_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dc_encoder_service_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dc_encoder_service_uninstall-8e4ccb24a5880cba76d7.json",
+					"name" : "dc_encoder_service_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-6d6952d1ed52fce8a357.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service",
+		"source" : "/root/ros2_ws/src/landcore_ros2/dc_encoder_service"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

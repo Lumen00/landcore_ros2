@@ -1,0 +1,11 @@
+{
+  "package_name": "dc_encoder_service",
+  "output_dir": "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/rosidl_generator_type_description/dc_encoder_service",
+  "idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/rosidl_adapter/dc_encoder_service:srv/MotorPI.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces"
+  ]
+}

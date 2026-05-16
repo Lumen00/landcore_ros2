@@ -1,0 +1,8 @@
+source;share/landdrive/hook/cmake_prefix_path.ps1
+source;share/landdrive/hook/cmake_prefix_path.dsv
+source;share/landdrive/hook/cmake_prefix_path.sh
+source;share/landdrive/local_setup.bash
+source;share/landdrive/local_setup.dsv
+source;share/landdrive/local_setup.ps1
+source;share/landdrive/local_setup.sh
+source;share/landdrive/local_setup.zsh

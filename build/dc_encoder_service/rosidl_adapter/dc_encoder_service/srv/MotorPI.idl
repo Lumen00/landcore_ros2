@@ -1,0 +1,27 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from dc_encoder_service/srv/MotorPI.srv
+// generated code does not contain a copyright notice
+
+
+module dc_encoder_service {
+  module srv {
+    struct MotorPI_Request {
+      double speed_cmd_front_left;
+
+      double speed_cmd_front_right;
+
+      double speed_cmd_back_left;
+
+      double speed_cmd_back_right;
+    };
+    struct MotorPI_Response {
+      double speed_front_left;
+
+      double speed_front_right;
+
+      double speed_back_left;
+
+      double speed_back_right;
+    };
+  };
+};

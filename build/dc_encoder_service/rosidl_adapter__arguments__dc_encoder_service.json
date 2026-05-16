@@ -1,0 +1,6 @@
+{
+  "package_name": "dc_encoder_service",
+  "non_idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/dc_encoder_service:srv/MotorPI.srv"
+  ]
+}

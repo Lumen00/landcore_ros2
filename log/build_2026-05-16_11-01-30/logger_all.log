@@ -1,0 +1,252 @@
+[0.059s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.059s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7aa179ce2c00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7aa179ce28d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7aa179ce28d0>>, mixin_verb=('build',))
+[0.085s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.086s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.086s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.086s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.086s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.086s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ros2_ws/src/landcore_ros2'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.086s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.087s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['ignore', 'ignore_ament_install']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ignore'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ignore_ament_install'
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['colcon_pkg']
+[0.108s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'colcon_pkg'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['colcon_meta']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'colcon_meta'
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['ros']
+[0.109s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ros'
+[0.111s] DEBUG:colcon.colcon_core.package_identification:Package 'dc_encoder_service' with type 'ros.ament_cmake' and name 'dc_encoder_service'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore_ament_install'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_pkg']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_pkg'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_meta']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_meta'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ros']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ros'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['cmake', 'python']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'cmake'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['python_setup_py']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python_setup_py'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.111s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landdrive) by extension 'ros'
+[0.112s] DEBUG:colcon.colcon_core.package_identification:Package 'landdrive' with type 'ros.ament_cmake' and name 'landdrive'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['ignore', 'ignore_ament_install']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ignore'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ignore_ament_install'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['colcon_pkg']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'colcon_pkg'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['colcon_meta']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'colcon_meta'
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['ros']
+[0.112s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ros'
+[0.113s] DEBUG:colcon.colcon_core.package_identification:Package 'landwheeldrive' with type 'ros.ament_python' and name 'landwheeldrive'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.113s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.113s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_target' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_clean_cache' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_clean_first' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_force_configure' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'ament_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'catkin_cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.126s] DEBUG:colcon.colcon_core.verb:Building package 'dc_encoder_service' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service', 'merge_install': False, 'path': '/root/ros2_ws/src/landcore_ros2/dc_encoder_service', 'symlink_install': False, 'test_result_base': None}
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_args' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_target' from command line to 'None'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_clean_cache' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_clean_first' from command line to 'False'
+[0.126s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'cmake_force_configure' from command line to 'False'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'ament_cmake_args' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'catkin_cmake_args' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landdrive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.127s] DEBUG:colcon.colcon_core.verb:Building package 'landdrive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/landdrive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/landdrive', 'merge_install': False, 'path': '/root/ros2_ws/src/landcore_ros2/landdrive', 'symlink_install': False, 'test_result_base': None}
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_args' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_target' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_clean_cache' from command line to 'False'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_clean_first' from command line to 'False'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_force_configure' from command line to 'False'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'ament_cmake_args' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'catkin_cmake_args' from command line to 'None'
+[0.127s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.127s] DEBUG:colcon.colcon_core.verb:Building package 'landwheeldrive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/landwheeldrive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive', 'merge_install': False, 'path': '/root/ros2_ws/src/landcore_ros2/landwheeldrive', 'symlink_install': False, 'test_result_base': None}
+[0.127s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.128s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.128s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/dc_encoder_service' with build type 'ament_cmake'
+[0.128s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/dc_encoder_service'
+[0.129s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.129s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.130s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.133s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/landdrive' with build type 'ament_cmake'
+[0.133s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/landdrive'
+[0.134s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.134s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.138s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/dc_encoder_service -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service
+[0.144s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/landdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/landdrive -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/landdrive
+[1.122s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/landdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/landdrive -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/landdrive
+[1.123s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/landdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/landdrive -- -j12 -l12
+[2.621s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/dc_encoder_service -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service
+[2.622s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service -- -j12 -l12
+[5.391s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/landdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/landdrive -- -j12 -l12
+[5.402s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/landdrive': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/landdrive
+[5.412s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(landdrive)
+[5.412s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/landdrive' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/landdrive
+[5.415s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive' for CMake module files
+[5.416s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive' for CMake config files
+[5.416s] Level 1:colcon.colcon_core.shell:create_environment_hook('landdrive', 'cmake_prefix_path')
+[5.416s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.ps1'
+[5.417s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.dsv'
+[5.417s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.sh'
+[5.418s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib'
+[5.418s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/bin'
+[5.418s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib/pkgconfig/landdrive.pc'
+[5.420s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib/python3.12/site-packages'
+[5.420s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/bin'
+[5.421s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.ps1'
+[5.422s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.dsv'
+[5.422s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.sh'
+[5.423s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.bash'
+[5.424s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.zsh'
+[5.424s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/landdrive/share/colcon-core/packages/landdrive)
+[5.425s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(landdrive)
+[5.425s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive' for CMake module files
+[5.426s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive' for CMake config files
+[5.426s] Level 1:colcon.colcon_core.shell:create_environment_hook('landdrive', 'cmake_prefix_path')
+[5.426s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.ps1'
+[5.426s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.dsv'
+[5.427s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/hook/cmake_prefix_path.sh'
+[5.427s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib'
+[5.427s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/bin'
+[5.427s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib/pkgconfig/landdrive.pc'
+[5.427s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/lib/python3.12/site-packages'
+[5.428s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landdrive/bin'
+[5.428s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.ps1'
+[5.429s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.dsv'
+[5.429s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.sh'
+[5.430s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.bash'
+[5.430s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landdrive/share/landdrive/package.zsh'
+[5.431s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/landdrive/share/colcon-core/packages/landdrive)
+[6.944s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service -- -j12 -l12
+[6.945s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service
+[7.027s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_encoder_service)
+[7.027s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake module files
+[7.028s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service
+[7.028s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake config files
+[7.029s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'cmake_prefix_path')
+[7.029s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.ps1'
+[7.029s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.dsv'
+[7.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.sh'
+[7.030s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib'
+[7.030s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'ld_library_path_lib')
+[7.030s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.ps1'
+[7.031s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.dsv'
+[7.031s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.sh'
+[7.031s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[7.031s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/pkgconfig/dc_encoder_service.pc'
+[7.032s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages'
+[7.032s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'pythonpath')
+[7.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.ps1'
+[7.032s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.dsv'
+[7.032s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.sh'
+[7.033s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[7.033s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.ps1'
+[7.034s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.dsv'
+[7.034s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.sh'
+[7.034s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.bash'
+[7.034s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.zsh'
+[7.035s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/colcon-core/packages/dc_encoder_service)
+[7.035s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_encoder_service)
+[7.035s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake module files
+[7.035s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake config files
+[7.036s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'cmake_prefix_path')
+[7.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.ps1'
+[7.036s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.dsv'
+[7.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.sh'
+[7.036s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib'
+[7.036s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'ld_library_path_lib')
+[7.036s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.ps1'
+[7.037s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.dsv'
+[7.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.sh'
+[7.037s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[7.037s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/pkgconfig/dc_encoder_service.pc'
+[7.037s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages'
+[7.037s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'pythonpath')
+[7.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.ps1'
+[7.037s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.dsv'
+[7.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.sh'
+[7.038s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[7.038s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.ps1'
+[7.038s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.dsv'
+[7.039s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.sh'
+[7.039s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.bash'
+[7.039s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.zsh'
+[7.039s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/colcon-core/packages/dc_encoder_service)
+[7.040s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/landwheeldrive' with build type 'ament_python'
+[7.040s] Level 1:colcon.colcon_core.shell:create_environment_hook('landwheeldrive', 'ament_prefix_path')
+[7.040s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.ps1'
+[7.040s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.dsv'
+[7.041s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.sh'
+[7.041s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.041s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.178s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.178s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.178s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with 'Command '['/usr/bin/python3', '-c', 'import sys;from contextlib import suppress;exec("with suppress(ImportError):    from setuptools.extern.packaging.specifiers    import SpecifierSet");exec("with suppress(ImportError):    from packaging.specifiers import SpecifierSet");from distutils.core import run_setup;dist = run_setup(    \'setup.py\', script_args=(\'--dry-run\',), stop_after=\'config\');skip_keys = (\'cmdclass\', \'distclass\', \'ext_modules\', \'metadata\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\'_\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\'metadata\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\'license_files\', \'provides_extras\')};sys.stdout.buffer.write(repr(data).encode(\'utf-8\'))']' returned non-zero exit status 1.'
+[7.178s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.183s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[7.183s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.183s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.183s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.185s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[7.185s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.186s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.ps1'
+[7.187s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/landcore_ros2/install/_local_setup_util_ps1.py'
+[7.188s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.ps1'
+[7.189s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.sh'
+[7.190s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/landcore_ros2/install/_local_setup_util_sh.py'
+[7.190s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.sh'
+[7.191s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.bash'
+[7.192s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.bash'
+[7.192s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.zsh'
+[7.193s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.zsh'

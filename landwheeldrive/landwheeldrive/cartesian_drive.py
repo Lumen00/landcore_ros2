@@ -45,10 +45,10 @@ class PI_Client(Node):
         self.req = MotorPI.Request()
 
     def send_request(self, spd_in):
-        self.req.speed_in_front_left = spd_in[0]
-        self.req.speed_in_front_right = spd_in[1]
-        self.req.speed_in_back_left = spd_in[2]
-        self.req.speed_in_back_right = spd_in[3]
+        self.req.speed_cmd_front_left = spd_in[0]
+        self.req.speed_cmd_front_right = spd_in[1]
+        self.req.speed_cmd_back_left = spd_in[2]
+        self.req.speed_cmd_back_right = spd_in[3]
         self.future = self.PI_client.call_async(self.req)
 
 # Listen on topic motor_drive for an array of four numbers. 

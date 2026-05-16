@@ -18,6 +18,7 @@ rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 # Install pip dependencies.
 pip install PyQt6 
 pip install smbus3
+pip install matplotlib
 apt-get install libxcb-cursor0
 apt install liblgpio-dev -y
 

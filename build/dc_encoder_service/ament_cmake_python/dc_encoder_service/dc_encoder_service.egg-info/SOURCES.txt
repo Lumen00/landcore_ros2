@@ -1,0 +1,6 @@
+setup.py
+dc_encoder_service/__init__.py
+dc_encoder_service.egg-info/PKG-INFO
+dc_encoder_service.egg-info/SOURCES.txt
+dc_encoder_service.egg-info/dependency_links.txt
+dc_encoder_service.egg-info/top_level.txt

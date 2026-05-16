@@ -1,0 +1,4 @@
+source;share/landdrive/local_setup.bash
+source;share/landdrive/local_setup.dsv
+source;share/landdrive/local_setup.sh
+source;share/landdrive/local_setup.zsh
