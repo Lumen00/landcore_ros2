@@ -98,7 +98,7 @@ class Cartesian_Subscriber(Node):
             scale = w_max            
 
         # Convert to 255 scale 
-        pwm = [round((w / scale) * 255) for w in wheels]
+        pwm = [round((w / scale) * 50) for w in wheels]
 
         # Apply PI control. Contact dc_encoder_server for calculation.
         # Likely better option to go commanded speed->PID->PWM

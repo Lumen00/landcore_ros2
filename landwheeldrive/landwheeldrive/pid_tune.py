@@ -21,15 +21,30 @@
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32MultiArray
-from landwheeldrive.cartesian_drive import PI_Client
+# from landwheeldrive.cartesian_drive import PI_Client
 from dc_encoder_service.srv import MotorPI
 import time
 import matplotlib.pyplot as plt
 import numpy as np
 
+class PI_Client(Node):
+    def __init__(self):
+        super().__init__('pi_controller_client')
+        self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
+        while not self.PI_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().info('service not available, waiting again...')
+        self.req = MotorPI.Request()
+
+    def send_request(self, spd_in):
+        self.req.speed_cmd_front_left = spd_in[0]
+        self.req.speed_cmd_front_right = spd_in[1]
+        self.req.speed_cmd_back_left = spd_in[2]
+        self.req.speed_cmd_back_right = spd_in[3]
+        self.future = self.PI_client.call_async(self.req)
+
 class PID_Tuner(Node):
-	def init(self):
-		super().__init__('pid_publisher')
+	def __init__(self):
+		super().__init__(node_name='pid_publisher')
 		self.speed_publisher = self.create_publisher(Float32MultiArray,
 												  'cartesian_heading', 10)
 		self.encoder_client = None
@@ -37,7 +52,7 @@ class PID_Tuner(Node):
 		self.speeds = []
 	def pid_tune(self, speed):
 		# Publish speed command. 
-		msg = Float32MultiArray
+		msg = Float32MultiArray()
 		msg.data = [speed, 0, 0]
 		self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
