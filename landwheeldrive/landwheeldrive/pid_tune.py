@@ -51,7 +51,8 @@ class PID_Tuner(Node):
 												  'cartesian_heading', 10)
 		self.encoder_client = None
 		self.times = []
-		self.speeds = []
+		self.speed_array = []
+		
 	def pid_tune(self, speed):
 		# Publish speed command. 
 		msg = Float32MultiArray()
@@ -59,22 +60,25 @@ class PID_Tuner(Node):
 		self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 0.2
+		duration = 2.0
 		while time.perf_counter() - start < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 			if response is not None:
 				# Log the speeds and time.
 				self.times.append(time.perf_counter())
-				self.speeds.append(response)
+				self.speed_array.append([response.speed_front_left,
+										response.speed_front_right,
+										response.speed_back_left,
+										response.speed_back_right])
 				self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		msg.data = [0, 0, 0]
 		self.speed_publisher.publish(msg)
-		# plt.plot(response)
-		# # For each graph, mark the time constant at 63.2% of value and annotate.
+		self.speed_array = np.array(self.speed_array)
+		plt.plot(self.speed_array)
 
-		# plt.show()
+		plt.show()
 
 
 def main(args=None):
@@ -82,7 +86,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=0.8)
+	pid_pub.pid_tune(speed=0.0)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()

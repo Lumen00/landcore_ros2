@@ -45,21 +45,22 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
 
   // Empty array to carry the speed calculations for each motor. 
   std::vector<double> all_encoders = {};
-  float timeout = 1;
+  float timeout = 0.5;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
   int iter = 0;
+  long double elapsed = encoder_times.at(iter);
   for (auto it = begin(encoder_timers); it != end(encoder_timers); it++){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
     if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
+      iter++;
     }
-    else if (it->elapsedSeconds() <= epsilon){
+    else if (elapsed <= epsilon){
       it--;
       continue;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      long double elapsed = encoder_times.at(iter);
       all_encoders.push_back((encoder_tick_threshold/341.2L) * ((2.0L*M_PI) / elapsed));
       iter++;
     }
