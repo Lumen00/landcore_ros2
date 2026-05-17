@@ -60,7 +60,7 @@ class PID_Tuner(Node):
 		self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 2.0
+		duration = 1.0
 		while time.perf_counter() - start < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
@@ -86,7 +86,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=0.0)
+	pid_pub.pid_tune(speed=0.6)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
