@@ -23,6 +23,7 @@ Encoder details:
 std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
+std::vector<long double> encoder_times = {};
 std::vector<int> encoder_tick_count = {0,0,0,0};
 int encoder_tick_threshold = 30;
 std::vector<int> read_pins = {6, 13, 20, 26};
@@ -58,8 +59,8 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       continue;
     }
     else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      long double elapsed = static_cast<long double>(it->elapsedSeconds());
-      all_encoders.push_back((encoder_tick_count.at(iter)/341.2L) * ((2.0L*M_PI) / elapsed));
+      long double elapsed = encoder_times.at(iter);
+      all_encoders.push_back((encoder_tick_threshold/341.2L) * ((2.0L*M_PI) / elapsed));
       iter++;
     }
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
@@ -100,6 +101,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
       break;
     }
     encoder_tick_count.at(0) = 0;
+    encoder_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     // Read GPIO pins for direction.
     // clockwise.at(0) = (lgGpioRead(pin_handles.at(0), pins.at(0)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // Record time and reset timer.
@@ -113,6 +115,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
         break;
     }
     encoder_tick_count.at(1) = 0;
+    encoder_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     // clockwise.at(1) = (lgGpioRead(pin_handles.at(3), pins.at(3)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // encoder_elapsed_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
@@ -124,6 +127,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
       break;
     }
     encoder_tick_count.at(2) = 0;
+    encoder_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     // clockwise.at(2) = (lgGpioRead(pin_handles.at(5), pins.at(5)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // encoder_elapsed_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     encoder_timers.at(2).start();
@@ -135,6 +139,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
       break;
     }
     encoder_tick_count.at(3) = 0;
+    encoder_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     // clockwise.at(3) = (lgGpioRead(pin_handles.at(6), pins.at(6)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
     // encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
