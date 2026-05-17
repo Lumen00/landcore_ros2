@@ -23,7 +23,7 @@ Encoder details:
 std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
-std::vector<long double> encoder_times = {};
+std::vector<long double> encoder_times = {0,0,0,0};
 std::vector<int> encoder_tick_count = {0,0,0,0};
 int encoder_tick_threshold = 30;
 std::vector<int> read_pins = {6, 13, 20, 26};
