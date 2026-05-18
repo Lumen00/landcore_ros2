@@ -106,9 +106,9 @@ class Cartesian_Subscriber(Node):
 
         # Apply PI control. Contact dc_encoder_server for speed calculation.
         response = self.pid.send_request(spd_in=wheels)
-        while response is None:
-            self.get_logger().info(f'response cartesian: {response}')
-            pass
+        # while response is None:
+            # self.get_logger().info(f'response cartesian: {response}')
+            # pass
         # if response is not None:
             # print('response from server', response)
 
@@ -154,7 +154,7 @@ class Cartesian_Subscriber(Node):
         # pwm = [round((w / scale) * 50) for w in wheels]        
 
         # Apply transformation to account for wheels spinning the other way.
-        self.get_logger().info('heard', msg.data, 'transformed to ', pwm)
+        self.get_logger().info(f'heard {msg.data} transformed to {pwm}')
         # print('heard', msg.data, 'transformed to ', pwm)
 
         t1 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[0])))
