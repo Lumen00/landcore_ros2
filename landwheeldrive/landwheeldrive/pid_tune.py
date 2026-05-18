@@ -88,7 +88,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=0.6)
+	pid_pub.pid_tune(speed=0.0)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
