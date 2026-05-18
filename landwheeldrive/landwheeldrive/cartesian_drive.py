@@ -50,7 +50,6 @@ class PI_Client(Node):
         self.req.speed_cmd_back_left = spd_in[2]
         self.req.speed_cmd_back_right = spd_in[3]
         self.future = self.PI_client.call_async(self.req)
-        # rclpy.spin_until_future_complete(self, self.future)
         return self.future.result()
 
 # Listen on topic motor_drive for an array of four numbers. 
@@ -106,6 +105,7 @@ class Cartesian_Subscriber(Node):
             # print('response from server', response)
 
         # Calculate speed error for each wheel.
+        self.get_logger().info(f'response cartesian: {response}')
         errors = [
             lf_factor - response.speed_front_left,
             rf_factor - response.speed_front_right,
