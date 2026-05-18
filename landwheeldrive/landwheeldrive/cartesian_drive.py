@@ -1,6 +1,7 @@
 # The purpose of this subscriber is to listen for any raw commands given to the motors and then apply them.
 
 import rclpy 
+from rclpy.executors import SingleThreadedExecutor
 from rclpy.node import Node
 import atexit
 import threading
@@ -43,6 +44,10 @@ class PI_Client(Node):
         while not self.PI_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.req = MotorPI.Request()
+        self._executor = SingleThreadedExecutor()
+        self._executor.add_node(self)
+        self._thread = threading.Thread(target=self._executor.spin, daemon=True)
+        self._thread.start()
 
     def send_request(self, spd_in):
         self.req.speed_cmd_front_left = spd_in[0]
@@ -50,6 +55,8 @@ class PI_Client(Node):
         self.req.speed_cmd_back_left = spd_in[2]
         self.req.speed_cmd_back_right = spd_in[3]
         self.future = self.PI_client.call_async(self.req)
+        while not self.future.done():
+            pass
         return self.future.result()
 
 # Listen on topic motor_drive for an array of four numbers. 
