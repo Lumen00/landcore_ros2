@@ -99,8 +99,8 @@ class Cartesian_Subscriber(Node):
 
         # Apply PI control. Contact dc_encoder_server for speed calculation.
         response = self.pid.send_request(spd_in=wheels)
-        # while response is None:
-            # pass
+        while response is None:
+            pass
         # if response is not None:
             # print('response from server', response)
 
