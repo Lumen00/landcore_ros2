@@ -63,9 +63,8 @@ class Cartesian_Subscriber(Node):
                                                       1)
         self.motor_barrier = threading.Barrier(4)
         self.pid = None
-
-        # Begin timeout for messages. 
-        # If not messages received for x time, come to a stop. 
+        self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
+        self.old_msg = None
 
         
     def listener_callback(self, msg):
@@ -98,18 +97,54 @@ class Cartesian_Subscriber(Node):
         else: # Otherwise if the command speed is lower than speed limit.
             scale = w_max            
 
-        # Convert to 255 scale 
-        pwm = [round((w / scale) * 50) for w in wheels]
-
-        # Apply PI control. Contact dc_encoder_server for calculation.
-        # Likely better option to go commanded speed->PID->PWM
+        # Apply PI control. Contact dc_encoder_server for speed calculation.
         response = self.pid.send_request(spd_in=wheels)
         if response is not None:
             print('response from server', response)
-        
+
+        # Calculate speed error for each wheel.
+        errors = [
+            lf_factor - response.speed_front_left,
+            rf_factor - response.speed_front_right,
+            lb_factor - response.speed_back_left,
+            rb_factor - response.speed_back_right,
+        ]
+
+        # Add to the cumulative error. If target speed of motor has changed,
+        # then reset the cumulative error.
+        if self.old_msg == msg:
+            self.I_error = [
+                add_error + errors[id] for id, add_error in enumerate(self.I_error)
+                ]
+        else:
+            self.I_error = [0,0,0,0]
+
+        # Based on the error, adjust the PWM applied to each motor. 
+        Kp = [
+            1,  # Left Front    
+            1,  # Right Front   
+            1,  # Left Back     
+            1   # Right Back    
+        ]
+        Ki = [
+            1, # Left Front    
+            1, # Right Front   
+            1, # Left Back     
+            1, # Right Back    
+        ]
+        pwm = [
+            max(0, min(255, Kp[0]*errors[0] + Ki[0]*self.I_error[0])), # Left Front    
+            max(0, min(255, Kp[1]*errors[1] + Ki[1]*self.I_error[1])), # Right Front   
+            max(0, min(255, Kp[2]*errors[2] + Ki[2]*self.I_error[2])), # Left Back     
+            max(0, min(255, Kp[3]*errors[3] + Ki[3]*self.I_error[3])) # Right Back    
+        ]
+
+        # Convert to PWM scale 
+        # pwm = [round((w / scale) * 50) for w in wheels]        
 
         # Apply transformation to account for wheels spinning the other way.
-        print('heard', msg.data, 'transformed to ', pwm)
+        self.get_logger().info('heard', msg.data, 'transformed to ', pwm)
+        # print('heard', msg.data, 'transformed to ', pwm)
 
         t1 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[0])))
         t2 = threading.Thread(target=self.run_motor, args=(right_front, int(pwm[1])))
@@ -124,6 +159,8 @@ class Cartesian_Subscriber(Node):
         for thread in [t1, t2, t3, t4]:
             thread.join()
         # print('threads joined')
+        self.old_msg = msg
+
 
     def run_motor(self, motor:DC_Motor, value:int):
         # motor.mh.setSpeed(255)

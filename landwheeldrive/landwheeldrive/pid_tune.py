@@ -60,23 +60,25 @@ class PID_Tuner(Node):
 		self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 1.0
+		duration = 0.5
 		while time.perf_counter() - start < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 			if response is not None:
 				# Log the speeds and time.
-				self.times.append(time.perf_counter())
+				self.times.append(time.perf_counter() - start)
 				self.speed_array.append([response.speed_front_left,
 										response.speed_front_right,
 										response.speed_back_left,
 										response.speed_back_right])
-				self.get_logger().info(f'collected response: {response}')
+				# self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		msg.data = [0, 0, 0]
 		self.speed_publisher.publish(msg)
 		self.speed_array = np.array(self.speed_array)
-		plt.plot(self.speed_array)
+		# self.get_logger().info(f'{self.times}')
+		plt.plot(self.times, self.speed_array)
+		plt.legend(['Front Left', 'Front Right', 'Back Left', 'Back Right'])
 
 		plt.show()
 
