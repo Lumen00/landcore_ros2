@@ -57,11 +57,13 @@ class PID_Tuner(Node):
 		# Publish speed command. 
 		msg = Float32MultiArray()
 		msg.data = [speed, 0, 0]
-		self.speed_publisher.publish(msg)
+		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 0.5
+		duration = 1.5
 		while time.perf_counter() - start < duration:
+			# Publish speed command.
+			self.speed_publisher.publish(msg)
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 			if response is not None:
@@ -88,7 +90,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=0.0)
+	pid_pub.pid_tune(speed=float(1))
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
