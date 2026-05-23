@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
     <node pkg="landwheeldrive" exec="cartesian_driver"/>
+    <node pkg="landwheeldrive" exec='motorlisten'
     <node pkg="dc_encoder_service" exec="dc_encoder_server"/>
 </launch>
