@@ -50,7 +50,7 @@ class PID_Tuner(Node):
 		self.speed_publisher = self.create_publisher(Float32MultiArray,
 												  'cartesian_heading', 10)
 		self.pwm_publisher = self.create_publisher(Int16MultiArray,
-												  'motor_subscriber', 10)
+												  'motor_drive', 10)
 
 		self.encoder_client = None
 		self.times = []
@@ -96,7 +96,7 @@ class PID_Tuner(Node):
 
 		# For each motor, determine what the steady state response is.
 		self.steady_state = []
-		error = 3
+		error = 20
 		for motor in self.speed_array:
 			# Find where the values settle with an acceptable error for a given window of samples.
 			old_speed = 0
@@ -123,10 +123,11 @@ class PID_Tuner(Node):
 					break # Continue to next motor, as we expect no change once in steady state. 
 
 		self.steady_state = np.array(self.steady_state)
+		self.get_logger().info(f'Steady State: {self.steady_state}')
 		# For each motor, determine what the time constant is at 63.2% of steady state response.  
 		tc_index = []
 		for id, motor in enumerate(self.speed_array):
-			tc_value = 63.2*self.steady_state[id]
+			tc_value = 63.2*float(self.steady_state[id])
 			# Given the tc_value, what is the closest value in the motor array?
 			diff = []
 			for spd in motor:
@@ -153,8 +154,8 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=float(0.5))
-	pid_pub.pid_tune(speed=0, pwm=50)
+	# pid_pub.pid_tune(speed=float(0.5))
+	pid_pub.pid_tune(speed=float(0), pwm=50)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()

@@ -72,10 +72,10 @@ class MotorSubscriber(Node):
         # print('threads joined')
 
     def run_motor(self, motor:DC_Motor, value:int):
-        motor.mh.setSpeed(255)
-        motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        motor.mh.run(Emakefun_MotorHAT.RELEASE)
-        time.sleep(0.1)
+        # motor.mh.setSpeed(255)
+        # motor.mh.run(Emakefun_MotorHAT.FORWARD)
+        # motor.mh.run(Emakefun_MotorHAT.RELEASE)
+        # time.sleep(0.1)
         self.motor_barrier.wait()
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
