@@ -67,7 +67,7 @@ class PID_Tuner(Node):
 		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 1.5
+		duration = 0.5
 		while time.perf_counter() - start < duration:
 			# Publish speed command.
 			if pwm != 0:
@@ -96,7 +96,7 @@ class PID_Tuner(Node):
 
 		# For each motor, determine what the steady state response is.
 		self.steady_state = []
-		error = 20
+		error = 50
 		for motor in self.speed_array:
 			# Find where the values settle with an acceptable error for a given window of samples.
 			old_speed = 0
@@ -155,7 +155,7 @@ def main(args=None):
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
 	# pid_pub.pid_tune(speed=float(0.5))
-	pid_pub.pid_tune(speed=float(0), pwm=50)
+	pid_pub.pid_tune(speed=float(0), pwm=35)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()

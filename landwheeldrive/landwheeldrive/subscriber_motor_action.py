@@ -41,7 +41,7 @@ class MotorSubscriber(Node):
         self.subscriber_ = self.create_subscription(Int16MultiArray,
                                                      'motor_drive',
                                                       self.listener_callback,
-                                                      10)
+                                                      1)
         self.motor_barrier = threading.Barrier(4)
 
         
