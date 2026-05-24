@@ -82,6 +82,7 @@ class MotorSubscriber(Node):
         elif value > 0:
             motor.mh.run(Emakefun_MotorHAT.FORWARD)
         elif value == 0:
+            motor.mh.run(Emakefun_MotorHAT.RELEASE)
             motor.signed_speed = 0
             return 
         motor.mh.setSpeed(abs(value))

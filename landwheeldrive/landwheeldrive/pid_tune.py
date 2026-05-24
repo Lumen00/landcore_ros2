@@ -86,9 +86,11 @@ class PID_Tuner(Node):
 				# self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		if pwm != 0:
+			self.get_logger().info('Stopping PWM drive.')
 			msg.data = [0, 0, 0, 0]
 			self.pwm_publisher.publish(msg)
 		else:
+			self.get_logger().info('Stopping Speed drive.')
 			msg.data = [0, 0, 0]
 			self.speed_publisher.publish(msg)
 		self.speed_array = np.array(self.speed_array)
