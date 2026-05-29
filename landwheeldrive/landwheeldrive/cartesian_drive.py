@@ -114,7 +114,7 @@ class Cartesian_Subscriber(Node):
 
         # Add to the cumulative error. If target speed of motor has changed,
         # then reset the cumulative error.
-        if self.old_msg.data == msg.data:
+        if self.old_msg == msg:
             self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
                 ]
