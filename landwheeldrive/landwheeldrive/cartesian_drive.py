@@ -132,16 +132,16 @@ class Cartesian_Subscriber(Node):
 
         # Based on the error, adjust the PWM applied to each motor. 
         Kp = [
-            1.298,  # Left Front    
-            1.483,  # Right Front   
-            1.461,  # Left Back     
-            1.517   # Right Back    
+            -0.9018,  # Left Front    
+            -0.8678,  # Right Front   
+            -0.8543,  # Left Back     
+            -0.8872   # Right Back    
         ]
         Ki = [
-            46.52, # Left Front    
-            49.73, # Right Front   
-            48.96, # Left Back     
-            50.84, # Right Back    
+            0.2068, # Left Front    
+            0.2210, # Right Front   
+            0.2176, # Left Back     
+            0.2260, # Right Back    
         ]
         pwm = [
             max(0, min(255, Kp[0]*errors[0] + Ki[0]*self.I_error[0])), # Left Front    
