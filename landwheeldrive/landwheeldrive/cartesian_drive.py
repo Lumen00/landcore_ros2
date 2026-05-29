@@ -8,9 +8,11 @@ import threading
 import time
 import math
 
+
 from dc_encoder_service.srv import MotorPI
 from std_msgs.msg import Float32MultiArray
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
+
 
 # mh = Emakefun_MotorHAT(addr=0x60)
 def turnOffMotors():
@@ -72,14 +74,13 @@ class Cartesian_Subscriber(Node):
         self.pid = None
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.old_msg = None
+        self.last_response_time = time.perf_counter()
 
         
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
         # Message is in format x, y, rotation.
-        w_max = 17.8 # Rad/s. From 170 RPM of max power efficiency point
-        # w_max = 0.5 # Debug test speed.
         x = msg.data[0]
         y = msg.data[1]
         rot = msg.data[2]
@@ -94,26 +95,16 @@ class Cartesian_Subscriber(Node):
         lb_factor = (x + y - (lx + ly)*rot)/r
         rb_factor = (x - y + (lx + ly)*rot)/r
 
-        wheels = [lf_factor, rf_factor, lb_factor, rb_factor]
-
-        # Scale if any wheel speed exceeds max speed.
-        cmd_max_w = max(abs(w) for w in wheels) # Maximum speed command.
-        # Scale the other motor command speeds by the max speed or max speed command.
-        if cmd_max_w >= w_max: # If the command speed is greater than speed limit.
-            scale = cmd_max_w
-        else: # Otherwise if the command speed is lower than speed limit.
-            scale = w_max            
+        wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
 
         # Apply PI control. Contact dc_encoder_server for speed calculation.
         response = self.pid.send_request(spd_in=wheels)
-        # while response is None:
-            # self.get_logger().info(f'response cartesian: {response}')
-            # pass
-        # if response is not None:
-            # print('response from server', response)
+        time_now = time.perf_counter()
+        response_time = time_now - self.last_response_time
+        self.last_response_time = time_now
 
         # Calculate speed error for each wheel.
-        self.get_logger().info(f'response cartesian: {response}')
+        # self.get_logger().info(f'response cartesian: {response}')
         errors = [
             lf_factor - response.speed_front_left,
             rf_factor - response.speed_front_right,
@@ -123,12 +114,13 @@ class Cartesian_Subscriber(Node):
 
         # Add to the cumulative error. If target speed of motor has changed,
         # then reset the cumulative error.
-        if self.old_msg == msg:
+        if self.old_msg.data == msg.data:
             self.I_error = [
-                add_error + errors[id] for id, add_error in enumerate(self.I_error)
+                add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
                 ]
         else:
             self.I_error = [0,0,0,0]
+        self.get_logger().info(f'Errors: {errors}')
 
         # Based on the error, adjust the PWM applied to each motor. 
         Kp = [
