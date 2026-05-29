@@ -31,7 +31,7 @@ class PI_Client(Node):
 	def __init__(self):
 		super().__init__('pi_controller_client')
 		self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
-		while not self.PI_client.wait_for_service(timeout_sec=1.0):
+		while not self.PI_client.wait_for_service(timeout_sec=None):
 			self.get_logger().info('service not available, waiting again...')
 		self.req = MotorPI.Request()
 
@@ -61,28 +61,32 @@ class PID_Tuner(Node):
 		if pwm != 0:
 			msg = Int16MultiArray()
 			msg.data = [pwm, pwm, pwm, pwm]
+			self.pwm_publisher.publish(msg)
 		else:
 			msg = Float32MultiArray()
 			msg.data = [speed, 0, 0]
 		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 0.5
-		while time.perf_counter() - start < duration:
+		duration = 2
+		while (time.perf_counter() - start) < duration:
 			# Publish speed command.
 			if pwm != 0:
-				self.pwm_publisher.publish(msg)
+				# self.pwm_publisher.publish(msg)
+				pass
 			else:
 				self.speed_publisher.publish(msg)
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 			if response is not None:
+				time_now = time.perf_counter() - start
 				# Log the speeds and time.
-				self.times.append(time.perf_counter() - start)
-				self.speed_array.append([response.speed_front_left,
-										response.speed_front_right,
-										response.speed_back_left,
-										response.speed_back_right])
+				if (time_now <= duration):
+					self.times.append(time.perf_counter() - start)
+					self.speed_array.append([[response.speed_front_left],
+											[response.speed_front_right],
+											[response.speed_back_left],
+											[response.speed_back_right]])
 				# self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		if pwm != 0:
@@ -98,58 +102,92 @@ class PID_Tuner(Node):
 
 		# For each motor, determine what the steady state response is.
 		self.steady_state = []
-		error = 50
-		for motor in self.speed_array:
-			# Find where the values settle with an acceptable error for a given window of samples.
+		error = 5
+		window_size = 25
+
+		# self.get_logger().info(f'Speed array: {self.speed_array}')
+
+		for id in range(4):
+			# self.get_logger().info(f'Motor speed log for {id}: {self.speed_array[:,id]}')
+			# self.get_logger().info(f'Motor speed log for {id}.')
 			old_speed = 0
-			window_size = 20
 			tally = 0
-			average = 0
-			for spd in motor:
-				# Check if the difference between the current speed and the old speed
-				# is smaller than the error threshold.
-				if (spd - old_speed) <= error:
-					# Add to the tally.
-					tally += 1
-					average += spd
-				else:
-					# If the difference exceeds the error threshold, then reset the tally to 0.
-					# This is because it is not yet in steady state. 
-					tally = 0 
-					average = 0
-				old_speed = spd
-				# Check if the tally has met the required window size.
-				if tally > window_size:
-					# We have achieved steady state if the tally exceeds the window size.
-					self.steady_state.append(average/tally)
-					break # Continue to next motor, as we expect no change once in steady state. 
+			sum = 0
+			for spd in reversed(self.speed_array[:,id]):
+				# Find where the values settle with an acceptable error for a given window of samples.
+				# for spd in motor:
+					# self.get_logger().info(f'spd: {spd}')
+					# Check if the difference between the current speed and the old speed 
+					# is smaller than the error threshold. Only if tally == 0
+					if (abs(spd - old_speed) <= error) and (tally == 0):
+						# Add to the tally.
+						tally += 1
+						sum += spd
+					elif (tally > 0) and (abs(spd - sum/tally) <= error): # Moving average.
+						tally += 1
+						sum += spd
+					else:
+						# If the difference exceeds the error threshold, then reset the tally to 0.
+						# This is because it is not yet in steady state. 
+						tally = 0 
+						sum = 0
+					old_speed = spd
+					# self.get_logger().info(f'id: {id}, tally: {tally}, sum: {sum}')
+					# Check if the tally has met the required window size.
+					if tally > window_size:
+						# We have achieved steady state if the tally exceeds the window size.
+						self.steady_state.append(sum/tally)
+						break # Continue to next motor, as we expect no change once in steady state. 
+				# if tally > window_size:
+				# 	break
 
 		self.steady_state = np.array(self.steady_state)
 		self.get_logger().info(f'Steady State: {self.steady_state}')
 		# For each motor, determine what the time constant is at 63.2% of steady state response.  
 		tc_index = []
-		for id, motor in enumerate(self.speed_array):
-			tc_value = 63.2*float(self.steady_state[id])
-			# Given the tc_value, what is the closest value in the motor array?
+
+		for id in range(4):
+			if len(self.steady_state) < 4:
+				self.get_logger().info(f'Steady state of length {len(self.steady_state)}. Aborting.')
+				break
+			self.get_logger().info(f'{self.steady_state[id]}')
+			tc_value = 0.632*self.steady_state[id]
 			diff = []
-			for spd in motor:
-				# Create an array for calculating the difference between speeds and tc_value.
-				# Obtain the argmin of the array.
+			for spd in self.speed_array[:,id]:
+				# Given the tc_value, what is the closest value in the motor array?
+				# for spd in motor:
+					# Create an array for calculating the difference between speeds and tc_value.
+					# Obtain the argmin of the array.
 				diff.append(np.abs(spd - tc_value))
 			tc_index.append(np.argmin(diff))
-		
+			
 		time_constants = [self.times[tc_index[0]],
 					self.times[tc_index[1]],
 					self.times[tc_index[2]],
 					self.times[tc_index[3]]]
+		
+		# Gains K = output/input
+		gains = self.steady_state/pwm
 
-		plt.plot(self.times, self.speed_array)
-		plt.hlines(y=self.steady_state)
-		plt.vlines(x=time_constants)
-		plt.text(x=0.05, y=0.95, s=f'Steady State Values: \n {self.steady_state} \n Time Constants: \n {time_constants}')
+		for id in range(4):
+			plt.plot(self.times, self.speed_array[:,id])
+		plt.hlines(y=self.steady_state, xmin=0, xmax=duration, linestyles='dotted')
+		plt.vlines(x=time_constants, ymin=0, ymax=0.632*self.steady_state, linestyles='dotted')
+		plt.text(x=0.05, y=0.1, s=f'Steady State Values: \n {self.steady_state} \n, Time Constants: \n {np.array(time_constants)} \n Gain: {gains}')
 		plt.legend(['Front Left', 'Front Right', 'Back Left', 'Back Right'])
 		plt.show()
 
+# Gains: @ 45
+# 0.94435707
+# 0.96554456
+# 0.98067849
+# 0.94435707
+
+# Time Constants
+# 0.13556775
+# 0.14821716
+# 0.14821716
+# 0.14821716
 
 def main(args=None):
 	rclpy.init(args=args)
@@ -157,7 +195,7 @@ def main(args=None):
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
 	# pid_pub.pid_tune(speed=float(0.5))
-	pid_pub.pid_tune(speed=float(0), pwm=35)
+	pid_pub.pid_tune(speed=float(0), pwm=45)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
