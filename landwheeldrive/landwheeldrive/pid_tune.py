@@ -68,7 +68,7 @@ class PID_Tuner(Node):
 		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 5
+		duration = 15
 		while (time.perf_counter() - start) < duration:
 			# Publish speed command.
 			if pwm != 0:
@@ -177,7 +177,7 @@ class PID_Tuner(Node):
 		plt.legend(['Front Left', 'Front Right', 'Back Left', 'Back Right'])
 		plt.show()
 
-# Gains: @ 45
+# Gains: @ 45 w/ Plug/Battery
 # 0.94435707
 # 0.96554456
 # 0.98067849
@@ -189,13 +189,25 @@ class PID_Tuner(Node):
 # 0.14821716
 # 0.14821716
 
+# Gains: @ 255 w/ Power Bank
+# 15.78425383/255 = 0.06189903
+# 15.78425383/255 = 0.06189903
+# 16.01637521/255 = 0.06280931
+# 15.34580233/255 = 0.06017962
+
+# Time Constants
+# 0.55275804
+# 0.30999461
+# 0.0881347
+# 0.20540162
+
 def main(args=None):
 	rclpy.init(args=args)
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=float(5))
-	# pid_pub.pid_tune(speed=float(0), pwm=45)
+	pid_pub.pid_tune(speed=float(0.5))
+	# pid_pub.pid_tune(speed=float(0), pwm=255)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
