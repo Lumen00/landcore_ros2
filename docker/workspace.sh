@@ -23,9 +23,9 @@ apt-get install libxcb-cursor0
 apt install liblgpio-dev -y
 
 # Build the packages
-echo "Building packages..."
+# echo "Building packages..."
 
-colcon build --executor sequential --parallel-workers 1
-source install/setup.bash
+# colcon build --executor sequential --parallel-workers 1
+# source install/setup.bash
 
 echo "Workspace setup completed!"
