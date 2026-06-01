@@ -24,7 +24,7 @@ apt install liblgpio-dev -y
 
 # Build the packages
 echo "Building packages..."
-colcon build --parallel-workers $(nproc)
+VERBOSE=1 colcon build --parallel-workers $(nproc) --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON
 
 # colcon build --packages-select dc_encoder_service --parallel-workers 1
 # colcon build --packages-select landdrive --parallel-workers 1
