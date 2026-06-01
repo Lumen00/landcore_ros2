@@ -23,12 +23,12 @@ apt-get install libxcb-cursor0
 apt install liblgpio-dev -y
 
 # Build the packages
-# echo "Building packages..."
+echo "Building packages..."
 
 colcon build --packages-select dc_encoder_service --parallel-workers 1
 colcon build --packages-select landdrive --parallel-workers 1
 colcon build --packages-select landwheeldrive --parallel-workers 1
-colcon build --packages-select rplidar_ros --parallel-workers 1 --symlink-install
+colcon build --packages-select rplidar_ros --symlink-install
 source install/setup.bash
 
 echo "Workspace setup completed!"
