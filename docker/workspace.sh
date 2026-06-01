@@ -25,7 +25,7 @@ echo "Building packages..."
 # VERBOSE=1 colcon build --parallel-workers $(nproc) --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
 
 colcon build --packages-select dc_encoder_service landdrive landwheeldrive
-colcon build --packages-select rplidar_ros --parallel-workers 1 --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
+colcon build --packages-select sllidar_ros2 --parallel-workers 1 --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
 source install/setup.bash
 
 echo "Workspace setup completed!"
