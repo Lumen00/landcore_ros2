@@ -24,8 +24,8 @@ apt install liblgpio-dev -y
 echo "Building packages..."
 # VERBOSE=1 colcon build --parallel-workers $(nproc) --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
 
-colcon build --packages-select dc_encoder_service landdrive landwheeldrive
-colcon build --packages-select sllidar_ros2 --parallel-workers 1 --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
+colcon build --packages-select dc_encoder_service landdrive landwheeldrive --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --packages-select sllidar_ros2 --parallel-workers 2 --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"
 source install/setup.bash
 
 echo "Workspace setup completed!"
