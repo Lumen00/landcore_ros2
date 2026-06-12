@@ -31,9 +31,11 @@ class PI_Client(Node):
 	def __init__(self):
 		super().__init__('pi_controller_client')
 		self.PI_client = self.create_client(MotorPI, 'dc_encoder_server')
-		while not self.PI_client.wait_for_service(timeout_sec=None):
+		while not self.PI_client.wait_for_service(timeout_sec=1):
 			self.get_logger().info('service not available, waiting again...')
 		self.req = MotorPI.Request()
+		self.get_logger().info('PI Client up')
+
 
 	def send_request(self, spd_in):
 		self.req.speed_cmd_front_left = spd_in[0]
@@ -51,12 +53,12 @@ class PID_Tuner(Node):
 												  'cartesian_heading', 10)
 		self.pwm_publisher = self.create_publisher(Int16MultiArray,
 												  'motor_drive', 10)
-
 		self.encoder_client = None
 		self.times = []
 		self.speed_array = []
 		
 	def pid_tune(self, speed, pwm=0):
+		self.get_logger().info('starting pid tune routine')
 		# Publish speed command. 
 		if pwm != 0:
 			msg = Int16MultiArray()
@@ -68,7 +70,7 @@ class PID_Tuner(Node):
 		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 15
+		duration = 1
 		while (time.perf_counter() - start) < duration:
 			# Publish speed command.
 			if pwm != 0:
@@ -201,12 +203,30 @@ class PID_Tuner(Node):
 # 0.0881347
 # 0.20540162
 
+# Steady State Values @ 255 w/ 2x 18650
+# 29.07625705
+# 29.07625705
+# 28.57301414
+# 27.6224442
+
+# Time Constants
+# 0.15514646
+# 0.15514646
+# 0.15514646
+# 0.13086134
+
+# Gain
+# 0.11402454
+# 0.11402454
+# 0.11205104
+# 0.10832331
+
 def main(args=None):
 	rclpy.init(args=args)
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=float(0.5))
+	pid_pub.pid_tune(speed=float(0.2))
 	# pid_pub.pid_tune(speed=float(0), pwm=255)
 
 	pid_pub.destroy_node()

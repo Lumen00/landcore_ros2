@@ -75,6 +75,32 @@ class Cartesian_Subscriber(Node):
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.old_msg = None
         self.last_response_time = time.perf_counter()
+        self.K = [ # Gain of PWM to rad/s
+            0.11402454,
+            0.11402454,
+            0.11205104,
+            0.10832331
+        ]
+        self.tc = [ # Time constants for 63.2% of steady state value.
+            0.15514646,
+            0.15514646,
+            0.15514646,
+            0.13086134
+        ]
+        damping_cnst = math.sqrt(math.pow(math.log(0.2), 2) / math.pow(math.log(0.2), 2) + pow(math.pi)) # 20% overshoot
+        wn = 1.8/0.2 # 0.2s rise time.
+        self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
+            (2*damping_cnst*wn*self.tc[0] - 1)/self.K[0],  # Left Front    
+            (2*damping_cnst*wn*self.tc[1] - 1)/self.K[1],  # Right Front   
+            (2*damping_cnst*wn*self.tc[2] - 1)/self.K[2],  # Left Back     
+            (2*damping_cnst*wn*self.tc[3] - 1)/self.K[3]   # Right Back    
+        ]
+        self.Ki = [ # Ki = wn**2*time_cnst/K
+            (pow(wn,2)*self.tc[0])/self.K[0], # Left Front    
+            (pow(wn,2)*self.tc[0])/self.K[0], # Right Front   
+            (pow(wn,2)*self.tc[0])/self.K[0], # Left Back     
+            (pow(wn,2)*self.tc[0])/self.K[0], # Right Back    
+        ]
 
         
     def listener_callback(self, msg):
@@ -122,24 +148,11 @@ class Cartesian_Subscriber(Node):
             self.I_error = [0,0,0,0]
         self.get_logger().info(f'Errors: {errors}')
 
-        # Based on the error, adjust the PWM applied to each motor. 
-        Kp = [
-            1.298,  # Left Front    
-            1.483,  # Right Front   
-            1.461,  # Left Back     
-            1.517   # Right Back    
-        ]
-        Ki = [
-            46.52, # Left Front    
-            49.73, # Right Front   
-            48.96, # Left Back     
-            50.84, # Right Back    
-        ]
         pwm = [
-            max(0, min(255, Kp[0]*errors[0] + Ki[0]*self.I_error[0])), # Left Front    
-            max(0, min(255, Kp[1]*errors[1] + Ki[1]*self.I_error[1])), # Right Front   
-            max(0, min(255, Kp[2]*errors[2] + Ki[2]*self.I_error[2])), # Left Back     
-            max(0, min(255, Kp[3]*errors[3] + Ki[3]*self.I_error[3])) # Right Back    
+            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
+            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1])), # Right Front   
+            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2])), # Left Back     
+            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3])) # Right Back    
         ]
 
         # Convert to PWM scale 
