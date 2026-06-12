@@ -28,8 +28,8 @@ class DC_Motor(Emakefun_MotorHAT):
         super().__init__(addr=0x60)
         self.signed_speed = 0
         self.mh = self.getMotor(motor_num)
-        self.mh.setSpeed(255)
-        self.mh.run(Emakefun_MotorHAT.FORWARD)
+        # self.mh.setSpeed(255)
+        # self.mh.run(Emakefun_MotorHAT.FORWARD)
         self.mh.run(Emakefun_MotorHAT.RELEASE)
 
         # Read from GPIO pins of encoders on schematic.
