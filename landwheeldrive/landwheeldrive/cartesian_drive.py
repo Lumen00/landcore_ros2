@@ -102,6 +102,7 @@ class Cartesian_Subscriber(Node):
             (pow(wn,2)*self.tc[3])/self.K[3], # Right Back    
         ]
 
+        self.min_pwm = 40
         
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
@@ -149,10 +150,10 @@ class Cartesian_Subscriber(Node):
         self.get_logger().info(f'Errors: {self.I_error}')
 
         pwm = [
-            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
-            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1])), # Right Front   
-            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2])), # Left Back     
-            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3])) # Right Back    
+            max(0, min(255, 40+self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
+            max(0, min(255, 40+self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1])), # Right Front   
+            max(0, min(255, 40+self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2])), # Left Back     
+            max(0, min(255, 40+self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3])) # Right Back    
         ]
 
         # Convert to PWM scale 
