@@ -97,9 +97,9 @@ class Cartesian_Subscriber(Node):
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
             (pow(wn,2)*self.tc[0])/self.K[0], # Left Front    
-            (pow(wn,2)*self.tc[0])/self.K[0], # Right Front   
-            (pow(wn,2)*self.tc[0])/self.K[0], # Left Back     
-            (pow(wn,2)*self.tc[0])/self.K[0], # Right Back    
+            (pow(wn,2)*self.tc[1])/self.K[1], # Right Front   
+            (pow(wn,2)*self.tc[2])/self.K[2], # Left Back     
+            (pow(wn,2)*self.tc[3])/self.K[3], # Right Back    
         ]
 
         
