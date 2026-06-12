@@ -146,7 +146,7 @@ class Cartesian_Subscriber(Node):
                 ]
         else:
             self.I_error = [0,0,0,0]
-        self.get_logger().info(f'Errors: {errors}')
+        self.get_logger().info(f'Errors: {self.I_error}')
 
         pwm = [
             max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
@@ -159,7 +159,7 @@ class Cartesian_Subscriber(Node):
         # pwm = [round((w / scale) * 50) for w in wheels]        
 
         # Apply transformation to account for wheels spinning the other way.
-        self.get_logger().info(f'heard {msg.data} transformed to {pwm}')
+        # self.get_logger().info(f'heard {msg.data} transformed to {pwm}')
         # print('heard', msg.data, 'transformed to ', pwm)
 
         t1 = threading.Thread(target=self.run_motor, args=(left_front, int(pwm[0])))
