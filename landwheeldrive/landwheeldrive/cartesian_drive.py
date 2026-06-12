@@ -87,8 +87,8 @@ class Cartesian_Subscriber(Node):
             0.15514646,
             0.13086134
         ]
-        damping_cnst = math.sqrt(math.pow(math.log(0.05), 2) / math.pow(math.log(0.05), 2) + pow(math.pi, 2)) # 20% overshoot
-        wn = 1.8/0.75 # 1s rise time.
+        damping_cnst = math.sqrt(math.pow(math.log(0.2), 2) / (math.pow(math.log(0.2), 2) + pow(math.pi, 2))) # 20% overshoot
+        wn = 1.8/1 # 1s rise time.
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
             (2*damping_cnst*wn*self.tc[0] - 1)/self.K[0],  # Left Front    
             (2*damping_cnst*wn*self.tc[1] - 1)/self.K[1],  # Right Front   
