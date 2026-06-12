@@ -70,7 +70,7 @@ class PID_Tuner(Node):
 		# self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 5
+		duration = 15
 		while (time.perf_counter() - start) < duration:
 			# Publish speed command.
 			if pwm != 0:
@@ -227,7 +227,7 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=float(0.25))
+	pid_pub.pid_tune(speed=float(0.3))
 	# pid_pub.pid_tune(speed=float(0), pwm=40)
 
 	pid_pub.destroy_node()
