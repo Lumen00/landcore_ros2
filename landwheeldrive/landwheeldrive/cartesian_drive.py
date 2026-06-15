@@ -145,7 +145,8 @@ class Cartesian_Subscriber(Node):
                 ]
         else:
             self.I_error = [0,0,0,0]
-        self.get_logger().info(f'Errors: {self.error}')
+        self.get_logger().info(f'P Errors: {errors}')
+        self.get_logger().info(f'I Errors: {self.I_error}')
 
         pwm = [
             max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
