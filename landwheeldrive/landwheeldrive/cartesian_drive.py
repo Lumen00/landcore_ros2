@@ -46,10 +46,10 @@ class PI_Client(Node):
         while not self.PI_client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('service not available, waiting again...')
         self.req = MotorPI.Request()
-        # self._executor = SingleThreadedExecutor()
-        # self._executor.add_node(self)
-        # self._thread = threading.Thread(target=self._executor.spin, daemon=True)
-        # self._thread.start()
+        self._executor = SingleThreadedExecutor()
+        self._executor.add_node(self)
+        self._thread = threading.Thread(target=self._executor.spin, daemon=True)
+        self._thread.start()
 
     def send_request(self, spd_in):
         self.req.speed_cmd_front_left = spd_in[0]
