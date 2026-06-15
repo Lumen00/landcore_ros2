@@ -88,7 +88,7 @@ class Cartesian_Subscriber(Node):
             0.13086134
         ]
         damping_cnst = math.sqrt(math.pow(math.log(0.2), 2) / (math.pow(math.log(0.2), 2) + pow(math.pi, 2))) # 20% overshoot
-        wn = 1.8/0.2 # 1s rise time.
+        wn = 1.8/0.5 # 1s rise time.
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
             (2*damping_cnst*wn*self.tc[0] - 1)/self.K[0],  # Left Front    
             (2*damping_cnst*wn*self.tc[1] - 1)/self.K[1],  # Right Front   
@@ -145,7 +145,7 @@ class Cartesian_Subscriber(Node):
                 ]
         else:
             self.I_error = [0,0,0,0]
-        self.get_logger().info(f'Errors: {self.I_error}')
+        self.get_logger().info(f'Errors: {self.error}')
 
         pwm = [
             max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
