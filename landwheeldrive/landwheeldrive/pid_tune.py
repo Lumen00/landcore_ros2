@@ -56,6 +56,7 @@ class PID_Tuner(Node):
 		self.encoder_client = None
 		self.times = []
 		self.speed_array = []
+		self.epsilon = pow(10,-9)
 		
 	def pid_tune(self, speed, pwm=0):
 		self.get_logger().info('starting pid tune routine')
@@ -168,6 +169,20 @@ class PID_Tuner(Node):
 						self.times[tc_index[2]],
 						self.times[tc_index[3]]]
 			
+			# Determine the delay time until the response begins for each motor.
+			time_delays = []
+			for id in range(4):
+				# Iterate over the speed response until the value exceeds epsilon.
+				response_start_id = 0
+				for index, spd in enumerate(self.speed_array[:,id]):
+					# Start of response found.
+					if spd > self.epsilon:
+						response_start_id = index
+						break				
+
+				# Access the index of the time array to get the delay time.
+				time_delays.append(self.times[response_start_id])
+
 			# Gains K = output/input
 			gains = self.steady_state/pwm
 
@@ -177,6 +192,7 @@ class PID_Tuner(Node):
 			plt.hlines(y=self.steady_state, xmin=0, xmax=duration, linestyles='dotted')
 			plt.vlines(x=time_constants, ymin=0, ymax=0.632*self.steady_state, linestyles='dotted')
 			plt.text(x=0.05, y=0.1, s=f'Steady State Values: \n {self.steady_state} \n, Time Constants: \n {np.array(time_constants)} \n Gain: {gains}')
+			plt.text(x=0.95, y=0.05, s=f'Time Delays \n {time_delays}')
 		plt.legend(['Front Left', 'Front Right', 'Back Left', 'Back Right'])
 		plt.show()
 
