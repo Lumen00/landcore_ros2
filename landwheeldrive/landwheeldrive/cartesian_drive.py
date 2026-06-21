@@ -73,7 +73,7 @@ class Cartesian_Subscriber(Node):
         self.motor_barrier = threading.Barrier(4)
         self.pid = None
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
-        self.prev_error = [0,0,0,0] # Derivative error for each wheel. 
+        self.D_error = [0,0,0,0] # Derivative error for each wheel. 
         self.prev_error = [0,0,0,0] # Last error for each wheel. 
         self.old_msg = None
         self.last_response_time = time.perf_counter()
