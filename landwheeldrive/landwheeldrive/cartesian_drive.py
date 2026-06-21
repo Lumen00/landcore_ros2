@@ -146,7 +146,7 @@ class Cartesian_Subscriber(Node):
         # Calculate the derivative errors, the difference between the current error and previous error divided by time step.
         if self.old_msg == msg:
             D_error = [
-                errors[id] - last_error for id, last_error in enumerate(self.prev_error)
+                (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
             ]
 
         # Add to the cumulative error. If target speed of motor has changed,
