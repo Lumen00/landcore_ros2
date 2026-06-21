@@ -163,10 +163,10 @@ class Cartesian_Subscriber(Node):
         self.get_logger().info(f'D Errors: {self.D_error}')
 
         pwm = [
-            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*D_error)), # Left Front    
-            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*D_error)), # Right Front   
-            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*D_error)), # Left Back     
-            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*D_error)) # Right Back    
+            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error)), # Left Front    
+            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error)), # Right Front   
+            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error)), # Left Back     
+            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error)) # Right Back    
         ]
 
         # Convert to PWM scale 
