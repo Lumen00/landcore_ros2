@@ -74,6 +74,7 @@ class Cartesian_Subscriber(Node):
         self.pid = None
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.prev_error = [0,0,0,0] # Derivative error for each wheel. 
+        self.prev_error = [0,0,0,0] # Last error for each wheel. 
         self.old_msg = None
         self.last_response_time = time.perf_counter()
         self.delay = [
@@ -145,7 +146,7 @@ class Cartesian_Subscriber(Node):
 
         # Calculate the derivative errors, the difference between the current error and previous error divided by time step.
         if self.old_msg == msg:
-            D_error = [
+            self.D_error = [
                 (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
             ]
 
@@ -159,7 +160,7 @@ class Cartesian_Subscriber(Node):
             self.I_error = [0,0,0,0]
         self.get_logger().info(f'P Errors: {errors}')
         self.get_logger().info(f'I Errors: {self.I_error}')
-        self.get_logger().info(f'D Errors: {D_error}')
+        self.get_logger().info(f'D Errors: {self.D_error}')
 
         pwm = [
             max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*D_error)), # Left Front    
