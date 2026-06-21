@@ -73,6 +73,7 @@ class Cartesian_Subscriber(Node):
         self.motor_barrier = threading.Barrier(4)
         self.pid = None
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
+        self.prev_error = [0,0,0,0] # Derivative error for each wheel. 
         self.old_msg = None
         self.last_response_time = time.perf_counter()
         self.delay = [
@@ -142,6 +143,12 @@ class Cartesian_Subscriber(Node):
             rb_factor - response.speed_back_right,
         ]
 
+        # Calculate the derivative errors, the difference between the current error and previous error divided by time step.
+        if self.old_msg == msg:
+            D_error = [
+                errors[id] - last_error for id, last_error in enumerate(self.prev_error)
+            ]
+
         # Add to the cumulative error. If target speed of motor has changed,
         # then reset the cumulative error.
         if self.old_msg == msg:
@@ -152,12 +159,13 @@ class Cartesian_Subscriber(Node):
             self.I_error = [0,0,0,0]
         self.get_logger().info(f'P Errors: {errors}')
         self.get_logger().info(f'I Errors: {self.I_error}')
+        self.get_logger().info(f'D Errors: {D_error}')
 
         pwm = [
-            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0])), # Left Front    
-            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1])), # Right Front   
-            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2])), # Left Back     
-            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3])) # Right Back    
+            max(0, min(255, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*D_error)), # Left Front    
+            max(0, min(255, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*D_error)), # Right Front   
+            max(0, min(255, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*D_error)), # Left Back     
+            max(0, min(255, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*D_error)) # Right Back    
         ]
 
         # Convert to PWM scale 
@@ -181,6 +189,7 @@ class Cartesian_Subscriber(Node):
             thread.join()
         # print('threads joined')
         self.old_msg = msg
+        self.prev_error = errors
 
 
     def run_motor(self, motor:DC_Motor, value:int):
