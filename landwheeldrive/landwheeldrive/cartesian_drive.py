@@ -75,32 +75,37 @@ class Cartesian_Subscriber(Node):
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.old_msg = None
         self.last_response_time = time.perf_counter()
-        self.K = [ # Gain of PWM to rad/s
-            0.11402454,
-            0.11402454,
-            0.11205104,
-            0.10832331
+        self.delay = [
+            0.2234584219986573,
+            0.26367882100031234,
+            0.2093913659991813,
+            0.2234584219986573
         ]
         self.tc = [ # Time constants for 63.2% of steady state value.
-            0.15514646,
-            0.15514646,
-            0.15514646,
-            0.13086134
+            0.4107253,
+            0.33913863,
+            0.33913863,
+            0.33913863
         ]
-        damping_cnst = math.sqrt(math.pow(math.log(0.2), 2) / (math.pow(math.log(0.2), 2) + pow(math.pi, 2))) # 20% overshoot
-        wn = 1.8/0.5 # 1s rise time.
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
-            (2*damping_cnst*wn*self.tc[0] - 1)/self.K[0],  # Left Front    
-            (2*damping_cnst*wn*self.tc[1] - 1)/self.K[1],  # Right Front   
-            (2*damping_cnst*wn*self.tc[2] - 1)/self.K[2],  # Left Back     
-            (2*damping_cnst*wn*self.tc[3] - 1)/self.K[3]   # Right Back    
+            0.756 * (self.tc[0] / self.delay[0]),  # Left Front    
+            0.756 * (self.tc[1] / self.delay[1]),  # Right Front   
+            0.756 * (self.tc[2] / self.delay[2]),  # Left Back     
+            0.756 * (self.tc[3] / self.delay[3])   # Right Back    
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
-            (pow(wn,2)*self.tc[0])/self.K[0], # Left Front    
-            (pow(wn,2)*self.tc[1])/self.K[1], # Right Front   
-            (pow(wn,2)*self.tc[2])/self.K[2], # Left Back     
-            (pow(wn,2)*self.tc[3])/self.K[3], # Right Back    
+            2 * self.delay[0], # Left Front    
+            2 * self.delay[1], # Right Front   
+            2 * self.delay[2], # Left Back     
+            2 * self.delay[3], # Right Back    
         ]
+        self.Kd = [ # Ki = wn**2*time_cnst/K
+            0.5 * self.delay[0], # Left Front    
+            0.5 * self.delay[1], # Right Front   
+            0.5 * self.delay[2], # Left Back     
+            0.5 * self.delay[3], # Right Back    
+        ]
+
         
     def listener_callback(self, msg):
         # Parse information in the array to be given to the motors.
