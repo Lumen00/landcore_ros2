@@ -29,6 +29,7 @@ int encoder_tick_threshold = 30;
 std::vector<int> read_pins = {6, 13, 20, 26};
 double epsilon = std::exp(-9);
 std::mutex encoder_mutex;
+std::vector<double> all_encoders = {0,0,0,0};
 
 auto to_str = [](double val, int precision = 3) {
     std::ostringstream oss;
@@ -53,18 +54,20 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
     if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
-    }
-    else if (encoder_times.at(iter) <= epsilon){ 
-      // If time is still small or 0, assume speed 0 so it doesn't get held up.
-      all_encoders.push_back(0);
-      // it--;
-      // continue;
-    }
-    else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-      long double elapsed = encoder_times.at(iter);
-      all_encoders.push_back((encoder_tick_threshold/341.2) * ((2.0*M_PI) / elapsed));
+      encoder_tick_count.at(iter) = 0;
       iter++;
     }
+    // else if (it->elapsedSeconds() <= epsilon){ 
+      // If time is still small or 0, assume speed 0 so it doesn't get held up.
+      // all_encoders.push_back(0);
+      // it--;
+      // continue;
+    // }
+    // else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
+    //   long double elapsed = encoder_times.at(iter);
+    //   all_encoders.push_back((encoder_tick_threshold/341.2) * ((2.0*M_PI) / elapsed));
+    //   iter++;
+    // }
     // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
   }
 
@@ -105,6 +108,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(0) = 0;
     encoder_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
+    all_encoders.at(0) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(0)));
     break;
   case 13: // Left Front
     if (encoder_tick_count.at(1) < encoder_tick_threshold){
@@ -114,6 +118,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(1) = 0;
     encoder_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
+    all_encoders.at(1) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(1)));
     break;  
   case 20: // Left Back
     if (encoder_tick_count.at(2) < encoder_tick_threshold){
@@ -123,6 +128,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(2) = 0;
     encoder_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     encoder_timers.at(2).start();
+    all_encoders.at(2) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(2)));
     break;  
   case 26: // Right Back
     if (encoder_tick_count.at(3) < encoder_tick_threshold){
@@ -132,6 +138,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(3) = 0;
     encoder_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
+    all_encoders.at(3) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(3)));
     break;
   default:
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", trigger_pin);
