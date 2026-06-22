@@ -7,6 +7,7 @@
 #include "dc_encoder_service/timer.hpp"
 #include <iterator>
 #include <iomanip>
+#include <mutex>
 /* 
 
 Create a service which responds to clients with
@@ -18,7 +19,6 @@ Encoder details:
   - Encoder 3 -> GPIO20, GPIO21 -> ...
   - Encoder 4 -> GPIO16, GPIO26 -> ...
 */
-// enum class Direction {CLOCKWISE = 1, STOPPED = 0, COUNTER_CLOCKWISE = -1};
 
 std::vector<int> pins = {5, 6, 13, 19, 20, 21, 16, 26};
 std::vector<int> pin_handles = {};
@@ -27,8 +27,8 @@ std::vector<long double> encoder_times = {0,0,0,0};
 std::vector<int> encoder_tick_count = {0,0,0,0};
 int encoder_tick_threshold = 30;
 std::vector<int> read_pins = {6, 13, 20, 26};
-double epsilon = std::exp(-9);
-// std::vector<Direction> clockwise = {Direction::STOPPED, Direction::STOPPED, Direction::STOPPED, Direction::STOPPED};
+double epsilon = std::exp(-3);
+std::mutex encoder_mutex;
 
 auto to_str = [](double val, int precision = 3) {
     std::ostringstream oss;
@@ -54,7 +54,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
     }
-    else if (it->elapsedSeconds() <= epsilon){
+    else if (encoder_times.at(iter) <= epsilon){ // OTherwise if still moving, if time is still below epsilon, wait.
       it--;
       continue;
     }
@@ -91,8 +91,8 @@ int openInputGPIO(int pin_no){
 
 void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // Using the pin number saved to *data, record the time interval for that encoder and restart the timer. 
+  std::lock_guard<std::mutex> lock(encoder_mutex);
   int trigger_pin = evt->report.gpio;
-  // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt triggered with motordata: %i", trigger_pin);
   switch (trigger_pin)
   {
   case 6: // Right Front
@@ -102,12 +102,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     }
     encoder_tick_count.at(0) = 0;
     encoder_times.at(0) = encoder_timers.at(0).elapsedSeconds();
-    // Read GPIO pins for direction.
-    // clockwise.at(0) = (lgGpioRead(pin_handles.at(0), pins.at(0)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    // Record time and reset timer.
-    // encoder_elapsed_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 5");
     break;
   case 13: // Left Front
     if (encoder_tick_count.at(1) < encoder_tick_threshold){
@@ -116,10 +111,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     }
     encoder_tick_count.at(1) = 0;
     encoder_times.at(1) = encoder_timers.at(1).elapsedSeconds();
-    // clockwise.at(1) = (lgGpioRead(pin_handles.at(3), pins.at(3)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    // encoder_elapsed_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 13");
     break;  
   case 20: // Left Back
     if (encoder_tick_count.at(2) < encoder_tick_threshold){
@@ -128,10 +120,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     }
     encoder_tick_count.at(2) = 0;
     encoder_times.at(2) = encoder_timers.at(2).elapsedSeconds();
-    // clockwise.at(2) = (lgGpioRead(pin_handles.at(5), pins.at(5)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    // encoder_elapsed_times.at(2) = encoder_timers.at(2).elapsedSeconds();
     encoder_timers.at(2).start();
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 20");
     break;  
   case 26: // Right Back
     if (encoder_tick_count.at(3) < encoder_tick_threshold){
@@ -140,10 +129,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     }
     encoder_tick_count.at(3) = 0;
     encoder_times.at(3) = encoder_timers.at(3).elapsedSeconds();
-    // clockwise.at(3) = (lgGpioRead(pin_handles.at(6), pins.at(6)) == 0) ? Direction::CLOCKWISE : Direction::COUNTER_CLOCKWISE;
-    // encoder_elapsed_times.at(3) = encoder_timers.at(3).elapsedSeconds();
     encoder_timers.at(3).start();
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "Interrupt on 16");
     break;
   default:
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", trigger_pin);
