@@ -53,7 +53,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   for (auto it = begin(encoder_timers); it != end(encoder_timers); it++){
     // If elapsed time is greater than x seconds (e.g. 0.1 seconds), then assume that speed is 0. 
     if (it->elapsedSeconds() >= timeout){
-      all_encoders.push_back(0); // Speed of 0 assumed.
+      all_encoders.at(iter) = 0; // Speed of 0 assumed.
       encoder_tick_count.at(iter) = 0;
       iter++;
     }

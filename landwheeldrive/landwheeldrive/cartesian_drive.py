@@ -149,6 +149,9 @@ class Cartesian_Subscriber(Node):
             self.D_error = [
                 (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
             ]
+        else:
+            self.D_error = [0,0,0,0]
+            self.prev_error = [0,0,0,0]
 
         # Add to the cumulative error. If target speed of motor has changed,
         # then reset the cumulative error.
@@ -158,8 +161,8 @@ class Cartesian_Subscriber(Node):
                 ]
         else:
             self.I_error = [0,0,0,0]
-        self.get_logger().info(f'P Errors: {errors}')
-        self.get_logger().info(f'I Errors: {self.I_error}')
+        # self.get_logger().info(f'P Errors: {errors}')
+        # self.get_logger().info(f'I Errors: {self.I_error}')
         self.get_logger().info(f'D Errors: {self.D_error}')
 
         pwm = [
