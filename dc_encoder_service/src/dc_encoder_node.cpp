@@ -54,7 +54,7 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
     if (it->elapsedSeconds() >= timeout){
       all_encoders.push_back(0); // Speed of 0 assumed.
     }
-    else if (encoder_times.at(iter) <= epsilon){ // OTherwise if still moving, if time is still below epsilon, wait.
+    else if (encoder_times.at(iter) <= epsilon){ // Otherwise if still moving, if time is still below epsilon, wait.
       it--;
       continue;
     }
