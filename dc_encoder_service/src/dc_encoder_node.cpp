@@ -45,7 +45,6 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
   request->speed_cmd_back_right;
 
   // Empty array to carry the speed calculations for each motor. 
-  std::vector<double> all_encoders = {};
   float timeout = 0.5;
 
   // Read the current elapsed time and calculate the current speeds for all motors.
