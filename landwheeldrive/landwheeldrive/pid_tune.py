@@ -219,7 +219,8 @@ def main(args=None):
 
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
-	pid_pub.pid_tune(speed=float(0.5))
+	# Speed is in m/s, but each wheel is commanded in rad/s based on mecanum wheel equations.
+	pid_pub.pid_tune(speed=float(0.3))
 	# pid_pub.pid_tune(speed=float(0), pwm=100)
 
 	pid_pub.destroy_node()
