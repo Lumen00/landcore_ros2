@@ -163,11 +163,12 @@ class Cartesian_Subscriber(Node):
             self.I_error = [0,0,0,0]
         # self.get_logger().info(f'P Errors: {errors}')
         # self.get_logger().info(f'I Errors: {self.I_error}')
-        self.get_logger().info(f'D Errors: {self.D_error}')
+        # self.get_logger().info(f'D Errors: {self.D_error}')
 
 
         # Feed-forward control + PID control
         # Note: May need to adjust feed forward gains based on performance w/ battery at real speeds.
+        # Gains at different values require, e.g. lookup table? Do with battery.
         pwm = [
             max(0, min(100, lf_factor/0.3 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
             max(0, min(100, rf_factor/0.3 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
