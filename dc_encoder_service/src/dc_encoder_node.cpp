@@ -107,7 +107,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(0) = 0;
     encoder_times.at(0) = encoder_timers.at(0).elapsedSeconds();
     encoder_timers.at(0).start();
-    all_encoders.at(1) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(0)));
+    all_encoders.at(1) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(1)));
     break;
   case 13: // Left Front
     if (encoder_tick_count.at(1) < encoder_tick_threshold){
@@ -117,7 +117,7 @@ void encoder_callback(int e, lgGpioAlert_p evt, void *data){
     encoder_tick_count.at(1) = 0;
     encoder_times.at(1) = encoder_timers.at(1).elapsedSeconds();
     encoder_timers.at(1).start();
-    all_encoders.at(0) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(1)));
+    all_encoders.at(0) = ((encoder_tick_threshold/341.2) * ((2.0*M_PI) / encoder_times.at(0)));
     break;  
   case 20: // Left Back
     if (encoder_tick_count.at(2) < encoder_tick_threshold){
