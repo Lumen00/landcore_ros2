@@ -114,7 +114,7 @@ class Cartesian_Subscriber(Node):
         self.new_cmd_flg = False
 
         # Run PID_control() continuously on a timer.
-        self.timer = self.create_timer(0.02, self.PID_control)
+        self.timer = self.create_timer(0.1, self.PID_control)
         
     def listener_callback(self, msg):
         # The callback should exclusively be for updating the desired speed.
@@ -174,9 +174,9 @@ class Cartesian_Subscriber(Node):
             max(0, min(100, rb_factor/0.25 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
-        self.get_logger().info(f'P: {errors}')
-        self.get_logger().info(f'I: {self.I_error}')
-        self.get_logger().info(f'D: {self.D_error}')
+        # self.get_logger().info(f'P: {errors}')
+        # self.get_logger().info(f'I: {self.I_error}')
+        # self.get_logger().info(f'D: {self.D_error}')
 
         # Apply transformation to account for wheels spinning the other way.
         # if self.current_msg:

@@ -97,9 +97,13 @@ class PID_Tuner(Node):
 			msg.data = [0, 0, 0, 0]
 			self.pwm_publisher.publish(msg)
 		else:
-			self.get_logger().info('Stopping Speed drive.')
-			msg.data = [0, 0, 0]
-			self.speed_publisher.publish(msg)
+			spd = [100,100,100,100]
+			while any([wheel_spd > self.epsilon for wheel_spd in spd]):
+				self.get_logger().info('Stopping Speed drive.')
+				msg.data = [0, 0, 0]
+				self.speed_publisher.publish(msg)
+				response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
+				spd = [response.speed_front_left, response.speed_front_right, response.speed_back_left, response.speed_back_right]
 		self.speed_array = np.array(self.speed_array)
 		# self.get_logger().info(f'{self.times}')
 
@@ -221,7 +225,7 @@ def main(args=None):
 	pid_pub.encoder_client = PI_Client()
 	# Speed is in m/s, but each wheel is commanded in rad/s based on mecanum wheel equations.
 	pid_pub.pid_tune(speed=float(0.4))
-	# pid_pub.pid_tune(speed=float(0), pwm=80)
+	# pid_pub.pid_tune(speed=float(0), pwm=60)
 
 	pid_pub.destroy_node()
 	rclpy.shutdown()
