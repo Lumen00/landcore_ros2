@@ -164,7 +164,7 @@ class Cartesian_Subscriber(Node):
                     (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
                 ]
                 self.I_error = [
-                    (add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error))
+                    add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
                 ]
             else: 
                 self.D_error = [0,0,0,0]
