@@ -71,7 +71,7 @@ class Cartesian_Subscriber(Node):
                                                       self.listener_callback,
                                                       1)
         self.motor_barrier = threading.Barrier(4)
-        self.pid = None
+        self.pid = PI_Client()
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.D_error = [0,0,0,0] # Derivative error for each wheel. 
         self.prev_error = [0,0,0,0] # Last error for each wheel. 
@@ -213,7 +213,7 @@ def main(args=None):
 
     motor_sub = Cartesian_Subscriber()
 
-    motor_sub.pid = PI_Client()
+    # motor_sub.pid = PI_Client()
 
 
     rclpy.spin(motor_sub)
