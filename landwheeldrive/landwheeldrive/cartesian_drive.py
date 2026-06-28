@@ -175,9 +175,13 @@ class Cartesian_Subscriber(Node):
             max(0, min(255, rb_factor/0.3 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
+        self.get_logger().info(f'{errors}')
+        self.get_logger().info(f'{self.I_error}')
+        self.get_logger().info(f'{self.D_error}')
+
         # Apply transformation to account for wheels spinning the other way.
-        if self.current_msg:
-            self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
+        # if self.current_msg:
+            # self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
 
         # Command motors to run at PWMs
         self.run_motor(left_front, int(pwm[0]))
