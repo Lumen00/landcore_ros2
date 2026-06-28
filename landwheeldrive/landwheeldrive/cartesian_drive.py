@@ -129,6 +129,7 @@ class Cartesian_Subscriber(Node):
         self.rot = msg.data[2]
         self.old_msg = self.current_msg
         self.current_msg = msg
+        self.get_logger().info(f'{msg}')
 
 
     def PID_control(self):
