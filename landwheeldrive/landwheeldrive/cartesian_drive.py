@@ -112,7 +112,7 @@ class Cartesian_Subscriber(Node):
         self.lx = 0.1315 # Distance from centre to wheel on x axis.
         self.ly = 0.135 # Distance from centre to wheel on y axis.
         self.r = 0.04 # Radius of wheels
-        self.current_msg = None
+        self.new_cmd_flg = False
 
         # Run PID_control() continuously on a timer.
         self.timer = self.create_timer(0.02, self.PID_control)
@@ -129,6 +129,7 @@ class Cartesian_Subscriber(Node):
         self.old_msg = self.current_msg
         self.current_msg = msg
         self.get_logger().info(f'{msg}')
+        self.new_cmd_flg = True
 
 
     def PID_control(self):
@@ -155,7 +156,7 @@ class Cartesian_Subscriber(Node):
             rb_factor - response.speed_back_right,
         ]
         # I & D error
-        if self.old_msg == self.current_msg:
+        if not self.new_cmd_flg:
             self.D_error = [
                 (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
             ]
@@ -166,6 +167,7 @@ class Cartesian_Subscriber(Node):
             self.D_error = [0,0,0,0]
             self.I_error = [0,0,0,0]
             self.prev_error = [0,0,0,0]
+            self.new_cmd_flg = False
                 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
