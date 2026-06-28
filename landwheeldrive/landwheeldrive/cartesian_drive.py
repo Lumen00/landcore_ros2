@@ -114,7 +114,7 @@ class Cartesian_Subscriber(Node):
         self.lx = 0.1315 # Distance from centre to wheel on x axis.
         self.ly = 0.135 # Distance from centre to wheel on y axis.
         self.r = 0.04 # Radius of wheels
-        self.current_msg = []
+        self.current_msg = None
 
         # Run PID_control() continuously. 
         pid_thread = threading.Thread(target=self.PID_control)
@@ -180,7 +180,8 @@ class Cartesian_Subscriber(Node):
             ] 
 
             # Apply transformation to account for wheels spinning the other way.
-            self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
+            if self.current_msg:
+                self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
 
             # Command motors to run at PWMs
             self.run_motor(left_front, int(pwm[0]))
