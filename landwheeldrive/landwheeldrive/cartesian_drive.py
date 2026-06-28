@@ -213,18 +213,18 @@ def main(args=None):
 
     motor_sub = Cartesian_Subscriber()
 
-    executor = MultiThreadedExecutor()
-    executor.add_node(motor_sub)
-    try:
-        executor.spin()
-    finally:
-        motor_sub.destroy_node()
-        rclpy.shutdown()
+    # executor = MultiThreadedExecutor()
+    # executor.add_node(motor_sub)
+    # try:
+    #     executor.spin()
+    # finally:
+    #     motor_sub.destroy_node()
+    #     rclpy.shutdown()
 
-    # rclpy.spin(motor_sub)
+    rclpy.spin(motor_sub)
 
-    # motor_sub.destroy_node()
-    # rclpy.shutdown()
+    motor_sub.destroy_node()
+    rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
