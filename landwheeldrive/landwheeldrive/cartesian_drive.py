@@ -57,7 +57,7 @@ class PI_Client(Node):
         self.req.speed_cmd_back_right = spd_in[3]
         self.future = self.PI_client.call_async(self.req)
         while not self.future.done():
-            pass
+            time.sleep(0.00005)
         return self.future.result()
 
 # Listen on topic motor_drive for an array of four numbers. 
@@ -69,7 +69,6 @@ class Cartesian_Subscriber(Node):
                                                      'cartesian_heading',
                                                       self.listener_callback,
                                                       1)
-        self.motor_barrier = threading.Barrier(4)
         self.pid = PI_Client()
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.D_error = [0,0,0,0] # Derivative error for each wheel. 
@@ -192,7 +191,6 @@ class Cartesian_Subscriber(Node):
         # motor.mh.setSpeed(255)
         # motor.mh.run(Emakefun_MotorHAT.FORWARD)
         # time.sleep(0.1)
-        self.motor_barrier.wait()
         motor.mh.setSpeed(abs(value))
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
