@@ -1,13 +1,12 @@
 # The purpose of this subscriber is to listen for any raw commands given to the motors and then apply them.
 
 import rclpy 
-from rclpy.executors import SingleThreadedExecutor
+from rclpy.executors import SingleThreadedExecutor, MultiThreadedExecutor
 from rclpy.node import Node
 import atexit
 import threading
 import time
 import math
-
 
 from dc_encoder_service.srv import MotorPI
 from std_msgs.msg import Float32MultiArray
@@ -117,7 +116,7 @@ class Cartesian_Subscriber(Node):
         self.current_msg = None
 
         # Run PID_control() continuously. 
-        pid_thread = threading.Thread(target=self.PID_control)
+        pid_thread = threading.Thread(target=self.PID_control, daemon=True)
         pid_thread.start()
         
     def listener_callback(self, msg):
@@ -136,7 +135,7 @@ class Cartesian_Subscriber(Node):
     def PID_control(self):
         "Apply PID control to each motor value based on updating desired speed from subscriber."
         "This should be run in a thread constantly which accesses outside values."
-        while(True):
+        while(rclpy.ok()):
             # Read current set speed into local variables.
             lf_factor = (self.x - self.y - (self.lx + self.ly)*self.rot)/self.r
             rf_factor = (self.x + self.y + (self.lx + self.ly)*self.rot)/self.r
@@ -214,13 +213,18 @@ def main(args=None):
 
     motor_sub = Cartesian_Subscriber()
 
-    # motor_sub.pid = PI_Client()
+    executor = MultiThreadedExecutor()
+    executor.add_node(motor_sub)
+    try:
+        executor.spin()
+    finally:
+        motor_sub.destroy_node()
+        rclpy.shutdown()
 
+    # rclpy.spin(motor_sub)
 
-    rclpy.spin(motor_sub)
-
-    motor_sub.destroy_node()
-    rclpy.shutdown()
+    # motor_sub.destroy_node()
+    # rclpy.shutdown()
 
 if __name__ == '__main__':
     main()
