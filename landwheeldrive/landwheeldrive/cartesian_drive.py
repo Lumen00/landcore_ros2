@@ -93,9 +93,9 @@ class Cartesian_Subscriber(Node):
             0.756 * (self.delay[3] / self.tc[3])   # Right Back    
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
-            1.2 * 2 * self.tc[0], # Left Front    
+            2 * 2 * self.tc[0], # Left Front    
             2 * self.tc[1], # Right Front   
-            1.2 * 2 * self.tc[2], # Left Back     
+            2 * 2 * self.tc[2], # Left Back     
             2 * self.tc[3], # Right Back    
         ]
         self.Kd = [ # Ki = wn**2*time_cnst/K

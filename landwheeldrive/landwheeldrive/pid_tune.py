@@ -104,7 +104,7 @@ class PID_Tuner(Node):
 				self.speed_publisher.publish(msg)
 				response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 				spd = [response.speed_front_left, response.speed_front_right, response.speed_back_left, response.speed_back_right]
-		self.speedduration_array = np.array(self.speed_array)
+		self.speed_array = np.array(self.speed_array)
 		# self.get_logger().info(f'{self.times}')
 
 		# For each motor, determine what the steady state response is.
@@ -190,8 +190,8 @@ class PID_Tuner(Node):
 			# Gains K = output/input
 			gains = self.steady_state/pwm
 
-		for id in range(4):
-			plt.plot(self.times, self.speed_array[:,id])
+		for wheel in range(4):
+			plt.plot(self.times, self.speed_array[:,wheel])
 		if pwm != 0:
 			plt.hlines(y=self.steady_state, xmin=0, xmax=duration, linestyles='dotted')
 			plt.vlines(x=time_constants, ymin=0, ymax=0.632*self.steady_state, linestyles='dotted')
