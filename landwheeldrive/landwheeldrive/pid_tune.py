@@ -104,7 +104,7 @@ class PID_Tuner(Node):
 				self.speed_publisher.publish(msg)
 				response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 				spd = [response.speed_front_left, response.speed_front_right, response.speed_back_left, response.speed_back_right]
-		self.speed_array = np.array(self.speed_array)
+		self.speedduration_array = np.array(self.speed_array)
 		# self.get_logger().info(f'{self.times}')
 
 		# For each motor, determine what the steady state response is.
@@ -224,7 +224,7 @@ def main(args=None):
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
 	# Speed is in m/s, but each wheel is commanded in rad/s based on mecanum wheel equations.
-	pid_pub.pid_tune(speed=float(0.3))
+	pid_pub.pid_tune(speed=float(0.4))
 	# pid_pub.pid_tune(speed=float(0), pwm=60)
 
 	pid_pub.destroy_node()
