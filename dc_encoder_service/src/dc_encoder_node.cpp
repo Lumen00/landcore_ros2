@@ -95,7 +95,7 @@ int openInputGPIO(int pin_no){
 
 void encoder_callback(int e, lgGpioAlert_p evt, void *data){
   // Using the pin number saved to *data, record the time interval for that encoder and restart the timer. 
-  std::lock_guard<std::mutex> lock(encoder_mutex);
+  // std::lock_guard<std::mutex> lock(encoder_mutex);
   int trigger_pin = evt->report.gpio;
   switch (trigger_pin)
   {
