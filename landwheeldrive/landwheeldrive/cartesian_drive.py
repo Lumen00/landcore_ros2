@@ -107,10 +107,10 @@ class Cartesian_Subscriber(Node):
             2 * self.tc[3], # Right Back    
         ]
         self.Kd = [ # Ki = wn**2*time_cnst/K
-            5* 0.5 * self.tc[0], # Left Front    
-            5* 0.5 * self.tc[1], # Right Front   
-            5* 0.5 * self.tc[2], # Left Back     
-            5* 0.5 * self.tc[3], # Right Back    
+            2.5* 0.5 * self.tc[0], # Left Front    
+            2.5* 0.5 * self.tc[1], # Right Front   
+            2.5* 0.5 * self.tc[2], # Left Back     
+            2.5* 0.5 * self.tc[3], # Right Back    
         ]
         self.x = 0
         self.y = 0
