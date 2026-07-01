@@ -75,16 +75,24 @@ class Cartesian_Subscriber(Node):
         self.prev_error = [0,0,0,0] # Last error for each wheel. 
         self.last_response_time = time.perf_counter()
         self.delay = [
-            0.2234584219986573,
-            0.26367882100031234,
-            0.2093913659991813,
-            0.2234584219986573
+            # 0.2234584219986573,
+            # 0.26367882100031234,
+            # 0.2093913659991813,
+            # 0.2234584219986573
+            0.770815682997636,
+            0.770815682997636,
+            0.5056347059980908,
+            0.47770777699770406
         ]
         self.tc = [ # Time constants for 63.2% of steady state value.
-            0.4107253,
-            0.33913863,
-            0.33913863,
-            0.33913863
+            # 0.4107253,
+            # 0.33913863,
+            # 0.33913863,
+            # 0.33913863
+            0.77081568,
+            0.79018351,
+            0.54310337,
+            3.03543622
         ]
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
             0.756 * (self.delay[0] / self.tc[0]),  # Left Front    
@@ -168,10 +176,10 @@ class Cartesian_Subscriber(Node):
                 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(150, lf_factor/0.35 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(150, rf_factor/0.3 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(150, lb_factor/0.35 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(150, rb_factor/0.3 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(150, lf_factor/0.55 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(150, rf_factor/0.37 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(150, lb_factor/0.58 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(150, rb_factor/0.52 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
