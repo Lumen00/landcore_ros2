@@ -95,10 +95,10 @@ class Cartesian_Subscriber(Node):
             0.51551162
         ]
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
-            0.8*0.756 * (self.delay[0] / self.tc[0]),  # Left Front    
-            0.8*0.756 * (self.delay[1] / self.tc[1]),  # Right Front   
-            0.8*0.756 * (self.delay[2] / self.tc[2]),  # Left Back     
-            0.8*0.756 * (self.delay[3] / self.tc[3])   # Right Back    
+            0.5*0.756 * (self.delay[0] / self.tc[0]),  # Left Front    
+            0.5*0.756 * (self.delay[1] / self.tc[1]),  # Right Front   
+            0.5*0.756 * (self.delay[2] / self.tc[2]),  # Left Back     
+            0.5*0.756 * (self.delay[3] / self.tc[3])   # Right Back    
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
             2 * self.tc[0], # Left Front    
