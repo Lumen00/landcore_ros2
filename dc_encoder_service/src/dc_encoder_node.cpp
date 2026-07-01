@@ -25,7 +25,7 @@ std::vector<int> pin_handles = {};
 std::vector<Timer> encoder_timers = {};
 std::vector<long double> encoder_times = {0,0,0,0};
 std::vector<int> encoder_tick_count = {0,0,0,0};
-int encoder_tick_threshold = 30;
+int encoder_tick_threshold = 60;
 std::vector<int> read_pins = {6, 13, 20, 26};
 double epsilon = std::exp(-9);
 std::mutex encoder_mutex;
@@ -56,18 +56,6 @@ std::shared_ptr<dc_encoder_service::srv::MotorPI::Response> response){
       encoder_tick_count.at(iter) = 0;
       iter++;
     }
-    // else if (it->elapsedSeconds() <= epsilon){ 
-      // If time is still small or 0, assume speed 0 so it doesn't get held up.
-      // all_encoders.push_back(0);
-      // it--;
-      // continue;
-    // }
-    // else { // Otherwise, use the formula RPM = (1/341.2) * (60/dT). Multiply by 2pi/60 for rad/s
-    //   long double elapsed = encoder_times.at(iter);
-    //   all_encoders.push_back((encoder_tick_threshold/341.2) * ((2.0*M_PI) / elapsed));
-    //   iter++;
-    // }
-    // RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"it: %f", it->elapsedSeconds());
   }
 
   // Send back the speed of current wheels.
