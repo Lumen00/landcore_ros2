@@ -179,7 +179,7 @@ class Cartesian_Subscriber(Node):
             max(0, min(80, lf_factor/0.25 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
             max(0, min(80, rf_factor/0.25 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
             max(0, min(80, lb_factor/0.25 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(80, rb_factor/0.25 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(80, rb_factor/0.2 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
