@@ -204,7 +204,7 @@ class Cartesian_Subscriber(Node):
             # self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
 
         # Check if motor should be running in reverse.
-        for i, reverse in reversed:
+        for i, reverse in enumerate(reversed):
             if reverse:
                 pwm[i] = -pwm[i]
 
