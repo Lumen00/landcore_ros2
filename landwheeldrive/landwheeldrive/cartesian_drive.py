@@ -152,6 +152,18 @@ class Cartesian_Subscriber(Node):
         response_time = time_now - self.last_response_time
         self.last_response_time = time_now
 
+        # Handle for negative speeds.
+        # If any factor is negative, it should drive in reverse.
+        # Take the abs of each factor and continue.
+        # Reapply the negative sign to the pwm command.
+        # Switching from forwards to backwards or backwards to forwards
+        # should be okay because errors are reset with every new command.
+        reversed = [False, False, False, False]
+        for i, factor in enumerate(wheels):
+            if factor < 0:
+                reversed[i] = True
+                wheels[i] = abs(wheels[i])
+
         # Calculate errors
         # P error
         errors = [
@@ -169,6 +181,7 @@ class Cartesian_Subscriber(Node):
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
             ]
         else: 
+            errors = [0,0,0,0]
             self.D_error = [0,0,0,0]
             self.I_error = [0,0,0,0]
             self.prev_error = [0,0,0,0]
@@ -176,10 +189,10 @@ class Cartesian_Subscriber(Node):
                 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(80, lf_factor/0.2 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(80, rf_factor/0.2 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(80, lb_factor/0.2 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(80, rb_factor/0.2 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, lf_factor/0.2 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, rf_factor/0.2 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, lb_factor/0.2 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, rb_factor/0.2 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
@@ -189,6 +202,11 @@ class Cartesian_Subscriber(Node):
         # Apply transformation to account for wheels spinning the other way.
         # if self.current_msg:
             # self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
+
+        # Check if motor should be running in reverse.
+        for i, reverse in reversed:
+            if reverse:
+                pwm[i] = -pwm[i]
 
         # Command motors to run at PWMs
         self.run_motor(left_front, int(pwm[0]))
