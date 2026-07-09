@@ -127,7 +127,7 @@ class Cartesian_Subscriber(Node):
         self.epsilon = pow(10, -6)
 
         # Run PID_control() continuously on a timer.
-        self.timer = self.create_timer(0.05, self.PID_control)
+        self.timer = self.create_timer(0.01, self.PID_control)
         
     def listener_callback(self, msg):
         # The callback should exclusively be for updating the desired speed.
@@ -198,10 +198,10 @@ class Cartesian_Subscriber(Node):
 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(70, wheels[0]/0.2 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(70, wheels[1]/0.2 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(70, wheels[2]/0.2 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(70, wheels[3]/0.2 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, wheels[0]/0.6 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, wheels[1]/0.6 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, wheels[2]/0.6 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, wheels[3]/0.6 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
