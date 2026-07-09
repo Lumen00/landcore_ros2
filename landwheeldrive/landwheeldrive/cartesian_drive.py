@@ -124,7 +124,7 @@ class Cartesian_Subscriber(Node):
         # self.new_cmd_flg = False
         # self.new_cmd_flgs = [False, False, False, False]
         # self.old_wheel_factors = [0,0,0,0]
-        # self.epsilon = pow(10, -2)
+        self.epsilon = pow(10, -6)
 
         # Run PID_control() continuously on a timer.
         self.timer = self.create_timer(0.01, self.PID_control)
@@ -151,18 +151,21 @@ class Cartesian_Subscriber(Node):
         rb_factor = (self.x - self.y + (self.lx + self.ly)*self.rot)/self.r
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
 
+        # Check if stop command issued.
+        if all([spd_cmd < self.epsilon for spd_cmd in wheels]):
+            pwm = [0,0,0,0]
+            self.run_motor(left_front, int(pwm[0]))
+            self.run_motor(right_front, int(pwm[1]))
+            self.run_motor(left_back, -int(pwm[2]))
+            self.run_motor(right_back, -int(pwm[3]))
+            self.get_logger().info('STOP')
+            return
+
         # Read current speeds from encoders.
         response = self.pid.send_request(spd_in=wheels)
         time_now = time.perf_counter()
         response_time = time_now - self.last_response_time
         self.last_response_time = time_now
-
-        current_speed = [
-            response.speed_front_left,
-            response.speed_front_right,
-            response.speed_back_left,
-            response.speed_back_right
-        ]
 
         # Handle for negative speeds.
         # If any factor is negative, it should drive in reverse.
@@ -186,10 +189,9 @@ class Cartesian_Subscriber(Node):
         ]
         # I & D error
         self.D_error = [
-                # (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
+                (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
                 # Derivative on measurement as opposed to derivative on error.
-                (current_speed[id] - last_speed)/response_time for id, last_speed in enumerate(self.prev_speed)
-
+                # (current_speed[id] - last_speed)/response_time for id, last_speed in enumerate(self.prev_speed)
             ]
         self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
@@ -197,15 +199,15 @@ class Cartesian_Subscriber(Node):
 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(70, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] - self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(70, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] - self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(70, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] - self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(70, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] - self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, wheels[0]/0.3 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, wheels[1]/0.3 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, wheels[2]/0.3 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, wheels[3]/0.3 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
         # self.get_logger().info(f'I: {self.I_error}')
-        self.get_logger().info(f'D: {self.D_error}')
+        # self.get_logger().info(f'D: {self.D_error}')
 
         # Apply transformation to account for wheels spinning the other way.
         # if self.current_msg:
@@ -224,7 +226,6 @@ class Cartesian_Subscriber(Node):
         self.run_motor(right_back, -int(pwm[3]))
 
         self.prev_error = errors
-        self.prev_speed = current_speed
 
     def run_motor(self, motor:DC_Motor, value:int):
         motor.mh.setSpeed(abs(value))
