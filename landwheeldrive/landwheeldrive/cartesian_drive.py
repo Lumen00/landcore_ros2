@@ -9,7 +9,8 @@ import time
 import math
 
 from dc_encoder_service.srv import MotorPI
-from std_msgs.msg import Float32MultiArray
+# from std_msgs.msg import Float32MultiArray
+from geometry_msgs.msg import Twist
 from .Emakefun_MotorHAT import Emakefun_MotorHAT
 
 
@@ -65,7 +66,7 @@ class PI_Client(Node):
 class Cartesian_Subscriber(Node):
     def __init__(self):
         super().__init__('cartesian_subscriber')
-        self.subscriber_ = self.create_subscription(Float32MultiArray,
+        self.subscriber_ = self.create_subscription(Twist,
                                                      'cartesian_heading',
                                                       self.listener_callback,
                                                       1)
@@ -130,9 +131,9 @@ class Cartesian_Subscriber(Node):
         # Parse information in the array to be given to the motors.
         # If negative, go backwards and apply absolute value.
         # Message is in format x, y, rotation.
-        self.x = msg.data[0]
-        self.y = msg.data[1]
-        self.rot = msg.data[2]
+        self.x = msg.linear.x
+        self.y = msg.linear.y
+        self.rot = msg.angular.z
         # self.get_logger().info(f'{msg}')
         self.new_cmd_flg = True
 
@@ -196,7 +197,7 @@ class Cartesian_Subscriber(Node):
         ] 
 
         # self.get_logger().info(f'P: {errors}')
-        # self.get_logger().info(f'I: {self.I_error}')
+        self.get_logger().info(f'I: {self.I_error}')
         # self.get_logger().info(f'D: {self.D_error}')
 
         # Apply transformation to account for wheels spinning the other way.
@@ -207,7 +208,7 @@ class Cartesian_Subscriber(Node):
         for i, reverse in enumerate(reversed):
             if reverse:
                 pwm[i] = -pwm[i]
-        self.get_logger().info(f'Final PWM: {pwm}')
+        # self.get_logger().info(f'Final PWM: {pwm}')
 
         # Command motors to run at PWMs
         self.run_motor(left_front, int(pwm[0]))

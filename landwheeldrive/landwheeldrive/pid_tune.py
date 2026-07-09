@@ -71,7 +71,7 @@ class PID_Tuner(Node):
 			self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 5
+		duration = 10
 		while (time.perf_counter() - start) < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
