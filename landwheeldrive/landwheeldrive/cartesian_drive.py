@@ -182,10 +182,10 @@ class Cartesian_Subscriber(Node):
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
             ]
         else: 
-            errors = [0,0,0,0]
-            self.D_error = [0,0,0,0]
-            self.I_error = [0,0,0,0]
-            self.prev_error = [0,0,0,0]
+            # errors = [0,0,0,0]
+            # self.D_error = [0,0,0,0]
+            # self.I_error = [0,0,0,0]
+            # self.prev_error = [0,0,0,0]
             self.new_cmd_flg = False
                 
         # Apply Feed Forward + PID control to calculate PWM.
