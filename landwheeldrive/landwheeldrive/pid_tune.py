@@ -84,7 +84,7 @@ class PID_Tuner(Node):
 											[response.speed_front_right],
 											[response.speed_back_left],
 											[response.speed_back_right]])
-				self.get_logger().info(f'collected response: {response}')
+				# self.get_logger().info(f'collected response: {response}')
 		# Display the speeds and times as four graphs.
 		if pwm != 0:
 			self.get_logger().info('Stopping PWM drive.')

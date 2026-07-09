@@ -207,6 +207,7 @@ class Cartesian_Subscriber(Node):
         for i, reverse in enumerate(reversed):
             if reverse:
                 pwm[i] = -pwm[i]
+        self.get_logger().info(f'Final PWM: {pwm}')
 
         # Command motors to run at PWMs
         self.run_motor(left_front, int(pwm[0]))
