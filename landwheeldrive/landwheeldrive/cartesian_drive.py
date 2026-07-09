@@ -120,10 +120,13 @@ class Cartesian_Subscriber(Node):
         self.lx = 0.1315 # Distance from centre to wheel on x axis.
         self.ly = 0.135 # Distance from centre to wheel on y axis.
         self.r = 0.04 # Radius of wheels
-        self.new_cmd_flg = False
+        # self.new_cmd_flg = False
+        self.new_cmd_flgs = [False, False, False, False]
+        self.old_wheel_factors = [0,0,0,0]
+        self.epsilon = pow(10, -3)
 
         # Run PID_control() continuously on a timer.
-        self.timer = self.create_timer(0.1, self.PID_control)
+        self.timer = self.create_timer(0.05, self.PID_control)
         
     def listener_callback(self, msg):
         # The callback should exclusively be for updating the desired speed.
@@ -135,7 +138,7 @@ class Cartesian_Subscriber(Node):
         self.y = msg.linear.y
         self.rot = msg.angular.z
         # self.get_logger().info(f'{msg}')
-        self.new_cmd_flg = True
+        # self.new_cmd_flg = True
 
 
     def PID_control(self):
@@ -146,6 +149,17 @@ class Cartesian_Subscriber(Node):
         lb_factor = (self.x + self.y - (self.lx + self.ly)*self.rot)/self.r
         rb_factor = (self.x - self.y + (self.lx + self.ly)*self.rot)/self.r
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
+
+        # Problem: Error is recalculated from scratch every time a new message is received.
+        # It should only be recalculated from scratch if the given parameters for each wheel are the same.
+        # Solution: For each wheel, evaluate how different the wheel factor is from the previous wheel factor.
+        # If it is different by n, do not flag a new command. This means a flag is required for each wheel.
+        
+        # Check for difference between new wheel factors and old ones. True if greater than epsilon.
+        self.new_cmd_flgs = ([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])
+
+        # Save the current wheel factors as the old ones.
+        self.old_wheel_factors = wheels
 
         # Read current speeds from encoders.
         response = self.pid.send_request(spd_in=wheels)
@@ -174,20 +188,23 @@ class Cartesian_Subscriber(Node):
             wheels[3] - response.speed_back_right,
         ]
         # I & D error
-        if not self.new_cmd_flg:
-            self.D_error = [
+        self.D_error = [
                 (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
             ]
-            self.I_error = [
+        self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
             ]
-        else: 
-            # errors = [0,0,0,0]
-            # self.D_error = [0,0,0,0]
-            # self.I_error = [0,0,0,0]
-            # self.prev_error = [0,0,0,0]
-            self.new_cmd_flg = False
-                
+        # Check new_cmd_flgs for true for whether or not to zero errors. 
+        for i, check in enumerate(self.new_cmd_flgs):
+            if check: # If true, this means that errors must be zeroed for that wheel. 
+                errors[i] = 0
+                self.D_error[i] = 0
+                self.I_error[i] = 0
+                self.prev_error[i] = 0
+                self.new_cmd_flgs[i] = False
+
+
+
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
             max(0, min(70, wheels[0]/0.2 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
