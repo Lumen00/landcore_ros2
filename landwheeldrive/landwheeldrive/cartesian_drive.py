@@ -215,7 +215,7 @@ class Cartesian_Subscriber(Node):
         ] 
 
         # self.get_logger().info(f'P: {errors}')
-        self.get_logger().info(f'I: {self.I_error}')
+        # self.get_logger().info(f'I: {self.I_error}')
         # self.get_logger().info(f'D: {self.D_error}')
 
         # Apply transformation to account for wheels spinning the other way.

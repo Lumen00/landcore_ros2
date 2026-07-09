@@ -20,7 +20,8 @@
 
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32MultiArray, Int16MultiArray
+from std_msgs.msg import Int16MultiArray
+from geometry_msgs.msg import Twist
 # from landwheeldrive.cartesian_drive import PI_Client
 from dc_encoder_service.srv import MotorPI
 import time
@@ -49,7 +50,7 @@ class PI_Client(Node):
 class PID_Tuner(Node):
 	def __init__(self):
 		super().__init__(node_name='pid_publisher')
-		self.speed_publisher = self.create_publisher(Float32MultiArray,
+		self.speed_publisher = self.create_publisher(Twist,
 												  'cartesian_heading', 10)
 		self.pwm_publisher = self.create_publisher(Int16MultiArray,
 												  'motor_drive', 10)
@@ -66,12 +67,14 @@ class PID_Tuner(Node):
 			msg.data = [pwm, pwm, pwm, pwm]
 			self.pwm_publisher.publish(msg)
 		else:
-			msg = Float32MultiArray()
-			msg.data = [speed, speed, 0]
+			msg = Twist()
+			msg.linear.x = float(speed)
+			msg.linear.y = float(speed)
+			msg.angular.z = float(0)
 			self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
-		duration = 10
+		duration = 5
 		while (time.perf_counter() - start) < duration:
 			# Call speed service.
 			response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
@@ -94,7 +97,7 @@ class PID_Tuner(Node):
 			spd = [100,100,100,100]
 			while any([wheel_spd > self.epsilon for wheel_spd in spd]):
 				self.get_logger().info('Stopping Speed drive.')
-				msg.data = [0, 0, 0]
+				msg = Twist()
 				self.speed_publisher.publish(msg)
 				response = self.encoder_client.send_request(spd_in=[speed, speed, speed, speed])
 				spd = [response.speed_front_left, response.speed_front_right, response.speed_back_left, response.speed_back_right]
@@ -218,7 +221,7 @@ def main(args=None):
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
 	# Speed is in m/s, but each wheel is commanded in rad/s based on mecanum wheel equations.
-	pid_pub.pid_tune(speed=float(-0.2))
+	pid_pub.pid_tune(speed=float(-0.15))
 	# pid_pub.pid_tune(speed=float(0), pwm=60)
 
 	pid_pub.destroy_node()
