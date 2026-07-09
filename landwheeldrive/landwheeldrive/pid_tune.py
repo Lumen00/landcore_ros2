@@ -67,7 +67,7 @@ class PID_Tuner(Node):
 			self.pwm_publisher.publish(msg)
 		else:
 			msg = Float32MultiArray()
-			msg.data = [speed, 0, 0]
+			msg.data = [speed, speed, 0]
 			self.speed_publisher.publish(msg)
 		# Begin recording encoder speeds.
 		start = time.perf_counter()
@@ -218,7 +218,7 @@ def main(args=None):
 	pid_pub = PID_Tuner()
 	pid_pub.encoder_client = PI_Client()
 	# Speed is in m/s, but each wheel is commanded in rad/s based on mecanum wheel equations.
-	pid_pub.pid_tune(speed=float(-0.3))
+	pid_pub.pid_tune(speed=float(-0.2))
 	# pid_pub.pid_tune(speed=float(0), pwm=60)
 
 	pid_pub.destroy_node()

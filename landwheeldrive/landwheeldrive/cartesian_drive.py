@@ -123,7 +123,7 @@ class Cartesian_Subscriber(Node):
         # self.new_cmd_flg = False
         self.new_cmd_flgs = [False, False, False, False]
         self.old_wheel_factors = [0,0,0,0]
-        self.epsilon = pow(10, -3)
+        self.epsilon = pow(10, -1)
 
         # Run PID_control() continuously on a timer.
         self.timer = self.create_timer(0.05, self.PID_control)
@@ -157,6 +157,7 @@ class Cartesian_Subscriber(Node):
         
         # Check for difference between new wheel factors and old ones. True if greater than epsilon.
         self.new_cmd_flgs = ([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])
+        self.get_logger().info(f'{self.new_cmd_flgs}')
 
         # Save the current wheel factors as the old ones.
         self.old_wheel_factors = wheels
