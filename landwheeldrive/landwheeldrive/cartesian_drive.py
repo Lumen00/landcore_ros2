@@ -151,18 +151,6 @@ class Cartesian_Subscriber(Node):
         rb_factor = (self.x - self.y + (self.lx + self.ly)*self.rot)/self.r
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
 
-        # Problem: Error is recalculated from scratch every time a new message is received.
-        # It should only be recalculated from scratch if the given parameters for each wheel are the same.
-        # Solution: For each wheel, evaluate how different the wheel factor is from the previous wheel factor.
-        # If it is different by n, do not flag a new command. This means a flag is required for each wheel.
-        
-        # Check for difference between new wheel factors and old ones. True if greater than epsilon.
-        # self.new_cmd_flgs = ([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])
-        # self.get_logger().info(f'{([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])}')
-
-        # Save the current wheel factors as the old ones.
-        # self.old_wheel_factors = wheels
-
         # Read current speeds from encoders.
         response = self.pid.send_request(spd_in=wheels)
         time_now = time.perf_counter()
@@ -206,28 +194,18 @@ class Cartesian_Subscriber(Node):
         self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
             ]
-        # # Check new_cmd_flgs for true for whether or not to zero errors. 
-        # for i, check in enumerate(self.new_cmd_flgs):
-        #     if check: # If true, this means that errors must be zeroed for that wheel. 
-        #         errors[i] = 0
-        #         self.D_error[i] = 0
-        #         self.I_error[i] = 0
-        #         self.prev_error[i] = 0
-        #         self.new_cmd_flgs[i] = False
-
-
 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(70, wheels[0]/0.25 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] - self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(70, wheels[1]/0.25 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] - self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(70, wheels[2]/0.25 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] - self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(70, wheels[3]/0.25 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] - self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] - self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] - self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] - self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] - self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
         # self.get_logger().info(f'I: {self.I_error}')
-        # self.get_logger().info(f'D: {self.D_error}')
+        self.get_logger().info(f'D: {self.D_error}')
 
         # Apply transformation to account for wheels spinning the other way.
         # if self.current_msg:
@@ -249,9 +227,6 @@ class Cartesian_Subscriber(Node):
         self.prev_speed = current_speed
 
     def run_motor(self, motor:DC_Motor, value:int):
-        # motor.mh.setSpeed(255)
-        # motor.mh.run(Emakefun_MotorHAT.FORWARD)
-        # time.sleep(0.1)
         motor.mh.setSpeed(abs(value))
         if value < 0:
             motor.mh.run(Emakefun_MotorHAT.BACKWARD)
@@ -269,14 +244,6 @@ def main(args=None):
     rclpy.init(args=args)
 
     motor_sub = Cartesian_Subscriber()
-
-    # executor = MultiThreadedExecutor()
-    # executor.add_node(motor_sub)
-    # try:
-    #     executor.spin()
-    # finally:
-    #     motor_sub.destroy_node()
-    #     rclpy.shutdown()
 
     rclpy.spin(motor_sub)
 
