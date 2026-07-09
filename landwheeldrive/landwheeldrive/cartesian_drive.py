@@ -160,7 +160,7 @@ class Cartesian_Subscriber(Node):
         self.get_logger().info(f'{self.old_wheel_factors}, {wheels}')
 
         # Save the current wheel factors as the old ones.
-        self.old_wheel_factors = wheels
+        self.old_wheel_factors = wheels.copy()
 
         # Read current speeds from encoders.
         response = self.pid.send_request(spd_in=wheels)
