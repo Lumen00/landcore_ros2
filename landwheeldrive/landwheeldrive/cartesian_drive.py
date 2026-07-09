@@ -121,9 +121,9 @@ class Cartesian_Subscriber(Node):
         self.ly = 0.135 # Distance from centre to wheel on y axis.
         self.r = 0.04 # Radius of wheels
         # self.new_cmd_flg = False
-        self.new_cmd_flgs = [False, False, False, False]
-        self.old_wheel_factors = [0,0,0,0]
-        self.epsilon = pow(10, -2)
+        # self.new_cmd_flgs = [False, False, False, False]
+        # self.old_wheel_factors = [0,0,0,0]
+        # self.epsilon = pow(10, -2)
 
         # Run PID_control() continuously on a timer.
         self.timer = self.create_timer(0.05, self.PID_control)
@@ -156,11 +156,11 @@ class Cartesian_Subscriber(Node):
         # If it is different by n, do not flag a new command. This means a flag is required for each wheel.
         
         # Check for difference between new wheel factors and old ones. True if greater than epsilon.
-        self.new_cmd_flgs = ([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])
-        self.get_logger().info(f'{([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])}')
+        # self.new_cmd_flgs = ([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])
+        # self.get_logger().info(f'{([abs(old_speed - wheels[i]) >= self.epsilon  for i, old_speed in enumerate(self.old_wheel_factors)])}')
 
         # Save the current wheel factors as the old ones.
-        self.old_wheel_factors = wheels
+        # self.old_wheel_factors = wheels
 
         # Read current speeds from encoders.
         response = self.pid.send_request(spd_in=wheels)
@@ -195,14 +195,14 @@ class Cartesian_Subscriber(Node):
         self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
             ]
-        # Check new_cmd_flgs for true for whether or not to zero errors. 
-        for i, check in enumerate(self.new_cmd_flgs):
-            if check: # If true, this means that errors must be zeroed for that wheel. 
-                errors[i] = 0
-                self.D_error[i] = 0
-                self.I_error[i] = 0
-                self.prev_error[i] = 0
-                self.new_cmd_flgs[i] = False
+        # # Check new_cmd_flgs for true for whether or not to zero errors. 
+        # for i, check in enumerate(self.new_cmd_flgs):
+        #     if check: # If true, this means that errors must be zeroed for that wheel. 
+        #         errors[i] = 0
+        #         self.D_error[i] = 0
+        #         self.I_error[i] = 0
+        #         self.prev_error[i] = 0
+        #         self.new_cmd_flgs[i] = False
 
 
 
