@@ -152,7 +152,7 @@ class Cartesian_Subscriber(Node):
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
 
         # Check if stop command issued.
-        if all([spd_cmd <= self.epsilon for spd_cmd in wheels]):
+        if all([abs(spd_cmd) <= self.epsilon for spd_cmd in wheels]):
             pwm = [0,0,0,0]
             self.run_motor(left_front, int(pwm[0]))
             self.run_motor(right_front, int(pwm[1]))
