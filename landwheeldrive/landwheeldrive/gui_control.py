@@ -171,7 +171,7 @@ class RotationSlider(QWidget):
         self._drag  = False
         self.setFixedHeight(62)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
-        self._max_speed = 17.8*0.04/(0.1315+0.135)
+        self._max_speed = 0.8 #17.8*0.04/(0.1315+0.135)
 
         self._timer = QTimer(self)
         self._timer.setInterval(16)
