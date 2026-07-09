@@ -127,7 +127,7 @@ class Cartesian_Subscriber(Node):
         self.epsilon = pow(10, -6)
 
         # Run PID_control() continuously on a timer.
-        self.timer = self.create_timer(0.01, self.PID_control)
+        self.timer = self.create_timer(0.05, self.PID_control)
         
     def listener_callback(self, msg):
         # The callback should exclusively be for updating the desired speed.
