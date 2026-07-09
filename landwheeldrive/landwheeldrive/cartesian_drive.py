@@ -123,7 +123,7 @@ class Cartesian_Subscriber(Node):
         # self.new_cmd_flg = False
         self.new_cmd_flgs = [False, False, False, False]
         self.old_wheel_factors = [0,0,0,0]
-        self.epsilon = pow(10, -1)
+        self.epsilon = pow(10, -2)
 
         # Run PID_control() continuously on a timer.
         self.timer = self.create_timer(0.05, self.PID_control)
