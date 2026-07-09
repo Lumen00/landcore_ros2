@@ -103,16 +103,16 @@ class Cartesian_Subscriber(Node):
             0.756 * (self.delay[3] / self.tc[3])   # Right Back    
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
-            2 * self.tc[0], # Left Front    
-            2 * self.tc[1], # Right Front   
-            2 * self.tc[2], # Left Back     
-            2 * self.tc[3], # Right Back    
+            1.5*2 * self.tc[0], # Left Front    
+            1.5*2 * self.tc[1], # Right Front   
+            1.5*2 * self.tc[2], # Left Back     
+            1.5*2 * self.tc[3], # Right Back    
         ]
         self.Kd = [ # Ki = wn**2*time_cnst/K
-             0.5 * self.tc[0], # Left Front    
-             0.5 * self.tc[1], # Right Front   
-             0.5 * self.tc[2], # Left Back     
-             0.5 * self.tc[3], # Right Back    
+            2.5* 0.5 * self.tc[0], # Left Front    
+            2.5* 0.5 * self.tc[1], # Right Front   
+            2.5* 0.5 * self.tc[2], # Left Back     
+            2.5* 0.5 * self.tc[3], # Right Back    
         ]
         self.x = 0
         self.y = 0
@@ -152,13 +152,13 @@ class Cartesian_Subscriber(Node):
         wheels = [lf_factor, rf_factor, lb_factor, rb_factor]         
 
         # Check if stop command issued.
-        if all([spd_cmd < self.epsilon for spd_cmd in wheels]):
+        if all([spd_cmd <= self.epsilon for spd_cmd in wheels]):
             pwm = [0,0,0,0]
             self.run_motor(left_front, int(pwm[0]))
             self.run_motor(right_front, int(pwm[1]))
             self.run_motor(left_back, -int(pwm[2]))
             self.run_motor(right_back, -int(pwm[3]))
-            self.get_logger().info('STOP')
+            # self.get_logger().info('STOP')
             return
 
         # Read current speeds from encoders.
@@ -190,7 +190,6 @@ class Cartesian_Subscriber(Node):
         # I & D error
         self.D_error = [
                 (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
-                # Derivative on measurement as opposed to derivative on error.
                 # (current_speed[id] - last_speed)/response_time for id, last_speed in enumerate(self.prev_speed)
             ]
         self.I_error = [
@@ -199,10 +198,10 @@ class Cartesian_Subscriber(Node):
 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(70, wheels[0]/0.3 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(70, wheels[1]/0.3 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(70, wheels[2]/0.3 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(70, wheels[3]/0.3 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, wheels[0]/0.2 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, wheels[1]/0.2 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, wheels[2]/0.2 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, wheels[3]/0.2 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
