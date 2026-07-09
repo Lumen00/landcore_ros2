@@ -97,10 +97,10 @@ class Cartesian_Subscriber(Node):
             0.51551162
         ]
         self.Kp = [ # Kp = (2*damping_cnst*wn*time_cnst - 1) / K
-            0.7*0.756 * (self.delay[0] / self.tc[0]),  # Left Front    
-            0.7*0.756 * (self.delay[1] / self.tc[1]),  # Right Front   
-            0.7*0.756 * (self.delay[2] / self.tc[2]),  # Left Back     
-            0.7*0.756 * (self.delay[3] / self.tc[3])   # Right Back    
+            0.4*0.756 * (self.delay[0] / self.tc[0]),  # Left Front    
+            0.4*0.756 * (self.delay[1] / self.tc[1]),  # Right Front   
+            0.4*0.756 * (self.delay[2] / self.tc[2]),  # Left Back     
+            0.4*0.756 * (self.delay[3] / self.tc[3])   # Right Back    
         ]
         self.Ki = [ # Ki = wn**2*time_cnst/K
             1.5*2 * self.tc[0], # Left Front    
@@ -210,7 +210,7 @@ class Cartesian_Subscriber(Node):
 
         # Apply transformation to account for wheels spinning the other way.
         # if self.current_msg:
-            # self.get_logger().info(f'heard {self.current_msg.data} transformed to {pwm}')
+        self.get_logger().info(f'transformed to {pwm}')
 
         # Check if motor should be running in reverse.
         for i, reverse in enumerate(reversed):
