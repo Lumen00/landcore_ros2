@@ -74,6 +74,7 @@ class Cartesian_Subscriber(Node):
         self.I_error = [0,0,0,0] # Cumulative errors for each wheel.
         self.D_error = [0,0,0,0] # Derivative error for each wheel. 
         self.prev_error = [0,0,0,0] # Last error for each wheel. 
+        self.prev_speed = [0,0,0,0]
         self.last_response_time = time.perf_counter()
         self.delay = [
             # 0.2234584219986573,
@@ -126,7 +127,7 @@ class Cartesian_Subscriber(Node):
         # self.epsilon = pow(10, -2)
 
         # Run PID_control() continuously on a timer.
-        self.timer = self.create_timer(0.05, self.PID_control)
+        self.timer = self.create_timer(0.01, self.PID_control)
         
     def listener_callback(self, msg):
         # The callback should exclusively be for updating the desired speed.
@@ -168,6 +169,13 @@ class Cartesian_Subscriber(Node):
         response_time = time_now - self.last_response_time
         self.last_response_time = time_now
 
+        current_speed = [
+            response.speed_front_left,
+            response.speed_front_right,
+            response.speed_back_left,
+            response.speed_back_right
+        ]
+
         # Handle for negative speeds.
         # If any factor is negative, it should drive in reverse.
         # Take the abs of each factor and continue.
@@ -190,7 +198,10 @@ class Cartesian_Subscriber(Node):
         ]
         # I & D error
         self.D_error = [
-                (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
+                # (errors[id] - last_error)/response_time for id, last_error in enumerate(self.prev_error)
+                # Derivative on measurement as opposed to derivative on error.
+                (current_speed[id] - last_speed)/response_time for id, last_speed in enumerate(self.prev_speed)
+
             ]
         self.I_error = [
                 add_error + errors[id]*response_time for id, add_error in enumerate(self.I_error)
@@ -208,10 +219,10 @@ class Cartesian_Subscriber(Node):
 
         # Apply Feed Forward + PID control to calculate PWM.
         pwm = [
-            max(0, min(70, wheels[0]/0.25 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] + self.Kd[0]*self.D_error[0])), # Left Front    
-            max(0, min(70, wheels[1]/0.25 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] + self.Kd[1]*self.D_error[1])), # Right Front   
-            max(0, min(70, wheels[2]/0.25 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] + self.Kd[2]*self.D_error[2])), # Left Back     
-            max(0, min(70, wheels[3]/0.25 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] + self.Kd[3]*self.D_error[3])) # Right Back    
+            max(0, min(70, wheels[0]/0.25 + self.Kp[0]*errors[0] + self.Ki[0]*self.I_error[0] - self.Kd[0]*self.D_error[0])), # Left Front    
+            max(0, min(70, wheels[1]/0.25 + self.Kp[1]*errors[1] + self.Ki[1]*self.I_error[1] - self.Kd[1]*self.D_error[1])), # Right Front   
+            max(0, min(70, wheels[2]/0.25 + self.Kp[2]*errors[2] + self.Ki[2]*self.I_error[2] - self.Kd[2]*self.D_error[2])), # Left Back     
+            max(0, min(70, wheels[3]/0.25 + self.Kp[3]*errors[3] + self.Ki[3]*self.I_error[3] - self.Kd[3]*self.D_error[3])) # Right Back    
         ] 
 
         # self.get_logger().info(f'P: {errors}')
@@ -235,6 +246,7 @@ class Cartesian_Subscriber(Node):
         self.run_motor(right_back, -int(pwm[3]))
 
         self.prev_error = errors
+        self.prev_speed = current_speed
 
     def run_motor(self, motor:DC_Motor, value:int):
         # motor.mh.setSpeed(255)
