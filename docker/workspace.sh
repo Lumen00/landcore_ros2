@@ -19,6 +19,7 @@ rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 pip install PyQt6 smbus3 matplotlib
 apt-get install libxcb-cursor0
 apt install liblgpio-dev -y
+apt install ros-jazzy-slam-toolbox
 
 # Build the packages
 echo "Building packages..."
