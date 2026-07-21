@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
+    <include file="$(find-pkg-share sllidar_ros2)/launch//sllidar_c1_launch.py"/>
     <node pkg="landwheeldrive" exec="cartesian_driver"/>
     <node pkg="dc_encoder_service" exec="dc_encoder_server"/>
 </launch>
