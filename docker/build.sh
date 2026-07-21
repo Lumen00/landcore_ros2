@@ -22,7 +22,7 @@ build_docker_image()
     # -t landcore:latest: Tag the image as landcore:latest
     # $PARENT_PATH: Use the parent directory as the build context, allowing access to all package files
     # --no-cache: Build the image without using the cache, ensuring fresh dependencies
-    sudo docker image build -f $SCRIPT_PATH/Dockerfile -t lumen00/landcore:latest $PARENT_PATH --platform linux/amd64,linux/arm64/v8 #--no-cache
+    sudo docker image buildx -f $SCRIPT_PATH/Dockerfile -t lumen00/landcore:latest $PARENT_PATH --platform linux/amd64,linux/arm64/v8 #--no-cache
 }
 
 # Function to create a shared folder
