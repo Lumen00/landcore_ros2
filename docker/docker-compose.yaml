@@ -2,7 +2,7 @@ version: '3.3'
 services:
   landcore: &landcore
     container_name: landcore
-    image: landcore:latest
+    image: lumen00/landcore:latest
     ipc: host
     network_mode: host
     privileged: true
