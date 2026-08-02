@@ -24,6 +24,8 @@ apt install liblgpio-dev \
     ros-jazzy-navigation2 \
     ros-jazzy-nav2-bringup \
     ros-jazzy-nav2-minimal-tb* \
+    ros-jazzy-ros2-control \
+    ros-jazzy-ros2-controllers \
     ros-jazzy-slam-toolbox -y 
 
 
