@@ -15,6 +15,7 @@ find_package(rclcpp_lifecycle REQUIRED)
 add_library(mecanum_system_hardware SHARED
   src/mecanum_system_hardware.cpp
   src/motorhat_driver.cpp
+  src/timer.cpp
 )
 
 target_include_directories(mecanum_system_hardware PRIVATE
