@@ -23,8 +23,8 @@ struct WheelWiring
 const std::vector<WheelWiring> kWiring = {
   {13, 19, 3, 2},  // front_left
   {6,  5,  0, 1},  // front_right
-  {20, 21, 4, 5},  // back_left
-  {26, 16, 7, 6},  // back_right
+  {20, 21, 5, 4},  // back_left
+  {26, 16, 6, 7},  // back_right
 };
 }  // namespace
 
