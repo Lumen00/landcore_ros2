@@ -227,7 +227,7 @@
   <!-- ROS2 WHEEL CONTROL -->
   <ros2_control name="MecanumHardware" type="system">
     <hardware>
-      <plugin>mock_components/GenericSystem</plugin>
+      <plugin>land_description/MecanumSystemHardware</plugin>
     </hardware>
     <joint name="front_left_wheel_joint">
       <command_interface name="velocity"/>
