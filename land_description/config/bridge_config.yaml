@@ -12,8 +12,8 @@
   direction: GZ_TO_ROS
 
 # Topic published by DiffDrive plugin
-- ros_topic_name: "/demo/odom"
-  gz_topic_name: "/demo/odom"
+- ros_topic_name: "/mecanum_drive_controller/odometry"
+  gz_topic_name: "/mecanum_drive_controller/odometry"
   ros_type_name: "nav_msgs/msg/Odometry"
   gz_type_name: "gz.msgs.Odometry"
   direction: GZ_TO_ROS
@@ -25,12 +25,18 @@
   gz_type_name: "gz.msgs.Model"
   direction: GZ_TO_ROS
 
-# Topic subscribed to by DiffDrive plugin
-- ros_topic_name: "/demo/cmd_vel"
-  gz_topic_name: "/demo/cmd_vel"
+# Topic subscribed to by MecanumDrive plugin
+- ros_topic_name: "/mecanum_drive_controller/reference"
+  gz_topic_name: "/mecanum_drive_controller/reference"
   ros_type_name: "geometry_msgs/msg/TwistStamped"
   gz_type_name: "gz.msgs.Twist"
   direction: ROS_TO_GZ
+
+- ros_topic_name: "/scan"
+  gz_topic_name: "/scan"
+  ros_type_name: sensor_msgs/msg/LaserScan
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
 
 - ros_topic_name: "/tf"
   gz_topic_name: "/tf"

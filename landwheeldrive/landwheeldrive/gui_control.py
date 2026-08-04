@@ -420,14 +420,14 @@ import rclpy
 from rclpy.node import Node
 import threading
 # from std_msgs.msg import Float32MultiArray
-from geometry_msgs.msg import Twist
+from geometry_msgs.msg import TwistStamped
 
 class GuiPublisher(Node):
     def __init__(self):
         super().__init__('gui_publisher') # The name of the node
         # We want to publish: [x/forward, y/strafe, r/rotation]
-        self.publisher_ = self.create_publisher(Twist, # message type
-                                                'cartesian_heading', # topic name
+        self.publisher_ = self.create_publisher(TwistStamped, # message type
+                                                '/mecanum_drive_controller/reference', # topic name
                                                 1) # QOS
         self.timer = self.create_timer(0.005, self.timer_callback)
         self.x = 0
@@ -435,11 +435,11 @@ class GuiPublisher(Node):
         self.rot = 0
     
     def timer_callback(self):
-        msg = Twist()
-        msg.linear.x = float(self.x)
-        msg.linear.y = float(self.y)
-        msg.angular.z = float(self.rot)
-        # msg.data = [self.x, self.y, self.rot] # 3 values of x/forward, y/strafe, r/rotation. 
+        msg = TwistStamped()
+        msg.twist.linear.x = float(self.x)
+        msg.twist.linear.y = float(self.y)
+        msg.twist.angular.z = -float(self.rot)
+
         self.publisher_.publish(msg)
         # print('published cartesian command:', msg.data)
 
