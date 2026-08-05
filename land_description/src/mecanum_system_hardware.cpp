@@ -192,7 +192,7 @@ hardware_interface::return_type MecanumSystemHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   // Tune this to your motor's actual max rad/s at full PWM
-  const double max_wheel_vel = 10.0;
+  const double max_wheel_vel = 7.0*M_PI;
 
   for (size_t i = 0; i < joint_names_.size(); i++)
   {

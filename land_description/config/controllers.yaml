@@ -36,32 +36,32 @@ mecanum_drive_controller:
     twist_covariance_diagonal: [0.001, 0.001, 0.0, 0.0, 0.0, 0.01]
 
     # Adjust velocity and acceleration parameters.
-    linear:
-      x:
-        max_velocity: 0.1
-        min_velocity: -0.1
-        max_acceleration: 0.5
-        max_deceleration: -0.5
-        max_acceleration_reverse: -0.5
-        max_deceleration_reverse: 0.5
-        # max_jerk: 
-        # min_jerk:
-      y: 
-        max_velocity: 0.1
-        min_velocity: -0.1
-        max_acceleration: 0.5
-        max_deceleration: -0.5
-        max_acceleration_reverse: -0.5
-        max_deceleration_reverse: 0.5
-        # max_jerk:
-        # min_jerk:
-    angular:
-      z:
-        max_velocity: 0.3
-        min_velocity: -0.3
-        max_acceleration: 0.5
-        max_deceleration: 0.5
-        max_acceleration_reverse: -0.5
-        max_deceleration_reverse: 0.5
-        # max_jerk:
-        # min_jerk:
+    # linear:
+    #   x:
+    #     max_velocity: 0.1
+    #     min_velocity: -0.1
+    #     max_acceleration: 0.5
+    #     max_deceleration: -0.5
+    #     max_acceleration_reverse: -0.5
+    #     max_deceleration_reverse: 0.5
+    #     # max_jerk: 
+    #     # min_jerk:
+    #   y: 
+    #     max_velocity: 0.1
+    #     min_velocity: -0.1
+    #     max_acceleration: 0.5
+    #     max_deceleration: -0.5
+    #     max_acceleration_reverse: -0.5
+    #     max_deceleration_reverse: 0.5
+    #     # max_jerk:
+    #     # min_jerk:
+    # angular:
+    #   z:
+    #     max_velocity: 0.3
+    #     min_velocity: -0.3
+    #     max_acceleration: 0.5
+    #     max_deceleration: 0.5
+    #     max_acceleration_reverse: -0.5
+    #     max_deceleration_reverse: 0.5
+    #     # max_jerk:
+    #     # min_jerk:
