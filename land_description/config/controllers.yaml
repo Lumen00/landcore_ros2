@@ -20,7 +20,7 @@ mecanum_drive_controller:
     kinematics:
       base_frame_offset: {x: 0.0, y: 0.0, theta: 0.0}
       wheels_radius: 0.04
-      su,_of_robot_center_projection_on_X_Y_axis: 0.2265
+      sum_of_robot_center_projection_on_X_Y_axis: 0.2265
     
     # If no commands received for timeout, stop.
     reference_timeout: 0.5
