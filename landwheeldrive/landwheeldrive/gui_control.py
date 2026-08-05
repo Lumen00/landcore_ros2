@@ -30,13 +30,13 @@ class JoystickWidget(QWidget):
         self._timer.setInterval(16)
         self._timer.timeout.connect(self._snap_back)
 
-        self._speed_limit = 0.4
+        self._speed_limit = 0.5
 
     def get_xy(self):
         dy = (self._center.x() - self._knob_pos.x()) / self._max_travel
         dx = (self._center.y() - self._knob_pos.y()) / self._max_travel
         return round(max(-self._speed_limit, min(self._speed_limit, dx)), 3), round(max(-self._speed_limit, min(self._speed_limit, dy)), 3)
-
+    
     def mousePressEvent(self, ev):
         if ev.button() == Qt.MouseButton.LeftButton:
             self._timer.stop()
