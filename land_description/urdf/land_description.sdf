@@ -365,5 +365,77 @@
         </ray>
       </sensor>
     </link>
+
+    <!-- RASP PI CAMERA  -->
+    <link name="camera_link">
+      <pose relative_to="camera_joint"/>
+      <visual name="camera_link_visual">
+        <geometry>
+          <box>
+            <size> 
+              0.001 0.025 0.025
+            </size>
+          </box>
+        </geometry>
+      </visual>
+
+      <collision name="camera_link_collision">
+        <geometry>
+          <box>
+            <size>
+            0.001 0.025 0.025
+            </size>
+          </box>
+        </geometry>
+      </collision>
+
+      <xacro:box_inertia m="0.01" w="0.001" d="0.025" h="0.025"/>
+
+      <sensor name="camera_sensor" type="camera">
+        <alwaysOn>true</alwaysOn>
+        <visualize>true</visualize>
+        <update_rate>30.0</update_rate>
+        <topic>camera/image_raw</topic>
+        <gz_frame_id>camera_link</gz_frame_id>
+        <camera name="tower_camera">
+          <horizontal_fov>1.086</horizontal_fov>
+          <image>
+            <width>1920</width> <!-- 1080p-->
+            <height>1080</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.007</stddev>
+          </noise>
+        </camera>
+        <!-- <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+          <alwaysOn>true</alwaysOn>
+          <updateRate>0.0</updateRate>
+          <cameraName>land/camera</cameraName>
+          <imageTopicName>camera/image_raw</imageTopicName>
+          <cameraInfoTopicName>camera/camera_info</cameraInfoTopicName>
+          <frameName>camera_link</frameName>
+          <hackBaseline>0.07</hackBaseline>
+          <distortionK1>0.0</distortionK1>
+          <distortionK2>0.0</distortionK2>
+          <distortionK3>0.0</distortionK3>
+          <distortionT1>0.0</distortionT1>
+          <distortionT2>0.0</distortionT2>
+        </plugin> -->
+      </sensor>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+        <parent>base_link</parent>
+        <child>camera_link</child>
+        <pose relative_to="tower_link">${tower_length/2 + 0.01} 0.0 0.0 0 0 0</pose>
+    </joint>
+
   </model>
 </sdf>
