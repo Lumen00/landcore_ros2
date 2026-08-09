@@ -1,0 +1,33 @@
+running egg_info
+creating ../build/land_camera/land_camera.egg-info
+writing ../build/land_camera/land_camera.egg-info/PKG-INFO
+writing dependency_links to ../build/land_camera/land_camera.egg-info/dependency_links.txt
+writing requirements to ../build/land_camera/land_camera.egg-info/requires.txt
+writing top-level names to ../build/land_camera/land_camera.egg-info/top_level.txt
+writing manifest file '../build/land_camera/land_camera.egg-info/SOURCES.txt'
+reading manifest file '../build/land_camera/land_camera.egg-info/SOURCES.txt'
+writing manifest file '../build/land_camera/land_camera.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/ros2_ws/src/landcore_ros2/build/land_camera/build
+creating /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib
+creating /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib/land_camera
+copying land_camera/camera_node.py -> /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib/land_camera
+copying land_camera/__init__.py -> /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib/land_camera
+running install
+running install_lib
+creating /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera
+copying /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib/land_camera/camera_node.py -> /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera
+copying /root/ros2_ws/src/landcore_ros2/build/land_camera/build/lib/land_camera/__init__.py -> /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera/camera_node.py to camera_node.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera/__init__.py to __init__.cpython-312.pyc
+running install_data
+creating /root/ros2_ws/src/landcore_ros2/install/land_camera/share/ament_index
+creating /root/ros2_ws/src/landcore_ros2/install/land_camera/share/ament_index/resource_index
+creating /root/ros2_ws/src/landcore_ros2/install/land_camera/share/ament_index/resource_index/packages
+copying resource/land_camera -> /root/ros2_ws/src/landcore_ros2/install/land_camera/share/ament_index/resource_index/packages
+copying package.xml -> /root/ros2_ws/src/landcore_ros2/install/land_camera/share/land_camera
+running install_egg_info
+Copying ../build/land_camera/land_camera.egg-info to /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera-0.0.0-py3.12.egg-info
+running install_scripts
+writing list of installed files to '/root/ros2_ws/src/landcore_ros2/build/land_camera/install.log'

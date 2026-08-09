@@ -117,6 +117,9 @@ dc_encoder_service__srv__MotorPI_Request__Sequence__init(dc_encoder_service__srv
   dc_encoder_service__srv__MotorPI_Request * data = NULL;
 
   if (size) {
+    if (size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Request)) {
+      return false;
+    }
     data = (dc_encoder_service__srv__MotorPI_Request *)allocator.zero_allocate(size, sizeof(dc_encoder_service__srv__MotorPI_Request), allocator.state);
     if (!data) {
       return false;
@@ -222,6 +225,9 @@ dc_encoder_service__srv__MotorPI_Request__Sequence__copy(
     return false;
   }
   if (output->capacity < input->size) {
+    if (input->size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Request)) {
+      return false;
+    }
     const size_t allocation_size =
       input->size * sizeof(dc_encoder_service__srv__MotorPI_Request);
     rcutils_allocator_t allocator = rcutils_get_default_allocator();
@@ -366,6 +372,9 @@ dc_encoder_service__srv__MotorPI_Response__Sequence__init(dc_encoder_service__sr
   dc_encoder_service__srv__MotorPI_Response * data = NULL;
 
   if (size) {
+    if (size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Response)) {
+      return false;
+    }
     data = (dc_encoder_service__srv__MotorPI_Response *)allocator.zero_allocate(size, sizeof(dc_encoder_service__srv__MotorPI_Response), allocator.state);
     if (!data) {
       return false;
@@ -471,6 +480,9 @@ dc_encoder_service__srv__MotorPI_Response__Sequence__copy(
     return false;
   }
   if (output->capacity < input->size) {
+    if (input->size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Response)) {
+      return false;
+    }
     const size_t allocation_size =
       input->size * sizeof(dc_encoder_service__srv__MotorPI_Response);
     rcutils_allocator_t allocator = rcutils_get_default_allocator();
@@ -648,6 +660,9 @@ dc_encoder_service__srv__MotorPI_Event__Sequence__init(dc_encoder_service__srv__
   dc_encoder_service__srv__MotorPI_Event * data = NULL;
 
   if (size) {
+    if (size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Event)) {
+      return false;
+    }
     data = (dc_encoder_service__srv__MotorPI_Event *)allocator.zero_allocate(size, sizeof(dc_encoder_service__srv__MotorPI_Event), allocator.state);
     if (!data) {
       return false;
@@ -753,6 +768,9 @@ dc_encoder_service__srv__MotorPI_Event__Sequence__copy(
     return false;
   }
   if (output->capacity < input->size) {
+    if (input->size > SIZE_MAX / sizeof(dc_encoder_service__srv__MotorPI_Event)) {
+      return false;
+    }
     const size_t allocation_size =
       input->size * sizeof(dc_encoder_service__srv__MotorPI_Event);
     rcutils_allocator_t allocator = rcutils_get_default_allocator();

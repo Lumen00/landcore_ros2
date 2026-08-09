@@ -1,0 +1,96 @@
+[0.168s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/land_description -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/land_description
+[0.237s] -- The C compiler identification is GNU 13.3.0
+[0.318s] -- The CXX compiler identification is GNU 13.3.0
+[0.334s] -- Detecting C compiler ABI info
+[0.431s] -- Detecting C compiler ABI info - done
+[0.443s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.443s] -- Detecting C compile features
+[0.443s] -- Detecting C compile features - done
+[0.453s] -- Detecting CXX compiler ABI info
+[0.545s] -- Detecting CXX compiler ABI info - done
+[0.557s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.557s] -- Detecting CXX compile features
+[0.558s] -- Detecting CXX compile features - done
+[0.564s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.689s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.862s] -- Found hardware_interface: 4.45.2 (/opt/ros/jazzy/share/hardware_interface/cmake)
+[0.922s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.944s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.968s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.994s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.308s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.359s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.364s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.390s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.457s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.461s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.480s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.485s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.495s] -- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+[1.507s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.295s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.697s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.697s] -- Configured cppcheck include dirs: /root/ros2_ws/src/landcore_ros2/land_description/include
+[2.697s] -- Configured cppcheck exclude dirs and/or files: 
+[2.699s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.699s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.701s] -- Added test 'lint_cmake' to check CMake code style
+[2.704s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.707s] -- Added test 'uncrustify' to check C / C++ code style
+[2.708s] -- Configured uncrustify additional arguments: 
+[2.713s] -- Added test 'xmllint' to check XML markup files
+[2.721s] -- Configuring done (2.5s)
+[2.794s] -- Generating done (0.0s)
+[2.811s] -- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/land_description
+[2.850s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/land_description -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/land_description
+[2.858s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[3.041s] [ 25%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/mecanum_system_hardware.cpp.o[0m
+[3.044s] [ 50%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/motorhat_driver.cpp.o[0m
+[3.050s] [ 75%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/timer.cpp.o[0m
+[8.100s] [100%] [32m[1mLinking CXX shared library libmecanum_system_hardware.so[0m
+[8.315s] [100%] Built target mecanum_system_hardware
+[8.326s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[8.327s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description
+[8.337s] -- Install configuration: ""
+[8.338s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/mecanum_hardware_plugin.xml
+[8.338s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/lib/libmecanum_system_hardware.so
+[8.339s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/land_description/lib/libmecanum_system_hardware.so" to ""
+[8.339s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src
+[8.339s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/timer.cpp
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/motorhat_driver.cpp
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/mecanum_system_hardware.cpp
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/display.launch.py
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/land_bringup.launch.py
+[8.340s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz/config.rviz
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/bridge_config.yaml
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/controllers.yaml
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world/my_world.sdf
+[8.341s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf.xacro
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.sdf
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/timer.hpp
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/mecanum_system_hardware.hpp
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/motorhat_driver.hpp
+[8.342s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/package_run_dependencies/land_description
+[8.343s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/parent_prefix_path/land_description
+[8.343s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.sh
+[8.343s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.dsv
+[8.343s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.sh
+[8.343s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.dsv
+[8.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.bash
+[8.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.sh
+[8.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.zsh
+[8.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.dsv
+[8.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.dsv
+[8.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/packages/land_description
+[8.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/land_description
+[8.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig.cmake
+[8.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig-version.cmake
+[8.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.xml
+[8.347s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description

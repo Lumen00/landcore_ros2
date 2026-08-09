@@ -1,0 +1,19 @@
+[0.682s] Invoking command in '/root/ros2_ws/src/landcore_ros2/land_camera': PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/land_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/land_camera build --build-base /root/ros2_ws/src/landcore_ros2/build/land_camera/build install --record /root/ros2_ws/src/landcore_ros2/build/land_camera/install.log --install-scripts $base/lib/land_camera --single-version-externally-managed install_data
+[0.829s] running egg_info
+[0.838s] writing ../build/land_camera/land_camera.egg-info/PKG-INFO
+[0.838s] writing dependency_links to ../build/land_camera/land_camera.egg-info/dependency_links.txt
+[0.838s] writing requirements to ../build/land_camera/land_camera.egg-info/requires.txt
+[0.838s] writing top-level names to ../build/land_camera/land_camera.egg-info/top_level.txt
+[0.856s] reading manifest file '../build/land_camera/land_camera.egg-info/SOURCES.txt'
+[0.857s] writing manifest file '../build/land_camera/land_camera.egg-info/SOURCES.txt'
+[0.857s] running build
+[0.857s] running build_py
+[0.857s] running install
+[0.861s] running install_lib
+[0.870s] running install_data
+[0.870s] running install_egg_info
+[0.879s] removing '/root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera-0.0.0-py3.12.egg-info' (and everything under it)
+[0.880s] Copying ../build/land_camera/land_camera.egg-info to /root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages/land_camera-0.0.0-py3.12.egg-info
+[0.880s] running install_scripts
+[0.944s] writing list of installed files to '/root/ros2_ws/src/landcore_ros2/build/land_camera/install.log'
+[0.964s] Invoked command in '/root/ros2_ws/src/landcore_ros2/land_camera' returned '0': PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/land_camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/land_camera/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/land_camera build --build-base /root/ros2_ws/src/landcore_ros2/build/land_camera/build install --record /root/ros2_ws/src/landcore_ros2/build/land_camera/install.log --install-scripts $base/lib/land_camera --single-version-externally-managed install_data

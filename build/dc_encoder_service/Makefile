@@ -431,6 +431,19 @@ dc_encoder_service__py/fast:
 	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/build
 .PHONY : dc_encoder_service__py/fast
 
+#=============================================================================
+# Target rules for targets named dc_encoder_service__rs
+
+# Build rule for target.
+dc_encoder_service__rs: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 dc_encoder_service__rs
+.PHONY : dc_encoder_service__rs
+
+# fast build rule for target.
+dc_encoder_service__rs/fast:
+	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build
+.PHONY : dc_encoder_service__rs/fast
+
 rosidl_generator_c/dc_encoder_service/srv/detail/motor_pi__description.o: rosidl_generator_c/dc_encoder_service/srv/detail/motor_pi__description.c.o
 .PHONY : rosidl_generator_c/dc_encoder_service/srv/detail/motor_pi__description.o
 
@@ -810,6 +823,7 @@ help:
 	@echo "... dc_encoder_service__cpp"
 	@echo "... dc_encoder_service__py"
 	@echo "... dc_encoder_service__rosidl_generator_type_description"
+	@echo "... dc_encoder_service__rs"
 	@echo "... dc_encoder_service_uninstall"
 	@echo "... uninstall"
 	@echo "... dc_encoder_server"

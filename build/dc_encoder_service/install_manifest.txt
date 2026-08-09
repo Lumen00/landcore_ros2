@@ -52,6 +52,12 @@
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_introspection_c.so
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_c.so
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_generator_py.so
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/rust_packages/dc_encoder_service
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/Cargo.toml
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/srv.rs
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/lib.rs
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/srv/rmw.rs
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/build.rs
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/srv/MotorPI.idl
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/srv/MotorPI.srv
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/dc_encoder_service/dc_encoder_server
@@ -91,6 +97,7 @@
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/ament_cmake_export_targets-extras.cmake
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_aggregate_target-extras.cmake
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_serviceConfig.cmake
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_serviceConfig-version.cmake
 /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.xml

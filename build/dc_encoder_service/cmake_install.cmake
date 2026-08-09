@@ -363,6 +363,14 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/rust_packages" TYPE FILE FILES "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/ament_cmake_index/share/ament_index/resource_index/rust_packages/dc_encoder_service")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dc_encoder_service" TYPE DIRECTORY FILES "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/rosidl_generator_rs/dc_encoder_service/rust")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dc_encoder_service/srv" TYPE FILE FILES "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/rosidl_adapter/dc_encoder_service/srv/MotorPI.idl")
 endif()
 
@@ -675,6 +683,10 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dc_encoder_service/cmake" TYPE FILE FILES "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/rosidl_cmake/rosidl_cmake_aggregate_target-extras.cmake")
+endif()
+
+if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/dc_encoder_service/cmake" TYPE FILE FILES
     "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/ament_cmake_core/dc_encoder_serviceConfig.cmake"
     "/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/ament_cmake_core/dc_encoder_serviceConfig-version.cmake"
@@ -688,6 +700,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/cmake_install.cmake")
+  include("/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/cmake_install.cmake")
 
 endif()
 

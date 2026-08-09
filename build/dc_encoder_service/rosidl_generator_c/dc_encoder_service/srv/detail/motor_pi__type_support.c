@@ -4,10 +4,10 @@
 
 #include <string.h>
 
-#include "rosidl_typesupport_interface/macros.h"
-#include "dc_encoder_service/srv/detail/motor_pi__type_support.h"
 #include "dc_encoder_service/srv/detail/motor_pi__functions.h"
 #include "dc_encoder_service/srv/detail/motor_pi__struct.h"
+#include "dc_encoder_service/srv/detail/motor_pi__type_support.h"
+#include "rosidl_typesupport_interface/macros.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -1,0 +1,90 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found hardware_interface: 4.45.2 (/opt/ros/jazzy/share/hardware_interface/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Found TinyXML2 via Config file: /usr/lib/x86_64-linux-gnu/cmake/tinyxml2
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /root/ros2_ws/src/landcore_ros2/land_description/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Configured 'flake8' exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done (2.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/land_description
+[ 25%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/mecanum_system_hardware.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/motorhat_driver.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/mecanum_system_hardware.dir/src/timer.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libmecanum_system_hardware.so[0m
+[100%] Built target mecanum_system_hardware
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/mecanum_hardware_plugin.xml
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/lib/libmecanum_system_hardware.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/land_description/lib/libmecanum_system_hardware.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/timer.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/motorhat_driver.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/mecanum_system_hardware.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/display.launch.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/land_bringup.launch.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz/config.rviz
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/bridge_config.yaml
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/controllers.yaml
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world/my_world.sdf
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf.xacro
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.sdf
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/timer.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/mecanum_system_hardware.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/motorhat_driver.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/package_run_dependencies/land_description
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/parent_prefix_path/land_description
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.bash
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.zsh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/packages/land_description
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/land_description
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig-version.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.xml

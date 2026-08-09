@@ -1,0 +1,161 @@
+[  2%] Built target dc_encoder_service__rs
+[  5%] Built target dc_encoder_service__rosidl_generator_type_description
+[  5%] Built target ament_cmake_python_copy_dc_encoder_service
+[  7%] Built target dc_encoder_service__cpp
+[ 21%] Built target dc_encoder_service__rosidl_generator_c
+[ 28%] Built target dc_encoder_service__rosidl_typesupport_introspection_cpp
+[ 36%] Built target dc_encoder_service__rosidl_typesupport_fastrtps_cpp
+[ 44%] Built target dc_encoder_service__rosidl_typesupport_introspection_c
+[ 52%] Built target dc_encoder_service__rosidl_typesupport_c
+[ 60%] Built target dc_encoder_service__rosidl_typesupport_cpp
+[ 68%] Built target dc_encoder_service__rosidl_typesupport_fastrtps_c
+[ 68%] Built target dc_encoder_service
+[ 76%] Built target dc_encoder_server
+[ 78%] Built target dc_encoder_service__py
+[ 84%] Built target dc_encoder_service__rosidl_generator_py
+[ 89%] Built target dc_encoder_service_s__rosidl_typesupport_introspection_c
+[ 97%] Built target dc_encoder_service_s__rosidl_typesupport_fastrtps_c
+[100%] Built target dc_encoder_service_s__rosidl_typesupport_c
+running egg_info
+writing dc_encoder_service.egg-info/PKG-INFO
+writing dependency_links to dc_encoder_service.egg-info/dependency_links.txt
+writing top-level names to dc_encoder_service.egg-info/top_level.txt
+reading manifest file 'dc_encoder_service.egg-info/SOURCES.txt'
+writing manifest file 'dc_encoder_service.egg-info/SOURCES.txt'
+[100%] Built target ament_cmake_python_build_dc_encoder_service_egg
+-- Install configuration: ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/rosidl_interfaces/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/srv/MotorPI.json
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg/rosidl_generator_c__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__functions.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__struct.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__type_support.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__type_support.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__description.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__functions.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/motor_pi.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/library_path.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/library_path.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_generator_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__traits.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__builder.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__type_support.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__struct.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/motor_pi.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/dds_fastrtps
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_fastrtps_cpp.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__type_support.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/include/dc_encoder_service/dc_encoder_service/srv/detail/motor_pi__type_support.cpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_introspection_cpp.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_typesupport_cpp.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/pythonpath.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/pythonpath.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service-0.0.0-py3.12.egg-info
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service-0.0.0-py3.12.egg-info/PKG-INFO
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service-0.0.0-py3.12.egg-info/dependency_links.txt
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service-0.0.0-py3.12.egg-info/top_level.txt
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service-0.0.0-py3.12.egg-info/SOURCES.txt
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/_dc_encoder_service_s.ep.rosidl_typesupport_introspection_c.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/_dc_encoder_service_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/_dc_encoder_service_s.ep.rosidl_typesupport_c.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/__init__.py
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/srv/_motor_pi_s.c
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/srv/__init__.py
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/srv/_motor_pi.py
+Listing '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service'...
+Listing '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/srv'...
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages/dc_encoder_service/dc_encoder_service_s__rosidl_typesupport_c.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/libdc_encoder_service__rosidl_generator_py.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/rust_packages/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/Cargo.toml
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/srv.rs
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/lib.rs
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/src/srv/rmw.rs
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/rust/build.rs
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/srv/MotorPI.idl
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/srv/MotorPI.srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/dc_encoder_service/dc_encoder_server
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/package_run_dependencies/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/parent_prefix_path/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/ament_prefix_path.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/ament_prefix_path.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/path.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/environment/path.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/local_setup.bash
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/local_setup.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/local_setup.zsh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/local_setup.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/ament_index/resource_index/packages/dc_encoder_service
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_generator_cExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_generator_cExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_typesupport_fastrtps_cExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_generator_cppExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_introspection_cExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_cExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_cExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_introspection_cppExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_cppExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_service__rosidl_typesupport_cppExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_generator_pyExport.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/export_dc_encoder_service__rosidl_generator_pyExport-noconfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_serviceConfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/cmake/dc_encoder_serviceConfig-version.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.xml

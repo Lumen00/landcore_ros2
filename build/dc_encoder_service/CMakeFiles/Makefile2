@@ -78,10 +78,12 @@ all: CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/all
 all: CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/all
 all: CMakeFiles/dc_encoder_server.dir/all
 all: dc_encoder_service__py/all
+all: dc_encoder_service__rs/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: dc_encoder_service__py/preinstall
+preinstall: dc_encoder_service__rs/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -105,6 +107,7 @@ clean: CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/c
 clean: CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/clean
 clean: CMakeFiles/dc_encoder_server.dir/clean
 clean: dc_encoder_service__py/clean
+clean: dc_encoder_service__rs/clean
 .PHONY : clean
 
 #=============================================================================
@@ -121,6 +124,21 @@ dc_encoder_service__py/preinstall:
 # Recursive "clean" directory target.
 dc_encoder_service__py/clean: dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/clean
 .PHONY : dc_encoder_service__py/clean
+
+#=============================================================================
+# Directory level rules for directory dc_encoder_service__rs
+
+# Recursive "all" directory target.
+dc_encoder_service__rs/all: dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/all
+.PHONY : dc_encoder_service__rs/all
+
+# Recursive "preinstall" directory target.
+dc_encoder_service__rs/preinstall:
+.PHONY : dc_encoder_service__rs/preinstall
+
+# Recursive "clean" directory target.
+dc_encoder_service__rs/clean: dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/clean
+.PHONY : dc_encoder_service__rs/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/uninstall.dir
@@ -187,6 +205,7 @@ CMakeFiles/dc_encoder_service.dir/all: CMakeFiles/dc_encoder_service__rosidl_typ
 CMakeFiles/dc_encoder_service.dir/all: CMakeFiles/dc_encoder_service__rosidl_typesupport_c.dir/all
 CMakeFiles/dc_encoder_service.dir/all: CMakeFiles/dc_encoder_service__rosidl_typesupport_introspection_cpp.dir/all
 CMakeFiles/dc_encoder_service.dir/all: CMakeFiles/dc_encoder_service__rosidl_typesupport_cpp.dir/all
+CMakeFiles/dc_encoder_service.dir/all: dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service.dir/build.make CMakeFiles/dc_encoder_service.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service.dir/build.make CMakeFiles/dc_encoder_service.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num= "Built target dc_encoder_service"
@@ -194,7 +213,7 @@ CMakeFiles/dc_encoder_service.dir/all: CMakeFiles/dc_encoder_service__rosidl_typ
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dc_encoder_service.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 25
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dc_encoder_service.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : CMakeFiles/dc_encoder_service.dir/rule
@@ -511,7 +530,7 @@ CMakeFiles/dc_encoder_service__rosidl_generator_py.dir/all: dc_encoder_service__
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dc_encoder_service__rosidl_generator_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 29
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dc_encoder_service__rosidl_generator_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : CMakeFiles/dc_encoder_service__rosidl_generator_py.dir/rule
@@ -536,12 +555,12 @@ CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/all: CMakeFil
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/all: dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=34,35 "Built target dc_encoder_service_s__rosidl_typesupport_fastrtps_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=35,36 "Built target dc_encoder_service_s__rosidl_typesupport_fastrtps_c"
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_fastrtps_c.dir/rule
@@ -566,12 +585,12 @@ CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/all: CMa
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/all: dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=36,37 "Built target dc_encoder_service_s__rosidl_typesupport_introspection_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=37,38 "Built target dc_encoder_service_s__rosidl_typesupport_introspection_c"
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_introspection_c.dir/rule
@@ -595,12 +614,12 @@ CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/all: CMakeFiles/dc_enc
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/all: dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/build.make CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=32,33 "Built target dc_encoder_service_s__rosidl_typesupport_c"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=33,34 "Built target dc_encoder_service_s__rosidl_typesupport_c"
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 30
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 31
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : CMakeFiles/dc_encoder_service_s__rosidl_typesupport_c.dir/rule
@@ -654,7 +673,7 @@ dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/all: CMakeFiles/dc_
 
 # Build rule for subdir invocation for target.
 dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 27
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
 .PHONY : dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/rule
@@ -667,6 +686,32 @@ dc_encoder_service__py: dc_encoder_service__py/CMakeFiles/dc_encoder_service__py
 dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/clean:
 	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/clean
 .PHONY : dc_encoder_service__py/CMakeFiles/dc_encoder_service__py.dir/clean
+
+#=============================================================================
+# Target rules for target /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir
+
+# All Build rule for target.
+dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/all:
+	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/depend
+	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles --progress-num=32 "Built target dc_encoder_service__rs"
+.PHONY : dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/all
+
+# Build rule for subdir invocation for target.
+dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/CMakeFiles 0
+.PHONY : dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/rule
+
+# Convenience name for target.
+dc_encoder_service__rs: dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/rule
+.PHONY : dc_encoder_service__rs
+
+# clean rule for target.
+dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/clean:
+	$(MAKE) $(MAKESILENT) -f /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/build.make /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service/dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/clean
+.PHONY : dc_encoder_service__rs/CMakeFiles/dc_encoder_service__rs.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

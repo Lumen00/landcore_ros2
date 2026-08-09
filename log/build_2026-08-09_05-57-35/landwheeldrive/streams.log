@@ -1,0 +1,25 @@
+[0.551s] Invoking command in '/root/ros2_ws/src/landcore_ros2/landwheeldrive': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/landwheeldrive build --build-base /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build install --record /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log --install-scripts $base/lib/landwheeldrive --single-version-externally-managed install_data
+[0.682s] running egg_info
+[0.691s] writing ../build/landwheeldrive/landwheeldrive.egg-info/PKG-INFO
+[0.691s] writing dependency_links to ../build/landwheeldrive/landwheeldrive.egg-info/dependency_links.txt
+[0.691s] writing entry points to ../build/landwheeldrive/landwheeldrive.egg-info/entry_points.txt
+[0.691s] writing requirements to ../build/landwheeldrive/landwheeldrive.egg-info/requires.txt
+[0.691s] writing top-level names to ../build/landwheeldrive/landwheeldrive.egg-info/top_level.txt
+[0.707s] reading manifest file '../build/landwheeldrive/landwheeldrive.egg-info/SOURCES.txt'
+[0.707s] adding license file 'LICENSE'
+[0.707s] writing manifest file '../build/landwheeldrive/landwheeldrive.egg-info/SOURCES.txt'
+[0.707s] running build
+[0.707s] running build_py
+[0.708s] running install
+[0.711s] running install_lib
+[0.719s] running install_data
+[0.719s] running install_egg_info
+[0.727s] removing '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive-0.0.0-py3.12.egg-info' (and everything under it)
+[0.727s] Copying ../build/landwheeldrive/landwheeldrive.egg-info to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive-0.0.0-py3.12.egg-info
+[0.728s] running install_scripts
+[0.786s] Installing cartesian_driver script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+[0.786s] Installing gui_controller script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+[0.786s] Installing motorlisten script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+[0.786s] Installing pid_tuner script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+[0.787s] writing list of installed files to '/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log'
+[0.804s] Invoked command in '/root/ros2_ws/src/landcore_ros2/landwheeldrive' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/landwheeldrive build --build-base /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build install --record /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log --install-scripts $base/lib/landwheeldrive --single-version-externally-managed install_data
