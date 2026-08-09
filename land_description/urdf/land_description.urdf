@@ -179,6 +179,30 @@
       <origin xyz="0 0 ${base_height/2 + tower_height/2 + 0.018/2}" rpy="0 0 0"/>
     </joint>
 
+    <!-- CAMERA -->
+
+    <link name='camera_link'>
+      <visual name="camera_link_visual">
+        <geometry>
+            <box size="0.001 0.025 0.025"/>
+        </geometry>
+      </visual>
+
+      <collision name="camera_link_collision">
+        <geometry>
+            <box size="0.001 0.025 0.025"/>
+        </geometry>
+      </collision>
+
+      <xacro:box_inertia m="0.01" w="0.025" h="0.025" d="0.001"/>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="camera_link"/>
+      <origin xyz="${tower_length/2} 0 ${base_height/2 + (3*tower_height/4)}" rpy="0 0 0"/>
+    </joint>
+
     <!-- ROS2 WHEEL CONTROL -->
 
     <ros2_control name="MecanumHardware" type="system">

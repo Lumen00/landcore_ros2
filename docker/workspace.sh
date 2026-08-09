@@ -18,7 +18,7 @@ rosdep update
 rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 
 # Install pip dependencies.
-pip install PyQt6 smbus3 matplotlib
+pip install PyQt6 smbus3 matplotlib picamera2
 apt-get install libxcb-cursor0
 apt install liblgpio-dev \
     ros-jazzy-navigation2 \
