@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            # executable_name = package_name.script_name:main_function
+            'camera_publisher = lanc_camera.camera_node:main'
         ],
     },
 )
