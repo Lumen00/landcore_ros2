@@ -1,5 +1,0 @@
-[console_scripts]
-cartesian_driver = landwheeldrive.cartesian_drive:main
-gui_controller = landwheeldrive.gui_control:main
-motorlisten = landwheeldrive.subscriber_motor_action:main
-pid_tuner = landwheeldrive.pid_tune:main

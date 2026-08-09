@@ -1,7 +1,0 @@
-<library path="mecanum_system_hardware">
-  <class name="land_description/MecanumSystemHardware"
-         type="land_description::MecanumSystemHardware"
-         base_class_type="hardware_interface::SystemInterface">
-    <description>Real hardware interface for the mecanum drive robot, using PCA9685 PWM and lgpio encoders.</description>
-  </class>
-</library>
