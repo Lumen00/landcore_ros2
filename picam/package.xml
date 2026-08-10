@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>picam_publisher</name>
+  <version>0.0.1</version>
+  <description>Publishes Pi Camera v2 frames via image_transport</description>
+  <maintainer email="you@example.com">you</maintainer>
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>image_transport</depend>
+  <depend>cv_bridge</depend>
+  <depend>sensor_msgs</depend>
+  <depend>OpenCV</depend>
+
+  <exec_depend>compressed_image_transport</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

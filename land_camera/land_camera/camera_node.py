@@ -49,7 +49,7 @@ class CameraImagePublisher(Node):
             msg.header.stamp = self.get_clock().now().to_msg()
             msg.format = "jpeg"
             msg.data = np.array(cv2.imencode('.jpg', frame)[1]).tobytes()
-            self.get_logger().info(f'{msg.data}')
+            # self.get_logger().info(f'{msg.data}')
             self.publisher_.publish(msg)
 
 def main(args=None):
