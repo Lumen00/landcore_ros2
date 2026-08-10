@@ -1,4 +1,5 @@
 import rclpy
+from rclpy.qos import qos_profile_sensor_data
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 import threading
@@ -9,7 +10,7 @@ class CameraImagePublisher(Node):
 
     def __init__(self):
         super().__init__('minimal_publisher')
-        self.publisher_ = self.create_publisher(Image, '/camera/image_raw', 10)
+        self.publisher_ = self.create_publisher(Image, '/camera/image_raw', qos_profile_sensor_data)
 
         # Init the bridge
         self.bridge = CvBridge()
@@ -22,21 +23,21 @@ class CameraImagePublisher(Node):
         self.picam.configure(config)
         self.picam.start()
 
-        self.timer = self.create_timer(0.033, self.camera_publish_loop)
+        # self.timer = self.create_timer(0.033, self.camera_publish_loop)
 
-        # self.stream_thread = threading.Thread(target=self.camera_publish_loop, daemon=True)
-        # self.stream_thread.start()
+        self.stream_thread = threading.Thread(target=self.camera_publish_loop, daemon=True)
+        self.stream_thread.start()
 
     def camera_publish_loop(self):
         # self.get_logger().info('Camera starting to publish.')
-        # while rclpy.ok():
+        while rclpy.ok():
             # try:
                 # Take a frame
-        frame = self.picam.capture_array().copy()
-        msg = self.bridge.cv2_to_imgmsg(frame, encoding='rgb8')
-        msg.header.stamp = self.get_clock().now().to_msg()
-        msg.header.frame_id = 'camera_link'
-        self.publisher_.publish(msg)
+            frame = self.picam.capture_array().copy()
+            msg = self.bridge.cv2_to_imgmsg(frame, encoding='rgb8')
+            msg.header.stamp = self.get_clock().now().to_msg()
+            msg.header.frame_id = 'camera_link'
+            self.publisher_.publish(msg)
         # except Exception as e:
         # self.get_logger().error(f'Publish loop failed: {e}')
 
@@ -46,9 +47,9 @@ def main(args=None):
 
     camera_publisher = CameraImagePublisher()
 
-    rclpy.spin(camera_publisher)
+    # rclpy.spin(camera_publisher)
 
-    # camera_publisher.stream_thread.join()
+    camera_publisher.stream_thread.join()
 
     camera_publisher.picam.stop()
     camera_publisher.destroy_node()
