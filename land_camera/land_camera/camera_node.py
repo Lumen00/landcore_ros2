@@ -25,8 +25,8 @@ class CameraImagePublisher(Node):
 
         self.timer = self.create_timer(0.033, self.camera_publish_loop)
 
-        self.stream_thread = threading.Thread(target=self.camera_publish_loop, daemon=True)
-        self.stream_thread.start()
+        # self.stream_thread = threading.Thread(target=self.camera_publish_loop, daemon=True)
+        # self.stream_thread.start()
 
     def camera_publish_loop(self):
         # self.get_logger().info('Camera starting to publish.')
@@ -47,7 +47,9 @@ def main(args=None):
 
     camera_publisher = CameraImagePublisher()
 
-    camera_publisher.stream_thread.join()
+    rclpy.spin(camera_publisher)
+
+    # camera_publisher.stream_thread.join()
 
     camera_publisher.picam.stop()
     camera_publisher.destroy_node()
