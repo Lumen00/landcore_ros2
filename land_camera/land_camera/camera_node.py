@@ -11,7 +11,7 @@ import numpy as np
 class CameraImagePublisher(Node):
 
     def __init__(self):
-        super().__init__('minimal_publisher')
+        super().__init__('image_publisher')
         self.publisher_ = self.create_publisher(CompressedImage, '/camera/image/compressed', qos_profile_sensor_data)
 
         # Init the bridge
@@ -20,8 +20,8 @@ class CameraImagePublisher(Node):
         self.timer = self.create_timer(0.05, self.camera_publish_loop)
 
         self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L)
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.get_logger().info('Publishing compressed image...')
 
         # # Init the camera.
@@ -51,7 +51,7 @@ class CameraImagePublisher(Node):
         #     # try:
         #         # Take a frame
         #     frame = self.picam.capture_array().copy()
-        #     msg = self.bridge.cv2_to_imgmsg(frame, encoding='rgb8')
+        #     msg = self.bridge.cv2_to_imgmsg(frame, enco:ding='rgb8')
         #     msg.header.stamp = self.get_clock().now().to_msg()
         #     msg.header.frame_id = 'camera_link'
         #     self.publisher_.publish(msg)
