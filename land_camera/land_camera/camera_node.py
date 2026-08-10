@@ -2,9 +2,9 @@ import rclpy
 from rclpy.qos import qos_profile_sensor_data
 from rclpy.node import Node
 from sensor_msgs.msg import CompressedImage
-import threading
-from picamera2 import Picamera2
-from cv_bridge import CvBridge # converts between opencv and ros images
+# import threading
+# from picamera2 import Picamera2
+# from cv_bridge import CvBridge # converts between opencv and ros images
 import cv2
 import numpy as np
 
