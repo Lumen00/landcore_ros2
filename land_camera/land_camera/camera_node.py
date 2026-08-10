@@ -44,8 +44,6 @@ def main(args=None):
 
     camera_publisher = CameraImagePublisher()
 
-    rclpy.spin(camera_publisher)
-
     camera_publisher.stream_thread.join()
 
     camera_publisher.picam.stop()
