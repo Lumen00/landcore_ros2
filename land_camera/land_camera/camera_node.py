@@ -17,7 +17,7 @@ class CameraImagePublisher(Node):
         # Init the camera.
         self.picam = Picamera2()
         config = self.picam.create_video_configuration(
-            main={"size": (640, 480), "format": "RGB888"}
+            main={"size": (1920, 1080), "format": "RGB888"}
         )
         self.picam.configure(config)
         self.picam.start()
@@ -27,12 +27,15 @@ class CameraImagePublisher(Node):
 
     def camera_publish_loop(self):
         while rclpy.ok():
-            # Take a frame
-            frame = self.picam.capture_array()
-            msg = self.bridge.cv2_to_imgmsg(frame, encoding='rgb8')
-            msg.header.stamp = self.get_clock().now().to_msg()
-            msg.header.frame_id = 'camera_link'
-            self.publisher_.publish(msg)
+            try:
+                # Take a frame
+                frame = self.picam.capture_array().copy()
+                msg = self.bridge.cv2_to_imgmsg(frame, encoding='rgb8')
+                msg.header.stamp = self.get_clock().now().to_msg()
+                msg.header.frame_id = 'camera_link'
+                self.publisher_.publish(msg)
+            except Exception as e:
+                self.get_logger().error(f'Publish loop failed: {e}')
 
 
 def main(args=None):
