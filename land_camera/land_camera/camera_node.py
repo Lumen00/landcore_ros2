@@ -12,17 +12,22 @@ class CameraImagePublisher(Node):
 
     def __init__(self):
         super().__init__('image_publisher')
-        self.publisher_ = self.create_publisher(CompressedImage, '/camera/image', qos_profile_sensor_data)
+        self.publisher_ = self.create_publisher(CompressedImage, '/camera/image_raw/compressed', 1)
 
         # Init the bridge
         # self.bridge = CvBridge()
 
-        self.timer = self.create_timer(0.05, self.camera_publish_loop)
 
-        self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L)
+        self.cap = cv2.VideoCapture('0')
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.get_logger().info('Publishing compressed image...')
+
+        if not self.cap.isOpened():
+            self.get_logger().info('Failed to open camera.')
+
+        self.timer = self.create_timer(0.05, self.camera_publish_loop)
+
 
         # # Init the camera.
         # self.picam = Picamera2()
@@ -34,9 +39,6 @@ class CameraImagePublisher(Node):
 
         # # self.timer = self.create_timer(0.033, self.camera_publish_loop)
 
-        # self.stream_thread = threading.Thread(target=self.camera_publish_loop, daemon=True)
-        # self.stream_thread.start()
-
     def camera_publish_loop(self):
         ret, frame = self.cap.read()
         if ret:
@@ -45,19 +47,6 @@ class CameraImagePublisher(Node):
             msg.format = "jpeg"
             msg.data = np.array(cv2.imencode('.jpg', frame)[1]).tobytes()
             self.publisher_.publish(msg)
-
-        # self.get_logger().info('Camera starting to publish.')
-        # while rclpy.ok():
-        #     # try:
-        #         # Take a frame
-        #     frame = self.picam.capture_array().copy()
-        #     msg = self.bridge.cv2_to_imgmsg(frame, enco:ding='rgb8')
-        #     msg.header.stamp = self.get_clock().now().to_msg()
-        #     msg.header.frame_id = 'camera_link'
-        #     self.publisher_.publish(msg)
-        # except Exception as e:
-        # self.get_logger().error(f'Publish loop failed: {e}')
-
 
 def main(args=None):
     rclpy.init(args=args)
