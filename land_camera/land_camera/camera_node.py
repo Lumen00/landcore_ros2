@@ -7,6 +7,7 @@ from sensor_msgs.msg import CompressedImage
 # from cv_bridge import CvBridge # converts between opencv and ros images
 import cv2
 import numpy as np
+import time
 
 class CameraImagePublisher(Node):
 
@@ -18,13 +19,15 @@ class CameraImagePublisher(Node):
         # self.bridge = CvBridge()
 
 
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         self.get_logger().info('Publishing compressed image...')
 
         if not self.cap.isOpened():
             self.get_logger().info('Failed to open camera.')
+
+        time.sleep()
 
         self.timer = self.create_timer(0.05, self.camera_publish_loop)
 
