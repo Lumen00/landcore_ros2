@@ -17,7 +17,7 @@ class CameraImagePublisher(Node):
         # Init the camera.
         self.picam = Picamera2()
         config = self.picam.create_video_configuration(
-            main={"size": (1920, 1080), "format": "RGB888"}
+            main={"size": (640, 480), "format": "RGB888"}
         )
         self.picam.configure(config)
         self.picam.start()
@@ -26,6 +26,7 @@ class CameraImagePublisher(Node):
         self.stream_thread.start()
 
     def camera_publish_loop(self):
+        self.get_logger().info('Camera starting to publish.')
         while rclpy.ok():
             try:
                 # Take a frame
@@ -44,6 +45,8 @@ def main(args=None):
     camera_publisher = CameraImagePublisher()
 
     rclpy.spin(camera_publisher)
+
+    camera_publisher.stream_thread.join()
 
     camera_publisher.picam.stop()
     camera_publisher.destroy_node()
