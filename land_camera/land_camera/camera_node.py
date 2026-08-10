@@ -27,7 +27,7 @@ class CameraImagePublisher(Node):
         if not self.cap.isOpened():
             self.get_logger().info('Failed to open camera.')
 
-        time.sleep()
+        time.sleep(2)
 
         self.timer = self.create_timer(0.05, self.camera_publish_loop)
 
