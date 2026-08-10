@@ -1,4 +1,5 @@
 import rclpy
+from rclpy.qos import qos_profile_sensor_data
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 import threading
@@ -9,7 +10,7 @@ class CameraImagePublisher(Node):
 
     def __init__(self):
         super().__init__('minimal_publisher')
-        self.publisher_ = self.create_publisher(Image, '/camera/image_raw', 10)
+        self.publisher_ = self.create_publisher(Image, '/camera/image_raw', qos_profile_sensor_data)
 
         # Init the bridge
         self.bridge = CvBridge()
