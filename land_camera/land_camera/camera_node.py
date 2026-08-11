@@ -31,17 +31,6 @@ class CameraImagePublisher(Node):
 
         self.timer = self.create_timer(0.05, self.camera_publish_loop)
 
-
-        # # Init the camera.
-        # self.picam = Picamera2()
-        # config = self.picam.create_video_configuration(
-        #     main={"size": (640, 480), "format": "RGB888"}
-        # )
-        # self.picam.configure(config)
-        # self.picam.start()
-
-        # # self.timer = self.create_timer(0.033, self.camera_publish_loop)
-
     def camera_publish_loop(self):
         ret, frame = self.cap.read()
         if ret:
@@ -62,6 +51,7 @@ def main(args=None):
     # camera_publisher.stream_thread.join()
 
     # camera_publisher.picam.stop()
+    camera_publisher.cap.release()
     camera_publisher.destroy_node()
     rclpy.shutdown()
 
