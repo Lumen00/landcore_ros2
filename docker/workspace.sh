@@ -18,7 +18,7 @@ rosdep update
 rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 
 # Install pip dependencies.
-python3 -m venv my
+python3 -m venv my --without-pip --system-site-packages #Bypass ensure-pip error on ubuntu
 pip install PyQt6 smbus3 matplotlib picamera2
 apt-get install libxcb-cursor0
 apt install liblgpio-dev \
