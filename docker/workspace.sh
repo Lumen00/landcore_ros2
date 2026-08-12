@@ -32,7 +32,7 @@ apt install liblgpio-dev \
 # Build the camera packages
 mkdir -p ~/ros2_ws/src/camera_ws/src
 cd ~/ros2_ws/src/camera_ws/src
-apt install python3-colcon-meson python3-ply python3.12-venv -y
+sudo apt install python3-colcon-meson python3-ply python3.12-venv -y
 git clone https://github.com/raspberrypi/libcamera.git
 git clone https://github.com/christianrauch/camera_ros.git
 source /opt/ros/$ROS_DISTRO/setup.sh
