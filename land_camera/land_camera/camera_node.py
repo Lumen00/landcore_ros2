@@ -13,7 +13,7 @@ class CameraImagePublisher(Node):
 
     def __init__(self):
         super().__init__('image_publisher')
-        self.publisher_ = self.create_publisher(CompressedImage, '/camera/image_raw/compressed', 1)
+        self.publisher_ = self.create_publisher(CompressedImage, '/camera/image_raw/compressed', 10)
 
         # Init the bridge
         # self.bridge = CvBridge()
