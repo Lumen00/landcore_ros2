@@ -29,12 +29,17 @@ apt install liblgpio-dev \
     ros-jazzy-ros2-controllers \
     ros-jazzy-slam-toolbox -y 
 
-# Build the camera packages
-mkdir -p ~/ros2_ws/src/camera_ws/src
-cd ~/ros2_ws/src/camera_ws/src
-apt install python3-colcon-meson python3-ply python3.12-venv -y
+# Build the libcamera package
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+apt install python3-colcon-meson python3-ply python3-pybind11 pybind11-dev -y
 git clone https://github.com/raspberrypi/libcamera.git
-git clone https://github.com/christianrauch/camera_ros.git
+cd libcamera
+meson setup build --reconfigure
+ninja -C build
+sudo ninja -C build install
+
+# git clone https://github.com/christianrauch/camera_ros.git
 source /opt/ros/$ROS_DISTRO/setup.sh
 cd ..
 sudo rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO --skip-keys=libcamera
