@@ -41,7 +41,7 @@ sudo ninja -C build install
 
 # git clone https://github.com/christianrauch/camera_ros.git
 source /opt/ros/$ROS_DISTRO/setup.sh
-cd ..
+cd ~/ros2_ws
 sudo rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO --skip-keys=libcamera
 
 # Return to top level directory to build.
