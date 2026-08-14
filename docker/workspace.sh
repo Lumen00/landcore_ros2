@@ -30,16 +30,14 @@ apt install liblgpio-dev \
     ros-jazzy-slam-toolbox -y 
 
 # Build the libcamera package
+sudo apt install v4l-utils ros-jazzy-image-transport-plugins ros-jazzy-rqt-image-view
+
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 apt install python3-colcon-meson python3-ply python3-pybind11 pybind11-dev -y
+apt install -y libboost-dev libgnutls28-dev openssl libtiff-dev pybind11-dev qtbase5-dev libqt5core5a meson cmake python3-yaml python3-ply libglib2.0-dev libgstreamer-plugins-base1.0-dev
+git clone https://github.com/christianrauch/camera_ros.git
 git clone https://github.com/raspberrypi/libcamera.git
-cd libcamera
-meson setup build --reconfigure
-ninja -C build
-sudo ninja -C build install
-
-# git clone https://github.com/christianrauch/camera_ros.git
 source /opt/ros/$ROS_DISTRO/setup.sh
 cd ~/ros2_ws
 sudo rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO --skip-keys=libcamera
@@ -50,7 +48,7 @@ cd ~/ros2_ws
 # Build the packages
 echo "Building packages..."
 # VERBOSE=1 colcon build --parallel-workers $(nproc) --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release
-colcon build --event-handlers=console_direct+
+colcon build --event-handlers=console_direct+ --symlink-install
 # colcon build --packages-select dc_encoder_service landdrive landwheeldrive --cmake-args -DCMAKE_BUILD_TYPE=Release
 # colcon build --packages-select sllidar_ros2 --parallel-workers 2 --event-handlers console_direct+ --cmake-args -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-w"
 source install/setup.sh
