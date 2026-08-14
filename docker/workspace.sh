@@ -35,7 +35,7 @@ sudo apt install v4l-utils ros-jazzy-image-transport-plugins ros-jazzy-rqt-image
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
 apt install python3-colcon-meson python3-ply python3-pybind11 pybind11-dev -y
-apt install -y libboost-dev libgnutls28-dev openssl libtiff-dev pybind11-dev qtbase5-dev libqt5core5a meson cmake python3-yaml python3-ply libglib2.0-dev libgstreamer-plugins-base1.0-dev
+apt install -y libboost-dev libgnutls28-dev openssl libtiff-dev pybind11-dev qtbase5-dev libqt5core5a meson cmake python3-yaml python3-ply libglib2.0-dev libgstreamer-plugins-base1.0-dev -y
 git clone https://github.com/christianrauch/camera_ros.git
 git clone https://github.com/raspberrypi/libcamera.git
 source /opt/ros/$ROS_DISTRO/setup.sh
