@@ -30,7 +30,7 @@ apt install liblgpio-dev \
     ros-jazzy-slam-toolbox -y 
 
 # Build the libcamera package
-sudo apt install v4l-utils ros-jazzy-image-transport-plugins ros-jazzy-rqt-image-view
+sudo apt install v4l-utils ros-jazzy-image-transport-plugins ros-jazzy-rqt-image-view -y
 
 mkdir -p ~/ros2_ws/src
 cd ~/ros2_ws/src
