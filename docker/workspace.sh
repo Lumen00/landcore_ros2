@@ -12,6 +12,13 @@ cd /root/ros2_ws
 
 apt-get update
 
+# Increase memory buffer and change to cyclone dds.
+sudo sysctl -w net.core.rmem_max=2147483647
+sudo sysctl -w net.core.rmem_default=2147483647
+sudo apt install ros-jazzy-rmw-cyclonedds-cpp
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp' >> ~/.bashrc
+
 # Install ROS2 dependencies for all packages
 echo "Installing ROS 2 dependencies..."
 rosdep update
