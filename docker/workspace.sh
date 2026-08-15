@@ -10,7 +10,7 @@ source /opt/ros/$ROS_DISTRO/setup.sh
 apt-get update
 
 # Change to cyclone dds.
-sudo apt install ros-jazzy-rmw-cyclonedds-cpp
+sudo apt install ros-jazzy-rmw-cyclonedds-cpp -y
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp' >> ~/.bashrc
 
