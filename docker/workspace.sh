@@ -9,9 +9,7 @@ source /opt/ros/$ROS_DISTRO/setup.sh
 
 apt-get update
 
-# Increase memory buffer and change to cyclone dds.
-sudo sysctl -w net.core.rmem_max=2147483647
-sudo sysctl -w net.core.rmem_default=2147483647
+# Change to cyclone dds.
 sudo apt install ros-jazzy-rmw-cyclonedds-cpp
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 echo 'export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp' >> ~/.bashrc
