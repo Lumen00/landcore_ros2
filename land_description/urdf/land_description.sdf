@@ -296,8 +296,8 @@
       <topic>/mecanum_drive_controller/reference</topic>
 
       <!-- output -->
-      <odom_topic>/mecanum_drive_controller/odometry</odom_topic>
-      <tf_topic>/mecanum_drive_controller/tf</tf_topic>
+      <odom_topic>/odom</odom_topic>
+      <tf_topic>/tf</tf_topic>
 
       <frame_id>odom</frame_id>
       <child_frame_id>base_link</child_frame_id>
@@ -341,7 +341,7 @@
         <always_on>true</always_on>
         <visualize>true</visualize>
         <update_rate>5</update_rate>
-        <topic>scan</topic>
+        <topic>/scan</topic>
         <gz_frame_id>lidar_link</gz_frame_id>
         <ray>
           <scan>

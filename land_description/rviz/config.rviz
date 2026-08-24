@@ -68,6 +68,15 @@ Visualization Manager:
         Reliability Policy: Reliable
         Durability Policy: Volatile
         Value: /camera/image_raw
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Map
+      Topic: 
+        Depth: 5
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Durability Policy: Transient Local
+        Value: /map
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
