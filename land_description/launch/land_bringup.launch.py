@@ -45,9 +45,6 @@ def generate_launch_description():
         arguments=['mecanum_drive_controller']
     )
 
-    # Include the C1 LiDAR launch file. 
-
-
     return LaunchDescription([robot_state_publisher, 
         controller_manager, 
         spawn_jsb, 

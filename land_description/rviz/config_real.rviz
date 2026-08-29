@@ -65,9 +65,9 @@ Visualization Manager:
       Topic: 
         Depth: 5
         History Policy: Keep Last
-        Reliability Policy: Reliable
+        Reliability Policy: Best Effort
         Durability Policy: Volatile
-        Value: /camera/image_raw
+        Value: /camera_node/image_raw/compressed
     - Class: rviz_default_plugins/Map
       Enabled: true
       Name: Map

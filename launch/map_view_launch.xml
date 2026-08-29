@@ -1,0 +1,6 @@
+<launch>
+  <arg name="rviz_config_file" default="$(find-pkg-share land_description)/rviz/config_real.rviz" />
+
+  <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config_file)"/>
+
+</launch>
