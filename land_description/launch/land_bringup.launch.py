@@ -16,7 +16,10 @@ def generate_launch_description():
     # Import LiDAR launch for C1.
     c1_launch_dir = PathJoinSubstitution([FindPackageShare('sllidar_ros2'), 'launch'])
     c1_launch = IncludeLaunchDescription(
-        PathJoinSubstitution([c1_launch_dir, 'sllidar_c1_launch.py'])
+        PathJoinSubstitution([c1_launch_dir, 'sllidar_c1_launch.py']),
+        launch_arguments={
+            'frame_id': 'lidar_link'
+        }.items()
     )
 
     # robot_description = {'robot_description': open(urdf_path).read()}  # or xacro.process_file()
