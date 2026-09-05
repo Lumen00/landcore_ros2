@@ -41,7 +41,7 @@ Visualization Manager:
       Enabled: true
       Name: LaserScan
       Topic: 
-        Depth: 5
+        Depth: 1
         Durability Policy: Volatile
         Filter Size: 10
         History Policy: Keep Last
@@ -63,7 +63,7 @@ Visualization Manager:
       Enabled: true
       Name: Image
       Topic: 
-        Depth: 5
+        Depth: 1
         History Policy: Keep Last
         Reliability Policy: Best Effort
         Durability Policy: Volatile
