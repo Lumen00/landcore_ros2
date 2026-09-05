@@ -47,8 +47,8 @@ def generate_launch_description():
         package='controller_manager', executable='spawner',
         arguments=[
             'mecanum_drive_controller',
-            '--controller-ros-args', '-r /mecanum_drive_controller/odometry:=/odom',
-            '-r /mecanum_drive_controller/tf_odometry:=/tf',
+            '--controller-ros-args', 
+            '-r /mecanum_drive_controller/odometry:=/odom -r /mecanum_drive_controller/tf_odometry:=/tf',
             ]
     )
 
