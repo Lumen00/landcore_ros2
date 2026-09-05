@@ -36,6 +36,7 @@ def generate_launch_description():
         package='controller_manager',
         executable='ros2_control_node',
         parameters=[robot_description, controllers_yaml],
+        remappings=[('/mecanum_drive_controller/odometry', '/odom')],
         output='screen'
     )
 
