@@ -222,7 +222,7 @@
   <joint name="lidar_joint" type="fixed">
     <parent link="base_link"/>
     <child link="lidar_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0.1055"/>
+    <origin rpy="0 0 3.14159" xyz="0 0 0.1055"/>
   </joint>
   <!-- CAMERA -->
   <link name="camera_link">
