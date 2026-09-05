@@ -29,7 +29,8 @@ def generate_launch_description():
     slam_node = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(slam_toolbox_launch_source),
         launch_arguments={
-            'slam_params_file': slam_config_path
+            'slam_params_file': slam_config_path,
+            'use_sim_time' : 'False'
         }.items()
     )
 
@@ -44,24 +45,15 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(nav2_launch_source),
                 launch_arguments={
                     'params_file': nav2_config_path,
+                    'use_sim_time' : 'False'
                 }.items(),
             ),
         ]
     )
 
 
-    urdf_path = os.path.join(get_package_share_directory('land_description'), 'urdf', 'land_description.urdf.xacro')
-    robot_description = {'robot_description': xacro.process_file(urdf_path).toxml()}
-    robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        parameters=[robot_description]
-    )
-
     return LaunchDescription([
         DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path, description='Absolute path to rviz config file'),
-        robot_state_publisher,
         slam_node,
         nav_node,
         rviz_node
