@@ -25,13 +25,6 @@ def generate_launch_description():
     # robot_description = {'robot_description': open(urdf_path).read()}  # or xacro.process_file()
     robot_description = {'robot_description': xacro.process_file(urdf_path).toxml()}
 
-    robot_state_publisher = Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        output='screen',
-        parameters=[robot_description]
-    )
-
     controller_manager = Node(
         package='controller_manager',
         executable='ros2_control_node',
@@ -52,7 +45,7 @@ def generate_launch_description():
             ]
     )
 
-    return LaunchDescription([robot_state_publisher, 
+    return LaunchDescription([ 
         controller_manager, 
         spawn_jsb, 
         spawn_mecanum,

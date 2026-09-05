@@ -8,6 +8,7 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node, SetRemap
 from launch.event_handlers import OnProcessExit
+import xacro
 
 def generate_launch_description():
     land_description_pkg = get_package_share_directory('land_description')
@@ -48,8 +49,19 @@ def generate_launch_description():
         ]
     )
 
+
+    urdf_path = os.path.join(get_package_share_directory('land_description'), 'urdf', 'land_description.urdf.xacro')
+    robot_description = {'robot_description': xacro.process_file(urdf_path).toxml()}
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[robot_description]
+    )
+
     return LaunchDescription([
         DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path, description='Absolute path to rviz config file'),
+        robot_state_publisher,
         slam_node,
         nav_node,
         rviz_node
