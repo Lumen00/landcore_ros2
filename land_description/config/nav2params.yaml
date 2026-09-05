@@ -117,7 +117,7 @@ controller_server:
       transform_tolerance: 0.1
       temperature: 0.3
       gamma: 0.015
-      motion_model: "DiffDrive"
+      motion_model: "Omni"
       visualize: true
       regenerate_noises: true
       TrajectoryVisualizer:
@@ -189,7 +189,7 @@ controller_server:
 local_costmap:
   local_costmap:
     ros__parameters:
-      transform_tolerance: 0.3
+      transform_tolerance: 5.0
       update_frequency: 5.0
       publish_frequency: 2.0
       global_frame: odom
@@ -227,6 +227,7 @@ local_costmap:
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
+        map_topic: /map
       always_send_full_costmap: True
 
 global_costmap:
@@ -258,6 +259,7 @@ global_costmap:
       static_layer:
         plugin: "nav2_costmap_2d::StaticLayer"
         map_subscribe_transient_local: True
+        map_topic: /map
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
