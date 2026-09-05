@@ -36,7 +36,6 @@ def generate_launch_description():
         package='controller_manager',
         executable='ros2_control_node',
         parameters=[robot_description, controllers_yaml],
-        remappings=[('/mecanum_drive_controller/odometry', '/odom')],
         output='screen'
     )
 
@@ -46,7 +45,11 @@ def generate_launch_description():
     )
     spawn_mecanum = Node(
         package='controller_manager', executable='spawner',
-        arguments=['mecanum_drive_controller']
+        arguments=[
+            'mecanum_drive_controller',
+            '--controller-ros-args', '-r odometry:=/odom'
+
+            ]
     )
 
     return LaunchDescription([robot_state_publisher, 
