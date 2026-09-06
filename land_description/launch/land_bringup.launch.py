@@ -65,7 +65,7 @@ def generate_launch_description():
     delayed_sensors = RegisterEventHandler(
         OnProcessExit(
             target_action=spawn_mecanum,   # trigger once this spawner finishes
-            on_exit=[c1_launch, camera_node],
+            on_exit=[c1_launch],
         )
     )
 
