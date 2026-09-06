@@ -48,8 +48,8 @@ def generate_launch_description():
         arguments=[
             'mecanum_drive_controller',
             '--controller-ros-args', 
-            '-r /mecanum_drive_controller/odometry:=/odom -r /mecanum_drive_controller/tf_odometry:=/tf',
-            '--controller-manager-timeout', '180'
+            '--ros-args -r /mecanum_drive_controller/odometry:=/odom -r /mecanum_drive_controller/tf_odometry:=/tf',
+            # '--controller-manager-timeout', '180'
             ]
     )
 
