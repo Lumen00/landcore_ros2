@@ -103,4 +103,6 @@ def generate_launch_description():
         controller_manager, 
         spawn_jsb, 
         spawn_mecanum,
-        delayed_sensors])
+        delayed_sensors,
+        slam_node,
+        nav_node])
