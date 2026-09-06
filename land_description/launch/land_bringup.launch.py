@@ -87,7 +87,7 @@ def generate_launch_description():
     nav2_config_path =  os.path.join(land_description_pkg, 'config', 'nav2params.yaml')
     nav_node = GroupAction(
         actions=[
-            SetRemap(src='/cmd_vel', dst='/mecanum_drive_controller/reference'),
+            SetRemap(src='/cmd_vel_smoothed', dst='/mecanum_drive_controller/reference'),
             IncludeLaunchDescription( 
                 PythonLaunchDescriptionSource(nav2_launch_source),
                 launch_arguments={

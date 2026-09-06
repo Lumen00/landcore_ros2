@@ -56,7 +56,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path, description='Absolute path to rviz config file'),
         # slam_node,
-        nav_node,
+        # nav_node,
         rviz_node
     ])
 
