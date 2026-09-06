@@ -45,7 +45,8 @@ def generate_launch_description():
                 PythonLaunchDescriptionSource(nav2_launch_source),
                 launch_arguments={
                     'params_file': nav2_config_path,
-                    'use_sim_time' : 'False'
+                    'use_sim_time' : 'False',
+                    'use_intra_process_comm' : 'True'
                 }.items(),
             ),
         ]
