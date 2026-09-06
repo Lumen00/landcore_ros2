@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
     <!-- Activate the land_description bringup launch file for the motors and lidar. -->
-    <include file="$(find-pkg-share land_description)/launch/land_bringup.launch.py" />    
+    <!-- <include file="$(find-pkg-share land_description)/launch/land_bringup.launch.py" />     -->
     <!-- Activate the camera node -->
     <node_container pkg="rclcpp_components" exec="component_container"
                     name="camera_container" namespace="" output="screen">

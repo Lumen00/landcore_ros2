@@ -1,7 +1,8 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, RegisterEventHandler
 from ament_index_python.packages import get_package_share_directory
+from launch.event_handlers import OnProcessExit
 import xacro
 import os
 
@@ -53,8 +54,21 @@ def generate_launch_description():
             ]
     )
 
+    camera_node = IncludeLaunchDescription(
+        PathJoinSubstitution([
+            FindPackageShare('land_description'), 'launch', 'camera_bringup.xml'
+        ])
+    )
+
+    delayed_sensors = RegisterEventHandler(
+        OnProcessExit(
+            target_action=spawn_mecanum,   # trigger once this spawner finishes
+            on_exit=[c1_launch, camera_node],
+        )
+    )
+
     return LaunchDescription([robot_state_publisher, 
         controller_manager, 
         spawn_jsb, 
         spawn_mecanum,
-        c1_launch])
+        delayed_sensors])
