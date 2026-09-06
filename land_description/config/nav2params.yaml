@@ -100,18 +100,19 @@ controller_server:
       time_steps: 56
       model_dt: 0.05
       batch_size: 2000
-      ax_max: 3.0
-      ax_min: -3.0
-      ay_max: 3.0
-      ay_min: -3.0
-      az_max: 3.5
+      ax_max: 0.3
+      ax_min: -0.3
+      ay_max: 0.3
+      ay_min: -0.3
+      az_max: 0.3
       vx_std: 0.2
       vy_std: 0.2
       wz_std: 0.4
-      vx_max: 0.5
-      vx_min: -0.35
-      vy_max: 0.5
-      wz_max: 1.9
+      vx_max: 0.25
+      vx_min: -0.25
+      vy_max: 0.25
+      vy_min: -0.25
+      wz_max: 0.3
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.1
@@ -189,7 +190,7 @@ controller_server:
 local_costmap:
   local_costmap:
     ros__parameters:
-      transform_tolerance: 0.3
+      transform_tolerance: 1.5
       update_frequency: 5.0
       publish_frequency: 2.0
       global_frame: odom
@@ -368,14 +369,14 @@ velocity_smoother:
     smoothing_frequency: 20.0
     stamp_smoothed_velocity_with_smoothing_time: False
     scale_velocities: False
-    feedback: "OPEN_LOOP"
-    max_velocity: [0.5, 0.0, 2.0]
-    min_velocity: [-0.5, 0.0, -2.0]
-    max_accel: [2.5, 0.0, 3.2]
-    max_decel: [-2.5, 0.0, -3.2]
+    feedback: "CLOSED_LOOP"
+    max_velocity: [0.25, 0.0, 0.3]
+    min_velocity: [-0.25, 0.0, -0.3]
+    max_accel: [0.5, 0.0, 0.6]
+    max_decel: [-0.5, 0.0, -0.6]
     odom_topic: "odom"
     odom_duration: 0.1
-    deadband_velocity: [0.0, 0.0, 0.0]
+    deadband_velocity: [0.05, 0.05, 0.05]
     velocity_timeout: 1.0
 
 collision_monitor:
