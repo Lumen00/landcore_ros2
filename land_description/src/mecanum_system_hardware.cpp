@@ -205,11 +205,19 @@ hardware_interface::return_type MecanumSystemHardware::write(
 
     if (normalized > 0.0)
     {
+      // If not moving, set to max speed to give it a quick kick. 
+      if (abs(hw_states_velocities_[i]) != 0){
+        pwm_val = 2048;
+      }
+
       motor_driver_.setPin(in2, false);
       motor_driver_.setPWM(in1, 0, pwm_val);
     }
     else if (normalized < 0.0)
     {
+      if (abs(hw_states_velocities_[i]) != 0){
+        pwm_val = 2048;
+      }
       motor_driver_.setPin(in1, false);
       motor_driver_.setPWM(in2, 0, pwm_val);
     }
