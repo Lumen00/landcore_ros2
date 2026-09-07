@@ -46,15 +46,24 @@ def generate_launch_description():
                 launch_arguments={
                     'params_file': nav2_config_path,
                     'use_sim_time' : 'False',
-                    'use_intra_process_comm' : 'True'
+                    # 'use_intra_process_comm' : 'True'
                 }.items(),
             ),
         ]
     )
+    urdf_path = os.path.join(get_package_share_directory('land_description'), 'urdf', 'land_description.urdf.xacro')
+    robot_description = {'robot_description': xacro.process_file(urdf_path).toxml()}
 
+    robot_state_publisher = Node(
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[robot_description]
+    )
 
     return LaunchDescription([
         DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path, description='Absolute path to rviz config file'),
+        # robot_state_publisher,
         slam_node,
         nav_node,
         rviz_node

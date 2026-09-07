@@ -69,35 +69,6 @@ def generate_launch_description():
         )
     )
 
-    # Get Slam Toolbox launch global_costmapand yaml config.
-    slam_toolbox_share = get_package_share_directory('slam_toolbox')
-    slam_toolbox_launch_source = os.path.join(slam_toolbox_share, "launch", "online_async_launch.py")
-    slam_config_path =  os.path.join(land_description_pkg, 'config', 'slam_config.yaml')
-    slam_node = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(slam_toolbox_launch_source),
-        launch_arguments={
-            'slam_params_file': slam_config_path,
-            'use_sim_time' : 'False'
-        }.items()
-    )
-
-    # Get Nav2 launch and yaml config.
-    nav2_pkg = get_package_share_directory('nav2_bringup')
-    nav2_launch_source = os.path.join(nav2_pkg, "launch", "navigation_launch.py")
-    nav2_config_path =  os.path.join(land_description_pkg, 'config', 'nav2params.yaml')
-    nav_node = GroupAction(
-        actions=[
-            SetRemap(src='/cmd_vel_smoothed', dst='/mecanum_drive_controller/reference'),
-            IncludeLaunchDescription( 
-                PythonLaunchDescriptionSource(nav2_launch_source),
-                launch_arguments={
-                    'params_file': nav2_config_path,
-                    'use_sim_time' : 'False',
-                    'use_intra_process_comm' : 'True'
-                }.items(),
-            ),
-        ]
-    )
 
     return LaunchDescription([robot_state_publisher, 
         controller_manager, 
