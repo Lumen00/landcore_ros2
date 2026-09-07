@@ -207,7 +207,7 @@ hardware_interface::return_type MecanumSystemHardware::write(
     {
       // If not moving, set to a speed to give it a quick kick. 
       if (abs(hw_states_velocities_[i]) <= 10e-3){
-        pwm_val = 400;
+        pwm_val = 600;
       }
 
       motor_driver_.setPin(in2, false);
@@ -216,7 +216,7 @@ hardware_interface::return_type MecanumSystemHardware::write(
     else if (normalized < 0.0)
     {
       if (abs(hw_states_velocities_[i]) <= 10e-3){
-        pwm_val = 400;
+        pwm_val = 600;
       }
       motor_driver_.setPin(in1, false);
       motor_driver_.setPWM(in2, 0, pwm_val);
