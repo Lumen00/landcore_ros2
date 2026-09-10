@@ -59,9 +59,9 @@ namespace land_description
         std::vector<double> last_errors_; // Old P Error
 
         // KP, KI, KD.
-        const double KP_ = 1.09998;
-        const double KI_ = 1.5;
-        const double KD_ = 0.625;
+        const double KP_ = 20;
+        const double KI_ = 0;
+        const double KD_ = 0;
 
         //  DT - the time since PID control was last called for this motor.
         std::vector<Timer> DT_;
