@@ -30,6 +30,9 @@ namespace land_description
         std::vector<hardware_interface::StateInterface> export_state_interfaces() override;
         std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
+        uint16_t pid_controller(double current_velocity, double command_velocity, size_t motor_num);
+
+
     private:
         std::vector<std::string> joint_names_;
         std::vector<double> hw_commands_velocities_; // what the controller sends (velocity command)
@@ -49,6 +52,20 @@ namespace land_description
         std::mutex encoder_mutex_;  // guards the vectors above, since alert callbacks fire async
 
         Pca9685Driver motor_driver_;
+
+        // Holds the current errors for pid control.
+        std::vector<double> motor_errors_; // P Error
+        std::vector<double> accumulated_errors_; // I Error
+        std::vector<double> last_errors_; // Old P Error
+
+        // KP, KI, KD.
+        const double KP_ = 1.09998;
+        const double KI_ = 1.5;
+        const double KD_ = 0.625;
+
+        //  DT - the time since PID control was last called for this motor.
+        std::vector<Timer> DT_;
+        
 
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
 };};

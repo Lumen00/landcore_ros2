@@ -61,6 +61,12 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_init(
   encoder_times_.assign(n, 0.0L);
   encoder_tick_count_.assign(n, 0);
 
+  // Init PID vectors.
+  DT_.resize(n);
+  motor_errors_.resize(n);
+  accumulated_errors_.resize(n);
+  last_errors_.resize(n);
+
   for (size_t i = 0; i < n; i++)
   {
     joint_names_[i] = info.joints[i].name;
@@ -129,6 +135,11 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_activate()
     t.start();
   }
 
+  for (auto & t : DT_) // Start the PID timers.
+  {
+    t.start();
+  }
+
   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Activated.");
   return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -173,7 +184,7 @@ hardware_interface::return_type MecanumSystemHardware::read(
 {
   std::lock_guard<std::mutex> lock(encoder_mutex_);
 
-  double timeout = 0.5;
+  double timeout = 0.1;
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
     if (encoder_timers_[i].elapsedSeconds() >= timeout)
@@ -188,36 +199,65 @@ hardware_interface::return_type MecanumSystemHardware::read(
   return hardware_interface::return_type::OK;
 }
 
+uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double command_velocity, size_t motor_num){
+  // Get time elapsed since last call. 
+  double dt = DT_[motor_num].elapsedSeconds();
+  DT_[motor_num].start();
+
+  // Update the previous error for this motor number
+  last_errors_[motor_num] = motor_errors_[motor_num];
+
+  // Calculate and save the new error.
+  motor_errors_[motor_num] = abs(command_velocity) - current_velocity;
+
+  // Update accumulated error / integral error.
+  accumulated_errors_[motor_num] += motor_errors_[motor_num];
+
+  // Calculate PID output.
+  double pid_pwm_val = KP_ * motor_errors_[motor_num] + KI_ * accumulated_errors_[motor_num] * dt + KD_ * (motor_errors_[motor_num] - last_errors_[motor_num]) / dt;
+
+  // Convert the calculated double value to uint16_t
+
+  // Clamp the PWM value to prevent future problems.
+  if (pid_pwm_val > 1600){pid_pwm_val = 1600;}
+  if (pid_pwm_val < 0){pid_pwm_val = 0;}
+
+  return static_cast<uint16_t>(pid_pwm_val);
+}
+
 hardware_interface::return_type MecanumSystemHardware::write(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & /*period*/)
 {
   // Tune this to your motor's actual max rad/s at full PWM
-  const double max_wheel_vel = 17.8; // Max efficiency point, 17/3 * M_PI // 7.0*M_PI;
+  // const double max_wheel_vel = 17.8; // Max efficiency point, 17/3 * M_PI // 7.0*M_PI;
 
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
     double cmd = hw_commands_velocities_[i];
-    double normalized = std::clamp(cmd / max_wheel_vel, -1.0, 1.0);
-    uint16_t pwm_val = static_cast<uint16_t>(std::abs(normalized) * 4095);
+    // double normalized = std::clamp(cmd / max_wheel_vel, -1.0, 1.0);
+    // uint16_t pwm_val = static_cast<uint16_t>(std::abs(normalized) * 4095);
+
+    // Use PID controller:
+    uint16_t pwm_val = pid_controller(hw_states_velocities_[i], cmd, i);
 
     uint8_t in1 = kWiring[i].in1_channel;
     uint8_t in2 = kWiring[i].in2_channel;
 
-    if (normalized > 0.0)
+    if (cmd > 0.0)
     {
       // If not moving, set to a speed to give it a quick kick. 
-      if (abs(hw_states_velocities_[i]) <= 10e-3){
-        pwm_val = 650;
-      }
+      // if (abs(hw_states_velocities_[i]) <= 10e-3){
+      //   pwm_val = 675;
+      // }
 
       motor_driver_.setPin(in2, false);
       motor_driver_.setPWM(in1, 0, pwm_val);
     }
-    else if (normalized < 0.0)
+    else if (cmd < 0.0)
     {
-      if (abs(hw_states_velocities_[i]) <= 10e-3){
-        pwm_val = 650;
-      }
+      // if (abs(hw_states_velocities_[i]) <= 10e-3){
+      //   pwm_val = 675;
+      // }
       motor_driver_.setPin(in1, false);
       motor_driver_.setPWM(in2, 0, pwm_val);
     }
