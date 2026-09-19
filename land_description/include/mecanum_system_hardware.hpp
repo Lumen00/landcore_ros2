@@ -49,6 +49,14 @@ namespace land_description
         std::vector<int> encoder_tick_count_;
         int encoder_tick_threshold_ = 60;
 
+        // New encoder variables
+        struct PinInfo { size_t motor; bool is_a;};
+        std::unordered_map<int, PinInfo> pin_map_; // (GPIO number, wheel number, is channel a?)
+        std::vector<int32_t> encoder_count_; // Running signed tick total per wheel. 
+        std::vector<int32_t> last_count_; // Total at the previous read() to count tick diff.
+        std::vector<uint8_t> enc_a_, enc_b_, enc_prev_; // Last known level of each channel a/b.
+                                                        // Enc_prev has the previous 2-bit state AB.
+
         std::mutex encoder_mutex_;  // guards the vectors above, since alert callbacks fire async
 
         Pca9685Driver motor_driver_;

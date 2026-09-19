@@ -77,7 +77,8 @@ controller_server:
     progress_checker_plugins: ["progress_checker"]
     goal_checker_plugins: ["general_goal_checker"] # "precise_goal_checker"
     controller_plugins: ["FollowPath"]
-    use_realtime_priority: false
+    use_realtime_priority: true
+    publish_zero_velocity: true
 
     # Progress checker parameters
     progress_checker:
@@ -108,11 +109,11 @@ controller_server:
       vx_std: 0.2
       vy_std: 0.2
       wz_std: 0.4
-      vx_max: 0.3
-      vx_min: -0.3
-      vy_max: 0.3
-      vy_min: -0.3
-      wz_max: 1.0
+      vx_max: 0.2
+      vx_min: -0.2
+      vy_max: 0.2
+      vy_min: -0.2
+      wz_max: 0.7
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.3
@@ -124,8 +125,8 @@ controller_server:
       TrajectoryVisualizer:
         trajectory_step: 5
         time_step: 3
-      AckermannConstraints:
-        min_turning_r: 0.2
+      # AckermannConstraints:
+        # min_turning_r: 0.2
       critics: [
         "ConstraintCritic", "CostCritic", "GoalCritic",
         "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic",
@@ -370,8 +371,8 @@ velocity_smoother:
     stamp_smoothed_velocity_with_smoothing_time: false
     scale_velocities: False
     feedback: "CLOSED_LOOP"
-    max_velocity: [0.3, 0.3, 1.0]
-    min_velocity: [-0.3, -0.3, -1.0]
+    max_velocity: [0.2, 0.2, 0.7]
+    min_velocity: [-0.2, -0.2, -0.7]
     max_accel: [1.0, 1.0, 0.6]
     max_decel: [-1.0, -1.0, -0.6]
     odom_topic: "odom"
