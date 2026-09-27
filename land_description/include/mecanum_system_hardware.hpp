@@ -2,6 +2,7 @@
 #define LAND_DESCRIPTION__MECANUM_SYSTEM_HARDWARE_HPP_
 
 #include <vector>
+#include <algorithm>
 #include <string>
 #include <lgpio.h>
 #include "motorhat_driver.hpp"

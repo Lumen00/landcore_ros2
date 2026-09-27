@@ -4,6 +4,8 @@
 #include <cmath>
 #include <algorithm>
 #include "rclcpp/rclcpp.hpp"
+#include <vector>
+#include <algorithm>
 
 namespace land_description
 {
@@ -271,7 +273,6 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
   auto * self = static_cast<MecanumSystemHardware *>(data);
   int trigger_pin = evt->report.gpio;
 
-  std::lock_guard<std::mutex> lock(self->encoder_mutex_);
 
   switch (trigger_pin)
   {
@@ -279,7 +280,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     // Read the pair pin level.
     // If the pair is low, we are going forwards. If it is high, we are going backwards.
     // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[0].encoder_pair_pin);
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[0].encoder_pair_pin));
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[0].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[0].encoder_pair_pin)){ // High
       self->encoder_tick_count_[0]--;
     }
@@ -289,7 +290,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   case 6: // Right Front
     // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[1].encoder_pair_pin);
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[1].encoder_pair_pin));
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[1].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[1].encoder_pair_pin)){ // High
       self->encoder_tick_count_[1]--;
     }
@@ -299,7 +300,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   case 20: // Left Back
     // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[2].encoder_pair_pin);
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[2].encoder_pair_pin));
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[2].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[2].encoder_pair_pin)){ // High
       self->encoder_tick_count_[2]--;
     }
@@ -309,7 +310,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   case 26: // Right Back
     // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[3].encoder_pair_pin);
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[3].encoder_pair_pin));
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[3].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[3].encoder_pair_pin)){ // High
       self->encoder_tick_count_[3]--;
     }
@@ -326,28 +327,16 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   }
 
-  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
-    self->encoder_tick_count_[0],
-    self->encoder_tick_count_[1],
-    self->encoder_tick_count_[2],
-    self->encoder_tick_count_[3]);
+  // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
+  if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 341 == 0;})){
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+      self->encoder_tick_count_[0],
+      self->encoder_tick_count_[1],
+      self->encoder_tick_count_[2],
+      self->encoder_tick_count_[3]);
+  }
 
-  // for (size_t i = 0; i < self->encoder_alert_pins_.size(); i++)
-  // {
-  //   if (self->encoder_alert_pins_[i] != trigger_pin)
-  //   {
-  //     continue;
-  //   }
 
-  //   if (self->encoder_tick_count_[i] < self->encoder_tick_threshold_)
-  //   {
-  //     self->encoder_tick_count_[i] += 1;
-  //     return;
-  //   }
-
-  //   self->encoder_tick_count_[i] = 0;
-  //   long double dt = self->encoder_timers_[i].elapsedSeconds();
-  //   self->encoder_timers_[i].start();
 
   //   if (dt > 0.0L)
   //   {
