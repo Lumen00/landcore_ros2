@@ -96,8 +96,8 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   {
     // pin_handles_[i] = h;
 
-    if (//lgGpioClaimInput(h_, LG_SET_PULL_UP, encoder_alert_pins_[i]) < 0 ||
-        lgGpioClaimInput(h_, LG_SET_PULL_UP, encoder_pair_pins_[i]) < 0)
+    if (//lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
+        lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -107,7 +107,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
 
     // Get alerts whenever the alert pins on the encoder go high. 
     lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h_, LG_SET_PULL_UP, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
+    if (lgGpioClaimAlert(h_, 0, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -278,7 +278,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
   case 13: // Left Front
     // Read the pair pin level.
     // If the pair is low, we are going forwards. If it is high, we are going backwards.
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[0].encoder_pair_pin);
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[0].encoder_pair_pin);
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[0].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[0].encoder_pair_pin)){ // High
       self->encoder_tick_count_[0]--;
     }
@@ -287,7 +288,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 6: // Right Front
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[1].encoder_pair_pin);
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[1].encoder_pair_pin);
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[1].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[1].encoder_pair_pin)){ // High
       self->encoder_tick_count_[1]--;
     }
@@ -296,7 +298,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 20: // Left Back
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[2].encoder_pair_pin);
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[2].encoder_pair_pin);
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[2].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[2].encoder_pair_pin)){ // High
       self->encoder_tick_count_[2]--;
     }
@@ -305,7 +308,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 26: // Right Back
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[3].encoder_pair_pin);
+    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[3].encoder_pair_pin);
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[3].encoder_pair_pin));
     if (lgGpioRead(self->h_, kWiring[3].encoder_pair_pin)){ // High
       self->encoder_tick_count_[3]--;
     }
