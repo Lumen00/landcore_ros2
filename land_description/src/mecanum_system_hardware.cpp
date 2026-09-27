@@ -81,7 +81,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
 
-  int h_ = lgGpiochipOpen(0);
+  h_ = lgGpiochipOpen(0);
     // if (h < 0)
     // {
     //   RCLCPP_ERROR(
