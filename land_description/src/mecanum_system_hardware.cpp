@@ -96,7 +96,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   {
     // pin_handles_[i] = h;
 
-    if (lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
+    if (//lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
         lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
     {
       RCLCPP_ERROR(
