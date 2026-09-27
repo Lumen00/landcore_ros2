@@ -273,17 +273,12 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
 
   std::lock_guard<std::mutex> lock(self->encoder_mutex_);
 
-  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
-    self->encoder_tick_count_[0],
-    self->encoder_tick_count_[1],
-    self->encoder_tick_count_[2],
-    self->encoder_tick_count_[3]);
-
   switch (trigger_pin)
   {
   case 13: // Left Front
     // Read the pair pin level.
     // If the pair is low, we are going forwards. If it is high, we are going backwards.
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[0].encoder_pair_pin);
     if (lgGpioRead(self->h_, kWiring[0].encoder_pair_pin)){ // High
       self->encoder_tick_count_[0]--;
     }
@@ -292,6 +287,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 6: // Right Front
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[1].encoder_pair_pin);
     if (lgGpioRead(self->h_, kWiring[1].encoder_pair_pin)){ // High
       self->encoder_tick_count_[1]--;
     }
@@ -300,6 +296,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 20: // Left Back
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[2].encoder_pair_pin);
     if (lgGpioRead(self->h_, kWiring[2].encoder_pair_pin)){ // High
       self->encoder_tick_count_[2]--;
     }
@@ -308,6 +305,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     }
     break;
   case 26: // Right Back
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[3].encoder_pair_pin);
     if (lgGpioRead(self->h_, kWiring[3].encoder_pair_pin)){ // High
       self->encoder_tick_count_[3]--;
     }
@@ -323,6 +321,12 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"data %p", data);
     break;
   }
+
+  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+    self->encoder_tick_count_[0],
+    self->encoder_tick_count_[1],
+    self->encoder_tick_count_[2],
+    self->encoder_tick_count_[3]);
 
   // for (size_t i = 0; i < self->encoder_alert_pins_.size(); i++)
   // {
@@ -349,8 +353,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     // return;
   // }
 
-  RCLCPP_WARN(
-    rclcpp::get_logger("MecanumSystemHardware"), "Unmatched encoder pin: %d", trigger_pin);
+  // RCLCPP_WARN(
+    // rclcpp::get_logger("MecanumSystemHardware"), "Unmatched encoder pin: %d", trigger_pin);
 }
 
 }  // namespace land_description
