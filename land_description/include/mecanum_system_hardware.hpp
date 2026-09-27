@@ -10,6 +10,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "timer.hpp"
 
+
 namespace land_description
 {
     // The plugin inherits from hardware_interface::SystemInterface class.
@@ -59,13 +60,14 @@ namespace land_description
         std::vector<double> last_errors_; // Old P Error
 
         // KP, KI, KD.
-        const double KP_ = 600;
-        const double KI_ = 700;
-        const double KD_ = 500;
+        const double KP_ = 0.6;
+        const double KI_ = 5;
+        const double KD_ = 0;
 
         //  DT - the time since PID control was last called for this motor.
         std::vector<Timer> DT_;
         
+        int h_ = -1;
 
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
 };};

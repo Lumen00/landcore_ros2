@@ -80,22 +80,24 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_init(
 hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   const rclcpp_lifecycle::State & /*previous_state*/)
 {
+
+  int h_ = lgGpiochipOpen(0);
+    // if (h < 0)
+    // {
+    //   RCLCPP_ERROR(
+    //     rclcpp::get_logger("MecanumSystemHardware"),
+    //     "Failed to open gpiochip for %s: %s (%d)",
+    //     joint_names_[i].c_str(), lguErrorText(h), h);
+    //   return hardware_interface::CallbackReturn::ERROR;
+    // }
+
   // --- Open GPIO for encoders (ported from dc_encoder_service openInputGPIO) ---
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
-    int h = lgGpiochipOpen(0);
-    if (h < 0)
-    {
-      RCLCPP_ERROR(
-        rclcpp::get_logger("MecanumSystemHardware"),
-        "Failed to open gpiochip for %s: %s (%d)",
-        joint_names_[i].c_str(), lguErrorText(h), h);
-      return hardware_interface::CallbackReturn::ERROR;
-    }
-    pin_handles_[i] = h;
+    // pin_handles_[i] = h;
 
-    if (lgGpioClaimInput(h, 0, encoder_alert_pins_[i]) < 0 ||
-        lgGpioClaimInput(h, 0, encoder_pair_pins_[i]) < 0)
+    if (lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
+        lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -103,8 +105,9 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
       return hardware_interface::CallbackReturn::ERROR;
     }
 
-    lgGpioSetAlertsFunc(h, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h, 0, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
+    // Get alerts whenever the alert pins on the encoder go high. 
+    lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
+    if (lgGpioClaimAlert(h_, 0, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -219,7 +222,7 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   // Convert the calculated double value to uint16_t
 
   // Clamp the PWM value to prevent future problems.
-  if (pid_pwm_val > 1600){pid_pwm_val = 1600;}
+  if (pid_pwm_val > 500){pid_pwm_val = 500;}
   if (pid_pwm_val < 0){pid_pwm_val = 0;}
 
   return static_cast<uint16_t>(pid_pwm_val);
@@ -245,19 +248,11 @@ hardware_interface::return_type MecanumSystemHardware::write(
 
     if (cmd > 0.05)
     {
-      // If not moving, set to a speed to give it a quick kick. 
-      // if (abs(hw_states_velocities_[i]) <= 10e-3){
-      //   pwm_val = 675;
-      // }
-
       motor_driver_.setPin(in2, false);
       motor_driver_.setPWM(in1, 0, pwm_val);
     }
     else if (cmd < -0.05)
     {
-      // if (abs(hw_states_velocities_[i]) <= 10e-3){
-      //   pwm_val = 675;
-      // }
       motor_driver_.setPin(in1, false);
       motor_driver_.setPWM(in2, 0, pwm_val);
     }
@@ -271,43 +266,88 @@ hardware_interface::return_type MecanumSystemHardware::write(
   return hardware_interface::return_type::OK;
 }
 
-void MecanumSystemHardware::encoder_callback(int /*e*/, lgGpioAlert_p evt, void * data)
+void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
 {
   auto * self = static_cast<MecanumSystemHardware *>(data);
   int trigger_pin = evt->report.gpio;
 
   std::lock_guard<std::mutex> lock(self->encoder_mutex_);
 
-  // Check which encoder pin has gone high with a switch statement.
-  // Add one tick to the encoder tick counter.
-  // Determine the direction of spin. 
+  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+    self->encoder_tick_count_[0],
+    self->encoder_tick_count_[1],
+    self->encoder_tick_count_[2],
+    self->encoder_tick_count_[3]);
 
-  // Make the encoder callback more lightweight
-  // and only calculate speed on read. 
-  for (size_t i = 0; i < self->encoder_alert_pins_.size(); i++)
+  switch (trigger_pin)
   {
-    if (self->encoder_alert_pins_[i] != trigger_pin)
-    {
-      continue;
+  case 13: // Left Front
+    // Read the pair pin level.
+    // If the pair is low, we are going forwards. If it is high, we are going backwards.
+    if (lgGpioRead(self->h_, kWiring[0].encoder_pair_pin)){ // High
+      self->encoder_tick_count_[0]--;
     }
-
-    if (self->encoder_tick_count_[i] < self->encoder_tick_threshold_)
-    {
-      self->encoder_tick_count_[i] += 1;
-      return;
+    else { // Low
+      self->encoder_tick_count_[0]++;
     }
-
-    self->encoder_tick_count_[i] = 0;
-    long double dt = self->encoder_timers_[i].elapsedSeconds();
-    self->encoder_timers_[i].start();
-
-    if (dt > 0.0L)
-    {
-      self->hw_states_velocities_[i] =
-        (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
+    break;
+  case 6: // Right Front
+    if (lgGpioRead(self->h_, kWiring[1].encoder_pair_pin)){ // High
+      self->encoder_tick_count_[1]--;
     }
-    return;
+    else { // Low
+      self->encoder_tick_count_[1]++;
+    }
+    break;
+  case 20: // Left Back
+    if (lgGpioRead(self->h_, kWiring[2].encoder_pair_pin)){ // High
+      self->encoder_tick_count_[2]--;
+    }
+    else { // Low
+      self->encoder_tick_count_[2]++;
+    }
+    break;
+  case 26: // Right Back
+    if (lgGpioRead(self->h_, kWiring[3].encoder_pair_pin)){ // High
+      self->encoder_tick_count_[3]--;
+    }
+    else { // Low
+      self->encoder_tick_count_[3]++;
+    }
+    break;
+
+  default:
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", trigger_pin);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"e: %i", e);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"evt->report.gpio: %i", evt->report.gpio);
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"data %p", data);
+    break;
   }
+
+  // for (size_t i = 0; i < self->encoder_alert_pins_.size(); i++)
+  // {
+  //   if (self->encoder_alert_pins_[i] != trigger_pin)
+  //   {
+  //     continue;
+  //   }
+
+  //   if (self->encoder_tick_count_[i] < self->encoder_tick_threshold_)
+  //   {
+  //     self->encoder_tick_count_[i] += 1;
+  //     return;
+  //   }
+
+  //   self->encoder_tick_count_[i] = 0;
+  //   long double dt = self->encoder_timers_[i].elapsedSeconds();
+  //   self->encoder_timers_[i].start();
+
+  //   if (dt > 0.0L)
+  //   {
+  //     self->hw_states_velocities_[i] =
+  //       (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
+  //   }
+    // return;
+  // }
 
   RCLCPP_WARN(
     rclcpp::get_logger("MecanumSystemHardware"), "Unmatched encoder pin: %d", trigger_pin);
