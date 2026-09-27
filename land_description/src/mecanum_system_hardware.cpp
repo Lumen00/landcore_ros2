@@ -96,8 +96,8 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   {
     // pin_handles_[i] = h;
 
-    if (//lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
-        lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
+    if (//lgGpioClaimInput(h_, LG_SET_PULL_UP, encoder_alert_pins_[i]) < 0 ||
+        lgGpioClaimInput(h_, LG_SET_PULL_UP, encoder_pair_pins_[i]) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -107,7 +107,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
 
     // Get alerts whenever the alert pins on the encoder go high. 
     lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h_, 0, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
+    if (lgGpioClaimAlert(h_, LG_SET_PULL_UP, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
