@@ -10,7 +10,8 @@
 #include "hardware_interface/handle.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "timer.hpp"
-
+#include <chrono>
+#include <thread>
 
 namespace land_description
 {
@@ -49,6 +50,7 @@ namespace land_description
         std::vector<Timer> encoder_timers_;
         std::vector<long double> encoder_times_;
         std::vector<int> encoder_tick_count_;
+        std::vector<int> encoder_tick_prev_;
         int encoder_tick_threshold_ = 60;        
 
         std::mutex encoder_mutex_;  // guards the vectors above, since alert callbacks fire async
@@ -70,7 +72,13 @@ namespace land_description
         
         int h_ = -1;
 
+        rclcpp::Node::SharedPtr timer_node_;
+        rclcpp::TimerBase::SharedPtr speed_timer_;
+        rclcpp::executors::SingleThreadedExecutor::SharedPtr timer_executor_;
+        std::thread timer_spin_thread_;
+
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
+        static void speed_calc(void * data, double interval);
 };};
 
 #endif
