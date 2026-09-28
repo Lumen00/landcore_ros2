@@ -219,14 +219,8 @@ hardware_interface::return_type MecanumSystemHardware::read(
 {
   std::lock_guard<std::mutex> lock(encoder_mutex_);
 
-  double timeout = 0.1;
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
-    if (encoder_timers_[i].elapsedSeconds() >= timeout)
-    {
-      hw_states_velocities_[i] = 0.0;
-      encoder_tick_count_[i] = 0;
-    }
     // integrate position from whatever velocity was last computed
     hw_states_positions_[i] += hw_states_velocities_[i] * period.seconds();
   }
