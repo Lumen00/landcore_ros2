@@ -321,6 +321,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
     wheel_speeds.push_back((tick_diff[i] / 341.2) * (2.0 / M_PI) / (interval / 1000));
   }
   self->hw_states_velocities_ = wheel_speeds;
+  self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
   std::ostringstream ss;
