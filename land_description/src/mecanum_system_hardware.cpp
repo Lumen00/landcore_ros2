@@ -318,7 +318,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
     //       (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
   std::vector<double> wheel_speeds(tick_diff.size());
   for (int i = 0; i <= int(tick_diff.size()); i++){
-    wheel_speeds.push_back((tick_diff[i] / 341.2) * (2.0 / M_PI) / (interval / 1000));
+    wheel_speeds[i] = ((tick_diff[i] / 341.2) * (2.0 / M_PI) / (interval / 1000));
   }
   self->hw_states_velocities_ = wheel_speeds;
   self->encoder_tick_prev_ = self->encoder_tick_count_;
