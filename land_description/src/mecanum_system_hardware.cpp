@@ -79,9 +79,9 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_init(
 
   timer_node_ = std::make_shared<rclcpp::Node>(params.hardware_info.name + "_timer_node");
   speed_timer_ = timer_node_->create_wall_timer(
-    std::chrono::milliseconds(200),
+    std::chrono::milliseconds(50),
     [this](){
-      MecanumSystemHardware::speed_calc(this, 200);
+      MecanumSystemHardware::speed_calc(this, 50);
     }
   );
 
