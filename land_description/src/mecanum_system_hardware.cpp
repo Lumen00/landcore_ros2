@@ -237,15 +237,13 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   last_errors_[motor_num] = motor_errors_[motor_num];
 
   // Calculate and save the new error.
-  motor_errors_[motor_num] = std::abs(command_velocity) - current_velocity;
+  motor_errors_[motor_num] = command_velocity - current_velocity;
 
   // Update accumulated error / integral error.
   accumulated_errors_[motor_num] += motor_errors_[motor_num];
 
   // Calculate PID output.
   double pid_pwm_val = KP_ * motor_errors_[motor_num] + KI_ * accumulated_errors_[motor_num] * dt + KD_ * (motor_errors_[motor_num] - last_errors_[motor_num]) / dt;
-
-  // Convert the calculated double value to uint16_t
 
   // Clamp the PWM value to prevent future problems.
   if (pid_pwm_val > 1600){pid_pwm_val = 1600;}
