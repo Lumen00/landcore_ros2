@@ -71,7 +71,7 @@ controller_server:
     controller_frequency: 20.0
     costmap_update_timeout: 0.30
     min_x_velocity_threshold: 0.001
-    min_y_velocity_threshold: 0.5
+    min_y_velocity_threshold: 0.001
     min_theta_velocity_threshold: 0.001
     failure_tolerance: 0.3
     progress_checker_plugins: ["progress_checker"]
@@ -86,11 +86,11 @@ controller_server:
       required_movement_radius: 0.5
       movement_time_allowance: 10.0
     # Goal checker parameters
-    #precise_goal_checker:
-    #  plugin: "nav2_controller::SimpleGoalChecker"
-    #  xy_goal_tolerance: 0.25
-    #  yaw_goal_tolerance: 0.25
-    #  stateful: True
+    precise_goal_checker:
+     plugin: "nav2_controller::SimpleGoalChecker"
+     xy_goal_tolerance: 0.25
+     yaw_goal_tolerance: 0.25
+     stateful: True
     general_goal_checker:
       stateful: True
       plugin: "nav2_controller::SimpleGoalChecker"
@@ -109,11 +109,11 @@ controller_server:
       vx_std: 0.2
       vy_std: 0.2
       wz_std: 0.4
-      vx_max: 0.2
-      vx_min: -0.2
-      vy_max: 0.2
-      vy_min: -0.2
-      wz_max: 0.7
+      vx_max: 1.0
+      vx_min: -1.0
+      vy_max: 1.0
+      vy_min: -1.0
+      wz_max: 1.0
       iteration_count: 1
       prune_distance: 1.7
       transform_tolerance: 0.3
@@ -126,7 +126,6 @@ controller_server:
         trajectory_step: 5
         time_step: 3
       # AckermannConstraints:
-        # min_turning_r: 0.2
       critics: [
         "ConstraintCritic", "CostCritic", "GoalCritic",
         "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic",
@@ -369,10 +368,10 @@ velocity_smoother:
     enable_stamped_cmd_vel: true
     smoothing_frequency: 20.0
     stamp_smoothed_velocity_with_smoothing_time: false
-    scale_velocities: False
+    scale_velocities: true
     feedback: "CLOSED_LOOP"
-    max_velocity: [0.2, 0.2, 0.7]
-    min_velocity: [-0.2, -0.2, -0.7]
+    max_velocity: [1.0, 1.0, 1.0]
+    min_velocity: [-1.0, -1.0, -1.0]
     max_accel: [1.0, 1.0, 0.6]
     max_decel: [-1.0, -1.0, -0.6]
     odom_topic: "odom"
