@@ -248,7 +248,7 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   // Convert the calculated double value to uint16_t
 
   // Clamp the PWM value to prevent future problems.
-  if (pid_pwm_val > 500){pid_pwm_val = 500;}
+  if (pid_pwm_val > 1600){pid_pwm_val = 1600;}
   if (pid_pwm_val < 0){pid_pwm_val = 0;}
 
   return static_cast<uint16_t>(pid_pwm_val);
@@ -321,7 +321,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   std::ostringstream ss;
   ss << std::fixed << std::setprecision(3);
   for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
-    ss << (i ? ", " : "") << self->hw_states_velocities_[i];
+    ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
   }
   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
 }
