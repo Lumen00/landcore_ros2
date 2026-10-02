@@ -63,7 +63,7 @@ namespace land_description
         std::vector<double> last_errors_; // Old P Error
 
         // KP, KI, KD.
-        const double KP_ = 100;
+        const double KP_ = 200;
         const double KI_ = 5*16;
         const double KD_ = 0;
 
