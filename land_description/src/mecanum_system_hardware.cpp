@@ -217,7 +217,7 @@ std::vector<hardware_interface::CommandInterface> MecanumSystemHardware::export_
 hardware_interface::return_type MecanumSystemHardware::read(
   const rclcpp::Time & /*time*/, const rclcpp::Duration & period)
 {
-  std::lock_guard<std::mutex> lock(encoder_mutex_);
+  // std::lock_guard<std::mutex> lock(encoder_mutex_);
 
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
@@ -295,7 +295,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   // At set intervals, calculate the speed of each wheel by observing
   // the change in encoder ticks between intervals. 
 
-  std::lock_guard<std::mutex> lock(self->encoder_mutex_);
+  // std::lock_guard<std::mutex> lock(self->encoder_mutex_);
 
   // Get the difference between last interval and current time.
   std::vector<int> tick_diff(self->encoder_tick_count_.size()); // Reserve mem space.
