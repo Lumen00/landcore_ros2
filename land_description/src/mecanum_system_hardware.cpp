@@ -319,7 +319,8 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   {
     // integrate position from whatever velocity was last computed
     self->hw_states_positions_[i] += self->hw_states_velocities_[i] * (interval);
-  }  self->encoder_tick_prev_ = self->encoder_tick_count_;
+  }  
+  self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
   std::ostringstream ss;
