@@ -77,17 +77,17 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_init(
     encoder_pair_pins_[i] = kWiring[i].encoder_pair_pin;
   }
 
-  timer_node_ = std::make_shared<rclcpp::Node>(params.hardware_info.name + "_timer_node");
-  speed_timer_ = timer_node_->create_wall_timer(
-    std::chrono::milliseconds(50),
-    [this](){
-      MecanumSystemHardware::speed_calc(this, 50);
-    }
-  );
+  // timer_node_ = std::make_shared<rclcpp::Node>(params.hardware_info.name + "_timer_node");
+  // speed_timer_ = timer_node_->create_wall_timer(
+  //   std::chrono::milliseconds(50),
+  //   [this](){
+  //     MecanumSystemHardware::speed_calc(this, 50);
+  //   }
+  // );
 
-  timer_executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
-  timer_executor_->add_node(timer_node_);
-  timer_spin_thread_ = std::thread([this]() { timer_executor_->spin(); });
+  // timer_executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
+  // timer_executor_->add_node(timer_node_);
+  // timer_spin_thread_ = std::thread([this]() { timer_executor_->spin(); });
 
   return hardware_interface::CallbackReturn::SUCCESS;
 }
@@ -225,6 +225,8 @@ hardware_interface::return_type MecanumSystemHardware::read(
   //   hw_states_positions_[i] += this->hw_states_velocities_[i] * period.seconds();
   // }
 
+  MecanumSystemHardware::speed_calc(this, period.seconds());
+
   return hardware_interface::return_type::OK;
 }
 
@@ -310,13 +312,13 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
     //       (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
   std::vector<double> wheel_speeds(tick_diff.size());
   for (int i = 0; i <= int(tick_diff.size()); i++){
-    wheel_speeds[i] = (((tick_diff[i] / 341.2) * (2.0 * M_PI)) / (interval / 1000));
+    wheel_speeds[i] = (((tick_diff[i] / 341.2) * (2.0 * M_PI)) / (interval));
   }
   self->hw_states_velocities_ = wheel_speeds;
   for (size_t i = 0; i < wheel_speeds.size(); i++)
   {
     // integrate position from whatever velocity was last computed
-    self->hw_states_positions_[i] += self->hw_states_velocities_[i] * (interval/1000);
+    self->hw_states_positions_[i] += self->hw_states_velocities_[i] * (interval);
   }  self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
