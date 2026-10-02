@@ -219,11 +219,11 @@ hardware_interface::return_type MecanumSystemHardware::read(
 {
   // std::lock_guard<std::mutex> lock(encoder_mutex_);
 
-  for (size_t i = 0; i < joint_names_.size(); i++)
-  {
-    // integrate position from whatever velocity was last computed
-    hw_states_positions_[i] += this->hw_states_velocities_[i] * period.seconds();
-  }
+  // for (size_t i = 0; i < joint_names_.size(); i++)
+  // {
+  //   // integrate position from whatever velocity was last computed
+  //   hw_states_positions_[i] += this->hw_states_velocities_[i] * period.seconds();
+  // }
 
   return hardware_interface::return_type::OK;
 }
@@ -295,7 +295,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   // At set intervals, calculate the speed of each wheel by observing
   // the change in encoder ticks between intervals. 
 
-  // std::lock_guard<std::mutex> lock(self->encoder_mutex_);
+  std::lock_guard<std::mutex> lock(self->encoder_mutex_);
 
   // Get the difference between last interval and current time.
   std::vector<int> tick_diff(self->encoder_tick_count_.size()); // Reserve mem space.
@@ -313,7 +313,11 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
     wheel_speeds[i] = (((tick_diff[i] / 341.2) * (2.0 * M_PI)) / (interval / 1000));
   }
   self->hw_states_velocities_ = wheel_speeds;
-  self->encoder_tick_prev_ = self->encoder_tick_count_;
+  for (size_t i = 0; i < wheel_speeds.size(); i++)
+  {
+    // integrate position from whatever velocity was last computed
+    self->hw_states_positions_[i] += self->hw_states_velocities_[i] * (interval/1000);
+  }  self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
   std::ostringstream ss;
