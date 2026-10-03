@@ -106,5 +106,5 @@ def generate_launch_description():
         delayed_sensors,
         camera_node,
         slam_node,
-        nav_node
+        # nav_node
         ])
