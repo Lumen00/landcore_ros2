@@ -83,10 +83,10 @@ namespace land_description
         // Static in a class member -> all objects using this class share the same value for this variable.
         // Constexpr -> like using const for read-only, but optimised for compile-time
         static constexpr std::array<int, 16> lookup_ = {
-            0,1,-1,2,
-            -1,0,2,1,
-            1,2,0,-1,
-            2,-1,1,0
+            0,-1,1,2,
+            1,0,2,-1,
+            -1,2,0,1,
+            2,1,-1,0
         };
 
         // Only need to save the old state of the motor encoders.

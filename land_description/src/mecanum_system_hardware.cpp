@@ -404,11 +404,12 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
 
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
   if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i REG: %i LOOKUP: %i", 
       self->encoder_tick_count_[0],
       self->encoder_tick_count_[1],
       self->encoder_tick_count_[2],
-      self->encoder_tick_count_[3]);
+      self->encoder_tick_count_[3],
+      regi, lookup_[regi]);
   }
 }
 
