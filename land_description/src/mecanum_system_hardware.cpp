@@ -142,6 +142,11 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
       return hardware_interface::CallbackReturn::ERROR;
     }
 
+    // Read motor pins and set current encoder states.
+    for (size_t i = 0; i < joint_names_.size(); i++){
+      old_encoders_[i] = ((lgGpioRead(h_, kWiring[i].encoder_alert_pin) & 1) << 1) | (lgGpioRead(h_, kWiring[i].encoder_pair_pin) & 1);
+    }
+
   }
 
   // --- Open PCA9685 for motor PWM ---
