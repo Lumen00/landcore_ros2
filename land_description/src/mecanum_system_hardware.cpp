@@ -26,7 +26,7 @@ const std::vector<WheelWiring> kWiring = {
   {13, 19, 3, 2},  // front_left
   {6,  5,  0, 1},  // front_right
   {20, 21, 5, 4},  // back_left
-  {26, 16, 6, 7},  // back_right
+  {16, 26, 6, 7},  // back_right
 };
 }  // namespace
 
@@ -110,7 +110,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
 
     // Get alerts whenever the alert pins on the encoder have an edge.
     lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h_, 0, LG_BOTH_EDGES, encoder_alert_pins_[i], -1) < 0)
+    if (lgGpioClaimAlert(h_, LG_SET_PULL_UP, LG_BOTH_EDGES, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -121,7 +121,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
 
     // Also set alerts on both edges for the pair pins for 4x resolution and to use the lookup table.
     lgGpioSetAlertsFunc(h_, encoder_pair_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h_, 0, LG_BOTH_EDGES, encoder_pair_pins_[i], -1) < 0)
+    if (lgGpioClaimAlert(h_, LG_SET_PULL_UP, LG_BOTH_EDGES, encoder_pair_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
@@ -325,11 +325,8 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
 void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
 {
   auto * self = static_cast<MecanumSystemHardware *>(data);
-
-  for (int k = 0; k < e; ++k){
-
-  int trigger_pin = evt[k].report.gpio;
-  uint8_t level = evt[k].report.level; // 0-> low, 1-> high
+  int trigger_pin = evt->report.gpio;
+  uint8_t level = evt->report.level; // 0-> low, 1-> high
   if (level > 1){
     return;
   }
@@ -400,7 +397,6 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   }
 
-
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
   if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
     RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i REG: %i", 
@@ -410,7 +406,6 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
       self->encoder_tick_count_[3],
       regi);
   }
-}
 }
 
 }  // namespace land_description
