@@ -325,8 +325,11 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
 void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
 {
   auto * self = static_cast<MecanumSystemHardware *>(data);
-  int trigger_pin = evt->report.gpio;
-  uint8_t level = evt->report.level; // 0-> low, 1-> high
+
+  for (int k = 0; k < e; ++k){
+
+  int trigger_pin = evt[k].report.gpio;
+  uint8_t level = evt[k].report.level; // 0-> low, 1-> high
   if (level > 1){
     return;
   }
@@ -397,6 +400,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
   }
 
+
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
   if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
     RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i REG: %i", 
@@ -406,6 +410,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
       self->encoder_tick_count_[3],
       regi);
   }
+}
 }
 
 }  // namespace land_description
