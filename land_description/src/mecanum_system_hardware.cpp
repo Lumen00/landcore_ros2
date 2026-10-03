@@ -77,18 +77,6 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_init(
     encoder_pair_pins_[i] = kWiring[i].encoder_pair_pin;
   }
 
-  // timer_node_ = std::make_shared<rclcpp::Node>(params.hardware_info.name + "_timer_node");
-  // speed_timer_ = timer_node_->create_wall_timer(
-  //   std::chrono::milliseconds(50),
-  //   [this](){
-  //     MecanumSystemHardware::speed_calc(this, 50);
-  //   }
-  // );
-
-  // timer_executor_ = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
-  // timer_executor_->add_node(timer_node_);
-  // timer_spin_thread_ = std::thread([this]() { timer_executor_->spin(); });
-
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 
@@ -314,7 +302,7 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   // May require a manual timer to be set if there is overrun. 
     //       (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
   std::vector<double> wheel_speeds(tick_diff.size());
-  for (int i = 0; i <= int(tick_diff.size()); i++){
+  for (int i = 0; i < int(tick_diff.size()); i++){
     wheel_speeds[i] = (((tick_diff[i] / (341.2 * 4)) * (2.0 * M_PI)) / (interval));
   }
   self->hw_states_velocities_ = wheel_speeds;
@@ -387,13 +375,15 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     break;
 
   case 26: // Right Back A
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Right Back A"); 
     regi = (self->old_encoders_[3] << 2) | (level << 1) | (self->old_encoders_[3] & 0b01);
     self->old_encoders_[3] = regi & 0b0011;
     if (lookup_[regi] <= 1){self->encoder_tick_count_[3] += lookup_[regi];}
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RB pin A.");}
     break;
   case 16:
-    regi = (self->old_encoders_[3] << 2) | ((self->old_encoders_[3] & 0b10) << 1) | level;
+    RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Right Back B");
+    regi = (self->old_encoders_[3] << 2) | ((self->old_encoders_[3] & 0b10)) | level;
     self->old_encoders_[3] = regi & 0b0011;
     if (lookup_[regi] <= 1){self->encoder_tick_count_[3] += lookup_[regi];}
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RB pin B.");}
@@ -409,12 +399,12 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
 
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
   if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
-    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i REG: %i LOOKUP: %i", 
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i REG: %i", 
       self->encoder_tick_count_[0],
       self->encoder_tick_count_[1],
       self->encoder_tick_count_[2],
       self->encoder_tick_count_[3],
-      regi, lookup_[regi]);
+      regi);
   }
 }
 
