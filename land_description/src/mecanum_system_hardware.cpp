@@ -111,25 +111,37 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   {
     // pin_handles_[i] = h;
 
-    if (//lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
-        lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
-    {
-      RCLCPP_ERROR(
-        rclcpp::get_logger("MecanumSystemHardware"),
-        "Failed to claim encoder pins for %s", joint_names_[i].c_str());
-      return hardware_interface::CallbackReturn::ERROR;
-    }
+    // if (//lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
+    //     lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
+    // {
+    //   RCLCPP_ERROR(
+    //     rclcpp::get_logger("MecanumSystemHardware"),
+    //     "Failed to claim encoder pins for %s", joint_names_[i].c_str());
+    //   return hardware_interface::CallbackReturn::ERROR;
+    // }
 
-    // Get alerts whenever the alert pins on the encoder go high. 
+    // Get alerts whenever the alert pins on the encoder have an edge.
     lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
-    if (lgGpioClaimAlert(h_, 0, LG_RISING_EDGE, encoder_alert_pins_[i], -1) < 0)
+    if (lgGpioClaimAlert(h_, 0, LG_BOTH_EDGES, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
         rclcpp::get_logger("MecanumSystemHardware"),
-        "Failed to claim alert on pin %d for %s",
+        "Failed to claim alert on A pin %d for %s",
         encoder_alert_pins_[i], joint_names_[i].c_str());
       return hardware_interface::CallbackReturn::ERROR;
     }
+
+    // Also set alerts on both edges for the pair pins for 4x resolution and to use the lookup table.
+    lgGpioSetAlertsFunc(h_, encoder_pair_pins_[i], &MecanumSystemHardware::encoder_callback, this);
+    if (lgGpioClaimAlert(h_, 0, LG_BOTH_EDGES, encoder_pair_pins_[i], -1) < 0)
+    {
+      RCLCPP_ERROR(
+        rclcpp::get_logger("MecanumSystemHardware"),
+        "Failed to claim alert on B pin %d for %s",
+        encoder_pair_pins_[i], joint_names_[i].c_str());
+      return hardware_interface::CallbackReturn::ERROR;
+    }
+
   }
 
   // --- Open PCA9685 for motor PWM ---
@@ -323,64 +335,71 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
-  std::ostringstream ss;
-  ss << std::fixed << std::setprecision(3);
-  for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
-    ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
-  }
-  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
+  // std::ostringstream ss;
+  // ss << std::fixed << std::setprecision(3);
+  // for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
+  //   ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
+  // }
+  // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
 }
 
 void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
 {
   auto * self = static_cast<MecanumSystemHardware *>(data);
   int trigger_pin = evt->report.gpio;
-
+  bool level = evt->report.level; // 0-> low, 1-> high
+  if (level > 1){
+    return;
+  }
+  // 
 
   switch (trigger_pin)
   {
-  case 13: // Left Front
-    // Read the pair pin level.
-    // If the pair is low, we are going forwards. If it is high, we are going backwards.
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[0].encoder_pair_pin);
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[0].encoder_pair_pin));
-    if (lgGpioRead(self->h_, kWiring[0].encoder_pair_pin)){ // High
-      self->encoder_tick_count_[0]--;
-    }
-    else { // Low
-      self->encoder_tick_count_[0]++;
-    }
+  case 13: // Left Front A
+    // Read the old state and update the motor's 4-bit register.
+    uint8_t regi = (self->old_encoders_[0] << 2) | (level << 1) | (self->old_encoders_[0] & 0b01);
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[0] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LF pin A.");}
     break;
-  case 6: // Right Front
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[1].encoder_pair_pin);
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[1].encoder_pair_pin));
-    if (lgGpioRead(self->h_, kWiring[1].encoder_pair_pin)){ // High
-      self->encoder_tick_count_[1]--;
-    }
-    else { // Low
-      self->encoder_tick_count_[1]++;
-    }
+  case 19: // Left Front B
+    uint8_t regi = (self->old_encoders_[0] << 2) | ((self->old_encoders_[0] & 0b10) << 1) | level;
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[0] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LF pin B.");}
     break;
-  case 20: // Left Back
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[2].encoder_pair_pin);
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[2].encoder_pair_pin));
-    if (lgGpioRead(self->h_, kWiring[2].encoder_pair_pin)){ // High
-      self->encoder_tick_count_[2]--;
-    }
-    else { // Low
-      self->encoder_tick_count_[2]++;
-    }
+
+  case 6: // Right Front A
+    uint8_t regi = (self->old_encoders_[1] << 2) | (level << 1) | (self->old_encoders_[1] & 0b01);
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[1] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RF pin A.");}
     break;
-  case 26: // Right Back
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Trigger: %i | Pair: %i", trigger_pin, kWiring[3].encoder_pair_pin);
-    // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Pair Val: %i", lgGpioRead(self->h_, kWiring[3].encoder_pair_pin));
-    if (lgGpioRead(self->h_, kWiring[3].encoder_pair_pin)){ // High
-      self->encoder_tick_count_[3]--;
-    }
-    else { // Low
-      self->encoder_tick_count_[3]++;
-    }
+  case 5: // Right Front B
+    uint8_t regi = (self->old_encoders_[1] << 2) | ((self->old_encoders_[1] & 0b10) << 1) | level;
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[1] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RF pin B.");}
     break;
+
+  case 20: // Left Back A
+    uint8_t regi = (self->old_encoders_[2] << 2) | (level << 1) | (self->old_encoders_[2] & 0b01);
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[2] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LB pin A.");}
+    break;
+  case 21: // Left Back B
+    uint8_t regi = (self->old_encoders_[2] << 2) | ((self->old_encoders_[2] & 0b10) << 1) | level;
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[2] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LB pin B.");}
+    break;
+
+  case 26: // Right Back A
+    uint8_t regi = (self->old_encoders_[3] << 2) | (level << 1) | (self->old_encoders_[3] & 0b01);
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[3] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RB pin A.");}
+    break;
+    break;
+  case 16:
+    uint8_t regi = (self->old_encoders_[3] << 2) | ((self->old_encoders_[3] & 0b10) << 1) | level;
+    if (lookup_[regi] <= 1){self->encoder_tick_count_[3] += lookup_[regi];}
+    else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RB pin B.");}
+    break; 
 
   default:
     RCLCPP_INFO(rclcpp::get_logger("rclcpp"),"Encoder data not found, %i ", trigger_pin);
@@ -391,13 +410,13 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
   }
 
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
-  // if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 341 == 0;})){
-  //   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
-  //     self->encoder_tick_count_[0],
-  //     self->encoder_tick_count_[1],
-  //     self->encoder_tick_count_[2],
-  //     self->encoder_tick_count_[3]);
-  // }
+  if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+      self->encoder_tick_count_[0],
+      self->encoder_tick_count_[1],
+      self->encoder_tick_count_[2],
+      self->encoder_tick_count_[3]);
+  }
 
 
 

@@ -64,7 +64,7 @@ namespace land_description
 
         // KP, KI, KD.
         const double KP_ = 400;
-        const double KI_ = 150;
+        const double KI_ = 200;
         const double KD_ = 0;
 
         //  DT - the time since PID control was last called for this motor.
@@ -79,6 +79,23 @@ namespace land_description
 
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
         static void speed_calc(void * data, double interval);
+
+        // Static in a class member -> all objects using this class share the same value for this variable.
+        // Constexpr -> like using const for read-only, but optimised for compile-time
+        static constexpr std::array<int, 16> lookup_ = {
+            0,-1,1,2,
+            1,0,2,-1,
+            -1,2,0,1,
+            2,1,-1,0
+        };
+
+        // Only need to save the old state of the motor encoders.
+        std::vector<uint8_t> old_encoders_ = {
+            0b00,
+            0b00,
+            0b00,
+            0b00
+        };
 };};
 
 #endif
