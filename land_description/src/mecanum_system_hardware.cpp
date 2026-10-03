@@ -321,12 +321,12 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
-  std::ostringstream ss;
-  ss << std::fixed << std::setprecision(3);
-  for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
-    ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
-  }
-  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
+  // std::ostringstream ss;
+  // ss << std::fixed << std::setprecision(3);
+  // for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
+  //   ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
+  // }
+  // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
 }
 
 void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
@@ -404,13 +404,13 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
   }
 
   // If any of the encoder tick counts meet threshold for revolution, print the tick count/speed.
-  // if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
-  //   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
-  //     self->encoder_tick_count_[0],
-  //     self->encoder_tick_count_[1],
-  //     self->encoder_tick_count_[2],
-  //     self->encoder_tick_count_[3]);
-  // }
+  if (std::any_of(self->encoder_tick_count_.begin(), self->encoder_tick_count_.end(), [](int n) {return n % 10 == 0;})){
+    RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "FL: %i  FR: %i BL: %i BR: %i", 
+      self->encoder_tick_count_[0],
+      self->encoder_tick_count_[1],
+      self->encoder_tick_count_[2],
+      self->encoder_tick_count_[3]);
+  }
 }
 
 }  // namespace land_description
