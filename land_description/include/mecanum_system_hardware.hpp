@@ -63,7 +63,7 @@ namespace land_description
         std::vector<double> last_errors_; // Old P Error
 
         // KP, KI, KD.
-        const double KP_ = 400;
+        const double KP_ = 500;
         const double KI_ = 200;
         const double KD_ = 0;
 
@@ -72,10 +72,10 @@ namespace land_description
         
         int h_ = -1;
 
-        rclcpp::Node::SharedPtr timer_node_;
-        rclcpp::TimerBase::SharedPtr speed_timer_;
-        rclcpp::executors::SingleThreadedExecutor::SharedPtr timer_executor_;
-        std::thread timer_spin_thread_;
+        // rclcpp::Node::SharedPtr timer_node_;
+        // rclcpp::TimerBase::SharedPtr speed_timer_;
+        // rclcpp::executors::SingleThreadedExecutor::SharedPtr timer_executor_;
+        // std::thread timer_spin_thread_;
 
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
         static void speed_calc(void * data, double interval);

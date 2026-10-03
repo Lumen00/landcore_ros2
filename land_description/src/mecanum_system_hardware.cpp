@@ -186,20 +186,6 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_deactivate()
 
   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Deactivated, motors stopped.");
 
-  if (speed_timer_) {
-    speed_timer_->cancel();
-  }
-  if (timer_executor_) {
-    timer_executor_->cancel();
-  }
-  if (timer_spin_thread_.joinable()) {
-    timer_spin_thread_.join();
-  }
-  if (timer_executor_ && timer_node_) {
-    timer_executor_->remove_node(timer_node_);
-  }
-  timer_executor_.reset();
-
   RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Speed calc stopped.");
 
   return hardware_interface::CallbackReturn::SUCCESS;
@@ -335,12 +321,12 @@ void MecanumSystemHardware::speed_calc(void * data, double interval){
   self->encoder_tick_prev_ = self->encoder_tick_count_;
 
   // Write speed to info log for debugging.
-  std::ostringstream ss;
-  ss << std::fixed << std::setprecision(3);
-  for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
-    ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
-  }
-  RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
+  // std::ostringstream ss;
+  // ss << std::fixed << std::setprecision(3);
+  // for (size_t i = 0; i < self->hw_states_velocities_.size(); ++i) {
+  //   ss << (i ? ", " : "") << self->hw_states_velocities_[i] << " vs " << self->hw_commands_velocities_[i] << "|";
+  // }
+  // RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Wheel Speeds: [%s]", ss.str().c_str());
 }
 
 void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * data)
@@ -425,19 +411,6 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
   //     self->encoder_tick_count_[2],
   //     self->encoder_tick_count_[3]);
   // }
-
-
-
-  //   if (dt > 0.0L)
-  //   {
-  //     self->hw_states_velocities_[i] =
-  //       (self->encoder_tick_threshold_ / 341.2) * ((2.0 * M_PI) / static_cast<double>(dt));
-  //   }
-    // return;
-  // }
-
-  // RCLCPP_WARN(
-    // rclcpp::get_logger("MecanumSystemHardware"), "Unmatched encoder pin: %d", trigger_pin);
 }
 
 }  // namespace land_description
