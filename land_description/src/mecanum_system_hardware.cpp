@@ -349,7 +349,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LF pin A.");}
     break;
   case 19: // Left Front B
-    regi = (self->old_encoders_[0] << 2) | ((self->old_encoders_[0] & 0b10) << 1) | level;
+    regi = (self->old_encoders_[0] << 2) | (self->old_encoders_[0] & 0b10) | level;
     self->old_encoders_[0] = regi & 0b0011;
     if (lookup_[regi] <= 1){self->encoder_tick_count_[0] += lookup_[regi];}
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LF pin B.");}
@@ -362,7 +362,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RF pin A.");}
     break;
   case 5: // Right Front B
-    regi = (self->old_encoders_[1] << 2) | ((self->old_encoders_[1] & 0b10) << 1) | level;
+    regi = (self->old_encoders_[1] << 2) | (self->old_encoders_[1] & 0b10) | level;
     self->old_encoders_[1] = regi & 0b0011;
     if (lookup_[regi] <= 1){self->encoder_tick_count_[1] += lookup_[regi];}
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on RF pin B.");}
@@ -375,7 +375,7 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LB pin A.");}
     break;
   case 21: // Left Back B
-    regi = (self->old_encoders_[2] << 2) | ((self->old_encoders_[2] & 0b10) << 1) | level;
+    regi = (self->old_encoders_[2] << 2) | (self->old_encoders_[2] & 0b10) | level;
     self->old_encoders_[2] = regi & 0b0011;
     if (lookup_[regi] <= 1){self->encoder_tick_count_[2] += lookup_[regi];}
     else {RCLCPP_INFO(rclcpp::get_logger("MecanumSystemHardware"), "Invalid bit register on LB pin B.");}
