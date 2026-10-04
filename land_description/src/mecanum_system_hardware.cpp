@@ -330,6 +330,8 @@ void MecanumSystemHardware::encoder_callback(int e, lgGpioAlert_p evt, void * da
     return;
   }
   // 
+  RCLCPP_INFO(self->get_logger(), "e: %i", e);
+
   uint8_t regi = 0b000;
   switch (trigger_pin)
   {

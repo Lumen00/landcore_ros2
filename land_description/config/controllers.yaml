@@ -2,7 +2,7 @@
 # which controllers will be defined.
 controller_manager:
   ros__parameters:
-    update_rate: 100 # Hz
+    update_rate: 50 # Hz
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     mecanum_drive_controller:
@@ -23,7 +23,7 @@ mecanum_drive_controller:
       sum_of_robot_center_projection_on_X_Y_axis: 0.2265
     
     # If no commands received for timeout, stop.
-    reference_timeout: 0.5
+    reference_timeout: 0.1
 
     # Tell the controller manager the names of the base and odom links.
     base_frame_id: base_link
