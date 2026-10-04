@@ -85,14 +85,14 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
 {
 
   h_ = lgGpiochipOpen(0);
-    // if (h < 0)
-    // {
-    //   RCLCPP_ERROR(
-    //     rclcpp::get_logger("MecanumSystemHardware"),
-    //     "Failed to open gpiochip for %s: %s (%d)",
-    //     joint_names_[i].c_str(), lguErrorText(h), h);
-    //   return hardware_interface::CallbackReturn::ERROR;
-    // }
+    if (h_ < 0)
+    {
+      RCLCPP_ERROR(
+        rclcpp::get_logger("MecanumSystemHardware"),
+        "Failed to open gpiochip: %s (%d)",
+        lguErrorText(h_), h_);
+      return hardware_interface::CallbackReturn::ERROR;
+    }
 
   // --- Open GPIO for encoders (ported from dc_encoder_service openInputGPIO) ---
   for (size_t i = 0; i < joint_names_.size(); i++)
@@ -228,7 +228,7 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   last_errors_[motor_num] = motor_errors_[motor_num];
 
   // Calculate and save the new error.
-  motor_errors_[motor_num] = command_velocity - current_velocity;
+  motor_errors_[motor_num] = std::abs(command_velocity) - std::abs(current_velocity);
 
   // Update accumulated error / integral error.
   accumulated_errors_[motor_num] += motor_errors_[motor_num];
