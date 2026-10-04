@@ -109,7 +109,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
     // }
 
     // Get alerts whenever the alert pins on the encoder have an edge.
-    lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
+    int result = lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
     if (lgGpioClaimAlert(h_, LG_SET_PULL_UP, LG_BOTH_EDGES, encoder_alert_pins_[i], -1) < 0)
     {
       RCLCPP_ERROR(
@@ -118,6 +118,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
         encoder_alert_pins_[i], joint_names_[i].c_str());
       return hardware_interface::CallbackReturn::ERROR;
     }
+    RCLCPP_INFO(this->get_logger(), "Alert function set on pin %i with outcome %i", encoder_alert_pins_[i], result);
 
     // Also set alerts on both edges for the pair pins for 4x resolution and to use the lookup table.
     lgGpioSetAlertsFunc(h_, encoder_pair_pins_[i], &MecanumSystemHardware::encoder_callback, this);
