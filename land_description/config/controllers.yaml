@@ -23,7 +23,7 @@ mecanum_drive_controller:
       sum_of_robot_center_projection_on_X_Y_axis: 0.2265
     
     # If no commands received for timeout, stop.
-    reference_timeout: 0.1
+    reference_timeout: 0.5
 
     # Tell the controller manager the names of the base and odom links.
     base_frame_id: base_link
