@@ -64,7 +64,7 @@ namespace land_description
 
         // KP, KI, KD.
         const double KP_ = 750;
-        const double KI_ = 0;
+        const double KI_ = 50;
         const double KD_ = 0;
 
         //  DT - the time since PID control was last called for this motor.
