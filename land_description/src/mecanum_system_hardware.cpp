@@ -99,14 +99,14 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
   {
     // pin_handles_[i] = h;
 
-    if (lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
-        lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
-    {
-      RCLCPP_ERROR(
-        rclcpp::get_logger("MecanumSystemHardware"),
-        "Failed to claim encoder pins for %s", joint_names_[i].c_str());
-      return hardware_interface::CallbackReturn::ERROR;
-    }
+    // if (lgGpioClaimInput(h_, 0, encoder_alert_pins_[i]) < 0 ||
+    //     lgGpioClaimInput(h_, 0, encoder_pair_pins_[i]) < 0)
+    // {
+    //   RCLCPP_ERROR(
+    //     rclcpp::get_logger("MecanumSystemHardware"),
+    //     "Failed to claim encoder pins for %s", joint_names_[i].c_str());
+    //   return hardware_interface::CallbackReturn::ERROR;
+    // }
 
     // Get alerts whenever the alert pins on the encoder have an edge.
     lgGpioSetAlertsFunc(h_, encoder_alert_pins_[i], &MecanumSystemHardware::encoder_callback, this);
@@ -131,9 +131,7 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_configure(
     }
 
     // Read motor pins and set current encoder states.
-    for (size_t i = 0; i < joint_names_.size(); i++){
-      old_encoders_[i] = ((lgGpioRead(h_, kWiring[i].encoder_alert_pin) & 1) << 1) | (lgGpioRead(h_, kWiring[i].encoder_pair_pin) & 1);
-    }
+    old_encoders_[i] = ((lgGpioRead(h_, kWiring[i].encoder_alert_pin) & 1) << 1) | (lgGpioRead(h_, kWiring[i].encoder_pair_pin) & 1);
 
   }
 
