@@ -2,7 +2,7 @@
 # which controllers will be defined.
 controller_manager:
   ros__parameters:
-    update_rate: 50 # Hz
+    update_rate: 100 # Hz
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     mecanum_drive_controller:
@@ -38,8 +38,8 @@ mecanum_drive_controller:
     # Adjust velocity and acceleration parameters.
     linear:
       x:
-        max_velocity: 1.0
-        min_velocity: -1.0
+        max_velocity: 0.5
+        min_velocity: -0.5
         max_acceleration: 0.5
         max_deceleration: -0.5
         max_acceleration_reverse: -0.5
@@ -47,8 +47,8 @@ mecanum_drive_controller:
         # max_jerk: 
         # min_jerk:
       y: 
-        max_velocity: 1.0
-        min_velocity: -1.0
+        max_velocity: 0.5
+        min_velocity: -0.5
         max_acceleration: 0.5
         max_deceleration: -0.5
         max_acceleration_reverse: -0.5
