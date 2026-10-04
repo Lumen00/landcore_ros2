@@ -93,7 +93,7 @@ def generate_launch_description():
                 launch_arguments={
                     'params_file': nav2_config_path,
                     'use_sim_time' : 'False',
-                    # 'use_intra_process_comm' : 'True'
+                    'use_intra_process_comm' : 'True'
                 }.items(),
             ),
         ]
@@ -106,5 +106,5 @@ def generate_launch_description():
         delayed_sensors,
         camera_node,
         slam_node,
-        # nav_node
+        nav_node
         ])
