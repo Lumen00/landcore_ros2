@@ -104,7 +104,7 @@ def generate_launch_description():
         spawn_jsb, 
         spawn_mecanum,
         delayed_sensors,
-        # camera_node,
+        camera_node,
         slam_node,
-        nav_node
+        # nav_node
         ])
