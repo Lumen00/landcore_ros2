@@ -78,9 +78,9 @@ void LSM9DS1::read_IMU()
 {
     IMURecord imu_record = lsm9ds1_device_->read_all();
 
-    // telemetry_msg_.magnetic_field.x = imu_record.raw_magnetic_field.x;
-    // telemetry_msg_.magnetic_field.y = imu_record.raw_magnetic_field.y;
-    // telemetry_msg_.magnetic_field.z = imu_record.raw_magnetic_field.z;
+    telemetry_msg_.orientation.x = imu_record.raw_magnetic_field.x;
+    telemetry_msg_.orientation.y = imu_record.raw_magnetic_field.y;
+    telemetry_msg_.orientation.z = imu_record.raw_magnetic_field.z;
 
     telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
     telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
