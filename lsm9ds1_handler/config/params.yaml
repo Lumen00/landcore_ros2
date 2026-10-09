@@ -15,7 +15,7 @@ lsm9ds1_handler:
     accel_scale: 0
 
     # Accelerometer rate: 0 -> Power Down, 1 -> 10hz, 2 -> 50hz, 3 -> 119hz, 4 -> 238hz, 5 -> 476hz 6 -> 952hz
-    accel_rate: 1
+    accel_rate: 3
 
     # Magnetometer scale: 0 -> 4 gauss, 1 -> 8 gauss, 2 -> 12 gauss, 3 -> 16 gauss
     mag_scale: 3
