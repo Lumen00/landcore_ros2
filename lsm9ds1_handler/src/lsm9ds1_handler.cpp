@@ -86,6 +86,7 @@ void LSM9DS1::initialize()
 void LSM9DS1::read_IMU()
 {
     IMURecord imu_record = lsm9ds1_device_->read_all();
+    
 
     telemetry_msg_.header.frame_id = "imu_link";
 
