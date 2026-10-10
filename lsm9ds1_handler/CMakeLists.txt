@@ -9,6 +9,9 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
 include_directories(include)
 
@@ -23,7 +26,7 @@ target_include_directories(lsm9ds1_handler
     $<INSTALL_INTERFACE:include>
 )
 
-ament_target_dependencies(lsm9ds1_handler rclcpp sensor_msgs)
+ament_target_dependencies(lsm9ds1_handler rclcpp sensor_msgs tf2 tf2_geometry_msgs geometry_msgs)
 target_link_libraries(lsm9ds1_handler i2c)
 
 add_executable(lsm9ds1_node src/lsm9ds1_node.cpp)
