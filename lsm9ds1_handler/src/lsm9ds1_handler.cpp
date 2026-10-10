@@ -76,8 +76,8 @@ void LSM9DS1::initialize()
         throw std::runtime_error("error: frequency cannot be 0\n");
     }
 
-    // madgwick setup
-    filter.begin(25);
+    // madgwick setup, leave as default of 1/512
+    // filter.begin(25);
 
     publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
