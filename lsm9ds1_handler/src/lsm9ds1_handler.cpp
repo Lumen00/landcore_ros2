@@ -94,13 +94,15 @@ void LSM9DS1::read_IMU()
     // telemetry_msg_.orientation.y = imu_record.raw_magnetic_field.y;
     // telemetry_msg_.orientation.z = imu_record.raw_magnetic_field.z;
 
-    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
-    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
-    telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
+    // a - acceleromter
+    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.y;
+    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.z = -imu_record.raw_linear_acceleration.z;
 
-    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.x;
-    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.y;
-    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
+    // g - gyroscope
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.z = -imu_record.raw_angular_velocity.z;
 
     filter.update(
         telemetry_msg_.angular_velocity.x,
@@ -109,12 +111,12 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.x,
         telemetry_msg_.linear_acceleration.y,
         telemetry_msg_.linear_acceleration.z,
-        imu_record.raw_magnetic_field.x,
         imu_record.raw_magnetic_field.y,
-        imu_record.raw_magnetic_field.z
+        imu_record.raw_magnetic_field.x,
+        -imu_record.raw_magnetic_field.z
     );
 
-    // Get Quaternion representation of RPY.
+    // Get Quaternion representation of RPY. m - magnetometer
     tf2::Quaternion q;
     q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
     q.normalize(); // Must sum to 1.
