@@ -60,7 +60,7 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz_default_plugins/Image
-      Enabled: true
+      Enabled: false
       Name: Image
       Topic: 
         Depth: 1
@@ -78,6 +78,16 @@ Visualization Manager:
         Durability Policy: Transient Local
         Value: /global_costmap/costmap
       Color Scheme: costmap
+    - Class: rviz_imu_plugin/Imu
+      Enabled: true
+      Name: IMU
+      Topic: 
+        Depth: 5
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Durability Policy: Volatile
+        Filter size: 10
+        Value: /lsm9ds1/telemetry
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48

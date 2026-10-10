@@ -1,4 +1,7 @@
 #include "lsm9ds1_handler/lsm9ds1_handler.hpp"
+#include "lsm9ds1_filters.cpp"
+
+Madgwick filter;
 
 namespace lsm9ds1
 {
@@ -70,6 +73,9 @@ void LSM9DS1::initialize()
         throw std::runtime_error("error: frequency cannot be 0\n");
     }
 
+    // madgwick setup
+    filter.begin(25);
+
     publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
 }
@@ -80,9 +86,9 @@ void LSM9DS1::read_IMU()
 
     telemetry_msg_.header.frame_id = "imu_link";
 
-    telemetry_msg_.orientation.x = imu_record.raw_magnetic_field.x;
-    telemetry_msg_.orientation.y = imu_record.raw_magnetic_field.y;
-    telemetry_msg_.orientation.z = imu_record.raw_magnetic_field.z;
+    // telemetry_msg_.orientation.x = imu_record.raw_magnetic_field.x;
+    // telemetry_msg_.orientation.y = imu_record.raw_magnetic_field.y;
+    // telemetry_msg_.orientation.z = imu_record.raw_magnetic_field.z;
 
     telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
     telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
@@ -91,6 +97,22 @@ void LSM9DS1::read_IMU()
     telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.x;
     telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.y;
     telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
+
+    filter.update(
+        telemetry_msg_.angular_velocity.x,
+        telemetry_msg_.angular_velocity.y,
+        telemetry_msg_.angular_velocity.z,
+        telemetry_msg_.linear_acceleration.x,
+        telemetry_msg_.linear_acceleration.y,
+        telemetry_msg_.linear_acceleration.z,
+        imu_record.raw_magnetic_field.x,
+        imu_record.raw_magnetic_field.y,
+        imu_record.raw_magnetic_field.z
+    );
+
+    telemetry_msg_.orientation.x = filter.getRoll();
+    telemetry_msg_.orientation.y = filter.getPitch();
+    telemetry_msg_.orientation.z = filter.getYaw();
 
     publish();
 }
