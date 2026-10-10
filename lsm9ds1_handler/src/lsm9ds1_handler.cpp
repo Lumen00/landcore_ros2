@@ -1,5 +1,8 @@
 #include "lsm9ds1_handler/lsm9ds1_handler.hpp"
 #include "lsm9ds1_filters.cpp"
+#include <tf2/LinearMath/Quaternion.h>
+#include <geometry_msgs/msg/quaternion.hpp>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 
 Madgwick filter;
 
@@ -110,9 +113,15 @@ void LSM9DS1::read_IMU()
         imu_record.raw_magnetic_field.z
     );
 
-    telemetry_msg_.orientation.x = filter.getRoll();
-    telemetry_msg_.orientation.y = filter.getPitch();
-    telemetry_msg_.orientation.z = filter.getYaw();
+    // Get Quaternion representation of RPY.
+    tf2::Quaternion q;
+    q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
+    q.normalize(); // Must sum to 1.
+
+    telemetry_msg_.orientation.x = q.getX();
+    telemetry_msg_.orientation.y = q.getY();
+    telemetry_msg_.orientation.z = q.getZ();
+    telemetry_msg_.orientation.w = q.getW();
 
     publish();
 }
