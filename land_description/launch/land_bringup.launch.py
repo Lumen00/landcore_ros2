@@ -99,12 +99,19 @@ def generate_launch_description():
         ]
     )
 
+    # Include IMU node.
+    imu_launch_dir = PathJoinSubstitution([FindPackageShare('lsm9ds1_handler'), 'launch'])
+    imu_launch = IncludeLaunchDescription(
+        PathJoinSubstitution([imu_launch_dir, 'lsm9ds1_handler.launch.py']),
+    )
+
     return LaunchDescription([robot_state_publisher, 
         controller_manager, 
         spawn_jsb, 
         spawn_mecanum,
         delayed_sensors,
-        camera_node,
+        # camera_node,
         slam_node,
+        imu_launch
         # nav_node
         ])

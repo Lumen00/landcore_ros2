@@ -80,17 +80,17 @@ void LSM9DS1::read_IMU()
 
     telemetry_msg_.header.frame_id = "imu_link";
 
-    telemetry_msg_.orientation.x = -imu_record.raw_magnetic_field.z;
-    telemetry_msg_.orientation.y = -imu_record.raw_magnetic_field.y;
-    telemetry_msg_.orientation.z = -imu_record.raw_magnetic_field.x;
+    telemetry_msg_.orientation.x = imu_record.raw_magnetic_field.x;
+    telemetry_msg_.orientation.y = imu_record.raw_magnetic_field.y;
+    telemetry_msg_.orientation.z = imu_record.raw_magnetic_field.z;
 
-    telemetry_msg_.linear_acceleration.x = -imu_record.raw_linear_acceleration.z;
-    telemetry_msg_.linear_acceleration.y = -imu_record.raw_linear_acceleration.y;
-    telemetry_msg_.linear_acceleration.z = -imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
+    telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
-    telemetry_msg_.angular_velocity.x = -imu_record.raw_angular_velocity.z;
-    telemetry_msg_.angular_velocity.y = -imu_record.raw_angular_velocity.y;
-    telemetry_msg_.angular_velocity.z = -imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.y;
+    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
 
     publish();
 }
