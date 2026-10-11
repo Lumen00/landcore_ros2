@@ -18,6 +18,7 @@
 #ifndef MadgwickAHRS_h
 #define MadgwickAHRS_h
 #include <math.h>
+#include <vector>
 
 //--------------------------------------------------------------------------------------------
 // Variable declaration
@@ -69,6 +70,10 @@ public:
     float getYawRadians() {
         if (!anglesComputed) computeAngles();
         return yaw;
+    }
+    std::vector<float> getQuaternion(){
+        std::vector<float> q = {q0, q1, q2, q3};
+        return q;
     }
 };
 #endif
