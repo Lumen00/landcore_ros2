@@ -114,7 +114,7 @@ void LSM9DS1_Device::calibrate_accelgyro()
     Axis3 g;
     for (int i = 0; i < N; ++i)
     {
-        read_gyro(g, true);          // dps, scaled
+        read_gyro(g, true, false);          // dps, scaled
         sx += g.x; sy += g.y; sz += g.z;
         usleep(2000);                // device must be perfectly still
     }
@@ -153,7 +153,7 @@ void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/)
     }
 }
 
-void LSM9DS1_Device::read_gyro(Axis3 &angular_vel, bool scaled /* = true*/)
+void LSM9DS1_Device::read_gyro(Axis3 &angular_vel, bool scaled /* = true*/, bool offset)
 {
     // read 12 bytes, LSM9DS1 will automatically increment the register
     // so we can read all the raw accel/gyro data in one go.
@@ -176,9 +176,11 @@ void LSM9DS1_Device::read_gyro(Axis3 &angular_vel, bool scaled /* = true*/)
         angular_vel.y = ((angular_vel.y) * settings::kGyroSensMap.at(gyro_scale_)) / 1000.0f;
         angular_vel.z = ((angular_vel.z) * settings::kGyroSensMap.at(gyro_scale_)) / 1000.0f;
 
-        angular_vel.x -= gyro_offset_.x;
-        angular_vel.y -= gyro_offset_.y;
-        angular_vel.z -= gyro_offset_.z;
+        if (offset){
+            angular_vel.x -= gyro_offset_.x;
+            angular_vel.y -= gyro_offset_.y;
+            angular_vel.z -= gyro_offset_.z;
+        }
     }
 }
 

@@ -118,7 +118,7 @@ class LSM9DS1_Device
     LSM9DS1_Device(const int bus_index, const uint8_t i2c_address_accelgyro, const uint8_t i2c_address_mag);
 
     void read_accel(Axis3 &accels, bool scaled = true);
-    void read_gyro(Axis3 &angular_vel, bool scaled = true);
+    void read_gyro(Axis3 &angular_vel, bool scaled = true, bool offset = true);
     void read_mag(Axis3 &mag_gauss, bool scaled = true);
     IMURecord read_all(bool scaled = true);
 
