@@ -112,6 +112,8 @@ void LSM9DS1::read_IMU()
         imu_record.raw_magnetic_field.z
     );
 
+    RCLCPP_INFO(rclcpp::get_logger("IMU"), "%f %f %f", imu_record.raw_magnetic_field.x, imu_record.raw_magnetic_field.y, imu_record.raw_magnetic_field.z);
+
     // Get Quaternion representation of RPY. m - magnetometer
     // tf2::Quaternion q;
     // q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
