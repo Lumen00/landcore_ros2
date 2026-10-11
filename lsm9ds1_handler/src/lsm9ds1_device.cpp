@@ -109,7 +109,7 @@ bool LSM9DS1_Device::check_devices()
 
 void LSM9DS1_Device::calibrate_accelgyro()
 {
-    const int N = 500;
+    const int N = 2000;
     double sx = 0, sy = 0, sz = 0;
     Axis3 g;
     for (int i = 0; i < N; ++i)
