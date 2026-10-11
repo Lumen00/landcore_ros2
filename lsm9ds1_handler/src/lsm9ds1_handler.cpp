@@ -91,13 +91,13 @@ void LSM9DS1::read_IMU()
     telemetry_msg_.header.frame_id = "imu_link";
 
     // a - acceleromter
-    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
-    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
+    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.y;
+    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.x;
     telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
     // g - gyroscope
-    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.x;
-    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.y;
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
     telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
 
     filter.update(
@@ -107,22 +107,24 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.x,
         telemetry_msg_.linear_acceleration.y,
         telemetry_msg_.linear_acceleration.z,
-        -imu_record.raw_magnetic_field.y,
-        -imu_record.raw_magnetic_field.x,
+        imu_record.raw_magnetic_field.x,
+        imu_record.raw_magnetic_field.y,
         imu_record.raw_magnetic_field.z
     );
 
     // Get Quaternion representation of RPY. m - magnetometer
-    tf2::Quaternion q;
-    q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
-    q.normalize(); // Must sum to 1.
+    // tf2::Quaternion q;
+    // q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
+    // q.normalize(); // Must sum to 1.
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "ROLL: %f | PITCH: %f | YAW: %f", filter.getRoll(), filter.getPitch(), filter.getYaw());
 
-    telemetry_msg_.orientation.x = q.getX();
-    telemetry_msg_.orientation.y = q.getY();
-    telemetry_msg_.orientation.z = q.getZ();
-    telemetry_msg_.orientation.w = q.getW();
+    std::vector<float> q = filter.getQuaternion();
+
+    telemetry_msg_.orientation.x = q.at(1);
+    telemetry_msg_.orientation.y = q.at(2);
+    telemetry_msg_.orientation.z = q.at(3);
+    telemetry_msg_.orientation.w = q.at(0);
 
     publish();
 }
