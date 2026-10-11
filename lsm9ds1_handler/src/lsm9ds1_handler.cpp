@@ -118,7 +118,7 @@ void LSM9DS1::read_IMU()
 
     // Get Quaternion representation of RPY. m - magnetometer
     tf2::Quaternion q;
-    q.setRPY(filter.getRollRadians(), -filter.getPitchRadians(), filter.getYawRadians());
+    q.setRPY(filter.getRollRadians(), filter.getPitchRadians(), filter.getYawRadians());
     q.normalize(); // Must sum to 1.
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "ROLL: %f | PITCH: %f | YAW: %f", filter.getRoll(), filter.getPitch(), filter.getYaw());
