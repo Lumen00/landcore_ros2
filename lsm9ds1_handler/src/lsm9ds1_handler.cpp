@@ -77,7 +77,7 @@ void LSM9DS1::initialize()
     }
 
     // madgwick setup, default of 1/512
-    // filter.begin(120);
+    filter.begin(80);
 
     publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
