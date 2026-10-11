@@ -121,6 +121,8 @@ void LSM9DS1::read_IMU()
     q.setRPY(filter.getRollRadians(), -filter.getPitchRadians(), filter.getYawRadians());
     q.normalize(); // Must sum to 1.
 
+    RCLCPP_INFO(rclcpp::get_logger("IMU"), "ROLL: %f | PITCH: %f | YAW: %f", filter.getRoll(), filter.getPitch(), filter.getYaw());
+
     telemetry_msg_.orientation.x = q.getX();
     telemetry_msg_.orientation.y = q.getY();
     telemetry_msg_.orientation.z = q.getZ();
