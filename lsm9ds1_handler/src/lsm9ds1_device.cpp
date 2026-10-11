@@ -121,6 +121,7 @@ void LSM9DS1_Device::calibrate_accelgyro()
     gyro_offset_.x = sx / N;
     gyro_offset_.y = sy / N;
     gyro_offset_.z = sz / N;
+    printf("Gyro offsets: %f %f %f", gyro_offset_.x, gyro_offset_.y, gyro_offset_.z);
 }
 
 void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/)
