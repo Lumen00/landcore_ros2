@@ -109,6 +109,18 @@ bool LSM9DS1_Device::check_devices()
 
 void LSM9DS1_Device::calibrate_accelgyro()
 {
+    const int N = 500;
+    double sx = 0, sy = 0, sz = 0;
+    Axis3 g;
+    for (int i = 0; i < N; ++i)
+    {
+        read_gyro(g, true);          // dps, scaled
+        sx += g.x; sy += g.y; sz += g.z;
+        usleep(2000);                // device must be perfectly still
+    }
+    gyro_offset_.x = sx / N;
+    gyro_offset_.y = sy / N;
+    gyro_offset_.z = sz / N;
 }
 
 void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/)
@@ -163,6 +175,10 @@ void LSM9DS1_Device::read_gyro(Axis3 &angular_vel, bool scaled /* = true*/)
         angular_vel.x = ((angular_vel.x) * settings::kGyroSensMap.at(gyro_scale_)) / 1000.0f;
         angular_vel.y = ((angular_vel.y) * settings::kGyroSensMap.at(gyro_scale_)) / 1000.0f;
         angular_vel.z = ((angular_vel.z) * settings::kGyroSensMap.at(gyro_scale_)) / 1000.0f;
+
+        angular_vel.x -= gyro_offset_.x;
+        angular_vel.y -= gyro_offset_.y;
+        angular_vel.z -= gyro_offset_.z;
     }
 }
 

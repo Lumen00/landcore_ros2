@@ -150,7 +150,7 @@ class LSM9DS1_Device
     uint8_t i2c_address_mag_;
     uint8_t mag_scale_;
     uint8_t mag_rate_;
-
+    Axis3 gyro_offset_{0, 0, 0};
 };
 } // namespace lsm9ds1
 
