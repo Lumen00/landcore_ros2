@@ -79,7 +79,9 @@ void LSM9DS1::initialize()
     // madgwick setup, default of 1/512
     filter.begin(frequency);
 
-    publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
+    // publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
+    publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>("/imu/telemetry", 10);
+    magPublisher_ = node_->create_publisher<sensor_msgs::msg::MagneticField>("/imu/mag",10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
 }
 
@@ -109,7 +111,7 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.z,
         imu_record.raw_magnetic_field.y,
         -imu_record.raw_magnetic_field.x,
-        -imu_record.raw_magnetic_field.z
+        imu_record.raw_magnetic_field.z
     );
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "%f %f %f", imu_record.raw_magnetic_field.x, imu_record.raw_magnetic_field.y, imu_record.raw_magnetic_field.z);
@@ -128,11 +130,17 @@ void LSM9DS1::read_IMU()
     telemetry_msg_.orientation.z = q.at(3);
     telemetry_msg_.orientation.w = q.at(0);
 
+    mag_msg_.header.frame_id = "imu_link";
+    mag_msg_.magnetic_field.set__x(imu_record.raw_magnetic_field.x);
+    mag_msg_.magnetic_field.set__x(imu_record.raw_magnetic_field.y);
+    mag_msg_.magnetic_field.set__x(imu_record.raw_magnetic_field.z);
+
     publish();
 }
 
 void LSM9DS1::publish()
 {
     publisher_->publish(telemetry_msg_);
+    magPublisher_->publish(mag_msg_);
 }
 } // namespace lsm9ds1

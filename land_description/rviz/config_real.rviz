@@ -87,7 +87,7 @@ Visualization Manager:
         Reliability Policy: Reliable
         Durability Policy: Volatile
         Filter size: 10
-        Value: /lsm9ds1/telemetry
+        Value: /imu/telemetry
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48

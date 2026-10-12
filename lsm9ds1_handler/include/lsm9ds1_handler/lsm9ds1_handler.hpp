@@ -6,6 +6,7 @@
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/imu.hpp>
+#include <sensor_msgs/msg/magnetic_field.hpp>
 #include <stdexcept>
 
 namespace lsm9ds1
@@ -27,8 +28,10 @@ class LSM9DS1
   private:
     std::string imu_name_;
     sensor_msgs::msg::Imu telemetry_msg_;
+    sensor_msgs::msg::MagneticField mag_msg_;
     std::shared_ptr<LSM9DS1_Device> lsm9ds1_device_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr publisher_;
+    rclcpp::Publisher<sensor_msgs::msg::MagneticField>::SharedPtr magPublisher_;
     rclcpp::TimerBase::SharedPtr timer_;
 };
 } // namespace lsm9ds1
