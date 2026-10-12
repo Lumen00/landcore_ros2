@@ -111,7 +111,7 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.z,
         -imu_record.raw_magnetic_field.x,
         -imu_record.raw_magnetic_field.y,
-        -imu_record.raw_magnetic_field.z
+        imu_record.raw_magnetic_field.z
     );
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "%f %f %f", imu_record.raw_magnetic_field.x, imu_record.raw_magnetic_field.y, imu_record.raw_magnetic_field.z);
@@ -133,7 +133,7 @@ void LSM9DS1::read_IMU()
     mag_msg_.header.frame_id = "imu_link";
     mag_msg_.magnetic_field.set__x(-imu_record.raw_magnetic_field.x);
     mag_msg_.magnetic_field.set__y(-imu_record.raw_magnetic_field.y);
-    mag_msg_.magnetic_field.set__z(-imu_record.raw_magnetic_field.z);
+    mag_msg_.magnetic_field.set__z(imu_record.raw_magnetic_field.z);
 
     publish();
 }
