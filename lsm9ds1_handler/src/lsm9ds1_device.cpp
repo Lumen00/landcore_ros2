@@ -1,5 +1,9 @@
 #include "lsm9ds1_handler/lsm9ds1_device.hpp"
 
+#define magBiasX		-0.401531
+#define magBiasY		0.682821
+#define magBiasZ		-0.197866
+
 namespace lsm9ds1
 {
 LSM9DS1_Device::LSM9DS1_Device(const int bus_index, const uint8_t i2c_address_accelgyro, const uint8_t i2c_address_mag)
@@ -208,6 +212,12 @@ void LSM9DS1_Device::read_mag(Axis3 &mag_gauss, bool scaled /* = true*/)
         mag_gauss.y = ((mag_gauss.y) * settings::kMagSensMap.at(mag_scale_)) / 1000.0f;
         mag_gauss.z = ((mag_gauss.z) * settings::kMagSensMap.at(mag_scale_)) / 1000.0f;
     }
+
+    // Subtract the hard-iron offset/bias.
+
+    mag_gauss.x -= magBiasX;
+    mag_gauss.y -= magBiasY;
+    mag_gauss.z -= magBiasZ;
 }
 
 IMURecord LSM9DS1_Device::read_all(bool scaled /*= true*/)
