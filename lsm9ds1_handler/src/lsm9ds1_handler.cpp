@@ -93,13 +93,13 @@ void LSM9DS1::read_IMU()
     telemetry_msg_.header.frame_id = "imu_link";
 
     // a - acceleromter
-    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.y;
-    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.y;
     telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
     // g - gyroscope
-    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
-    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.y;
     telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
 
     filter.update(
