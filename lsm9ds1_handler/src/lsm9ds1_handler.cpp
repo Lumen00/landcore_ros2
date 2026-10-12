@@ -80,7 +80,7 @@ void LSM9DS1::initialize()
     filter.begin(frequency);
 
     // publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
-    publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>("/imu/telemetry", 10);
+    publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>("/imu/data_raw", 10);
     magPublisher_ = node_->create_publisher<sensor_msgs::msg::MagneticField>("/imu/mag",10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
 }
