@@ -1,8 +1,19 @@
 #include "lsm9ds1_handler/lsm9ds1_device.hpp"
 
-#define magBiasX		-0.401531
-#define magBiasY		0.682821
-#define magBiasZ		-0.197866
+#define magMinX         -0.942500
+#define magMaxX         -0.159500
+#define magMinY         0.129340
+#define magMaxY         1.268460
+#define magMinZ         -0.738340
+#define magMaxZ         0.444280
+
+#define magBiasX		(magMinX+magMaxX)/2    //-0.401531
+#define magBiasY		(magMinY+magMaxY)/2    //0.682821
+#define magBiasZ		(magMinZ+magMaxZ)/2    //-0.197866
+
+#define magScaleX       2/(magMaxX-magMinX)
+#define magScaleY       2/(magMaxY-magMinY)
+#define magScaleZ       2/(magMaxZ-magMinZ)
 
 namespace lsm9ds1
 {
@@ -215,9 +226,15 @@ void LSM9DS1_Device::read_mag(Axis3 &mag_gauss, bool scaled /* = true*/)
 
     // Subtract the hard-iron offset/bias.
 
-    // mag_gauss.x -= magBiasX;
-    // mag_gauss.y -= magBiasY;
-    // mag_gauss.z -= magBiasZ;
+    mag_gauss.x -= magBiasX;
+    mag_gauss.y -= magBiasY;
+    mag_gauss.z -= magBiasZ;
+
+    // Apply the scale transformation
+
+    mag_gauss.x *= magScaleX;
+    mag_gauss.y *= magScaleY;
+    mag_gauss.z *= magScaleZ;
 }
 
 IMURecord LSM9DS1_Device::read_all(bool scaled /*= true*/)
