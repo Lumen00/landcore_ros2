@@ -23,16 +23,16 @@ class MagnetometerSubscriber : public rclcpp::Node{
 
             std::vector<float> magResults = {x,y,z};
             // Comparison.
+            uint8_t iter = 0;
             for (const auto & axis : magResults){
-                for (auto &pair : minMax){ // For each pair in the minMax vector
-                    if (axis < pair.first){
-                        pair.first = axis;
-                    }
-                    if (axis > pair.second){
-                        pair.second = axis;
-                    }
+                if (axis < minMax.at(iter).first){
+                    minMax.at(iter).first = axis;
                 }
-            }
+                if (axis > minMax.at(iter).second){
+                    minMax.at(iter).second = axis;
+                }
+                iter++;
+            } 
             RCLCPP_INFO(this->get_logger(), "X: %f %f Y: %f %f Z: %f %f", 
                 minMax.at(0).first,
                 minMax.at(0).second,
