@@ -215,9 +215,9 @@ void LSM9DS1_Device::read_mag(Axis3 &mag_gauss, bool scaled /* = true*/)
 
     // Subtract the hard-iron offset/bias.
 
-    mag_gauss.x -= magBiasX;
-    mag_gauss.y -= magBiasY;
-    mag_gauss.z -= magBiasZ;
+    // mag_gauss.x -= magBiasX;
+    // mag_gauss.y -= magBiasY;
+    // mag_gauss.z -= magBiasZ;
 }
 
 IMURecord LSM9DS1_Device::read_all(bool scaled /*= true*/)

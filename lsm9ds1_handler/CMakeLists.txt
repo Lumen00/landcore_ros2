@@ -32,6 +32,9 @@ target_link_libraries(lsm9ds1_handler i2c)
 add_executable(lsm9ds1_node src/lsm9ds1_node.cpp)
 target_link_libraries(lsm9ds1_node lsm9ds1_handler)
 
+add_executable(calibrate_mag src/calibrate_mag.cpp)
+ament_target_dependencies(calibrate_mag rclcpp sensor_msgs)
+
 install(
   DIRECTORY include/
   DESTINATION include
@@ -39,6 +42,7 @@ install(
 
 install(TARGETS
   lsm9ds1_node
+  calibrate_mag
   DESTINATION lib/${PROJECT_NAME}
 )
 
