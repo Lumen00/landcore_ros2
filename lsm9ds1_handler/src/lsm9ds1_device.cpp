@@ -1,7 +1,7 @@
 #include "lsm9ds1_handler/lsm9ds1_device.hpp"
 
 #define magMinX         -0.942500
-#define magMaxX         -0.159500
+#define magMaxX         0.159500
 #define magMinY         0.129340
 #define magMaxY         1.268460
 #define magMinZ         -0.738340
