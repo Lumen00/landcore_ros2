@@ -110,10 +110,12 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.x,
         telemetry_msg_.linear_acceleration.y,
         telemetry_msg_.linear_acceleration.z,
-        imu_record.raw_magnetic_field.x,
         imu_record.raw_magnetic_field.y,
-        -imu_record.raw_magnetic_field.z
+        -imu_record.raw_magnetic_field.x,
+        imu_record.raw_magnetic_field.z
     );
+
+    // When pitch (Y per robot axes) goes up, yaw rotates by the same amount and vice versa.
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "%f %f %f", imu_record.raw_magnetic_field.x, imu_record.raw_magnetic_field.y, imu_record.raw_magnetic_field.z);
 

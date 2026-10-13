@@ -7,9 +7,9 @@
 #define magMinZ         -0.738340
 #define magMaxZ         0.444280
 
-#define magBiasX		(magMinX+magMaxX)/2    //-0.401531
-#define magBiasY		(magMinY+magMaxY)/2    //0.682821
-#define magBiasZ		(magMinZ+magMaxZ)/2    //-0.197866
+#define magBiasX		-0.401531 // (magMinX+magMaxX)/2  
+#define magBiasY		0.682821    // (magMinY+magMaxY)/2
+#define magBiasZ		-0.197866 //(magMinZ+magMaxZ)/2 
 
 #define magScaleX       2/(magMaxX-magMinX)
 #define magScaleY       2/(magMaxY-magMinY)

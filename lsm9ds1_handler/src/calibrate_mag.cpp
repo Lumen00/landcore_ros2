@@ -51,6 +51,10 @@ class MagnetometerSubscriber : public rclcpp::Node{
         }; 
 };
 
+// Need a way to get average top values rather than absolute?
+// E.g. Take all samples, top and bottom 10% and average them.
+// Would involve timer for node. 
+
 int main(int argc, char * argv[])
 {
     rclcpp::init(argc, argv);
