@@ -45,9 +45,9 @@ class MagnetometerSubscriber : public rclcpp::Node{
         // Vector containing min and maxes.
         // std::pair<float, float> test;
         std::vector<std::pair<float, float>> minMax = {
-            {0,0}, // Min X, Max X
-            {0,0}, // Y
-            {0,0}  // Z
+            {1e9,-1e9}, // Min X, Max X
+            {1e9,-1e9}, // Y
+            {1e9,-1e9}  // Z
         }; 
 };
 
