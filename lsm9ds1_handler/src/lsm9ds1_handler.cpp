@@ -77,7 +77,7 @@ void LSM9DS1::initialize()
     }
 
     // madgwick setup, default of 1/512
-    filter.begin(80);
+    filter.begin(frequency);
 
     // publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>(imu_name_ + "/telemetry", 10);
     publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>("/imu/data_raw", 10);
@@ -96,12 +96,12 @@ void LSM9DS1::read_IMU()
     // a - acceleromter
     telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.y;
     telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.x;
-    telemetry_msg_.linear_acceleration.z = -imu_record.raw_linear_acceleration.z;
+    telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
     // g - gyroscope
     telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
     telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
-    telemetry_msg_.angular_velocity.z = -imu_record.raw_angular_velocity.z;
+    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
 
     filter.update(
         telemetry_msg_.angular_velocity.x,
