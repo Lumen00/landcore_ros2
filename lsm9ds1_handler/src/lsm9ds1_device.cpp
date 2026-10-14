@@ -137,9 +137,22 @@ void LSM9DS1_Device::calibrate_accelgyro()
     gyro_offset_.y = sy / N;
     gyro_offset_.z = sz / N;
     // printf("Gyro offsets: %f %f %f", gyro_offset_.x, gyro_offset_.y, gyro_offset_.z);
+
+    double ax = 0, ay = 0, az = 0;
+    Axis3 a;
+    for (int i = 0; i < N; ++i)
+    {
+        read_accel(a, true, false);          // dps, scaled
+        ax += a.x; ay += a.y; az += a.z;
+        usleep(2000);                // device must be perfectly still
+    }
+    accel_offset_.x = ax / N;
+    accel_offset_.y = ay / N;
+    accel_offset_.z = az / N;
+
 }
 
-void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/)
+void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/, bool offset)
 {
     // read 6 bytes, LSM9DS1 will automatically increment the register
     // so we can read all the raw accel/gyro data in one go.
@@ -166,6 +179,13 @@ void LSM9DS1_Device::read_accel(Axis3 &accels, bool scaled /* = true*/)
 
         accels.z = (accels.z - accel_offset_.z) * settings::kAccelSensMap.at(accel_scale_);
         accels.z = (accels.z / 1000.0f) * constants::kGravity;
+
+        if (offset){
+            accels.x -= accel_offset_.x;
+            accels.y -= accel_offset_.y;
+            accels.z -= accel_offset_.z;
+        }
+
     }
 }
 

@@ -117,7 +117,7 @@ class LSM9DS1_Device
     ~LSM9DS1_Device();
     LSM9DS1_Device(const int bus_index, const uint8_t i2c_address_accelgyro, const uint8_t i2c_address_mag);
 
-    void read_accel(Axis3 &accels, bool scaled = true);
+    void read_accel(Axis3 &accels, bool scaled = true, bool offset = true);
     void read_gyro(Axis3 &angular_vel, bool scaled = true, bool offset = true);
     void read_mag(Axis3 &mag_gauss, bool scaled = true);
     IMURecord read_all(bool scaled = true);
@@ -142,7 +142,6 @@ class LSM9DS1_Device
     uint8_t i2c_address_accelgyro_;
     uint8_t accel_scale_;
     uint8_t accel_rate_;
-    Axis3 accel_offset_;
 
     uint8_t gyro_scale_;
     uint8_t gyro_rate_;
@@ -151,6 +150,7 @@ class LSM9DS1_Device
     uint8_t mag_scale_;
     uint8_t mag_rate_;
     Axis3 gyro_offset_{0, 0, 0};
+    Axis3 accel_offset_{0,0,0};
 };
 } // namespace lsm9ds1
 
