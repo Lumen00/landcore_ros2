@@ -12,7 +12,7 @@ lsm9ds1_handler:
 
     # ask STMicroElectronics why 16 comes before 4..
     # Acceleration scale: 0 -> 2g, 1 -> 16g, 2 -> 4g, 3 -> 8g
-    accel_scale: 0
+    accel_scale: 1
 
     # Accelerometer rate: 0 -> Power Down, 1 -> 10hz, 2 -> 50hz, 3 -> 119hz, 4 -> 238hz, 5 -> 476hz 6 -> 952hz
     accel_rate: 3
