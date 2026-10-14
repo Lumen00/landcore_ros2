@@ -127,11 +127,14 @@ void LSM9DS1::read_IMU()
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "ROLL: %f | PITCH: %f | YAW: %f", filter.getRoll(), filter.getPitch(), filter.getYaw());
 
     std::vector<float> q = filter.getQuaternion();
+    tf2::Quaternion qNorm;
+    qNorm.setW(q.at(0)); qNorm.setX(q.at(1)); qNorm.setY(q.at(1)); qNorm.setZ(q.at(2));
+    qNorm.normalize();
 
-    telemetry_msg_.orientation.x = q.at(1);
-    telemetry_msg_.orientation.y = q.at(2);
-    telemetry_msg_.orientation.z = q.at(3);
-    telemetry_msg_.orientation.w = q.at(0);
+    telemetry_msg_.orientation.x = qNorm.getX();
+    telemetry_msg_.orientation.y = qNorm.getY();
+    telemetry_msg_.orientation.z = qNorm.getZ();
+    telemetry_msg_.orientation.w = qNorm.getW();
 
     mag_msg_.header.frame_id = "imu_link";
     mag_msg_.header.set__stamp(node_->get_clock()->now());
