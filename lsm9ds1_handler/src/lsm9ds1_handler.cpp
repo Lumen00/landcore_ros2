@@ -128,8 +128,8 @@ void LSM9DS1::read_IMU()
 
     std::vector<float> q = filter.getQuaternion();
 
-    telemetry_msg_.orientation.x = q.at(2);
-    telemetry_msg_.orientation.y = q.at(1);
+    telemetry_msg_.orientation.x = q.at(1);
+    telemetry_msg_.orientation.y = q.at(2);
     telemetry_msg_.orientation.z = q.at(3);
     telemetry_msg_.orientation.w = q.at(0);
 
