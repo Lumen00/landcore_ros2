@@ -178,18 +178,18 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.02 0.01 0.001"/>
+        <box size="0.01 0.02 0.001"/>
       </geometry>
     </collision>
     <inertial>
       <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="0 0 0"/>
       <mass value="0.01"/>
-      <inertia ixx="8.416666666666667e-08" ixy="0.0" ixz="0.0" iyy="4.166666666666667e-07" iyz="0.0" izz="3.341666666666667e-07"/>
+      <inertia ixx="3.341666666666667e-07" ixy="0.0" ixz="0.0" iyy="4.166666666666667e-07" iyz="0.0" izz="8.416666666666667e-08"/>
     </inertial>
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.02 0.01 0.001"/>
+        <box size="0.01 0.02 0.001"/>
       </geometry>
       <material name="Cyan">
         <color rgba="0.0 1.0 1.0 1.0"/>
@@ -199,7 +199,7 @@
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
-    <origin rpy="0 0 0" xyz="0.04 0 0.0305"/>
+    <origin rpy="0 0 -1.5707963267948966" xyz="0.04 0 0.0305"/>
   </joint>
   <!-- LIDAR -->
   <link name="lidar_link">

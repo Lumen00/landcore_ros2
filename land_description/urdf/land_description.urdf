@@ -134,14 +134,14 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <box size="0.02 0.01 0.001"/>
+                <box size="0.01 0.02 0.001"/>
             </geometry>
         </collision>
-        <xacro:box_inertia m="0.01" w="0.02" d="0.01" h="0.001"/>
+        <xacro:box_inertia m="0.01" w="0.01" d="0.02" h="0.001"/>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <geometry>
-                <box size="0.02 0.01 0.001"/>
+                <box size="0.01 0.02 0.001"/>
             </geometry>
             <material name="Cyan">
                 <color rgba="0.0 1.0 1.0 1.0"/>
@@ -152,7 +152,7 @@
     <joint name="imu_joint" type="fixed">
         <parent link="base_link"/>
         <child link="imu_link"/>
-        <origin xyz="${0.01+tower_length/2} 0 ${base_height/2}" rpy="0 0 0"/>
+        <origin xyz="${0.01+tower_length/2} 0 ${base_height/2}" rpy="0 0 ${-pi/2}"/>
     </joint>
 
     <!-- LIDAR -->
