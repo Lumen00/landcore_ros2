@@ -115,7 +115,7 @@ void LSM9DS1::read_IMU()
         imu_record.raw_magnetic_field.z
     );
 
-    // When pitch (Y per robot axes) goes up, yaw rotates by the same amount and vice versa.
+    // EDIT THE QUATERNION DIRECTLY TO HAVE IT ALIGN WITH ROBOT FRAME?
 
     // RCLCPP_INFO(rclcpp::get_logger("IMU"), "%f %f %f", imu_record.raw_magnetic_field.x, imu_record.raw_magnetic_field.y, imu_record.raw_magnetic_field.z);
 
