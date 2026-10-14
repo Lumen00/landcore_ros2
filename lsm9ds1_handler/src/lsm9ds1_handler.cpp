@@ -128,7 +128,7 @@ void LSM9DS1::read_IMU()
 
     std::vector<float> q = filter.getQuaternion();
     tf2::Quaternion qNorm;
-    qNorm.setW(q.at(0)); qNorm.setX(q.at(1)); qNorm.setY(q.at(1)); qNorm.setZ(q.at(2));
+    qNorm.setW(q.at(0)); qNorm.setX(q.at(1)); qNorm.setY(q.at(2)); qNorm.setZ(q.at(3));
     qNorm.normalize();
 
     telemetry_msg_.orientation.x = qNorm.getX();
