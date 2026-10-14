@@ -148,7 +148,7 @@ void LSM9DS1_Device::calibrate_accelgyro()
     }
     accel_offset_.x = ax / N;
     accel_offset_.y = ay / N;
-    accel_offset_.z = az / N;
+    accel_offset_.z = (az / N) + 9.81;
 
 }
 
