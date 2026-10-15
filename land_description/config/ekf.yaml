@@ -33,13 +33,13 @@ ekf_filter_node:
         world_frame: odom           # Defaults to the value of odom_frame if unspecified
 
         odom0: /odom
-        odom0_config: [false, false, false,
-                      false, false, false,
-                      true, true, false,
-                      false, false, true,
-                      false, false, false]
+        odom0_config: [false, false, false,     # XYZ
+                      false, false, false,      # RPY
+                      true, true, false,        # XYZ Velocity
+                      false, false, true,       # RPY Velocity
+                      false, false, false]      # XYZ Acceleration
 
-        imu0: /imu
+        imu0: /imu/data_raw
         imu0_config: [false, false, false,
                       false, false, false,
                       false, false, false,

@@ -60,7 +60,7 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz_default_plugins/Image
-      Enabled: false
+      Enabled: true
       Name: Image
       Topic: 
         Depth: 1
@@ -79,7 +79,7 @@ Visualization Manager:
         Value: /global_costmap/costmap
       Color Scheme: costmap
     - Class: rviz_imu_plugin/Imu
-      Enabled: true
+      Enabled: false
       Name: IMU
       Topic: 
         Depth: 5
