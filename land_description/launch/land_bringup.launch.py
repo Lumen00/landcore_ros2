@@ -125,4 +125,5 @@ def generate_launch_description():
         slam_node,
         imu_launch,
         # nav_node
+        robot_localisation_node
         ])
