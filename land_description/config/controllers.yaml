@@ -29,7 +29,7 @@ mecanum_drive_controller:
     base_frame_id: base_link
     odom_frame_id: odom
     # Broadcast the odom -> base_link transform.
-    enable_odom_tf: true
+    enable_odom_tf: false
     publish_rate: 50.0
 
     # Uncertainty estimate in xyzrpy.
