@@ -111,7 +111,7 @@ def generate_launch_description():
         name='ekf_filter_node',
         output='screen',
         parameters=[
-            os.path.join(land_description_pkg, 'config/eky.yaml'),
+            os.path.join(land_description_pkg, 'config/ekf.yaml'),
             {'use_sim_time' : False}
         ]
     )
