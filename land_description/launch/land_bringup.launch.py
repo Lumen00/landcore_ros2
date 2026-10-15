@@ -105,6 +105,17 @@ def generate_launch_description():
         PathJoinSubstitution([imu_launch_dir, 'lsm9ds1_handler.launch.py']),
     )
 
+    robot_localisation_node = Node(
+        package='robot_localization',
+        executable='ekf_node',
+        name='ekf_filter_node',
+        output='screen',
+        parameters=[
+            os.path.join(land_description_pkg, 'config/eky.yaml'),
+            {'use_sim_time' : 'False'}
+        ]
+    )
+
     return LaunchDescription([robot_state_publisher, 
         controller_manager, 
         spawn_jsb, 
@@ -112,6 +123,6 @@ def generate_launch_description():
         delayed_sensors,
         camera_node,
         slam_node,
-        imu_launch
-        # nav_node
+        imu_launch,
+        nav_node
         ])
