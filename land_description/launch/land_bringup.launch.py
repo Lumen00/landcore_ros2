@@ -112,7 +112,7 @@ def generate_launch_description():
         output='screen',
         parameters=[
             os.path.join(land_description_pkg, 'config/eky.yaml'),
-            {'use_sim_time' : 'False'}
+            {'use_sim_time' : False}
         ]
     )
 
