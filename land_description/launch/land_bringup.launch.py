@@ -124,5 +124,5 @@ def generate_launch_description():
         camera_node,
         slam_node,
         imu_launch,
-        nav_node
+        # nav_node
         ])
