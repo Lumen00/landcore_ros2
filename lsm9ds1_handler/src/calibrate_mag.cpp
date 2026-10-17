@@ -3,18 +3,27 @@
 #include <memory>
 #include <vector>
 #include <utility>
+#include <chrono>
 using std::placeholders::_1;
-
 class MagnetometerSubscriber : public rclcpp::Node{
     public: 
         MagnetometerSubscriber() : Node("mag_subscriber"){
             magSubscriber_ = this->create_subscription<sensor_msgs::msg::MagneticField>(
                 "/imu/mag", 10, std::bind(&MagnetometerSubscriber::calibCallback, this, _1));
+            startTimer_ = std::chrono::steady_clock::now(); // Get the starting time.
         }
 
     private: 
         rclcpp::Subscription<sensor_msgs::msg::MagneticField>::SharedPtr magSubscriber_;
+        std::chrono::_V2::steady_clock::time_point startTimer_;
         void calibCallback(const sensor_msgs::msg::MagneticField::SharedPtr msg){
+
+            // If the current time exceeds the starting time by n seconds, display results instead.
+            if ((std::chrono::steady_clock::now() - startTimer_) >= std::chrono::seconds(120)){
+
+                rclcpp::shutdown();
+            }
+
             // Keep track of the minimum and maximum magnetometer readings on all axes.
             
             float x = msg->magnetic_field.x;
