@@ -112,6 +112,24 @@ void LSM9DS1::initialize()
         imu_record.raw_magnetic_field.z,
         true
     );
+
+    std::vector<float> q = filter.getQuaternion();
+
+    // Correct for magnetic declination.
+
+    telemetry_msg_.orientation.x = q.at(1);
+    telemetry_msg_.orientation.y = q.at(2);
+    telemetry_msg_.orientation.z = q.at(3);
+    telemetry_msg_.orientation.w = q.at(0);
+
+    mag_msg_.header.frame_id = "imu_link";
+    mag_msg_.header.set__stamp(node_->get_clock()->now());
+    mag_msg_.magnetic_field.set__x(imu_record.raw_magnetic_field.y);
+    mag_msg_.magnetic_field.set__y(-imu_record.raw_magnetic_field.x);
+    mag_msg_.magnetic_field.set__z(imu_record.raw_magnetic_field.z);
+
+    publish();
+
 }
 
 void LSM9DS1::read_IMU()
