@@ -4,7 +4,7 @@ lsm9ds1_handler:
     i2c_interface: 1
     
     # telemetry publish rate
-    frequency: 100 # [Hz]
+    frequency: 50 # [Hz]
 
     # default addresses for the lsm9ds1
     i2c_address_accelgyro: 0x6b
