@@ -98,9 +98,9 @@ void LSM9DS1::initialize()
         telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
         // g - gyroscope
-        telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
-        telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
-        telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
+        telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y*(M_PI/180);
+        telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x*(M_PI/180);
+        telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z*(M_PI/180);
 
         filter.update(
             telemetry_msg_.angular_velocity.x,
@@ -114,6 +114,7 @@ void LSM9DS1::initialize()
             imu_record.raw_magnetic_field.z,
             true
         );
+        publish();
     }    
 }
 
@@ -131,9 +132,9 @@ void LSM9DS1::read_IMU()
     telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
 
     // g - gyroscope
-    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
-    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
-    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y*(M_PI/180);
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x*(M_PI/180);
+    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z*(M_PI/180);
 
     filter.update(
         telemetry_msg_.angular_velocity.x,

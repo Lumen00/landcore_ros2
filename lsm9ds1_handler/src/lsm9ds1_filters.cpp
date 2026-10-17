@@ -65,10 +65,10 @@ void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az
 		beta = betaDef;
 	}
 
-	// Convert gyroscope degrees/sec to radians/sec
-	gx *= 0.0174533f;
-	gy *= 0.0174533f;
-	gz *= 0.0174533f;
+	// // Convert gyroscope degrees/sec to radians/sec
+	// gx *= 0.0174533f;
+	// gy *= 0.0174533f;
+	// gz *= 0.0174533f;
 
 	// Rate of change of quaternion from gyroscope
 	qDot1 = 0.5f * (-q1 * gx - q2 * gy - q3 * gz);
