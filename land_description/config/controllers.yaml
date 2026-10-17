@@ -2,7 +2,7 @@
 # which controllers will be defined.
 controller_manager:
   ros__parameters:
-    update_rate: 50 # Hz
+    update_rate: 20 # Hz
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     mecanum_drive_controller:
@@ -30,7 +30,7 @@ mecanum_drive_controller:
     odom_frame_id: odom
     # Broadcast the odom -> base_link transform.
     enable_odom_tf: false
-    publish_rate: 50.0
+    publish_rate: 20.0
 
     # Uncertainty estimate in xyzrpy.
     twist_covariance_diagonal: [0.001, 0.001, 0.0, 0.0, 0.0, 0.01]
