@@ -83,6 +83,35 @@ void LSM9DS1::initialize()
     publisher_ = node_->create_publisher<sensor_msgs::msg::Imu>("/imu/data_raw", 10);
     magPublisher_ = node_->create_publisher<sensor_msgs::msg::MagneticField>("/imu/mag",10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
+
+    IMURecord imu_record = lsm9ds1_device_->read_all(true);
+    
+
+    telemetry_msg_.header.frame_id = "imu_link";
+    telemetry_msg_.header.set__stamp(node_->get_clock()->now());
+
+    // a - acceleromter
+    telemetry_msg_.linear_acceleration.x = imu_record.raw_linear_acceleration.y;
+    telemetry_msg_.linear_acceleration.y = imu_record.raw_linear_acceleration.x;
+    telemetry_msg_.linear_acceleration.z = imu_record.raw_linear_acceleration.z;
+
+    // g - gyroscope
+    telemetry_msg_.angular_velocity.x = imu_record.raw_angular_velocity.y;
+    telemetry_msg_.angular_velocity.y = imu_record.raw_angular_velocity.x;
+    telemetry_msg_.angular_velocity.z = imu_record.raw_angular_velocity.z;
+
+    filter.update(
+        telemetry_msg_.angular_velocity.x,
+        telemetry_msg_.angular_velocity.y,
+        telemetry_msg_.angular_velocity.z,
+        telemetry_msg_.linear_acceleration.x,
+        telemetry_msg_.linear_acceleration.y,
+        telemetry_msg_.linear_acceleration.z,
+        imu_record.raw_magnetic_field.y,
+        -imu_record.raw_magnetic_field.x,
+        imu_record.raw_magnetic_field.z,
+        true
+    );
 }
 
 void LSM9DS1::read_IMU()
@@ -112,7 +141,8 @@ void LSM9DS1::read_IMU()
         telemetry_msg_.linear_acceleration.z,
         imu_record.raw_magnetic_field.y,
         -imu_record.raw_magnetic_field.x,
-        imu_record.raw_magnetic_field.z
+        imu_record.raw_magnetic_field.z,
+        false
     );
 
 

@@ -45,7 +45,7 @@ Madgwick::Madgwick() {
 	anglesComputed = 0;
 }
 
-void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz) {
+void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz, bool init) {
 	float recipNorm;
 	float s0, s1, s2, s3;
 	float qDot1, qDot2, qDot3, qDot4;
@@ -130,6 +130,15 @@ void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az
 		qDot2 -= beta * s1;
 		qDot3 -= beta * s2;
 		qDot4 -= beta * s3;
+	}
+
+	// If making initial guess, return qDot as q0-q3.
+	if (init){
+		q0 = qDot1;
+		q1 = qDot2;
+		q2 = qDot3;
+		q3 = qDot4;
+		return;
 	}
 
 	// Integrate rate of change of quaternion to yield quaternion
