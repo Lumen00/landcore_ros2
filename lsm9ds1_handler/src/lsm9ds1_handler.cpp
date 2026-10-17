@@ -129,6 +129,7 @@ void LSM9DS1::initialize()
     mag_msg_.magnetic_field.set__z(imu_record.raw_magnetic_field.z);
 
     publish();
+    
 
 }
 
