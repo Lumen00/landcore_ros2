@@ -371,10 +371,10 @@ velocity_smoother:
     stamp_smoothed_velocity_with_smoothing_time: false
     scale_velocities: true
     feedback: "CLOSED_LOOP"
-    max_velocity: [1.0, 1.0, 1.0]
-    min_velocity: [-1.0, -1.0, -1.0]
-    max_accel: [1.0, 1.0, 0.6]
-    max_decel: [-1.0, -1.0, -0.6]
+    max_velocity: [1.0, 1.0, 1.5]
+    min_velocity: [-1.0, -1.0, -1.5]
+    max_accel: [1.0, 1.0, 1.0]
+    max_decel: [-1.0, -1.0, -1.0]
     odom_topic: "/odometry/filtered"
     odom_duration: 0.1
     deadband_velocity: [0.05, 0.05, 0.05]

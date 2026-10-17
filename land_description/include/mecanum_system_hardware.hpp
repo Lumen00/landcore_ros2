@@ -64,8 +64,8 @@ namespace land_description
 
         // KP, KI, KD.
         const double KP_ = 1600;
-        const double KI_ = 150;
-        const double KD_ = 10;
+        const double KI_ = 160;
+        const double KD_ = 15;
 
         //  DT - the time since PID control was last called for this motor.
         std::vector<Timer> DT_;

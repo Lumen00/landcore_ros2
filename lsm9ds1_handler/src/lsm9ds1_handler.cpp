@@ -116,6 +116,7 @@ void LSM9DS1::initialize()
         );
         publish();
     }    
+    // Should clear costmap and generate new one.
 }
 
 void LSM9DS1::read_IMU()
