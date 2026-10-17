@@ -138,6 +138,11 @@ void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az
 		q1 = qDot2;
 		q2 = qDot3;
 		q3 = qDot4;
+		recipNorm = invSqrt(q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3);
+		q0 *= recipNorm;
+		q1 *= recipNorm;
+		q2 *= recipNorm;
+		q3 *= recipNorm;
 		return;
 	}
 
