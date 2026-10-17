@@ -115,7 +115,6 @@ void LSM9DS1::initialize()
             true
         );
     }    
-
 }
 
 void LSM9DS1::read_IMU()
