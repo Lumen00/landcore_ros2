@@ -171,6 +171,8 @@ hardware_interface::CallbackReturn MecanumSystemHardware::on_deactivate()
   // Safety-critical: stop every motor before giving up control
   for (size_t i = 0; i < joint_names_.size(); i++)
   {
+    motor_driver_.setPWM(kWiring[i].in1_channel, 0, 0);
+    motor_driver_.setPWM(kWiring[i].in2_channel, 0, 0);
     motor_driver_.setPin(kWiring[i].in1_channel, false);
     motor_driver_.setPin(kWiring[i].in2_channel, false);
   }
@@ -238,7 +240,7 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   double pid_pwm_val = KP_ * motor_errors_[motor_num] + KI_ * accumulated_errors_[motor_num] * dt + KD_ * (motor_errors_[motor_num] - last_errors_[motor_num]) / dt;
 
   // Clamp the PWM value to prevent future problems.
-  if (pid_pwm_val > 1600){pid_pwm_val = 1600;}
+  if (pid_pwm_val > 1000){pid_pwm_val = 1000;}
   if (pid_pwm_val < 0){pid_pwm_val = 0;}
 
   return static_cast<uint16_t>(pid_pwm_val);
@@ -274,6 +276,8 @@ hardware_interface::return_type MecanumSystemHardware::write(
     }
     else
     {
+      motor_driver_.setPWM(in1, 0, 0);
+      motor_driver_.setPWM(in2, 0, 0);
       motor_driver_.setPin(in1, false);
       motor_driver_.setPin(in2, false);
     }
