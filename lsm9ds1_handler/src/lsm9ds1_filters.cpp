@@ -59,7 +59,7 @@ void Madgwick::update(float gx, float gy, float gz, float ax, float ay, float az
 	}
 
 	if (init){
-		beta = 100.0;
+		beta = 1000.0;
 	}
 	else{
 		beta = betaDef;
