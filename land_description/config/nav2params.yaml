@@ -106,7 +106,7 @@ controller_server:
       ax_min: -2.0
       ay_max: 2.0
       ay_min: -2.0
-      az_max: 2.0
+      az_max: 3.0
       vx_std: 0.2
       vy_std: 0.2
       wz_std: 0.2
@@ -373,8 +373,8 @@ velocity_smoother:
     feedback: "CLOSED_LOOP"
     max_velocity: [1.0, 1.0, 1.5]
     min_velocity: [-1.0, -1.0, -1.5]
-    max_accel: [2.0, 2.0, 2.0]
-    max_decel: [-2.0, -2.0, -2.0]
+    max_accel: [2.0, 2.0, 3.0]
+    max_decel: [-2.0, -2.0, -3.0]
     odom_topic: "/odometry/filtered"
     odom_duration: 0.1
     deadband_velocity: [0.05, 0.05, 0.05]
