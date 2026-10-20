@@ -4,6 +4,9 @@ set -e
 # Set ROS 2 distribution as a variable
 ROS_DISTRO="jazzy"
 
+# Set libcamera versioning.
+LIBCAMERA_REF="ca0ba53ef1eec5e59dee7255863b943f5eaf6cfd"
+
 # Source ROS 2 setup
 source /opt/ros/$ROS_DISTRO/setup.sh
 
@@ -44,6 +47,7 @@ apt install python3-colcon-meson python3-ply python3-pybind11 pybind11-dev -y
 apt install -y libboost-dev libgnutls28-dev openssl libtiff-dev pybind11-dev qtbase5-dev libqt5core5a meson cmake python3-yaml python3-ply libglib2.0-dev libgstreamer-plugins-base1.0-dev -y
 git clone https://github.com/christianrauch/camera_ros.git
 git clone https://github.com/raspberrypi/libcamera.git
+git -C libcamera checkout "$LIBCAMERA_REF"
 source /opt/ros/$ROS_DISTRO/setup.sh
 cd ~/ros2_ws
 sudo rosdep update
