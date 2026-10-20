@@ -20,8 +20,8 @@ cd /root/ros2_ws
 
 # Install ROS2 dependencies for all packages
 echo "Installing ROS 2 dependencies..."
-# rosdep update
-# rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
+rosdep update
+rosdep install -i --from-path src --rosdistro $ROS_DISTRO -y
 
 # Install pip dependencies.
 python3 -m venv my --without-pip --system-site-packages #Bypass ensure-pip error on ubuntu
