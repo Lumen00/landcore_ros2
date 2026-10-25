@@ -240,7 +240,7 @@ uint16_t MecanumSystemHardware::pid_controller(double current_velocity, double c
   double pid_pwm_val = KP_ * motor_errors_[motor_num] + KI_ * accumulated_errors_[motor_num] * dt + KD_ * (motor_errors_[motor_num] - last_errors_[motor_num]) / dt;
 
   // Clamp the PWM value to prevent future problems.
-  if (pid_pwm_val > 1000){pid_pwm_val = 1000;}
+  if (pid_pwm_val > 1200){pid_pwm_val = 1200;}
   if (pid_pwm_val < 0){pid_pwm_val = 0;}
 
   return static_cast<uint16_t>(pid_pwm_val);

@@ -64,18 +64,13 @@ namespace land_description
 
         // KP, KI, KD.
         const double KP_ = 1650;
-        const double KI_ = 200;
+        const double KI_ = 210;
         const double KD_ = 15;
 
         //  DT - the time since PID control was last called for this motor.
         std::vector<Timer> DT_;
         
         int h_ = -1;
-
-        // rclcpp::Node::SharedPtr timer_node_;
-        // rclcpp::TimerBase::SharedPtr speed_timer_;
-        // rclcpp::executors::SingleThreadedExecutor::SharedPtr timer_executor_;
-        // std::thread timer_spin_thread_;
 
         static void encoder_callback(int e, lgGpioAlert_p evt, void * data);
         static void speed_calc(void * data, double interval);
