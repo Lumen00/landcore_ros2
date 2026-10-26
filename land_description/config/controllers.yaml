@@ -2,7 +2,7 @@
 # which controllers will be defined.
 controller_manager:
   ros__parameters:
-    update_rate: 30 # Hz
+    update_rate: 20 # Hz
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     mecanum_drive_controller:

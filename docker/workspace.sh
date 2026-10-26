@@ -36,6 +36,7 @@ apt install liblgpio-dev \
     ros-jazzy-nav2-minimal-tb* \
     ros-jazzy-ros2-control \
     ros-jazzy-ros2-controllers \
+    ros-jazzy-imu-tools \
     ros-jazzy-slam-toolbox -y 
 
 # Build the libcamera package
