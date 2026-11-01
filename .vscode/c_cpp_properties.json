@@ -1,16 +1,17 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "ROS 2 Jazzy",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/ros/jazzy/include/**",
-                "/root/ros2_ws/**"
+                "${workspaceFolder}/install/**/include/**",
+                "/opt/ros/jazzy/include/rclcpp"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c17",
-            "cppStandard": "gnu++17",
+            "cppStandard": "c++17",
             "intelliSenseMode": "linux-gcc-x64"
         }
     ],
