@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-b8735201b6c707195d76.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "oscp_imu_msgs__py",
+					"jsonFile" : "directory-oscp_imu_msgs__py-06242c138640587844c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/oscp_imu_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "oscp_imu_msgs__rs",
+					"jsonFile" : "directory-oscp_imu_msgs__rs-2be02b7840bbf9ab5cde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/oscp_imu_msgs__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "oscp_imu_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_oscp_imu_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_oscp_imu_msgs_egg-981918a03dabeadfe677.json",
+					"name" : "ament_cmake_python_build_oscp_imu_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_oscp_imu_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_oscp_imu_msgs-972565f347f58d08b7e7.json",
+					"name" : "ament_cmake_python_copy_oscp_imu_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs-167b4fb231a1b9c48734.json",
+					"name" : "oscp_imu_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__cpp-54a12dd30e93538e259f.json",
+					"name" : "oscp_imu_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "oscp_imu_msgs__py::@0179a24eb5b5a51df9dd",
+					"jsonFile" : "target-oscp_imu_msgs__py-1cf21ba7ca4b14e7cb37.json",
+					"name" : "oscp_imu_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_generator_c-2599e3aaa0a26236465a.json",
+					"name" : "oscp_imu_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_generator_py-61a2aa96e20f0ad2c40e.json",
+					"name" : "oscp_imu_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_generator_type_description-82c4a0eb7735b786d77a.json",
+					"name" : "oscp_imu_msgs__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_c-ab10a0786feda27ab28a.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_cpp-de7cb7f7ee9ee73889fb.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_fastrtps_c-0097eab0ceaa5742451d.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp-78f571e9f6c47bc99606.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_introspection_c-684fb9e353531c029638.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs__rosidl_typesupport_introspection_cpp-43c013692484481166f5.json",
+					"name" : "oscp_imu_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "oscp_imu_msgs__rs::@5adf333c5b7794272e95",
+					"jsonFile" : "target-oscp_imu_msgs__rs-679ccf0f35a6541f945b.json",
+					"name" : "oscp_imu_msgs__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs_s__rosidl_typesupport_c-9ea1046851cd7699ea50.json",
+					"name" : "oscp_imu_msgs_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c-12123197e7d2be9bb0d6.json",
+					"name" : "oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs_s__rosidl_typesupport_introspection_c-5eba2108efce338d7489.json",
+					"name" : "oscp_imu_msgs_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_msgs_uninstall-adbd30dd26542721e108.json",
+					"name" : "oscp_imu_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-c31d64e375bfdbe286a4.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs",
+		"source" : "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

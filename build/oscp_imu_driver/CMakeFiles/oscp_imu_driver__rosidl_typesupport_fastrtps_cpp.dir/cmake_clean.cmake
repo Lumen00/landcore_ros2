@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/apply_mag_config__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/apply_mag_config__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/get_imu_config__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/get_imu_config__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/stationary_calibrate__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/stationary_calibrate__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/zero_orientation__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/zero_orientation__type_support.cpp.o.d"
+  "liboscp_imu_driver__rosidl_typesupport_fastrtps_cpp.pdb"
+  "liboscp_imu_driver__rosidl_typesupport_fastrtps_cpp.so"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/apply_mag_config__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/get_imu_config__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/stationary_calibrate__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/zero_orientation__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_fastrtps_cpp.hpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

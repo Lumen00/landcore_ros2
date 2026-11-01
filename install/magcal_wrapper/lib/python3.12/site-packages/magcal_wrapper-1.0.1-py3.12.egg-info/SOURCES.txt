@@ -1,0 +1,8 @@
+setup.py
+magcal_wrapper/__init__.py
+magcal_wrapper.egg-info/PKG-INFO
+magcal_wrapper.egg-info/SOURCES.txt
+magcal_wrapper.egg-info/dependency_links.txt
+magcal_wrapper.egg-info/top_level.txt
+magcal_wrapper/action/__init__.py
+magcal_wrapper/action/_magnetometer_calibration.py

@@ -1,0 +1,254 @@
+[0.011s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper
+[0.076s] -- The C compiler identification is GNU 13.3.0
+[0.142s] -- The CXX compiler identification is GNU 13.3.0
+[0.159s] -- Detecting C compiler ABI info
+[0.261s] -- Detecting C compiler ABI info - done
+[0.275s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.276s] -- Detecting C compile features
+[0.276s] -- Detecting C compile features - done
+[0.290s] -- Detecting CXX compiler ABI info
+[0.407s] -- Detecting CXX compiler ABI info - done
+[0.416s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.416s] -- Detecting CXX compile features
+[0.416s] -- Detecting CXX compile features - done
+[0.421s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.566s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.740s] -- Found rclpy: 7.1.12 (/opt/ros/jazzy/share/rclpy/cmake)
+[0.740s] -- Found oscp_imu_msgs: 1.0.1 (/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake)
+[0.800s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.827s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.863s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.906s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.145s] -- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[1.210s] -- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[2.027s] -- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[2.663s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.890s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.894s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[3.019s] -- Found PythonExtra: /root/ros2_ws/my/bin/python3  
+[3.500s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[3.563s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.568s] -- Configuring done (3.5s)
+[3.596s] -- Generating done (0.0s)
+[3.605s] -- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper
+[3.613s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper
+[3.613s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper -- -j12 -l12
+[3.676s] [  2%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[3.677s] [  5%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[3.684s] [  5%] Built target ament_cmake_python_copy_magcal_wrapper
+[3.829s] [  5%] Built target magcal_wrapper__rosidl_generator_type_description
+[3.843s] [  8%] [34m[1mGenerating C code for ROS interfaces[0m
+[3.857s] [ 11%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.894s] running egg_info
+[3.895s] creating magcal_wrapper.egg-info
+[3.919s] writing magcal_wrapper.egg-info/PKG-INFO
+[3.919s] writing dependency_links to magcal_wrapper.egg-info/dependency_links.txt
+[3.920s] writing top-level names to magcal_wrapper.egg-info/top_level.txt
+[3.920s] writing manifest file 'magcal_wrapper.egg-info/SOURCES.txt'
+[3.987s] [ 11%] Built target magcal_wrapper__rs
+[3.991s] reading manifest file 'magcal_wrapper.egg-info/SOURCES.txt'
+[3.991s] writing manifest file 'magcal_wrapper.egg-info/SOURCES.txt'
+[4.028s] [ 11%] Built target ament_cmake_python_build_magcal_wrapper_egg
+[4.226s] [ 14%] [32mBuilding C object CMakeFiles/magcal_wrapper__rosidl_generator_c.dir/rosidl_generator_c/magcal_wrapper/action/detail/magnetometer_calibration__functions.c.o[0m
+[4.229s] [ 17%] [32mBuilding C object CMakeFiles/magcal_wrapper__rosidl_generator_c.dir/rosidl_generator_c/magcal_wrapper/action/detail/magnetometer_calibration__description.c.o[0m
+[4.229s] [ 20%] [32mBuilding C object CMakeFiles/magcal_wrapper__rosidl_generator_c.dir/rosidl_generator_c/magcal_wrapper/action/detail/magnetometer_calibration__type_support.c.o[0m
+[4.269s] [ 20%] Built target magcal_wrapper__cpp
+[4.384s] [ 22%] [32m[1mLinking C shared library libmagcal_wrapper__rosidl_generator_c.so[0m
+[4.418s] [ 22%] Built target magcal_wrapper__rosidl_generator_c
+[4.430s] [ 28%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.430s] [ 28%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[4.434s] [ 40%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[4.434s] [ 40%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[4.434s] [ 40%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[4.434s] [ 40%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[4.640s] [ 42%] [32mBuilding CXX object CMakeFiles/magcal_wrapper__rosidl_typesupport_c.dir/rosidl_typesupport_c/magcal_wrapper/action/magnetometer_calibration__type_support.cpp.o[0m
+[4.683s] [ 45%] [32m[1mLinking CXX shared library libmagcal_wrapper__rosidl_typesupport_c.so[0m
+[4.730s] [ 45%] Built target magcal_wrapper__rosidl_typesupport_c
+[4.769s] [ 48%] [32mBuilding CXX object CMakeFiles/magcal_wrapper__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/magcal_wrapper/action/magnetometer_calibration__type_support.cpp.o[0m
+[4.833s] [ 51%] [32mBuilding CXX object CMakeFiles/magcal_wrapper__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/magcal_wrapper/action/detail/magnetometer_calibration__type_support.cpp.o[0m
+[4.838s] [ 54%] [32mBuilding CXX object CMakeFiles/magcal_wrapper__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/magcal_wrapper/action/detail/dds_fastrtps/magnetometer_calibration__type_support.cpp.o[0m
+[4.855s] [ 57%] [32mBuilding C object CMakeFiles/magcal_wrapper__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/magcal_wrapper/action/detail/magnetometer_calibration__type_support.c.o[0m
+[4.936s] [ 60%] [32m[1mLinking C shared library libmagcal_wrapper__rosidl_typesupport_introspection_c.so[0m
+[4.975s] [ 60%] Built target magcal_wrapper__rosidl_typesupport_introspection_c
+[5.020s] [ 62%] [32mBuilding CXX object CMakeFiles/magcal_wrapper__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/magcal_wrapper/action/detail/magnetometer_calibration__type_support_c.cpp.o[0m
+[5.487s] [ 65%] [32m[1mLinking CXX shared library libmagcal_wrapper__rosidl_typesupport_fastrtps_c.so[0m
+[5.494s] [ 68%] [32m[1mLinking CXX shared library libmagcal_wrapper__rosidl_typesupport_cpp.so[0m
+[5.595s] [ 68%] Built target magcal_wrapper__rosidl_typesupport_cpp
+[5.597s] [ 68%] Built target magcal_wrapper__rosidl_typesupport_fastrtps_c
+[5.747s] [ 71%] [32m[1mLinking CXX shared library libmagcal_wrapper__rosidl_typesupport_introspection_cpp.so[0m
+[5.827s] [ 71%] Built target magcal_wrapper__rosidl_typesupport_introspection_cpp
+[6.079s] [ 74%] [32m[1mLinking CXX shared library libmagcal_wrapper__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.163s] [ 74%] Built target magcal_wrapper__rosidl_typesupport_fastrtps_cpp
+[6.186s] [ 74%] Built target magcal_wrapper
+[6.209s] [ 77%] [34m[1mGenerating Python code for ROS interfaces[0m
+[6.650s] [ 77%] Built target magcal_wrapper__py
+[6.672s] [ 80%] [32mBuilding C object CMakeFiles/magcal_wrapper__rosidl_generator_py.dir/rosidl_generator_py/magcal_wrapper/action/_magnetometer_calibration_s.c.o[0m
+[6.827s] [ 82%] [32m[1mLinking C shared library libmagcal_wrapper__rosidl_generator_py.so[0m
+[6.871s] [ 82%] Built target magcal_wrapper__rosidl_generator_py
+[6.893s] [ 85%] [32mBuilding C object CMakeFiles/magcal_wrapper_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[6.894s] [ 91%] [32mBuilding C object CMakeFiles/magcal_wrapper_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[6.894s] [ 91%] [32mBuilding C object CMakeFiles/magcal_wrapper_s__rosidl_typesupport_c.dir/rosidl_generator_py/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_c.c.o[0m
+[6.986s] [ 94%] [32m[1mLinking C shared module rosidl_generator_py/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_c.so[0m
+[6.993s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_fastrtps_c.so[0m
+[7.017s] [100%] [32m[1mLinking C shared module rosidl_generator_py/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_introspection_c.so[0m
+[7.020s] [100%] Built target magcal_wrapper_s__rosidl_typesupport_c
+[7.031s] [100%] Built target magcal_wrapper_s__rosidl_typesupport_fastrtps_c
+[7.052s] [100%] Built target magcal_wrapper_s__rosidl_typesupport_introspection_c
+[7.061s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper -- -j12 -l12
+[7.062s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper
+[7.072s] -- Install configuration: ""
+[7.072s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/ament_index/resource_index/rosidl_interfaces/magcal_wrapper
+[7.072s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/action/MagnetometerCalibration.json
+[7.072s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__type_support.h
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__description.c
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__functions.c
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__type_support.c
+[7.073s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__functions.h
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__struct.h
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/magnetometer_calibration.h
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg/rosidl_generator_c__visibility_control.h
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/library_path.sh
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/library_path.dsv
+[7.074s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_generator_c.so
+[7.075s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_generator_c.so" to ""
+[7.075s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.075s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.076s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.076s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__rosidl_typesupport_fastrtps_c.h
+[7.076s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg
+[7.076s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.076s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_fastrtps_c.so
+[7.076s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_fastrtps_c.so" to ""
+[7.076s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.076s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.076s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__struct.hpp
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__builder.hpp
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__type_support.hpp
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__traits.hpp
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/magnetometer_calibration.hpp
+[7.077s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg
+[7.077s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.077s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.077s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.077s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.078s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__rosidl_typesupport_fastrtps_cpp.hpp
+[7.078s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/dds_fastrtps
+[7.078s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg
+[7.078s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.078s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_fastrtps_cpp.so
+[7.078s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_fastrtps_cpp.so" to ""
+[7.078s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.078s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.078s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.078s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__rosidl_typesupport_introspection_c.h
+[7.079s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__type_support.c
+[7.079s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg
+[7.079s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.079s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_introspection_c.so
+[7.079s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_introspection_c.so" to ""
+[7.079s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_c.so
+[7.079s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_c.so" to ""
+[7.079s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper
+[7.080s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action
+[7.080s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__rosidl_typesupport_introspection_cpp.hpp
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/include/magcal_wrapper/magcal_wrapper/action/detail/magnetometer_calibration__type_support.cpp
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_introspection_cpp.so
+[7.080s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_introspection_cpp.so" to ""
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_cpp.so
+[7.080s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_typesupport_cpp.so" to ""
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/pythonpath.sh
+[7.080s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/pythonpath.dsv
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper-1.0.1-py3.12.egg-info
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper-1.0.1-py3.12.egg-info/PKG-INFO
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper-1.0.1-py3.12.egg-info/dependency_links.txt
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper-1.0.1-py3.12.egg-info/top_level.txt
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper-1.0.1-py3.12.egg-info/SOURCES.txt
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_c.c
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action/_magnetometer_calibration.py
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action/__init__.py
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action/_magnetometer_calibration_s.c
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_introspection_c.so
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_introspection_c.c
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_c.so
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/_magcal_wrapper_s.ep.rosidl_typesupport_fastrtps_c.c
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/__init__.py
+[7.081s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_fastrtps_c.so
+[7.116s] Listing '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper'...
+[7.116s] Compiling '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/__init__.py'...
+[7.116s] Listing '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action'...
+[7.116s] Compiling '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action/__init__.py'...
+[7.116s] Compiling '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/action/_magnetometer_calibration.py'...
+[7.120s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_fastrtps_c.so
+[7.121s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_fastrtps_c.so" to ""
+[7.121s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_introspection_c.so
+[7.121s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_introspection_c.so" to ""
+[7.121s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_c.so
+[7.121s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages/magcal_wrapper/magcal_wrapper_s__rosidl_typesupport_c.so" to ""
+[7.121s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_generator_py.so
+[7.122s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/libmagcal_wrapper__rosidl_generator_py.so" to ""
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/Cargo.toml
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/src
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/src/action
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/src/action/rmw.rs
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/src/action.rs
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/src/lib.rs
+[7.122s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/rust/build.rs
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/action/MagnetometerCalibration.idl
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/action/MagnetometerCalibration.action
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.10/site-packages/magcal_wrapper_py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.10/site-packages/magcal_wrapper_py/magnetometer_calibration.py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.10/site-packages/magcal_wrapper_py/core.py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.10/site-packages/magcal_wrapper_py/mag_calibration_client.py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.10/site-packages/magcal_wrapper_py/__init__.py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/magcal_wrapper/magnetometer_calibration.py
+[7.123s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/magcal_wrapper/mag_calibration_client.py
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/ament_index/resource_index/package_run_dependencies/magcal_wrapper
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/ament_index/resource_index/parent_prefix_path/magcal_wrapper
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/ament_prefix_path.sh
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/ament_prefix_path.dsv
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/path.sh
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/environment/path.dsv
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/local_setup.bash
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/local_setup.sh
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/local_setup.zsh
+[7.124s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/local_setup.dsv
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.dsv
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/ament_index/resource_index/packages/magcal_wrapper
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_generator_cExport.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_generator_cExport-noconfig.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_typesupport_fastrtps_cExport.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_generator_cppExport.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_typesupport_fastrtps_cppExport.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_introspection_cExport.cmake
+[7.125s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_cExport.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_cExport-noconfig.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_introspection_cppExport.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_cppExport.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapper__rosidl_typesupport_cppExport-noconfig.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_generator_pyExport.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/export_magcal_wrapper__rosidl_generator_pyExport-noconfig.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/rosidl_cmake-extras.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/ament_cmake_export_dependencies-extras.cmake
+[7.126s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/ament_cmake_export_include_directories-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/ament_cmake_export_libraries-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/ament_cmake_export_targets-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapperConfig.cmake
+[7.127s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake/magcal_wrapperConfig-version.cmake
+[7.128s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.xml
+[7.128s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper

@@ -1,0 +1,370 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+-- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+-- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+-- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+-- Found tf2: 0.36.23 (/opt/ros/jazzy/share/tf2/cmake)
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found oscp_imu_msgs: 1.0.1 (/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake)
+-- Found oscp_imu_libraries: 1.0.1 (/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake)
+-- Found rclcpp_action: 28.1.22 (/opt/ros/jazzy/share/rclcpp_action/cmake)
+-- Found magcal_wrapper: 1.0.1 (/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/cmake)
+-- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+-- Found PythonExtra: /root/ros2_ws/my/bin/python3  
+-- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+-- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (3.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver
+[  1%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[  2%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[  4%] [32mBuilding CXX object CMakeFiles/counter_tracker.dir/src/counter_tracker.cpp.o[0m
+[  4%] Built target ament_cmake_python_copy_oscp_imu_driver
+running egg_info
+creating oscp_imu_driver.egg-info
+writing oscp_imu_driver.egg-info/PKG-INFO
+writing dependency_links to oscp_imu_driver.egg-info/dependency_links.txt
+writing top-level names to oscp_imu_driver.egg-info/top_level.txt
+writing manifest file 'oscp_imu_driver.egg-info/SOURCES.txt'
+reading manifest file 'oscp_imu_driver.egg-info/SOURCES.txt'
+writing manifest file 'oscp_imu_driver.egg-info/SOURCES.txt'
+[  4%] Built target oscp_imu_driver__rosidl_generator_type_description
+[  4%] Built target ament_cmake_python_build_oscp_imu_driver_egg
+[  4%] Built target oscp_imu_driver__rs
+[  5%] [34m[1mGenerating C code for ROS interfaces[0m
+[  7%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[  7%] Built target oscp_imu_driver__cpp
+[  8%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/get_imu_config__functions.c.o[0m
+[ 10%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/zero_orientation__description.c.o[0m
+[ 11%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/stationary_calibrate__description.c.o[0m
+[ 13%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/zero_orientation__functions.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/zero_orientation__type_support.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c.o[0m
+[ 17%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/get_imu_config__description.c.o[0m
+[ 18%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/stationary_calibrate__functions.c.o[0m
+[ 20%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/apply_mag_config__functions.c.o[0m
+[ 21%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/apply_mag_config__description.c.o[0m
+[ 23%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/get_imu_config__type_support.c.o[0m
+[ 24%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c.o[0m
+[ 26%] [32m[1mLinking C shared library liboscp_imu_driver__rosidl_generator_c.so[0m
+[ 26%] Built target oscp_imu_driver__rosidl_generator_c
+[ 27%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[ 34%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[ 34%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[ 34%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[ 34%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[ 34%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[ 36%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_driver/srv/get_imu_config__type_support.cpp.o[0m
+[ 37%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_driver/srv/stationary_calibrate__type_support.cpp.o[0m
+[ 39%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_driver/srv/zero_orientation__type_support.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_driver/srv/apply_mag_config__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_driver/srv/get_imu_config__type_support.cpp.o[0m
+[ 43%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_driver/srv/stationary_calibrate__type_support.cpp.o[0m
+[ 44%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_driver/srv/zero_orientation__type_support.cpp.o[0m
+[ 46%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_driver/srv/apply_mag_config__type_support.cpp.o[0m
+[ 47%] [32m[1mLinking CXX shared library liboscp_imu_driver__rosidl_typesupport_c.so[0m
+[ 47%] Built target oscp_imu_driver__rosidl_typesupport_c
+[ 49%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_driver/srv/detail/zero_orientation__type_support.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.cpp.o[0m
+[ 52%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_driver/srv/detail/apply_mag_config__type_support.cpp.o[0m
+[ 53%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_driver/srv/detail/get_imu_config__type_support.cpp.o[0m
+[ 55%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/zero_orientation__type_support.c.o[0m
+[ 56%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c.o[0m
+[ 57%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/zero_orientation__type_support.cpp.o[0m
+[ 59%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/get_imu_config__type_support.c.o[0m
+[ 60%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c.o[0m
+[ 62%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_driver/srv/detail/zero_orientation__type_support_c.cpp.o[0m
+[ 63%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/stationary_calibrate__type_support.cpp.o[0m
+[ 65%] [32m[1mLinking C shared library liboscp_imu_driver__rosidl_typesupport_introspection_c.so[0m
+[ 66%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/get_imu_config__type_support.cpp.o[0m
+[ 66%] Built target oscp_imu_driver__rosidl_typesupport_introspection_c
+[ 68%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_driver/srv/detail/dds_fastrtps/apply_mag_config__type_support.cpp.o[0m
+[ 69%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support_c.cpp.o[0m
+[ 71%] [32m[1mLinking CXX shared library liboscp_imu_driver__rosidl_typesupport_cpp.so[0m
+[ 72%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_driver/srv/detail/get_imu_config__type_support_c.cpp.o[0m
+[ 72%] Built target oscp_imu_driver__rosidl_typesupport_cpp
+[ 73%] [32mBuilding CXX object CMakeFiles/oscp_imu_driver__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support_c.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/oscp_imu_node.dir/src/oscp_imu_node.cpp.o[0m
+[ 76%] [32m[1mLinking CXX shared library liboscp_imu_driver__rosidl_typesupport_introspection_cpp.so[0m
+[ 76%] Built target oscp_imu_driver__rosidl_typesupport_introspection_cpp
+[ 78%] [32m[1mLinking CXX shared library liboscp_imu_driver__rosidl_typesupport_fastrtps_cpp.so[0m
+[ 79%] [32m[1mLinking CXX shared library liboscp_imu_driver__rosidl_typesupport_fastrtps_c.so[0m
+[ 79%] Built target oscp_imu_driver__rosidl_typesupport_fastrtps_cpp
+[ 79%] Built target oscp_imu_driver__rosidl_typesupport_fastrtps_c
+[ 79%] Built target oscp_imu_driver
+[ 81%] [34m[1mGenerating Python code for ROS interfaces[0m
+[ 81%] Built target oscp_imu_driver__py
+[ 86%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_driver/srv/_get_imu_config_s.c.o[0m
+[ 86%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_driver/srv/_apply_mag_config_s.c.o[0m
+[ 86%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_driver/srv/_stationary_calibrate_s.c.o[0m
+[ 86%] [32mBuilding C object CMakeFiles/oscp_imu_driver__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_driver/srv/_zero_orientation_s.c.o[0m
+[ 88%] [32m[1mLinking C shared library liboscp_imu_driver__rosidl_generator_py.so[0m
+[ 88%] Built target oscp_imu_driver__rosidl_generator_py
+[ 92%] [32mBuilding C object CMakeFiles/oscp_imu_driver_s__rosidl_typesupport_c.dir/rosidl_generator_py/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_c.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/oscp_imu_driver_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 92%] [32mBuilding C object CMakeFiles/oscp_imu_driver_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 95%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_c.so[0m
+[ 95%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_introspection_c.so[0m
+[ 97%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_fastrtps_c.so[0m
+[ 97%] Built target oscp_imu_driver_s__rosidl_typesupport_introspection_c
+[ 97%] Built target oscp_imu_driver_s__rosidl_typesupport_c
+[ 97%] Built target oscp_imu_driver_s__rosidl_typesupport_fastrtps_c
+[ 98%] [32m[1mLinking CXX executable oscp_imu_node[0m
+[ 98%] Built target oscp_imu_node
+[100%] [32m[1mLinking CXX executable counter_tracker[0m
+[100%] Built target counter_tracker
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/ament_index/resource_index/rosidl_interfaces/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ZeroOrientation.json
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/StationaryCalibrate.json
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/GetIMUConfig.json
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ApplyMagConfig.json
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg/rosidl_generator_c__visibility_control.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__description.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__functions.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__description.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__functions.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__type_support.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__description.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__functions.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__type_support.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__functions.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__functions.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__type_support.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__functions.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__struct.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__struct.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__functions.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__functions.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__struct.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__struct.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__description.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/stationary_calibrate.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/zero_orientation.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/apply_mag_config.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/get_imu_config.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/library_path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/library_path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_generator_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_generator_c.so" to ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_fastrtps_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_fastrtps_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_fastrtps_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_fastrtps_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_fastrtps_c.so" to ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg/rosidl_generator_cpp__visibility_control.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__type_support.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__struct.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__builder.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__traits.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__traits.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__builder.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__type_support.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__struct.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__builder.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__traits.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__traits.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__type_support.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__struct.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__builder.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__struct.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/stationary_calibrate.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/apply_mag_config.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/get_imu_config.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/zero_orientation.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_fastrtps_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/dds_fastrtps
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_fastrtps_cpp.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_fastrtps_cpp.so" to ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_introspection_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_introspection_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_introspection_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_introspection_c.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_c.so" to ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__type_support.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__type_support.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_introspection_cpp.hpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/include/oscp_imu_driver/oscp_imu_driver/srv/detail/get_imu_config__type_support.cpp
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_introspection_cpp.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_introspection_cpp.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_cpp.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_typesupport_cpp.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/pythonpath.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/pythonpath.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver-1.0.1-py3.12.egg-info
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver-1.0.1-py3.12.egg-info/PKG-INFO
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver-1.0.1-py3.12.egg-info/dependency_links.txt
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver-1.0.1-py3.12.egg-info/top_level.txt
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver-1.0.1-py3.12.egg-info/SOURCES.txt
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_fastrtps_c.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_fastrtps_c.so
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_introspection_c.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/_oscp_imu_driver_s.ep.rosidl_typesupport_c.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_introspection_c.so
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/__init__.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_c.so
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_stationary_calibrate_s.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_zero_orientation_s.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_stationary_calibrate.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_apply_mag_config_s.c
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_zero_orientation.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_apply_mag_config.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_get_imu_config.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/__init__.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_get_imu_config_s.c
+Listing '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/__init__.py'...
+Listing '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/__init__.py'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_apply_mag_config.py'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_get_imu_config.py'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_stationary_calibrate.py'...
+Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/srv/_zero_orientation.py'...
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_fastrtps_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_fastrtps_c.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_introspection_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_introspection_c.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_c.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages/oscp_imu_driver/oscp_imu_driver_s__rosidl_typesupport_c.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_generator_py.so
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/liboscp_imu_driver__rosidl_generator_py.so" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/Cargo.toml
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/src
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/src/srv.rs
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/src/lib.rs
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/src/srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/src/srv/rmw.rs
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/rust/build.rs
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ZeroOrientation.idl
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/StationaryCalibrate.idl
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/GetIMUConfig.idl
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ApplyMagConfig.idl
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ZeroOrientation.srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/StationaryCalibrate.srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/GetIMUConfig.srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/srv/ApplyMagConfig.srv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/oscp_imu_driver/oscp_imu_node
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/oscp_imu_driver/oscp_imu_node" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/oscp_imu_driver/counter_tracker
+-- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/oscp_imu_driver/counter_tracker" to ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/config
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/config/default.yaml
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/launch
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/launch/oscp_imu.launch.py
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/ament_index/resource_index/package_run_dependencies/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/ament_index/resource_index/parent_prefix_path/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/ament_prefix_path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/ament_prefix_path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/environment/path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/local_setup.bash
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/local_setup.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/local_setup.zsh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/local_setup.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/ament_index/resource_index/packages/oscp_imu_driver
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_generator_cExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_generator_cExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_typesupport_fastrtps_cExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_generator_cppExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_typesupport_fastrtps_cppExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_cExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_cExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_cppExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driver__rosidl_typesupport_cppExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_generator_pyExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/export_oscp_imu_driver__rosidl_generator_pyExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/rosidl_cmake-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/ament_cmake_export_libraries-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/rosidl_cmake_aggregate_target-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driverConfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/cmake/oscp_imu_driverConfig-version.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.xml

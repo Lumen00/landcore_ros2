@@ -1,0 +1,4 @@
+source;share/lsm9ds1_handler/local_setup.bash
+source;share/lsm9ds1_handler/local_setup.dsv
+source;share/lsm9ds1_handler/local_setup.sh
+source;share/lsm9ds1_handler/local_setup.zsh

@@ -1,0 +1,8 @@
+source;share/oscp_imu_libraries/hook/cmake_prefix_path.ps1
+source;share/oscp_imu_libraries/hook/cmake_prefix_path.dsv
+source;share/oscp_imu_libraries/hook/cmake_prefix_path.sh
+source;share/oscp_imu_libraries/local_setup.bash
+source;share/oscp_imu_libraries/local_setup.dsv
+source;share/oscp_imu_libraries/local_setup.ps1
+source;share/oscp_imu_libraries/local_setup.sh
+source;share/oscp_imu_libraries/local_setup.zsh

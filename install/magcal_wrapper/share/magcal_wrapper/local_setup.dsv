@@ -1,0 +1,4 @@
+source;share/magcal_wrapper/environment/ament_prefix_path.sh
+source;share/magcal_wrapper/environment/library_path.sh
+source;share/magcal_wrapper/environment/path.sh
+source;share/magcal_wrapper/environment/pythonpath.sh

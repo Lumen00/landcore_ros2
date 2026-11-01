@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from oscp_imu_driver/srv/GetIMUConfig.srv
+// generated code does not contain a copyright notice
+
+
+module oscp_imu_driver {
+  module srv {
+    struct GetIMUConfig_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct GetIMUConfig_Response {
+      string config_summary;
+    };
+  };
+};

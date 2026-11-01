@@ -1,0 +1,32 @@
+[ 28%] Built target calibrate_mag
+[ 71%] Built target lsm9ds1_handler
+[100%] Built target lsm9ds1_node
+-- Install configuration: ""
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_handler.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_device.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_registers.hpp
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/MadgwickAHRS.h
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/lsm9ds1_node
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/calibrate_mag
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/liblsm9ds1_handler.so
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch/lsm9ds1_handler.launch.py
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config/params.yaml
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/package_run_dependencies/lsm9ds1_handler
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/parent_prefix_path/lsm9ds1_handler
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.bash
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.sh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.zsh
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.dsv
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/packages/lsm9ds1_handler
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig-version.cmake
+-- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.xml

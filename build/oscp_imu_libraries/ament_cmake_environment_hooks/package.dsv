@@ -1,0 +1,4 @@
+source;share/oscp_imu_libraries/local_setup.bash
+source;share/oscp_imu_libraries/local_setup.dsv
+source;share/oscp_imu_libraries/local_setup.sh
+source;share/oscp_imu_libraries/local_setup.zsh

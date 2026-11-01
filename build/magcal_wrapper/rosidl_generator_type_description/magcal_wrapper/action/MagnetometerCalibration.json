@@ -1,0 +1,582 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration",
+      "fields": [
+        {
+          "name": "goal",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "result",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Result"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "feedback",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "send_goal_service",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "get_result_service",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult"
+          },
+          "default_value": ""
+        },
+        {
+          "name": "feedback_message",
+          "type": {
+            "type_id": 1,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_FeedbackMessage"
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": [
+      {
+        "type_name": "builtin_interfaces/msg/Time",
+        "fields": [
+          {
+            "name": "sec",
+            "type": {
+              "type_id": 6,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "nanosec",
+            "type": {
+              "type_id": 7,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback",
+        "fields": [
+          {
+            "name": "progress",
+            "type": {
+              "type_id": 10,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "status",
+            "type": {
+              "type_id": 17,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_FeedbackMessage",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "feedback",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult",
+        "fields": [
+          {
+            "name": "request_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Response"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "event_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Event"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Event",
+        "fields": [
+          {
+            "name": "info",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "service_msgs/msg/ServiceEventInfo"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "request",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Response"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Request",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Response",
+        "fields": [
+          {
+            "name": "status",
+            "type": {
+              "type_id": 2,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "result",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Result"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal",
+        "fields": [
+          {
+            "name": "start",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_Result",
+        "fields": [
+          {
+            "name": "success",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "hard_iron_x",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "hard_iron_y",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "hard_iron_z",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "soft_iron",
+            "type": {
+              "type_id": 59,
+              "capacity": 9,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "fit_error",
+            "type": {
+              "type_id": 11,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal",
+        "fields": [
+          {
+            "name": "request_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Response"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "event_message",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Event"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Event",
+        "fields": [
+          {
+            "name": "info",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "service_msgs/msg/ServiceEventInfo"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "request",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Request"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "response",
+            "type": {
+              "type_id": 97,
+              "capacity": 1,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Response"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Request",
+        "fields": [
+          {
+            "name": "goal_id",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "unique_identifier_msgs/msg/UUID"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "goal",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Response",
+        "fields": [
+          {
+            "name": "accepted",
+            "type": {
+              "type_id": 15,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "stamp",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "builtin_interfaces/msg/Time"
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "service_msgs/msg/ServiceEventInfo",
+        "fields": [
+          {
+            "name": "event_type",
+            "type": {
+              "type_id": 3,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "stamp",
+            "type": {
+              "type_id": 1,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": "builtin_interfaces/msg/Time"
+            },
+            "default_value": ""
+          },
+          {
+            "name": "client_gid",
+            "type": {
+              "type_id": 51,
+              "capacity": 16,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          },
+          {
+            "name": "sequence_number",
+            "type": {
+              "type_id": 8,
+              "capacity": 0,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      },
+      {
+        "type_name": "unique_identifier_msgs/msg/UUID",
+        "fields": [
+          {
+            "name": "uuid",
+            "type": {
+              "type_id": 51,
+              "capacity": 16,
+              "string_capacity": 0,
+              "nested_type_name": ""
+            },
+            "default_value": ""
+          }
+        ]
+      }
+    ]
+  },
+  "type_hashes": [
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration",
+      "hash_string": "RIHS01_a158e768275f7c89dd22dd9db23871a386ea592cb2ebd19610cab2d45b44fec1"
+    },
+    {
+      "type_name": "builtin_interfaces/msg/Time",
+      "hash_string": "RIHS01_b106235e25a4c5ed35098aa0a61a3ee9c9b18d197f398b0e4206cea9acf9c197"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback",
+      "hash_string": "RIHS01_70b970fdfac44964bdf95345f319c9b445f960178ed7aa082a5cb79c5c791c18"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_FeedbackMessage",
+      "hash_string": "RIHS01_93241594fcd47d64d3b352bf676e61967920fd317be7e3a92973fd0e416cdb88"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult",
+      "hash_string": "RIHS01_11fc564834a10b0f75d9510bece2fd71411a32200fd1a6725e717d1ae53f1952"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Event",
+      "hash_string": "RIHS01_c811f5f88d5798d0ea734971cc15bed2bfb3fd75db7d111f2b35430320012b48"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Request",
+      "hash_string": "RIHS01_aae713f029a71dcaa79086e6b946592f891f5ff9288a36b8c7a0c4732a9133b9"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_GetResult_Response",
+      "hash_string": "RIHS01_16877ecf8eb2560cb1af82931025af2d84a436bfca98342215d2addd59f1e394"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal",
+      "hash_string": "RIHS01_9cbab78faf2e8e4dbe7d5528fc712c6361b0e2665d94bfab9a315628b295f901"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Result",
+      "hash_string": "RIHS01_463e2d89fb925c064e1cea12af1b775aa16bb134851e19617e7539ee7d660cbd"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal",
+      "hash_string": "RIHS01_5edcc4accacce9d1890c86660234805dad36945dac40580a52d3e3c2a0d36f6a"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Event",
+      "hash_string": "RIHS01_0853670e21508ffda06ef2b55c24376741d8bbef4c0415d6ee73c9b59ee79250"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Request",
+      "hash_string": "RIHS01_a9943401fd17b77ea15d823310084d8612523366f26b8251f748d7c45237c7ed"
+    },
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_SendGoal_Response",
+      "hash_string": "RIHS01_ba50f990e07b2eb01f8d4d910ea2caab9be4c88bfff53b5f695e4fafa8261211"
+    },
+    {
+      "type_name": "service_msgs/msg/ServiceEventInfo",
+      "hash_string": "RIHS01_41bcbbe07a75c9b52bc96bfd5c24d7f0fc0a08c0cb7921b3373c5732345a6f45"
+    },
+    {
+      "type_name": "unique_identifier_msgs/msg/UUID",
+      "hash_string": "RIHS01_1b8e8aca958cbea28fe6ef60bf6c19b683c97a9ef60bb34752067d0f2f7ab437"
+    }
+  ]
+}

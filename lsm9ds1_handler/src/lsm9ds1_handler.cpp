@@ -174,7 +174,7 @@ void LSM9DS1::read_IMU()
     mag_msg_.magnetic_field.set__x(imu_record.raw_magnetic_field.x);
     mag_msg_.magnetic_field.set__y(imu_record.raw_magnetic_field.y);
     mag_msg_.magnetic_field.set__z(imu_record.raw_magnetic_field.z);
-
+    
     publish();
 }
 

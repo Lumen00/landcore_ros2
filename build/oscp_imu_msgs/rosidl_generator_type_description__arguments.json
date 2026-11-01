@@ -1,0 +1,18 @@
+{
+  "package_name": "oscp_imu_msgs",
+  "output_dir": "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_generator_type_description/oscp_imu_msgs",
+  "idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_adapter/oscp_imu_msgs:msg/OscpRaw.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_adapter/oscp_imu_msgs:msg/OscpRot.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_adapter/oscp_imu_msgs:msg/OscpQuat.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_adapter/oscp_imu_msgs:msg/OscpEuler.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/rosidl_adapter/oscp_imu_msgs:msg/OscpGnss.idl"
+  ],
+  "include_paths": [
+    "std_msgs:/opt/ros/jazzy/share/std_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "sensor_msgs:/opt/ros/jazzy/share/sensor_msgs",
+    "geometry_msgs:/opt/ros/jazzy/share/geometry_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs"
+  ]
+}

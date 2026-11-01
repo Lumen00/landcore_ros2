@@ -1,0 +1,48 @@
+-- The C compiler identification is GNU 13.3.0
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+-- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+-- Configuring done (0.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries
+[ 33%] [32mBuilding C object CMakeFiles/oscp_imu_libraries.dir/src/oscp_imu.c.o[0m
+[ 66%] [32mBuilding C object CMakeFiles/oscp_imu_libraries.dir/src/cobs.c.o[0m
+[100%] [32m[1mLinking C static library liboscp_imu_libraries.a[0m
+[100%] Built target oscp_imu_libraries
+-- Install configuration: ""
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/liboscp_imu_libraries.a
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries/cobs.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries/oscp_imu.h
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/library_path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/library_path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/package_run_dependencies/oscp_imu_libraries
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/parent_prefix_path/oscp_imu_libraries
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/ament_prefix_path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/ament_prefix_path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/path.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/path.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.bash
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.sh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.zsh
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.dsv
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/packages/oscp_imu_libraries
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/export_oscp_imu_librariesExport.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/export_oscp_imu_librariesExport-noconfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/oscp_imu_librariesConfig.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/oscp_imu_librariesConfig-version.cmake
+-- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.xml

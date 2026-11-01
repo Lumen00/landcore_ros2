@@ -1,0 +1,17 @@
+{
+  "package_name": "oscp_imu_driver",
+  "output_dir": "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver/rosidl_generator_type_description/oscp_imu_driver",
+  "idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver/rosidl_adapter/oscp_imu_driver:srv/ZeroOrientation.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver/rosidl_adapter/oscp_imu_driver:srv/StationaryCalibrate.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver/rosidl_adapter/oscp_imu_driver:srv/GetIMUConfig.idl",
+    "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver/rosidl_adapter/oscp_imu_driver:srv/ApplyMagConfig.idl"
+  ],
+  "include_paths": [
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs",
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "std_msgs:/opt/ros/jazzy/share/std_msgs"
+  ]
+}

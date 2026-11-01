@@ -1,0 +1,29 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_euler__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_euler__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_quat__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_quat__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_raw__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_raw__type_support.cpp.o.d"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_rot__type_support.cpp.o"
+  "CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_rot__type_support.cpp.o.d"
+  "liboscp_imu_msgs__rosidl_typesupport_introspection_cpp.pdb"
+  "liboscp_imu_msgs__rosidl_typesupport_introspection_cpp.so"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_euler__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_euler__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_gnss__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_quat__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_quat__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_raw__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_raw__type_support.cpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_rot__rosidl_typesupport_introspection_cpp.hpp"
+  "rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_rot__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

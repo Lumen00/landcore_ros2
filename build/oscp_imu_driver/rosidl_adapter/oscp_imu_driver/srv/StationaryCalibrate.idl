@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from oscp_imu_driver/srv/StationaryCalibrate.srv
+// generated code does not contain a copyright notice
+
+
+module oscp_imu_driver {
+  module srv {
+    struct StationaryCalibrate_Request {
+      float duration;
+    };
+    struct StationaryCalibrate_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

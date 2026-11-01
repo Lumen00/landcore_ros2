@@ -1,0 +1,36 @@
+[0.023s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[0.116s] [ 42%] Built target lsm9ds1_handler
+[0.117s] [ 71%] Built target calibrate_mag
+[0.163s] [100%] Built target lsm9ds1_node
+[0.208s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[0.208s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler
+[0.237s] -- Install configuration: ""
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_handler.hpp
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_device.hpp
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_registers.hpp
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/MadgwickAHRS.h
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/lsm9ds1_node
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/calibrate_mag
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/liblsm9ds1_handler.so
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch/lsm9ds1_handler.launch.py
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config/params.yaml
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/package_run_dependencies/lsm9ds1_handler
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/parent_prefix_path/lsm9ds1_handler
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.sh
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.dsv
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.sh
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.dsv
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.bash
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.sh
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.zsh
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.dsv
+[0.240s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.dsv
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/packages/lsm9ds1_handler
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig.cmake
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig-version.cmake
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.xml
+[0.268s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler

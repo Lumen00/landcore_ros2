@@ -1,0 +1,791 @@
+[0.160s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.160s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=12, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, meson_args=[], ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x793c64d1b920>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x793c64d1b980>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x793c64d1b980>>, mixin_verb=('build',))
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.210s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.210s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.210s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.210s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.211s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.211s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/root/ros2_ws/src/landcore_ros2'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.211s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'meson', 'python']
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.237s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'meson'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['ignore', 'ignore_ament_install']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ignore'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ignore_ament_install'
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['colcon_pkg']
+[0.239s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'colcon_pkg'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['colcon_meta']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'colcon_meta'
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extensions ['ros']
+[0.240s] Level 1:colcon.colcon_core.package_identification:_identify(dc_encoder_service) by extension 'ros'
+[0.242s] DEBUG:colcon.colcon_core.package_identification:Package 'dc_encoder_service' with type 'ros.ament_cmake' and name 'dc_encoder_service'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ignore', 'ignore_ament_install']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore_ament_install'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_pkg']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_pkg'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_meta']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_meta'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ros']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ros'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['cmake', 'meson', 'python']
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'cmake'
+[0.242s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'meson'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['python_setup_py']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python_setup_py'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extensions ['ignore', 'ignore_ament_install']
+[0.243s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extension 'ignore'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extension 'ignore_ament_install'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extensions ['colcon_pkg']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extension 'colcon_pkg'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extensions ['colcon_meta']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extension 'colcon_meta'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extensions ['ros']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(land_description) by extension 'ros'
+[0.244s] DEBUG:colcon.colcon_core.package_identification:Package 'land_description' with type 'ros.ament_cmake' and name 'land_description'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['ignore', 'ignore_ament_install']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ignore'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ignore_ament_install'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['colcon_pkg']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'colcon_pkg'
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['colcon_meta']
+[0.244s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'colcon_meta'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extensions ['ros']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(landwheeldrive) by extension 'ros'
+[0.245s] DEBUG:colcon.colcon_core.package_identification:Package 'landwheeldrive' with type 'ros.ament_python' and name 'landwheeldrive'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ignore', 'ignore_ament_install']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ignore_ament_install'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_pkg']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_pkg'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['colcon_meta']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'colcon_meta'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['ros']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'ros'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['cmake', 'meson', 'python']
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'cmake'
+[0.245s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'meson'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extensions ['python_setup_py']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch) by extension 'python_setup_py'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ignore', 'ignore_ament_install']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ignore_ament_install'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_pkg']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_pkg'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['colcon_meta']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'colcon_meta'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['ros']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'ros'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['cmake', 'meson', 'python']
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'cmake'
+[0.246s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'meson'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extensions ['python_setup_py']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(launch/__pycache__) by extension 'python_setup_py'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extensions ['ignore', 'ignore_ament_install']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extension 'ignore'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extension 'ignore_ament_install'
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extensions ['colcon_pkg']
+[0.247s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extension 'colcon_pkg'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extensions ['colcon_meta']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extension 'colcon_meta'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extensions ['ros']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(lsm9ds1_handler) by extension 'ros'
+[0.248s] DEBUG:colcon.colcon_core.package_identification:Package 'lsm9ds1_handler' with type 'ros.ament_cmake' and name 'lsm9ds1_handler'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'ignore'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'ignore_ament_install'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['colcon_pkg']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'colcon_pkg'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['colcon_meta']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'colcon_meta'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['ros']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'ros'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['cmake', 'meson', 'python']
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'cmake'
+[0.248s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'meson'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'python'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extensions ['python_setup_py']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver) by extension 'python_setup_py'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['ignore', 'ignore_ament_install']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'ignore'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'ignore_ament_install'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['colcon_pkg']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'colcon_pkg'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['colcon_meta']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'colcon_meta'
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['ros']
+[0.249s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'ros'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['cmake', 'meson', 'python']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'cmake'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'meson'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'python'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extensions ['python_setup_py']
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries) by extension 'python_setup_py'
+[0.250s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extensions ['ignore', 'ignore_ament_install']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extension 'ignore'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extension 'ignore_ament_install'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extensions ['colcon_pkg']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extension 'colcon_pkg'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extensions ['colcon_meta']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extension 'colcon_meta'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extensions ['ros']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/magcal_wrapper) by extension 'ros'
+[0.251s] DEBUG:colcon.colcon_core.package_identification:Package 'oscp_ros2_driver/Libraries/magcal_wrapper' with type 'ros.ament_cmake' and name 'magcal_wrapper'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extensions ['ignore', 'ignore_ament_install']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extension 'ignore'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extension 'ignore_ament_install'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extensions ['colcon_pkg']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extension 'colcon_pkg'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extensions ['colcon_meta']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extension 'colcon_meta'
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extensions ['ros']
+[0.251s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/Libraries/oscp_imu_libraries) by extension 'ros'
+[0.252s] DEBUG:colcon.colcon_core.package_identification:Package 'oscp_ros2_driver/Libraries/oscp_imu_libraries' with type 'ros.ament_cmake' and name 'oscp_imu_libraries'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extensions ['ignore', 'ignore_ament_install']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extension 'ignore'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extension 'ignore_ament_install'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extensions ['colcon_pkg']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extension 'colcon_pkg'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extensions ['colcon_meta']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extension 'colcon_meta'
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extensions ['ros']
+[0.252s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_driver) by extension 'ros'
+[0.253s] DEBUG:colcon.colcon_core.package_identification:Package 'oscp_ros2_driver/oscp_imu_driver' with type 'ros.ament_cmake' and name 'oscp_imu_driver'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extension 'ignore_ament_install'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extensions ['colcon_pkg']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extension 'colcon_pkg'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extensions ['colcon_meta']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extension 'colcon_meta'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extensions ['ros']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(oscp_ros2_driver/oscp_imu_msgs) by extension 'ros'
+[0.253s] DEBUG:colcon.colcon_core.package_identification:Package 'oscp_ros2_driver/oscp_imu_msgs' with type 'ros.ament_cmake' and name 'oscp_imu_msgs'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extensions ['ignore', 'ignore_ament_install']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extension 'ignore'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extension 'ignore_ament_install'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extensions ['colcon_pkg']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extension 'colcon_pkg'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extensions ['colcon_meta']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extension 'colcon_meta'
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extensions ['ros']
+[0.253s] Level 1:colcon.colcon_core.package_identification:_identify(sllidar_ros2) by extension 'ros'
+[0.254s] DEBUG:colcon.colcon_core.package_identification:Package 'sllidar_ros2' with type 'ros.ament_cmake' and name 'sllidar_ros2'
+[0.254s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.254s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.254s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.254s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.254s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_target' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_clean_cache' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_clean_first' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'cmake_force_configure' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'meson_args' from command line to '[]'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'ament_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'catkin_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'dc_encoder_service' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.285s] DEBUG:colcon.colcon_core.verb:Building package 'dc_encoder_service' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/dc_encoder_service', 'symlink_install': False, 'test_result_base': None}
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_target' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'meson_args' from command line to '[]'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'land_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.285s] DEBUG:colcon.colcon_core.verb:Building package 'land_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/land_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/land_description', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/land_description', 'symlink_install': False, 'test_result_base': None}
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_args' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_target' from command line to 'None'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.285s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_clean_cache' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_clean_first' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'meson_args' from command line to '[]'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'lsm9ds1_handler' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'lsm9ds1_handler' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/lsm9ds1_handler', 'symlink_install': False, 'test_result_base': None}
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_target' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_clean_cache' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_clean_first' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'meson_args' from command line to '[]'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_libraries' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'oscp_imu_libraries' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries', 'symlink_install': False, 'test_result_base': None}
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_target' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'meson_args' from command line to '[]'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'oscp_imu_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_cache' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_clean_first' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'cmake_force_configure' from command line to 'False'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'meson_args' from command line to '[]'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'ament_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_cmake_args' from command line to 'None'
+[0.286s] Level 5:colcon.colcon_core.verb:set package 'sllidar_ros2' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.286s] DEBUG:colcon.colcon_core.verb:Building package 'sllidar_ros2' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/sllidar_ros2', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/sllidar_ros2', 'symlink_install': False, 'test_result_base': None}
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_target' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_clean_cache' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_clean_first' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'cmake_force_configure' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'meson_args' from command line to '[]'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'ament_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'catkin_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'landwheeldrive' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.287s] DEBUG:colcon.colcon_core.verb:Building package 'landwheeldrive' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/landwheeldrive', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/landwheeldrive', 'symlink_install': False, 'test_result_base': None}
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_target' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_clean_cache' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_clean_first' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'cmake_force_configure' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'meson_args' from command line to '[]'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'ament_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'catkin_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'magcal_wrapper' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.287s] DEBUG:colcon.colcon_core.verb:Building package 'magcal_wrapper' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper', 'symlink_install': False, 'test_result_base': None}
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_target' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_clean_first' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'cmake_force_configure' from command line to 'False'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'meson_args' from command line to '[]'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'ament_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[0.287s] Level 5:colcon.colcon_core.verb:set package 'oscp_imu_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.287s] DEBUG:colcon.colcon_core.verb:Building package 'oscp_imu_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver', 'merge_install': False, 'meson_args': [], 'path': '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver', 'symlink_install': False, 'test_result_base': None}
+[0.287s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.288s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.289s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs' with build type 'ament_cmake'
+[0.289s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs'
+[0.291s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.291s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.291s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.295s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/dc_encoder_service' with build type 'ament_cmake'
+[0.296s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/dc_encoder_service'
+[0.296s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.296s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.301s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries' with build type 'ament_cmake'
+[0.301s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries'
+[0.301s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.301s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.307s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/land_description' with build type 'ament_cmake'
+[0.307s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/land_description'
+[0.307s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.307s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.314s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/lsm9ds1_handler' with build type 'ament_cmake'
+[0.314s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/lsm9ds1_handler'
+[0.315s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.315s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.320s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/sllidar_ros2' with build type 'ament_cmake'
+[0.321s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/sllidar_ros2'
+[0.321s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.321s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.334s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs -- -j12 -l12
+[0.338s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service -- -j12 -l12
+[0.340s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries -- -j12 -l12
+[0.341s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[0.343s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[0.350s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/sllidar_ros2 -- -j12 -l12
+[0.461s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries -- -j12 -l12
+[0.476s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries
+[0.514s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/sllidar_ros2 -- -j12 -l12
+[0.514s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/sllidar_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/sllidar_ros2
+[0.516s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[0.517s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description
+[0.517s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_libraries)
+[0.519s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries' for CMake module files
+[0.520s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries' for CMake config files
+[0.520s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_libraries', 'cmake_prefix_path')
+[0.520s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.ps1'
+[0.524s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.dsv'
+[0.528s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.sh'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/bin'
+[0.530s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/pkgconfig/oscp_imu_libraries.pc'
+[0.534s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/python3.12/site-packages'
+[0.534s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/bin'
+[0.534s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.ps1'
+[0.536s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.dsv'
+[0.537s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.sh'
+[0.538s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.bash'
+[0.539s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.zsh'
+[0.540s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/colcon-core/packages/oscp_imu_libraries)
+[0.540s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_libraries)
+[0.541s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries' for CMake module files
+[0.542s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries' for CMake config files
+[0.542s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_libraries', 'cmake_prefix_path')
+[0.542s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.ps1'
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.dsv'
+[0.543s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/hook/cmake_prefix_path.sh'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/bin'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/pkgconfig/oscp_imu_libraries.pc'
+[0.544s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/python3.12/site-packages'
+[0.545s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/bin'
+[0.545s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.ps1'
+[0.546s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.dsv'
+[0.547s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.sh'
+[0.547s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.bash'
+[0.548s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.zsh'
+[0.548s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/colcon-core/packages/oscp_imu_libraries)
+[0.552s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(land_description)
+[0.553s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description' for CMake module files
+[0.555s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description' for CMake config files
+[0.561s] Level 1:colcon.colcon_core.shell:create_environment_hook('land_description', 'cmake_prefix_path')
+[0.562s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.ps1'
+[0.565s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.dsv'
+[0.566s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[0.566s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.sh'
+[0.567s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler
+[0.568s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description
+[0.568s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib'
+[0.569s] Level 1:colcon.colcon_core.shell:create_environment_hook('land_description', 'ld_library_path_lib')
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.ps1'
+[0.569s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.dsv'
+[0.570s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.sh'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/bin'
+[0.570s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib/pkgconfig/land_description.pc'
+[0.571s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib/python3.12/site-packages'
+[0.571s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/bin'
+[0.572s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.ps1'
+[0.573s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.dsv'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.sh'
+[0.574s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.bash'
+[0.575s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.zsh'
+[0.575s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/land_description/share/colcon-core/packages/land_description)
+[0.576s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(land_description)
+[0.576s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description' for CMake module files
+[0.576s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description' for CMake config files
+[0.577s] Level 1:colcon.colcon_core.shell:create_environment_hook('land_description', 'cmake_prefix_path')
+[0.577s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.ps1'
+[0.577s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.dsv'
+[0.578s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/cmake_prefix_path.sh'
+[0.578s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib'
+[0.579s] Level 1:colcon.colcon_core.shell:create_environment_hook('land_description', 'ld_library_path_lib')
+[0.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.ps1'
+[0.579s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.dsv'
+[0.580s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/hook/ld_library_path_lib.sh'
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/bin'
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib/pkgconfig/land_description.pc'
+[0.580s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/lib/python3.12/site-packages'
+[0.581s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/land_description/bin'
+[0.581s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.ps1'
+[0.582s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.dsv'
+[0.583s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.sh'
+[0.583s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.bash'
+[0.584s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.zsh'
+[0.584s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/land_description/share/colcon-core/packages/land_description)
+[0.585s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.586s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2' for CMake module files
+[0.587s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/sllidar_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/sllidar_ros2
+[0.588s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2' for CMake config files
+[0.590s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.590s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.591s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.592s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib'
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/bin'
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.593s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib/python3.12/site-packages'
+[0.594s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/bin'
+[0.594s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.595s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.596s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.597s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.597s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.598s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sllidar_ros2)
+[0.598s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2' for CMake module files
+[0.599s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2' for CMake config files
+[0.599s] Level 1:colcon.colcon_core.shell:create_environment_hook('sllidar_ros2', 'cmake_prefix_path')
+[0.599s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.ps1'
+[0.600s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.dsv'
+[0.600s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/hook/cmake_prefix_path.sh'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/bin'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib/pkgconfig/sllidar_ros2.pc'
+[0.601s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/lib/python3.12/site-packages'
+[0.602s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/bin'
+[0.602s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.ps1'
+[0.603s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.dsv'
+[0.603s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.sh'
+[0.604s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.bash'
+[0.604s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/sllidar_ros2/package.zsh'
+[0.605s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/sllidar_ros2/share/colcon-core/packages/sllidar_ros2)
+[0.605s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lsm9ds1_handler)
+[0.605s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler' for CMake module files
+[0.606s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler
+[0.607s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler' for CMake config files
+[0.607s] Level 1:colcon.colcon_core.shell:create_environment_hook('lsm9ds1_handler', 'cmake_prefix_path')
+[0.608s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.ps1'
+[0.608s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.dsv'
+[0.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.sh'
+[0.610s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib'
+[0.610s] Level 1:colcon.colcon_core.shell:create_environment_hook('lsm9ds1_handler', 'ld_library_path_lib')
+[0.610s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.ps1'
+[0.610s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.dsv'
+[0.611s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.sh'
+[0.611s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/bin'
+[0.612s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/pkgconfig/lsm9ds1_handler.pc'
+[0.612s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/python3.12/site-packages'
+[0.612s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/bin'
+[0.613s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.ps1'
+[0.613s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.dsv'
+[0.614s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.sh'
+[0.615s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.bash'
+[0.615s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.zsh'
+[0.616s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/colcon-core/packages/lsm9ds1_handler)
+[0.616s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(lsm9ds1_handler)
+[0.616s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler' for CMake module files
+[0.617s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler' for CMake config files
+[0.618s] Level 1:colcon.colcon_core.shell:create_environment_hook('lsm9ds1_handler', 'cmake_prefix_path')
+[0.618s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.ps1'
+[0.619s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.dsv'
+[0.619s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/cmake_prefix_path.sh'
+[0.620s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib'
+[0.620s] Level 1:colcon.colcon_core.shell:create_environment_hook('lsm9ds1_handler', 'ld_library_path_lib')
+[0.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.ps1'
+[0.621s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.dsv'
+[0.621s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/hook/ld_library_path_lib.sh'
+[0.622s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/bin'
+[0.622s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/pkgconfig/lsm9ds1_handler.pc'
+[0.622s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/python3.12/site-packages'
+[0.622s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/bin'
+[0.623s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.ps1'
+[0.624s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.dsv'
+[0.624s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.sh'
+[0.625s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.bash'
+[0.626s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.zsh'
+[0.626s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/colcon-core/packages/lsm9ds1_handler)
+[0.745s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs -- -j12 -l12
+[0.746s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs
+[0.796s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service -- -j12 -l12
+[0.799s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service
+[0.800s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_msgs)
+[0.800s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs' for CMake module files
+[0.800s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs
+[0.801s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs' for CMake config files
+[0.801s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'cmake_prefix_path')
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.ps1'
+[0.802s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.dsv'
+[0.803s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.sh'
+[0.803s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib'
+[0.803s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'ld_library_path_lib')
+[0.804s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.ps1'
+[0.804s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.dsv'
+[0.804s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.sh'
+[0.805s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/bin'
+[0.805s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/pkgconfig/oscp_imu_msgs.pc'
+[0.805s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages'
+[0.805s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'pythonpath')
+[0.805s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.ps1'
+[0.806s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.dsv'
+[0.806s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.sh'
+[0.806s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/bin'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.ps1'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.dsv'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.sh'
+[0.807s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.bash'
+[0.808s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.zsh'
+[0.808s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/colcon-core/packages/oscp_imu_msgs)
+[0.808s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_msgs)
+[0.808s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs' for CMake module files
+[0.809s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs' for CMake config files
+[0.809s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'cmake_prefix_path')
+[0.809s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.ps1'
+[0.809s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.dsv'
+[0.812s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/cmake_prefix_path.sh'
+[0.813s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib'
+[0.813s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'ld_library_path_lib')
+[0.814s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.ps1'
+[0.815s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.dsv'
+[0.816s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/ld_library_path_lib.sh'
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/bin'
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/pkgconfig/oscp_imu_msgs.pc'
+[0.816s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages'
+[0.817s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_msgs', 'pythonpath')
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.ps1'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.dsv'
+[0.817s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/hook/pythonpath.sh'
+[0.818s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/bin'
+[0.818s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.ps1'
+[0.818s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.dsv'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.sh'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.bash'
+[0.819s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.zsh'
+[0.819s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/colcon-core/packages/oscp_imu_msgs)
+[0.820s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper' with build type 'ament_cmake'
+[0.820s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper'
+[0.820s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.820s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.830s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper -- -j12 -l12
+[0.860s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_encoder_service)
+[0.860s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake module files
+[0.860s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/dc_encoder_service' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/dc_encoder_service
+[0.861s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake config files
+[0.861s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'cmake_prefix_path')
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.ps1'
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.dsv'
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.sh'
+[0.863s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib'
+[0.863s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'ld_library_path_lib')
+[0.863s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.ps1'
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.dsv'
+[0.864s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.sh'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/pkgconfig/dc_encoder_service.pc'
+[0.865s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages'
+[0.865s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'pythonpath')
+[0.865s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.ps1'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.dsv'
+[0.866s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.sh'
+[0.867s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[0.867s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.ps1'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.dsv'
+[0.868s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.sh'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.bash'
+[0.869s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.zsh'
+[0.870s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/colcon-core/packages/dc_encoder_service)
+[0.870s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(dc_encoder_service)
+[0.870s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake module files
+[0.871s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service' for CMake config files
+[0.872s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'cmake_prefix_path')
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.ps1'
+[0.872s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.dsv'
+[0.873s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/cmake_prefix_path.sh'
+[0.873s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib'
+[0.874s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'ld_library_path_lib')
+[0.874s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.ps1'
+[0.874s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.dsv'
+[0.875s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/ld_library_path_lib.sh'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[0.875s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/pkgconfig/dc_encoder_service.pc'
+[0.876s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages'
+[0.876s] Level 1:colcon.colcon_core.shell:create_environment_hook('dc_encoder_service', 'pythonpath')
+[0.876s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.ps1'
+[0.876s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.dsv'
+[0.877s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/hook/pythonpath.sh'
+[0.877s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/bin'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.ps1'
+[0.878s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.dsv'
+[0.879s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.sh'
+[0.879s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.bash'
+[0.880s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/dc_encoder_service/package.zsh'
+[0.880s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/share/colcon-core/packages/dc_encoder_service)
+[0.881s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/landwheeldrive' with build type 'ament_python'
+[0.881s] Level 1:colcon.colcon_core.shell:create_environment_hook('landwheeldrive', 'ament_prefix_path')
+[0.881s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.ps1'
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.dsv'
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/ament_prefix_path.sh'
+[0.883s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.883s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.057s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/root/ros2_ws/src/landcore_ros2/landwheeldrive'
+[1.058s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.058s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.182s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper -- -j12 -l12
+[1.183s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper
+[1.237s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(magcal_wrapper)
+[1.237s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper' for CMake module files
+[1.240s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper' for CMake config files
+[1.241s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/magcal_wrapper
+[1.242s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'cmake_prefix_path')
+[1.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.ps1'
+[1.242s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.dsv'
+[1.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.sh'
+[1.243s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib'
+[1.243s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'ld_library_path_lib')
+[1.243s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.ps1'
+[1.244s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.dsv'
+[1.244s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.sh'
+[1.244s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/bin'
+[1.244s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/pkgconfig/magcal_wrapper.pc'
+[1.245s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages'
+[1.245s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'pythonpath')
+[1.245s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.ps1'
+[1.245s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.dsv'
+[1.245s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.sh'
+[1.246s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/bin'
+[1.246s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.ps1'
+[1.246s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.dsv'
+[1.247s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.sh'
+[1.247s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.bash'
+[1.247s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.zsh'
+[1.247s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/colcon-core/packages/magcal_wrapper)
+[1.248s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(magcal_wrapper)
+[1.248s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper' for CMake module files
+[1.248s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper' for CMake config files
+[1.248s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'cmake_prefix_path')
+[1.248s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.ps1'
+[1.249s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.dsv'
+[1.249s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/cmake_prefix_path.sh'
+[1.249s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib'
+[1.249s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'ld_library_path_lib')
+[1.249s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.ps1'
+[1.249s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.dsv'
+[1.250s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/ld_library_path_lib.sh'
+[1.250s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/bin'
+[1.250s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/pkgconfig/magcal_wrapper.pc'
+[1.250s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages'
+[1.250s] Level 1:colcon.colcon_core.shell:create_environment_hook('magcal_wrapper', 'pythonpath')
+[1.250s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.ps1'
+[1.250s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.dsv'
+[1.251s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/hook/pythonpath.sh'
+[1.251s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/bin'
+[1.251s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.ps1'
+[1.252s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.dsv'
+[1.252s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.sh'
+[1.252s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.bash'
+[1.252s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/magcal_wrapper/package.zsh'
+[1.253s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/share/colcon-core/packages/magcal_wrapper)
+[1.253s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver' with build type 'ament_cmake'
+[1.253s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver'
+[1.253s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.253s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.269s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver -- -j12 -l12
+[1.538s] DEBUG:colcon.colcon_core.task.python.build:Available setuptools commands: install_egg_info, install_headers, upload_docs, test, install, install_lib, init_catalog, build_clib, compile_catalog, symlink_data, bdist_dumb, build_py, sdist, alias, build_scripts, editable_wheel, dist_info, upload, egg_info, saveopts, build_ext, clean, install_scripts, rotate, extract_messages, install_data, bdist, register, bdist_rpm, update_catalog, setopt, check, bdist_egg, develop, easy_install, build, bdist_wheel
+[1.541s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/landwheeldrive': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/landwheeldrive build --build-base /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build install --record /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log --install-scripts $base/lib/landwheeldrive --single-version-externally-managed install_data
+[1.666s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver -- -j12 -l12
+[1.667s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver
+[1.723s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_driver)
+[1.724s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver' for CMake module files
+[1.724s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries:/root/ros2_ws/install/oscp_imu_driver:/root/ros2_ws/install/magcal_wrapper:/root/ros2_ws/install/oscp_imu_msgs:/root/ros2_ws/install/oscp_imu_libraries:/root/ros2_ws/install/sllidar_ros2:/root/ros2_ws/install/lsm9ds1_handler:/root/ros2_ws/install/camera_ros:/root/ros2_ws/install/land_description:/root/ros2_ws/install/dc_encoder_service:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/install/magcal_wrapper/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_driver
+[1.725s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver' for CMake config files
+[1.725s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'cmake_prefix_path')
+[1.726s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.ps1'
+[1.726s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.dsv'
+[1.726s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.sh'
+[1.727s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib'
+[1.727s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'ld_library_path_lib')
+[1.727s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.ps1'
+[1.728s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.dsv'
+[1.728s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.sh'
+[1.729s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/bin'
+[1.729s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/pkgconfig/oscp_imu_driver.pc'
+[1.729s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages'
+[1.729s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'pythonpath')
+[1.730s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.ps1'
+[1.730s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.dsv'
+[1.730s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.sh'
+[1.731s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/bin'
+[1.731s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.ps1'
+[1.732s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.dsv'
+[1.733s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.sh'
+[1.734s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.bash'
+[1.734s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.zsh'
+[1.734s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/colcon-core/packages/oscp_imu_driver)
+[1.735s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(oscp_imu_driver)
+[1.735s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver' for CMake module files
+[1.736s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver' for CMake config files
+[1.737s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'cmake_prefix_path')
+[1.737s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.ps1'
+[1.738s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.dsv'
+[1.738s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/cmake_prefix_path.sh'
+[1.739s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib'
+[1.739s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'ld_library_path_lib')
+[1.739s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.ps1'
+[1.739s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.dsv'
+[1.739s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/ld_library_path_lib.sh'
+[1.740s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/bin'
+[1.740s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/pkgconfig/oscp_imu_driver.pc'
+[1.740s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/lib/python3.12/site-packages'
+[1.740s] Level 1:colcon.colcon_core.shell:create_environment_hook('oscp_imu_driver', 'pythonpath')
+[1.740s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.ps1'
+[1.741s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.dsv'
+[1.741s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/hook/pythonpath.sh'
+[1.742s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/bin'
+[1.742s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.ps1'
+[1.743s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.dsv'
+[1.743s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.sh'
+[1.744s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.bash'
+[1.744s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/oscp_imu_driver/package.zsh'
+[1.745s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/oscp_imu_driver/share/colcon-core/packages/oscp_imu_driver)
+[1.914s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive' for CMake module files
+[1.914s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/root/ros2_ws/src/landcore_ros2/landwheeldrive' returned '0': AMENT_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service:${CMAKE_PREFIX_PATH} LD_LIBRARY_PATH=/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib:${LD_LIBRARY_PATH} PYTHONPATH=/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages:/root/ros2_ws/src/landcore_ros2/install/dc_encoder_service/lib/python3.12/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(my) /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/landwheeldrive build --build-base /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build install --record /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log --install-scripts $base/lib/landwheeldrive --single-version-externally-managed install_data
+[1.915s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive' for CMake config files
+[1.915s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib'
+[1.916s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/bin'
+[1.916s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/pkgconfig/landwheeldrive.pc'
+[1.916s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages'
+[1.916s] Level 1:colcon.colcon_core.shell:create_environment_hook('landwheeldrive', 'pythonpath')
+[1.916s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/pythonpath.ps1'
+[1.917s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/pythonpath.dsv'
+[1.917s] INFO:colcon.colcon_core.shell:Creating environment hook '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/hook/pythonpath.sh'
+[1.918s] Level 1:colcon.colcon_core.environment:checking '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/bin'
+[1.918s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(landwheeldrive)
+[1.918s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/package.ps1'
+[1.919s] INFO:colcon.colcon_core.shell:Creating package descriptor '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/package.dsv'
+[1.919s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/package.sh'
+[1.920s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/package.bash'
+[1.920s] INFO:colcon.colcon_core.shell:Creating package script '/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/package.zsh'
+[1.920s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/colcon-core/packages/landwheeldrive)
+[1.921s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.921s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.921s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.921s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.927s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[1.927s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.928s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.928s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.930s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[1.930s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.931s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.ps1'
+[1.932s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/landcore_ros2/install/_local_setup_util_ps1.py'
+[1.933s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.ps1'
+[1.935s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.sh'
+[1.935s] INFO:colcon.colcon_core.shell:Creating prefix util module '/root/ros2_ws/src/landcore_ros2/install/_local_setup_util_sh.py'
+[1.936s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.sh'
+[1.938s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.bash'
+[1.938s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.bash'
+[1.940s] INFO:colcon.colcon_core.shell:Creating prefix script '/root/ros2_ws/src/landcore_ros2/install/local_setup.zsh'
+[1.941s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/root/ros2_ws/src/landcore_ros2/install/setup.zsh'

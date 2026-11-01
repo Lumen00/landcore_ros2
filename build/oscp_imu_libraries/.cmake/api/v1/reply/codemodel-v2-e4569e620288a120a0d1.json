@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-4dc57bad9157a1879262.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "oscp_imu_libraries",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_libraries::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_libraries-1e5fd9d0990b2d140ac7.json",
+					"name" : "oscp_imu_libraries",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "oscp_imu_libraries_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-oscp_imu_libraries_uninstall-2cdde33d05fbdce93d36.json",
+					"name" : "oscp_imu_libraries_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-ea08f991cd7454712f0c.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries",
+		"source" : "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

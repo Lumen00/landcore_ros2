@@ -1,0 +1,14 @@
+source;share/magcal_wrapper/hook/cmake_prefix_path.ps1
+source;share/magcal_wrapper/hook/cmake_prefix_path.dsv
+source;share/magcal_wrapper/hook/cmake_prefix_path.sh
+source;share/magcal_wrapper/hook/ld_library_path_lib.ps1
+source;share/magcal_wrapper/hook/ld_library_path_lib.dsv
+source;share/magcal_wrapper/hook/ld_library_path_lib.sh
+source;share/magcal_wrapper/hook/pythonpath.ps1
+source;share/magcal_wrapper/hook/pythonpath.dsv
+source;share/magcal_wrapper/hook/pythonpath.sh
+source;share/magcal_wrapper/local_setup.bash
+source;share/magcal_wrapper/local_setup.dsv
+source;share/magcal_wrapper/local_setup.ps1
+source;share/magcal_wrapper/local_setup.sh
+source;share/magcal_wrapper/local_setup.zsh

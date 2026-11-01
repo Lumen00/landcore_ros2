@@ -1,0 +1,10 @@
+{
+  "package_name": "oscp_imu_msgs",
+  "non_idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs:msg/OscpRaw.msg",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs:msg/OscpRot.msg",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs:msg/OscpQuat.msg",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs:msg/OscpEuler.msg",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs:msg/OscpGnss.msg"
+  ]
+}

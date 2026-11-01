@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "oscp_imu_msgs__rs",
+		"source" : "/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs/oscp_imu_msgs__rs"
+	}
+}

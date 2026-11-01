@@ -1,0 +1,13 @@
+{
+  "package_name": "magcal_wrapper",
+  "output_dir": "/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper/rosidl_generator_type_description/magcal_wrapper",
+  "idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper/rosidl_adapter/magcal_wrapper:action/MagnetometerCalibration.idl"
+  ],
+  "include_paths": [
+    "service_msgs:/opt/ros/jazzy/share/service_msgs",
+    "builtin_interfaces:/opt/ros/jazzy/share/builtin_interfaces",
+    "action_msgs:/opt/ros/jazzy/share/action_msgs",
+    "unique_identifier_msgs:/opt/ros/jazzy/share/unique_identifier_msgs"
+  ]
+}

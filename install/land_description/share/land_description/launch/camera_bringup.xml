@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Activate the land_description bringup launch file for the motors and lidar. -->
+    <!-- <include file="$(find-pkg-share land_description)/launch/land_bringup.launch.py" />     -->
+    <!-- Activate the camera node -->
+    <node_container pkg="rclcpp_components" exec="component_container"
+                    name="camera_container" namespace="" output="screen">
+        <composable_node pkg="camera_ros" plugin="camera::CameraNode" name="camera_node">
+        <param name="width" value="240"/>
+        <param name="height" value="160"/>
+        <param name="FrameDurationLimits" value="[200000, 200000]"/>
+        <param name="format" value="YUYV"/>
+        <param name="role" value="video"/>
+        </composable_node>
+    </node_container>
+</launch>
+
+<!-- ros2 component standalone camera_ros camera::CameraNode -p width:=320 -p height:=180  -->
+<!-- -p FrameDurationLimits:="[100000,100000]" -p format:=YUYV -p role:=video -->

@@ -1,0 +1,376 @@
+[0.045s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs
+[0.119s] -- The C compiler identification is GNU 13.3.0
+[0.184s] -- The CXX compiler identification is GNU 13.3.0
+[0.203s] -- Detecting C compiler ABI info
+[0.311s] -- Detecting C compiler ABI info - done
+[0.323s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.323s] -- Detecting C compile features
+[0.323s] -- Detecting C compile features - done
+[0.332s] -- Detecting CXX compiler ABI info
+[0.434s] -- Detecting CXX compiler ABI info - done
+[0.446s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.447s] -- Detecting CXX compile features
+[0.447s] -- Detecting CXX compile features - done
+[0.455s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.603s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.772s] -- Found rosidl_default_generators: 1.6.1 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.787s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.899s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.007s] -- Found rosidl_adapter: 4.6.9 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.016s] -- Found std_msgs: 5.3.8 (/opt/ros/jazzy/share/std_msgs/cmake)
+[1.080s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[2.195s] -- Found ament_cmake_ros: 0.12.2 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[3.795s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.714s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.723s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[4.881s] -- Found PythonExtra: /root/ros2_ws/my/bin/python3  
+[5.577s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[5.777s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[5.794s] -- Configuring done (5.7s)
+[5.903s] -- Generating done (0.1s)
+[5.931s] -- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs
+[5.946s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_msgs -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs
+[5.948s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs -- -j12 -l12
+[6.042s] [  1%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[6.059s] [  2%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[6.072s] [  2%] Built target ament_cmake_python_copy_oscp_imu_msgs
+[6.479s] running egg_info
+[6.479s] creating oscp_imu_msgs.egg-info
+[6.510s] writing oscp_imu_msgs.egg-info/PKG-INFO
+[6.511s] writing dependency_links to oscp_imu_msgs.egg-info/dependency_links.txt
+[6.512s] writing top-level names to oscp_imu_msgs.egg-info/top_level.txt
+[6.516s] writing manifest file 'oscp_imu_msgs.egg-info/SOURCES.txt'
+[6.599s] reading manifest file 'oscp_imu_msgs.egg-info/SOURCES.txt'
+[6.600s] writing manifest file 'oscp_imu_msgs.egg-info/SOURCES.txt'
+[6.672s] [  2%] Built target ament_cmake_python_build_oscp_imu_msgs_egg
+[7.573s] [  2%] Built target oscp_imu_msgs__rs
+[7.702s] [  2%] Built target oscp_imu_msgs__rosidl_generator_type_description
+[7.740s] [  4%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.774s] [  5%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[9.534s] [  5%] Built target oscp_imu_msgs__cpp
+[9.621s] [  6%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_raw__description.c.o[0m
+[9.632s] [  8%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_raw__type_support.c.o[0m
+[9.636s] [  9%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_rot__description.c.o[0m
+[9.636s] [ 10%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_raw__functions.c.o[0m
+[9.640s] [ 13%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_rot__type_support.c.o[0m
+[9.641s] [ 13%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_rot__functions.c.o[0m
+[9.645s] [ 14%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_quat__description.c.o[0m
+[9.653s] [ 16%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_quat__type_support.c.o[0m
+[9.659s] [ 17%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_quat__functions.c.o[0m
+[9.662s] [ 18%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_euler__description.c.o[0m
+[9.665s] [ 20%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_euler__functions.c.o[0m
+[9.689s] [ 21%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_euler__type_support.c.o[0m
+[9.732s] [ 24%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_gnss__description.c.o[0m
+[9.734s] [ 24%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_gnss__functions.c.o[0m
+[9.751s] [ 25%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_c.dir/rosidl_generator_c/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.c.o[0m
+[9.864s] [ 26%] [32m[1mLinking C shared library liboscp_imu_msgs__rosidl_generator_c.so[0m
+[9.949s] [ 26%] Built target oscp_imu_msgs__rosidl_generator_c
+[9.977s] [ 29%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[9.977s] [ 29%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[9.979s] [ 30%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[10.004s] [ 33%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[10.005s] [ 33%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[10.006s] [ 34%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[11.360s] [ 36%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_msgs/msg/detail/oscp_raw__type_support_c.cpp.o[0m
+[11.360s] [ 37%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_msgs/msg/detail/oscp_rot__type_support_c.cpp.o[0m
+[11.360s] [ 38%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_msgs/msg/detail/oscp_quat__type_support_c.cpp.o[0m
+[11.366s] [ 40%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_msgs/msg/detail/oscp_gnss__type_support_c.cpp.o[0m
+[11.366s] [ 41%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/oscp_imu_msgs/msg/detail/oscp_euler__type_support_c.cpp.o[0m
+[11.518s] [ 42%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_raw__type_support.cpp.o[0m
+[11.521s] [ 44%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_rot__type_support.cpp.o[0m
+[11.526s] [ 45%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_quat__type_support.cpp.o[0m
+[11.536s] [ 46%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_msgs/msg/oscp_raw__type_support.cpp.o[0m
+[11.704s] [ 48%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_msgs/msg/oscp_raw__type_support.cpp.o[0m
+[11.846s] [ 49%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_msgs/msg/oscp_rot__type_support.cpp.o[0m
+[11.947s] [ 50%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_msgs/msg/detail/dds_fastrtps/oscp_raw__type_support.cpp.o[0m
+[12.002s] [ 52%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_msgs/msg/oscp_quat__type_support.cpp.o[0m
+[12.087s] [ 53%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_msgs/msg/detail/oscp_raw__type_support.c.o[0m
+[12.125s] [ 54%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_msgs/msg/oscp_euler__type_support.cpp.o[0m
+[12.149s] [ 56%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/oscp_imu_msgs/msg/oscp_gnss__type_support.cpp.o[0m
+[12.195s] [ 57%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_msgs/msg/detail/oscp_rot__type_support.c.o[0m
+[12.218s] [ 58%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_msgs/msg/oscp_rot__type_support.cpp.o[0m
+[12.272s] [ 60%] [32m[1mLinking CXX shared library liboscp_imu_msgs__rosidl_typesupport_c.so[0m
+[12.308s] [ 61%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_msgs/msg/detail/oscp_quat__type_support.c.o[0m
+[12.322s] [ 62%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_euler__type_support.cpp.o[0m
+[12.326s] [ 64%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_msgs/msg/detail/dds_fastrtps/oscp_rot__type_support.cpp.o[0m
+[12.418s] [ 65%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_msgs/msg/detail/oscp_euler__type_support.c.o[0m
+[12.436s] [ 65%] Built target oscp_imu_msgs__rosidl_typesupport_c
+[12.467s] [ 66%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_msgs/msg/detail/dds_fastrtps/oscp_quat__type_support.cpp.o[0m
+[12.477s] [ 68%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_msgs/msg/detail/dds_fastrtps/oscp_gnss__type_support.cpp.o[0m
+[12.484s] [ 69%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/oscp_imu_msgs/msg/detail/dds_fastrtps/oscp_euler__type_support.cpp.o[0m
+[12.494s] [ 70%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.cpp.o[0m
+[12.515s] [ 72%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.c.o[0m
+[12.569s] [ 73%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_msgs/msg/oscp_euler__type_support.cpp.o[0m
+[12.573s] [ 74%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_msgs/msg/oscp_quat__type_support.cpp.o[0m
+[12.616s] [ 76%] [32m[1mLinking C shared library liboscp_imu_msgs__rosidl_typesupport_introspection_c.so[0m
+[12.690s] [ 76%] Built target oscp_imu_msgs__rosidl_typesupport_introspection_c
+[12.717s] [ 77%] [32mBuilding CXX object CMakeFiles/oscp_imu_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/oscp_imu_msgs/msg/oscp_gnss__type_support.cpp.o[0m
+[12.927s] [ 78%] [32m[1mLinking CXX shared library liboscp_imu_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[13.057s] [ 78%] Built target oscp_imu_msgs__rosidl_typesupport_fastrtps_c
+[13.262s] [ 80%] [32m[1mLinking CXX shared library liboscp_imu_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[13.384s] [ 81%] [32m[1mLinking CXX shared library liboscp_imu_msgs__rosidl_typesupport_cpp.so[0m
+[13.396s] [ 81%] Built target oscp_imu_msgs__rosidl_typesupport_introspection_cpp
+[13.442s] [ 81%] Built target oscp_imu_msgs__rosidl_typesupport_cpp
+[13.514s] [ 82%] [32m[1mLinking CXX shared library liboscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[13.640s] [ 82%] Built target oscp_imu_msgs__rosidl_typesupport_fastrtps_cpp
+[13.671s] [ 82%] Built target oscp_imu_msgs
+[13.704s] [ 84%] [34m[1mGenerating Python code for ROS interfaces[0m
+[15.760s] [ 84%] Built target oscp_imu_msgs__py
+[15.806s] [ 85%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_msgs/msg/_oscp_raw_s.c.o[0m
+[15.814s] [ 88%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_msgs/msg/_oscp_rot_s.c.o[0m
+[15.814s] [ 88%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_msgs/msg/_oscp_quat_s.c.o[0m
+[15.814s] [ 89%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_msgs/msg/_oscp_gnss_s.c.o[0m
+[15.814s] [ 90%] [32mBuilding C object CMakeFiles/oscp_imu_msgs__rosidl_generator_py.dir/rosidl_generator_py/oscp_imu_msgs/msg/_oscp_euler_s.c.o[0m
+[16.006s] [ 92%] [32m[1mLinking C shared library liboscp_imu_msgs__rosidl_generator_py.so[0m
+[16.051s] [ 92%] Built target oscp_imu_msgs__rosidl_generator_py
+[16.073s] [ 93%] [32mBuilding C object CMakeFiles/oscp_imu_msgs_s__rosidl_typesupport_c.dir/rosidl_generator_py/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[16.076s] [ 96%] [32mBuilding C object CMakeFiles/oscp_imu_msgs_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[16.076s] [ 96%] [32mBuilding C object CMakeFiles/oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[16.153s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_c.so[0m
+[16.191s] [ 97%] Built target oscp_imu_msgs_s__rosidl_typesupport_c
+[16.199s] [ 98%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_introspection_c.so[0m
+[16.207s] [100%] [32m[1mLinking C shared module rosidl_generator_py/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c.so[0m
+[16.245s] [100%] Built target oscp_imu_msgs_s__rosidl_typesupport_introspection_c
+[16.251s] [100%] Built target oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c
+[16.266s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs -- -j12 -l12
+[16.267s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs
+[16.277s] -- Install configuration: ""
+[16.278s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/ament_index/resource_index/rosidl_interfaces/oscp_imu_msgs
+[16.278s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRaw.json
+[16.278s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRot.json
+[16.278s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpQuat.json
+[16.278s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpEuler.json
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpGnss.json
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__functions.c
+[16.279s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__functions.h
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__description.c
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__type_support.h
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__functions.c
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__functions.h
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__type_support.h
+[16.280s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__functions.c
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__description.c
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__struct.h
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__functions.h
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__struct.h
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__description.c
+[16.281s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__type_support.h
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__description.c
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__type_support.c
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__type_support.c
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__type_support.c
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__struct.h
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__struct.h
+[16.282s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__functions.c
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__type_support.c
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.c
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__functions.c
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__functions.h
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__struct.h
+[16.283s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__functions.h
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__description.c
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__type_support.h
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.h
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_quat.h
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_raw.h
+[16.284s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/rosidl_generator_c__visibility_control.h
+[16.285s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_euler.h
+[16.285s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_rot.h
+[16.285s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_gnss.h
+[16.285s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/library_path.sh
+[16.285s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/library_path.dsv
+[16.286s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_generator_c.so
+[16.286s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_generator_c.so" to ""
+[16.286s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.286s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.286s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.286s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__rosidl_typesupport_fastrtps_c.h
+[16.286s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__rosidl_typesupport_fastrtps_c.h
+[16.287s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__rosidl_typesupport_fastrtps_c.h
+[16.287s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__rosidl_typesupport_fastrtps_c.h
+[16.287s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__rosidl_typesupport_fastrtps_c.h
+[16.287s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[16.287s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_fastrtps_c.so
+[16.288s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[16.288s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.288s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.288s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.288s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__rosidl_typesupport_introspection_c.h
+[16.288s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__rosidl_typesupport_introspection_c.h
+[16.288s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__rosidl_typesupport_introspection_c.h
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__type_support.c
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__type_support.c
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__type_support.c
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__rosidl_typesupport_introspection_c.h
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__type_support.c
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.c
+[16.289s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__rosidl_typesupport_introspection_c.h
+[16.290s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[16.290s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_introspection_c.so
+[16.290s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_introspection_c.so" to ""
+[16.290s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_c.so
+[16.290s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_c.so" to ""
+[16.290s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.290s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.290s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__type_support.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__traits.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__builder.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__type_support.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__struct.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__builder.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__traits.hpp
+[16.291s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__traits.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__type_support.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__builder.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__struct.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__traits.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__struct.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__traits.hpp
+[16.292s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__builder.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__struct.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__builder.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__struct.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__type_support.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_quat.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_raw.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_gnss.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_rot.hpp
+[16.293s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/oscp_euler.hpp
+[16.294s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.294s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.294s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__rosidl_typesupport_fastrtps_cpp.hpp
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__rosidl_typesupport_fastrtps_cpp.hpp
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__rosidl_typesupport_fastrtps_cpp.hpp
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__rosidl_typesupport_fastrtps_cpp.hpp
+[16.294s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/dds_fastrtps
+[16.295s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__rosidl_typesupport_fastrtps_cpp.hpp
+[16.295s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[16.295s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.so
+[16.295s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[16.295s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs
+[16.295s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg
+[16.295s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail
+[16.295s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__rosidl_typesupport_introspection_cpp.hpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__type_support.cpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__type_support.cpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_quat__type_support.cpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__rosidl_typesupport_introspection_cpp.hpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_gnss__type_support.cpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_raw__rosidl_typesupport_introspection_cpp.hpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__type_support.cpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_euler__rosidl_typesupport_introspection_cpp.hpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/include/oscp_imu_msgs/oscp_imu_msgs/msg/detail/oscp_rot__rosidl_typesupport_introspection_cpp.hpp
+[16.296s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_introspection_cpp.so
+[16.297s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_cpp.so
+[16.297s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_typesupport_cpp.so" to ""
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/pythonpath.sh
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/pythonpath.dsv
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs-1.0.1-py3.12.egg-info
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs-1.0.1-py3.12.egg-info/PKG-INFO
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs-1.0.1-py3.12.egg-info/dependency_links.txt
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs-1.0.1-py3.12.egg-info/top_level.txt
+[16.297s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs-1.0.1-py3.12.egg-info/SOURCES.txt
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_introspection_c.so
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_euler_s.c
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_quat_s.c
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_gnss.py
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_quat.py
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_gnss_s.c
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_rot.py
+[16.298s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_euler.py
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_raw_s.c
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/__init__.py
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_rot_s.c
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_raw.py
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c.so
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_c.so
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/_oscp_imu_msgs_s.ep.rosidl_typesupport_c.c
+[16.299s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/__init__.py
+[16.339s] Listing '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs'...
+[16.339s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/__init__.py'...
+[16.339s] Listing '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg'...
+[16.339s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/__init__.py'...
+[16.339s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_euler.py'...
+[16.339s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_gnss.py'...
+[16.340s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_quat.py'...
+[16.340s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_raw.py'...
+[16.340s] Compiling '/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/msg/_oscp_rot.py'...
+[16.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c.so
+[16.344s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_fastrtps_c.so" to ""
+[16.344s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_introspection_c.so
+[16.345s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_introspection_c.so" to ""
+[16.345s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_c.so
+[16.345s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/python3.12/site-packages/oscp_imu_msgs/oscp_imu_msgs_s__rosidl_typesupport_c.so" to ""
+[16.346s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_generator_py.so
+[16.346s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/lib/liboscp_imu_msgs__rosidl_generator_py.so" to ""
+[16.346s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust
+[16.346s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/Cargo.toml
+[16.346s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/src
+[16.346s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/src/msg
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/src/msg/rmw.rs
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/src/lib.rs
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/src/msg.rs
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/rust/build.rs
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRaw.idl
+[16.347s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRot.idl
+[16.348s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpQuat.idl
+[16.348s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpEuler.idl
+[16.348s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpGnss.idl
+[16.348s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRaw.msg
+[16.348s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpRot.msg
+[16.349s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpQuat.msg
+[16.349s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpEuler.msg
+[16.349s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/msg/OscpGnss.msg
+[16.349s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/ament_index/resource_index/package_run_dependencies/oscp_imu_msgs
+[16.349s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/ament_index/resource_index/parent_prefix_path/oscp_imu_msgs
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/ament_prefix_path.sh
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/ament_prefix_path.dsv
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/path.sh
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/environment/path.dsv
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/local_setup.bash
+[16.350s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/local_setup.sh
+[16.351s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/local_setup.zsh
+[16.351s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/local_setup.dsv
+[16.351s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.dsv
+[16.351s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/ament_index/resource_index/packages/oscp_imu_msgs
+[16.352s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_generator_cExport.cmake
+[16.352s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_generator_cExport-noconfig.cmake
+[16.352s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[16.352s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[16.352s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_introspection_cExport.cmake
+[16.353s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[16.353s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_cExport.cmake
+[16.353s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[16.353s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_generator_cppExport.cmake
+[16.353s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[16.354s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[16.354s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[16.354s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[16.354s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_cppExport.cmake
+[16.354s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[16.355s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_generator_pyExport.cmake
+[16.355s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/export_oscp_imu_msgs__rosidl_generator_pyExport-noconfig.cmake
+[16.355s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/rosidl_cmake-extras.cmake
+[16.355s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[16.355s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[16.356s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[16.356s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[16.356s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[16.356s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[16.356s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/rosidl_cmake_aggregate_target-extras.cmake
+[16.357s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgsConfig.cmake
+[16.357s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/cmake/oscp_imu_msgsConfig-version.cmake
+[16.357s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_msgs/share/oscp_imu_msgs/package.xml
+[16.360s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_msgs

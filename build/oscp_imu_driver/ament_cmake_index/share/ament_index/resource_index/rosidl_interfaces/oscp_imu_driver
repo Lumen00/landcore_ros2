@@ -1,0 +1,8 @@
+srv/ApplyMagConfig.idl
+srv/ApplyMagConfig.srv
+srv/GetIMUConfig.idl
+srv/GetIMUConfig.srv
+srv/StationaryCalibrate.idl
+srv/StationaryCalibrate.srv
+srv/ZeroOrientation.idl
+srv/ZeroOrientation.srv

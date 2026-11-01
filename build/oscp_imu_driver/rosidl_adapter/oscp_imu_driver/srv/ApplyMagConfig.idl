@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from oscp_imu_driver/srv/ApplyMagConfig.srv
+// generated code does not contain a copyright notice
+
+
+module oscp_imu_driver {
+  module srv {
+    struct ApplyMagConfig_Request {
+      string config_path;
+    };
+    struct ApplyMagConfig_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

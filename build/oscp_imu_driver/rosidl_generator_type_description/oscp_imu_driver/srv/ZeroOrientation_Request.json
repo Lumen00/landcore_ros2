@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "oscp_imu_driver/srv/ZeroOrientation_Request",
+      "fields": [
+        {
+          "name": "structure_needs_at_least_one_member",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "oscp_imu_driver/srv/ZeroOrientation_Request",
+      "hash_string": "RIHS01_def613e81293763ea92e8494aa1bc810a14efa1010d6aed37c90c5de83dd78f0"
+    }
+  ]
+}

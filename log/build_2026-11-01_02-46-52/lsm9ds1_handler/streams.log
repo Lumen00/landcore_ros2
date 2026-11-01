@@ -1,0 +1,95 @@
+[0.027s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/lsm9ds1_handler -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler
+[0.102s] -- The C compiler identification is GNU 13.3.0
+[0.174s] -- The CXX compiler identification is GNU 13.3.0
+[0.196s] -- Detecting C compiler ABI info
+[0.303s] -- Detecting C compiler ABI info - done
+[0.316s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.316s] -- Detecting C compile features
+[0.316s] -- Detecting C compile features - done
+[0.327s] -- Detecting CXX compiler ABI info
+[0.435s] -- Detecting CXX compiler ABI info - done
+[0.448s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.448s] -- Detecting CXX compile features
+[0.449s] -- Detecting CXX compile features - done
+[0.457s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.611s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.772s] -- Found rclcpp: 28.1.22 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.849s] -- Found rosidl_generator_c: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.881s] -- Found rosidl_generator_cpp: 4.6.9 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.918s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.958s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.058s] -- Found rmw_implementation_cmake: 7.3.4 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[1.063s] -- Found rmw_fastrtps_cpp: 8.4.4 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[1.165s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[1.195s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[1.229s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.461s] -- Found sensor_msgs: 5.3.8 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[1.529s] -- Found tf2: 0.36.23 (/opt/ros/jazzy/share/tf2/cmake)
+[1.538s] -- Found tf2_geometry_msgs: 0.36.23 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[1.571s] -- Found eigen3_cmake_module: 0.3.1 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[1.572s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[1.572s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.880s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.263s] -- Added test 'copyright' to check source files copyright and LICENSE
+[2.268s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.268s] -- Configured cppcheck include dirs: /root/ros2_ws/src/landcore_ros2/lsm9ds1_handler/include;$<BUILD_INTERFACE:/root/ros2_ws/src/landcore_ros2/lsm9ds1_handler/include>
+[2.268s] -- Configured cppcheck exclude dirs and/or files: 
+[2.276s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[2.277s] -- Configured cpplint exclude dirs and/or files: 
+[2.282s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.282s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.284s] -- Added test 'lint_cmake' to check CMake code style
+[2.291s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.294s] -- Added test 'uncrustify' to check C / C++ code style
+[2.298s] -- Configured uncrustify additional arguments: 
+[2.305s] -- Added test 'xmllint' to check XML markup files
+[2.315s] -- Configuring done (2.3s)
+[2.363s] -- Generating done (0.0s)
+[2.381s] -- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler
+[2.410s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/lsm9ds1_handler -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler
+[2.410s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[2.576s] [ 28%] [32mBuilding CXX object CMakeFiles/lsm9ds1_handler.dir/src/lsm9ds1_handler.cpp.o[0m
+[2.576s] [ 28%] [32mBuilding CXX object CMakeFiles/calibrate_mag.dir/src/calibrate_mag.cpp.o[0m
+[2.580s] [ 42%] [32mBuilding CXX object CMakeFiles/lsm9ds1_handler.dir/src/lsm9ds1_device.cpp.o[0m
+[14.026s] [ 57%] [32m[1mLinking CXX shared library liblsm9ds1_handler.so[0m
+[14.411s] [ 57%] Built target lsm9ds1_handler
+[14.440s] [ 71%] [32mBuilding CXX object CMakeFiles/lsm9ds1_node.dir/src/lsm9ds1_node.cpp.o[0m
+[15.594s] [ 85%] [32m[1mLinking CXX executable calibrate_mag[0m
+[15.971s] [ 85%] Built target calibrate_mag
+[17.730s] [100%] [32m[1mLinking CXX executable lsm9ds1_node[0m
+[17.945s] [100%] Built target lsm9ds1_node
+[17.962s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler -- -j12 -l12
+[17.963s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler
+[17.975s] -- Install configuration: ""
+[17.975s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include
+[17.975s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler
+[17.975s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_handler.hpp
+[17.976s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_device.hpp
+[17.976s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/lsm9ds1_registers.hpp
+[17.976s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/include/lsm9ds1_handler/MadgwickAHRS.h
+[17.976s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/lsm9ds1_node
+[17.976s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/lsm9ds1_node" to ""
+[17.976s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/calibrate_mag
+[17.981s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/lsm9ds1_handler/calibrate_mag" to ""
+[17.983s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/liblsm9ds1_handler.so
+[17.984s] -- Set non-toolchain portion of runtime path of "/root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/lib/liblsm9ds1_handler.so" to ""
+[17.984s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch
+[17.985s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/launch/lsm9ds1_handler.launch.py
+[17.985s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config
+[17.985s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/config/params.yaml
+[17.986s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/package_run_dependencies/lsm9ds1_handler
+[17.986s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/parent_prefix_path/lsm9ds1_handler
+[17.986s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.sh
+[17.987s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/ament_prefix_path.dsv
+[17.987s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.sh
+[17.987s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/environment/path.dsv
+[17.987s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.bash
+[17.988s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.sh
+[17.988s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.zsh
+[17.988s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/local_setup.dsv
+[17.988s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.dsv
+[17.989s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/ament_index/resource_index/packages/lsm9ds1_handler
+[17.989s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig.cmake
+[17.990s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/cmake/lsm9ds1_handlerConfig-version.cmake
+[17.991s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/lsm9ds1_handler/share/lsm9ds1_handler/package.xml
+[17.996s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/lsm9ds1_handler

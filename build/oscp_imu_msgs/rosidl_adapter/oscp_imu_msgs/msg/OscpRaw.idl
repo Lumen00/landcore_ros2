@@ -1,0 +1,84 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from oscp_imu_msgs/msg/OscpRaw.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module oscp_imu_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "OSCP Raw IMU Frame" "\n"
+      "Corresponds to oscp_raw_t structure")
+    struct OscpRaw {
+      std_msgs::msg::Header header;
+
+      @verbatim (language="comment", text=
+        "Misalignment Correction (2b) | Operating Mode (3b) | Frame Type (3b)")
+      uint8 header_byte;
+
+      @verbatim (language="comment", text=
+        "Wrapping frame counter [0,255]")
+      uint8 counter;
+
+      @verbatim (language="comment", text=
+        "Timestamp in ms since last power up or reset")
+      uint64 timestamp_ms;
+
+      @verbatim (language="comment", text=
+        "°/sec")
+      float gyro_x;
+
+      @verbatim (language="comment", text=
+        "°/sec")
+      float gyro_y;
+
+      @verbatim (language="comment", text=
+        "°/sec")
+      float gyro_z;
+
+      @verbatim (language="comment", text=
+        "g")
+      float accel_x;
+
+      @verbatim (language="comment", text=
+        "g")
+      float accel_y;
+
+      @verbatim (language="comment", text=
+        "g")
+      float accel_z;
+
+      @verbatim (language="comment", text=
+        "mg")
+      float incl_x;
+
+      @verbatim (language="comment", text=
+        "mg")
+      float incl_y;
+
+      @verbatim (language="comment", text=
+        "μT")
+      float mag_x;
+
+      @verbatim (language="comment", text=
+        "μT")
+      float mag_y;
+
+      @verbatim (language="comment", text=
+        "μT")
+      float mag_z;
+
+      @verbatim (language="comment", text=
+        "°C")
+      float temp;
+
+      @verbatim (language="comment", text=
+        "Status byte - use OSCP_STATUS_* masks")
+      uint8 status;
+
+      @verbatim (language="comment", text=
+        "Checksum (CRC-16)")
+      uint16 crc;
+    };
+  };
+};

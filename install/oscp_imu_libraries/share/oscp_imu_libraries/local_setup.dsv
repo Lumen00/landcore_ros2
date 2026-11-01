@@ -1,0 +1,3 @@
+source;share/oscp_imu_libraries/environment/ament_prefix_path.sh
+source;share/oscp_imu_libraries/environment/library_path.sh
+source;share/oscp_imu_libraries/environment/path.sh

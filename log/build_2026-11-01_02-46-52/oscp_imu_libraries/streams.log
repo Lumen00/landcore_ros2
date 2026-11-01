@@ -1,0 +1,54 @@
+[0.033s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries
+[0.101s] -- The C compiler identification is GNU 13.3.0
+[0.167s] -- The CXX compiler identification is GNU 13.3.0
+[0.187s] -- Detecting C compiler ABI info
+[0.294s] -- Detecting C compiler ABI info - done
+[0.307s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.307s] -- Detecting C compile features
+[0.308s] -- Detecting C compile features - done
+[0.316s] -- Detecting CXX compiler ABI info
+[0.422s] -- Detecting CXX compiler ABI info - done
+[0.434s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.435s] -- Detecting CXX compile features
+[0.435s] -- Detecting CXX compile features - done
+[0.444s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.599s] -- Found Python3: /root/ros2_ws/my/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.857s] -- Configuring done (0.8s)
+[0.862s] -- Generating done (0.0s)
+[0.865s] -- Build files have been written to: /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries
+[0.870s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake /root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/oscp_imu_libraries -DCMAKE_INSTALL_PREFIX=/root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries
+[0.871s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries -- -j12 -l12
+[0.920s] [ 33%] [32mBuilding C object CMakeFiles/oscp_imu_libraries.dir/src/oscp_imu.c.o[0m
+[0.925s] [ 66%] [32mBuilding C object CMakeFiles/oscp_imu_libraries.dir/src/cobs.c.o[0m
+[0.972s] [100%] [32m[1mLinking C static library liboscp_imu_libraries.a[0m
+[1.010s] [100%] Built target oscp_imu_libraries
+[1.021s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries -- -j12 -l12
+[1.032s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries
+[1.038s] -- Install configuration: ""
+[1.038s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/lib/liboscp_imu_libraries.a
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries/cobs.h
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/include/oscp_imu_libraries/oscp_imu.h
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/library_path.sh
+[1.039s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/library_path.dsv
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/package_run_dependencies/oscp_imu_libraries
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/parent_prefix_path/oscp_imu_libraries
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/ament_prefix_path.sh
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/ament_prefix_path.dsv
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/path.sh
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/environment/path.dsv
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.bash
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.sh
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.zsh
+[1.040s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/local_setup.dsv
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.dsv
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/ament_index/resource_index/packages/oscp_imu_libraries
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/export_oscp_imu_librariesExport.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/export_oscp_imu_librariesExport-noconfig.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/ament_cmake_export_targets-extras.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/ament_cmake_export_include_directories-extras.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/oscp_imu_librariesConfig.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/cmake/oscp_imu_librariesConfig-version.cmake
+[1.041s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/oscp_imu_libraries/share/oscp_imu_libraries/package.xml
+[1.042s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/oscp_imu_libraries

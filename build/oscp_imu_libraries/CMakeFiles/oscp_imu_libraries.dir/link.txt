@@ -1,0 +1,2 @@
+/usr/bin/ar qc liboscp_imu_libraries.a CMakeFiles/oscp_imu_libraries.dir/src/oscp_imu.c.o CMakeFiles/oscp_imu_libraries.dir/src/cobs.c.o
+/usr/bin/ranlib liboscp_imu_libraries.a

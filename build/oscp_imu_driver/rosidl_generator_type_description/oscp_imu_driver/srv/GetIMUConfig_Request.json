@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "oscp_imu_driver/srv/GetIMUConfig_Request",
+      "fields": [
+        {
+          "name": "structure_needs_at_least_one_member",
+          "type": {
+            "type_id": 3,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "oscp_imu_driver/srv/GetIMUConfig_Request",
+      "hash_string": "RIHS01_e841a668df3be355a90b4d3e0b1d4c01259fd579f77fbac93ea2708cd99702b6"
+    }
+  ]
+}

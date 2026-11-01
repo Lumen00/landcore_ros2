@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-2cb411766c5b96f9b597.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "magcal_wrapper__py",
+					"jsonFile" : "directory-magcal_wrapper__py-d06e703a72fd1fabd54a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper/magcal_wrapper__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "magcal_wrapper__rs",
+					"jsonFile" : "directory-magcal_wrapper__rs-97c843c9dd236921f3ae.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper/magcal_wrapper__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "magcal_wrapper",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_magcal_wrapper_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_magcal_wrapper_egg-adffe60485a17a904dae.json",
+					"name" : "ament_cmake_python_build_magcal_wrapper_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_magcal_wrapper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_magcal_wrapper-84e7684dadcdc41702ed.json",
+					"name" : "ament_cmake_python_copy_magcal_wrapper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper-b0bb0df4689ae15baae8.json",
+					"name" : "magcal_wrapper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__cpp-becdeaaf4dfbed6befc7.json",
+					"name" : "magcal_wrapper__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "magcal_wrapper__py::@0aaada2ba29b071f4f02",
+					"jsonFile" : "target-magcal_wrapper__py-b9593fe769d26f7faf1c.json",
+					"name" : "magcal_wrapper__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_generator_c-666c8b217aa892c2d2b8.json",
+					"name" : "magcal_wrapper__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_generator_py-d5f17ccb9a74c3d381f2.json",
+					"name" : "magcal_wrapper__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_generator_type_description-da4b0f18d45f870ef879.json",
+					"name" : "magcal_wrapper__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_c-df1beb1b04b49d5607a2.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_cpp-34c14cf03c9bc15b9bed.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_fastrtps_c-0c74a26ed9596010e7c0.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_fastrtps_cpp-9a022726bb883faa426f.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_introspection_c-23ad93919b138e565eee.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper__rosidl_typesupport_introspection_cpp-7b752b54ec78f341d19c.json",
+					"name" : "magcal_wrapper__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "magcal_wrapper__rs::@9b95e41191b06b160742",
+					"jsonFile" : "target-magcal_wrapper__rs-b9b51725c6ef9ce9ae03.json",
+					"name" : "magcal_wrapper__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper_s__rosidl_typesupport_c-08da9d3e4e9a33d441df.json",
+					"name" : "magcal_wrapper_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper_s__rosidl_typesupport_fastrtps_c-b4441caff23246d93bf5.json",
+					"name" : "magcal_wrapper_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper_s__rosidl_typesupport_introspection_c-5c2d5232409c0ddb5e77.json",
+					"name" : "magcal_wrapper_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "magcal_wrapper_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-magcal_wrapper_uninstall-2982eaf3187cd9bd0880.json",
+					"name" : "magcal_wrapper_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-a2ba1dc0b6ab37a49f93.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/root/ros2_ws/src/landcore_ros2/build/magcal_wrapper",
+		"source" : "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

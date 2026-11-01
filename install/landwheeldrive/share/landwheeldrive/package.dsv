@@ -1,0 +1,6 @@
+source;share/landwheeldrive/hook/pythonpath.ps1
+source;share/landwheeldrive/hook/pythonpath.dsv
+source;share/landwheeldrive/hook/pythonpath.sh
+source;share/landwheeldrive/hook/ament_prefix_path.ps1
+source;share/landwheeldrive/hook/ament_prefix_path.dsv
+source;share/landwheeldrive/hook/ament_prefix_path.sh

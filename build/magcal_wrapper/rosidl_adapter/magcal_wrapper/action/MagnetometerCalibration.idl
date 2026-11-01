@@ -1,0 +1,31 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from magcal_wrapper/action/MagnetometerCalibration.action
+// generated code does not contain a copyright notice
+
+
+module magcal_wrapper {
+  module action {
+    struct MagnetometerCalibration_Goal {
+      boolean start;
+    };
+    typedef double double__9[9];
+    struct MagnetometerCalibration_Result {
+      boolean success;
+
+      double hard_iron_x;
+
+      double hard_iron_y;
+
+      double hard_iron_z;
+
+      double__9 soft_iron;
+
+      double fit_error;
+    };
+    struct MagnetometerCalibration_Feedback {
+      float progress;
+
+      string status;
+    };
+  };
+};

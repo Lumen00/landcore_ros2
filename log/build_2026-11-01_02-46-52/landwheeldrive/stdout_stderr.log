@@ -1,0 +1,63 @@
+running egg_info
+creating ../build/landwheeldrive/landwheeldrive.egg-info
+writing ../build/landwheeldrive/landwheeldrive.egg-info/PKG-INFO
+writing dependency_links to ../build/landwheeldrive/landwheeldrive.egg-info/dependency_links.txt
+writing entry points to ../build/landwheeldrive/landwheeldrive.egg-info/entry_points.txt
+writing requirements to ../build/landwheeldrive/landwheeldrive.egg-info/requires.txt
+writing top-level names to ../build/landwheeldrive/landwheeldrive.egg-info/top_level.txt
+writing manifest file '../build/landwheeldrive/landwheeldrive.egg-info/SOURCES.txt'
+reading manifest file '../build/landwheeldrive/landwheeldrive.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/landwheeldrive/landwheeldrive.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build
+creating /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib
+creating /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/DCTest.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/gui_control.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/cartesian_drive.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/subscriber_motor_action.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/Emakefun_MotorDriver.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/__init__.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/pid_tune.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/Emakefun_I2C.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+copying landwheeldrive/Emakefun_MotorHAT.py -> /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive
+running install
+running install_lib
+creating /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/DCTest.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/gui_control.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/cartesian_drive.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/subscriber_motor_action.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/Emakefun_MotorDriver.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/__init__.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/pid_tune.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/Emakefun_I2C.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+copying /root/ros2_ws/src/landcore_ros2/build/landwheeldrive/build/lib/landwheeldrive/Emakefun_MotorHAT.py -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/DCTest.py to DCTest.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/gui_control.py to gui_control.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/cartesian_drive.py to cartesian_drive.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/subscriber_motor_action.py to subscriber_motor_action.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/Emakefun_MotorDriver.py to Emakefun_MotorDriver.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/__init__.py to __init__.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/pid_tune.py to pid_tune.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/Emakefun_I2C.py to Emakefun_I2C.cpython-312.pyc
+byte-compiling /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive/Emakefun_MotorHAT.py to Emakefun_MotorHAT.cpython-312.pyc
+running install_data
+creating /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/ament_index
+creating /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/ament_index/resource_index
+creating /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/ament_index/resource_index/packages
+copying resource/landwheeldrive -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/ament_index/resource_index/packages
+copying package.xml -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive
+creating /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/launch
+copying launch/onboard_control_launch.xml -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/launch
+copying launch/pwm_pid_launch.xml -> /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/share/landwheeldrive/launch
+running install_egg_info
+Copying ../build/landwheeldrive/landwheeldrive.egg-info to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/python3.12/site-packages/landwheeldrive-0.0.0-py3.12.egg-info
+running install_scripts
+Installing cartesian_driver script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+Installing gui_controller script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+Installing motorlisten script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+Installing pid_tuner script to /root/ros2_ws/src/landcore_ros2/install/landwheeldrive/lib/landwheeldrive
+writing list of installed files to '/root/ros2_ws/src/landcore_ros2/build/landwheeldrive/install.log'

@@ -1,0 +1,52 @@
+[0.025s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[0.133s] [100%] Built target mecanum_system_hardware
+[0.197s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --build /root/ros2_ws/src/landcore_ros2/build/land_description -- -j12 -l12
+[0.198s] Invoking command in '/root/ros2_ws/src/landcore_ros2/build/land_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description
+[0.218s] -- Install configuration: ""
+[0.218s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/mecanum_hardware_plugin.xml
+[0.218s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/lib/libmecanum_system_hardware.so
+[0.219s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src
+[0.219s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/timer.cpp
+[0.219s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/motorhat_driver.cpp
+[0.219s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/src/mecanum_system_hardware.cpp
+[0.219s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch
+[0.220s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/map_view.launch.py
+[0.220s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/display.launch.py
+[0.220s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/land_bringup.launch.py
+[0.220s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/launch/camera_bringup.xml
+[0.221s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz/config_real.rviz
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/rviz/config.rviz
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/bridge_config.yaml
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/ekf.yaml
+[0.222s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/controllers.yaml
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/slam_config.yaml
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/config/nav2params.yaml
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/world/my_world.sdf
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf.xacro
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.sdf
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/urdf/land_description.urdf
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include
+[0.223s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/timer.hpp
+[0.224s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/mecanum_system_hardware.hpp
+[0.224s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/include/motorhat_driver.hpp
+[0.225s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/package_run_dependencies/land_description
+[0.225s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/parent_prefix_path/land_description
+[0.237s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.sh
+[0.237s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/ament_prefix_path.dsv
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.sh
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/environment/path.dsv
+[0.238s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.bash
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.sh
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.zsh
+[0.239s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/local_setup.dsv
+[0.240s] -- Installing: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.dsv
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/packages/land_description
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/land_description
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig.cmake
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/cmake/land_descriptionConfig-version.cmake
+[0.240s] -- Up-to-date: /root/ros2_ws/src/landcore_ros2/install/land_description/share/land_description/package.xml
+[0.254s] Invoked command in '/root/ros2_ws/src/landcore_ros2/build/land_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/root/ros2_ws/install/landwheeldrive:/opt/ros/jazzy VIRTUAL_ENV_PROMPT=(my) /usr/bin/cmake --install /root/ros2_ws/src/landcore_ros2/build/land_description

@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/get_imu_config__type_support.c.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/get_imu_config__type_support.c.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c.o.d"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/zero_orientation__type_support.c.o"
+  "CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/zero_orientation__type_support.c.o.d"
+  "liboscp_imu_driver__rosidl_typesupport_introspection_c.pdb"
+  "liboscp_imu_driver__rosidl_typesupport_introspection_c.so"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/apply_mag_config__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/apply_mag_config__type_support.c"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/get_imu_config__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/get_imu_config__type_support.c"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/stationary_calibrate__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/stationary_calibrate__type_support.c"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/zero_orientation__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/oscp_imu_driver/srv/detail/zero_orientation__type_support.c"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang C)
+  include(CMakeFiles/oscp_imu_driver__rosidl_typesupport_introspection_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

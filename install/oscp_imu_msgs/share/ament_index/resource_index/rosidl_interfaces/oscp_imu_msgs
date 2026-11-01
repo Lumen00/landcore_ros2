@@ -1,0 +1,10 @@
+msg/OscpEuler.idl
+msg/OscpEuler.msg
+msg/OscpGnss.idl
+msg/OscpGnss.msg
+msg/OscpQuat.idl
+msg/OscpQuat.msg
+msg/OscpRaw.idl
+msg/OscpRaw.msg
+msg/OscpRot.idl
+msg/OscpRot.msg

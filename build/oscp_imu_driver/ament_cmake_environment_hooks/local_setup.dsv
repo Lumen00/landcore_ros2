@@ -1,0 +1,4 @@
+source;share/oscp_imu_driver/environment/ament_prefix_path.sh
+source;share/oscp_imu_driver/environment/library_path.sh
+source;share/oscp_imu_driver/environment/path.sh
+source;share/oscp_imu_driver/environment/pythonpath.sh

@@ -4,6 +4,9 @@
 #include <vector>
 #include <utility>
 #include <chrono>
+#include <iostream>
+#include <fstream>
+
 using std::placeholders::_1;
 class MagnetometerSubscriber : public rclcpp::Node{
     public: 
@@ -11,11 +14,15 @@ class MagnetometerSubscriber : public rclcpp::Node{
             magSubscriber_ = this->create_subscription<sensor_msgs::msg::MagneticField>(
                 "/imu/mag", 10, std::bind(&MagnetometerSubscriber::calibCallback, this, _1));
             startTimer_ = std::chrono::steady_clock::now(); // Get the starting time.
+
+            outputFile.open("magCal.txt");
+
         }
 
     private: 
         rclcpp::Subscription<sensor_msgs::msg::MagneticField>::SharedPtr magSubscriber_;
         std::chrono::_V2::steady_clock::time_point startTimer_;
+        std::ofstream outputFile;
         void calibCallback(const sensor_msgs::msg::MagneticField::SharedPtr msg){
 
             // If the current time exceeds the starting time by n seconds, display results instead.
@@ -50,6 +57,11 @@ class MagnetometerSubscriber : public rclcpp::Node{
                 minMax.at(2).first,
                 minMax.at(2).second            
             );
+
+            if (outputFile.is_open()){
+                outputFile << x << ", " << y << ", " << z;
+            }
+
         }
         // Vector containing min and maxes.
         // std::pair<float, float> test;

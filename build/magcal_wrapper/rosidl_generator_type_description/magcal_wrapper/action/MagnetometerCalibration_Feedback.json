@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback",
+      "fields": [
+        {
+          "name": "progress",
+          "type": {
+            "type_id": 10,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "status",
+          "type": {
+            "type_id": 17,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Feedback",
+      "hash_string": "RIHS01_70b970fdfac44964bdf95345f319c9b445f960178ed7aa082a5cb79c5c791c18"
+    }
+  ]
+}

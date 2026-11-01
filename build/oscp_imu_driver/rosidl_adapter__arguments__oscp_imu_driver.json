@@ -1,0 +1,9 @@
+{
+  "package_name": "oscp_imu_driver",
+  "non_idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver:srv/ZeroOrientation.srv",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver:srv/StationaryCalibrate.srv",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver:srv/GetIMUConfig.srv",
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/oscp_imu_driver:srv/ApplyMagConfig.srv"
+  ]
+}

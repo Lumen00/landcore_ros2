@@ -1,0 +1,6 @@
+{
+  "package_name": "magcal_wrapper",
+  "non_idl_tuples": [
+    "/root/ros2_ws/src/landcore_ros2/oscp_ros2_driver/Libraries/magcal_wrapper:action/MagnetometerCalibration.action"
+  ]
+}

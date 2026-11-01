@@ -1,0 +1,9 @@
+float64 speed_cmd_front_left
+float64 speed_cmd_front_right
+float64 speed_cmd_back_left
+float64 speed_cmd_back_right
+---
+float64 speed_front_left
+float64 speed_front_right
+float64 speed_back_left
+float64 speed_back_right

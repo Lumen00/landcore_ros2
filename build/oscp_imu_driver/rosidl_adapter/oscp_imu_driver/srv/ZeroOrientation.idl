@@ -1,0 +1,17 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from oscp_imu_driver/srv/ZeroOrientation.srv
+// generated code does not contain a copyright notice
+
+
+module oscp_imu_driver {
+  module srv {
+    struct ZeroOrientation_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct ZeroOrientation_Response {
+      boolean success;
+
+      string message;
+    };
+  };
+};

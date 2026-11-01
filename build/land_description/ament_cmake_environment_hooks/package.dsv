@@ -1,0 +1,4 @@
+source;share/land_description/local_setup.bash
+source;share/land_description/local_setup.dsv
+source;share/land_description/local_setup.sh
+source;share/land_description/local_setup.zsh

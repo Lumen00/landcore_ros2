@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal",
+      "fields": [
+        {
+          "name": "start",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "magcal_wrapper/action/MagnetometerCalibration_Goal",
+      "hash_string": "RIHS01_9cbab78faf2e8e4dbe7d5528fc712c6361b0e2665d94bfab9a315628b295f901"
+    }
+  ]
+}
