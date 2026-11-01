@@ -1,19 +1,31 @@
 #include "lsm9ds1_handler/lsm9ds1_device.hpp"
 
-#define magMinX         -0.942500
-#define magMaxX         0.159500
-#define magMinY         0.129340
-#define magMaxY         1.268460
-#define magMinZ         -0.738340
-#define magMaxZ         0.444280
+// #define magMinX         -0.942500
+// #define magMaxX         0.159500
+// #define magMinY         0.129340
+// #define magMaxY         1.268460
+// #define magMinZ         -0.738340
+// #define magMaxZ         0.444280
 
-#define magBiasX		(magMinX+magMaxX)/2  // -0.401531
-#define magBiasY		(magMinY+magMaxY)/2 // 0.682821 
-#define magBiasZ		(magMinZ+magMaxZ)/2  //-0.197866
+#define magBiasX		-0.385461    //(magMinX+magMaxX)/2  // -0.401531
+#define magBiasY		0.677119    //(magMinY+magMaxY)/2 // 0.682821 
+#define magBiasZ		-0.153068    //(magMinZ+magMaxZ)/2  //-0.197866
 
-#define magScaleX       2/(magMaxX-magMinX)
-#define magScaleY       2/(magMaxY-magMinY)
-#define magScaleZ       2/(magMaxZ-magMinZ)
+// #define magScaleX       2/(magMaxX-magMinX)
+// #define magScaleY       2/(magMaxY-magMinY)
+// #define magScaleZ       2/(magMaxZ-magMinZ)
+
+double soft_iron_bias_xx = 1919.914173;
+double soft_iron_bias_xy = 80.348900;
+double soft_iron_bias_xz = 3.286722;
+
+double soft_iron_bias_yx = 80.348900;
+double soft_iron_bias_yy = 1895.320614;
+double soft_iron_bias_yz = 144.035065;
+
+double soft_iron_bias_zx = 3.286722;
+double soft_iron_bias_zy = 144.035065;
+double soft_iron_bias_zz = 2148.663083;
 
 namespace lsm9ds1
 {
@@ -246,15 +258,19 @@ void LSM9DS1_Device::read_mag(Axis3 &mag_gauss, bool scaled /* = true*/)
 
     // Subtract the hard-iron offset/bias.
 
-    // mag_gauss.x -= magBiasX;
-    // mag_gauss.y -= magBiasY;
-    // mag_gauss.z -= magBiasZ;
+    mag_gauss.x -= magBiasX;
+    mag_gauss.y -= magBiasY;
+    mag_gauss.z -= magBiasZ;
 
-    // Apply the scale transformation
+    // Apply soft-iron matrix.
 
-    // mag_gauss.x *= magScaleX;
-    // mag_gauss.y *= magScaleY;
-    // mag_gauss.z *= magScaleZ;
+        float xm_cal = mag_gauss.x * soft_iron_bias_xx + mag_gauss.y * soft_iron_bias_yx + mag_gauss.z * soft_iron_bias_zx;
+        float ym_cal = mag_gauss.x * soft_iron_bias_xy + mag_gauss.y * soft_iron_bias_yy + mag_gauss.z * soft_iron_bias_zy;
+        float zm_cal = mag_gauss.x * soft_iron_bias_xz + mag_gauss.y * soft_iron_bias_yz + mag_gauss.z * soft_iron_bias_zz;
+
+    mag_gauss.x *= xm_cal;
+    mag_gauss.y *= ym_cal;
+    mag_gauss.z *= zm_cal;
 }
 
 IMURecord LSM9DS1_Device::read_all(bool scaled /*= true*/)
