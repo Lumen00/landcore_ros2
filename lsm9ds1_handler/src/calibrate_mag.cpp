@@ -14,9 +14,6 @@ class MagnetometerSubscriber : public rclcpp::Node{
             magSubscriber_ = this->create_subscription<sensor_msgs::msg::MagneticField>(
                 "/imu/mag", 10, std::bind(&MagnetometerSubscriber::calibCallback, this, _1));
             startTimer_ = std::chrono::steady_clock::now(); // Get the starting time.
-
-            outputFile.open("magCal.txt");
-
         }
 
     private: 
@@ -57,10 +54,12 @@ class MagnetometerSubscriber : public rclcpp::Node{
                 minMax.at(2).first,
                 minMax.at(2).second            
             );
+            outputFile.open("magCal.txt");
 
             if (outputFile.is_open()){
                 outputFile << x << ", " << y << ", " << z;
             }
+            outputFile.close();
 
         }
         // Vector containing min and maxes.
