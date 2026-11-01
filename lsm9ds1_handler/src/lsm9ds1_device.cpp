@@ -268,9 +268,9 @@ void LSM9DS1_Device::read_mag(Axis3 &mag_gauss, bool scaled /* = true*/)
         float ym_cal = mag_gauss.x * soft_iron_bias_xy + mag_gauss.y * soft_iron_bias_yy + mag_gauss.z * soft_iron_bias_zy;
         float zm_cal = mag_gauss.x * soft_iron_bias_xz + mag_gauss.y * soft_iron_bias_yz + mag_gauss.z * soft_iron_bias_zz;
 
-    mag_gauss.x *= xm_cal;
-    mag_gauss.y *= ym_cal;
-    mag_gauss.z *= zm_cal;
+    mag_gauss.x = xm_cal;
+    mag_gauss.y = ym_cal;
+    mag_gauss.z = zm_cal;
 }
 
 IMURecord LSM9DS1_Device::read_all(bool scaled /*= true*/)
