@@ -84,7 +84,7 @@ void LSM9DS1::initialize()
     magPublisher_ = node_->create_publisher<sensor_msgs::msg::MagneticField>("/imu/mag",10);
     timer_ = node_->create_wall_timer(std::chrono::milliseconds(1000 / frequency), std::bind(&LSM9DS1::read_IMU, this));
 
-    for (int i = 0; i < 50; i++){
+    for (int i = 0; i < 20; i++){
 
         IMURecord imu_record = lsm9ds1_device_->read_all(true);
         
