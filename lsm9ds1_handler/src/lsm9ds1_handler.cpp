@@ -114,7 +114,7 @@ void LSM9DS1::initialize()
             imu_record.raw_magnetic_field.z,
             true
         );
-        publish();
+        // publish();
     }    
     // Should clear costmap and generate new one.
 }
