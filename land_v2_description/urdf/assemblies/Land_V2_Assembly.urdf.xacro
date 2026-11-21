@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Land_V2_Assembly_macro">
+
+  <xacro:macro name="Land_V2_Assembly" params="prefix">
+
+    <!-- Links -->
+    <link name="${prefix}imu_link">
+      <inertial>
+        <origin xyz="0.001770 0.000077 -0.001017" rpy="0 0 0"/>
+        <mass value="0.001837"/>
+        <inertia ixx="1.000000e-06" ixy="3.145141e-11" ixz="2.825579e-10"
+                 iyy="1.000000e-06" iyz="4.860150e-12" izz="1.000000e-06"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}lidar_link">
+      <inertial>
+        <origin xyz="-0.000077 0.000000 -0.012638" rpy="0 0 0"/>
+        <mass value="0.804716"/>
+        <inertia ixx="2.751606e-04" ixy="-2.467141e-09" ixz="-8.277243e-07"
+                 iyy="2.771977e-04" iyz="-3.475674e-10" izz="3.414676e-04"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Shapes_macro">
+
+  <xacro:macro name="Shapes" params="prefix">
+
+    <!-- Links -->
+    <link name="${prefix}camera_link">
+      <inertial>
+        <origin xyz="-0.006421 -0.000039 0.000357" rpy="0 0 0"/>
+        <mass value="0.008517"/>
+        <inertia ixx="1.000000e-06" ixy="-1.073114e-10" ixz="-1.592692e-08"
+                 iyy="1.000000e-06" iyz="1.998784e-09" izz="1.000000e-06"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

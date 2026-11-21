@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Mecanum_Wheel_Assembly_macro">
+
+  <xacro:macro name="Mecanum_Wheel_Assembly" params="prefix">
+
+    <!-- Links -->
+    <link name="${prefix}front_right_wheel">
+      <inertial>
+        <origin xyz="0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+        <mass value="1.492323"/>
+        <inertia ixx="7.236931e-04" ixy="-2.045480e-11" ixz="0.000000e+00"
+                 iyy="7.236928e-04" iyz="-1.892112e-09" izz="1.090287e-03"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}back_right_wheel">
+      <inertial>
+        <origin xyz="0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+        <mass value="1.492323"/>
+        <inertia ixx="7.236931e-04" ixy="-2.045480e-11" ixz="0.000000e+00"
+                 iyy="7.236928e-04" iyz="-1.892112e-09" izz="1.090287e-03"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}front_left_wheel">
+      <inertial>
+        <origin xyz="-0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+        <mass value="1.492323"/>
+        <inertia ixx="7.236928e-04" ixy="2.045479e-11" ixz="-1.892111e-09"
+                 iyy="7.236931e-04" iyz="0.000000e+00" izz="1.090287e-03"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="${prefix}back_left_wheel">
+      <inertial>
+        <origin xyz="-0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+        <mass value="1.492323"/>
+        <inertia ixx="7.236928e-04" ixy="2.045480e-11" ixz="-1.892112e-09"
+                 iyy="7.236931e-04" iyz="0.000000e+00" izz="1.090287e-03"/>
+      </inertial>
+      <visual>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
+        </geometry>
+        <material name="Steel"/>
+      </visual>
+      <collision>
+        <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+        <geometry>
+          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        </geometry>
+      </collision>
+    </link>
+
+  </xacro:macro>
+
+</robot>

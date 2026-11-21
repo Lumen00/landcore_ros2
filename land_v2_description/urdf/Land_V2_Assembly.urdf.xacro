@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Land_V2_Assembly">
+
+  <!-- Materials (shared across all assemblies) -->
+  <material name="Steel">
+    <color rgba="0.627 0.627 0.627 1.0"/>
+  </material>
+
+  <!-- Assembly includes -->
+  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Mecanum_Wheel_Assembly.urdf.xacro"/>
+  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Shapes.urdf.xacro"/>
+  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/body.urdf.xacro"/>
+  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Land_V2_Assembly.urdf.xacro"/>
+
+  <!-- Instantiate assemblies -->
+  <xacro:Mecanum_Wheel_Assembly prefix=""/>
+  <xacro:Shapes prefix=""/>
+  <xacro:body prefix=""/>
+  <xacro:Land_V2_Assembly prefix=""/>
+
+  <!-- Mount joints (cross-assembly connections) -->
+  <!-- These define how assemblies connect to each other. -->
+  <!-- When swapping a dummy assembly with a real part, -->
+  <!-- update the include + macro call above, and adjust -->
+  <!-- parent/child link names in the mount joint below. -->
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.041800 0.002765 0.094100" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.083100 0.002515 0.022540" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.081000 0.002465 0.064692" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <origin xyz="0.153244 -0.136291 -0.082475" rpy="1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="back_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_right_wheel"/>
+    <origin xyz="-0.069244 -0.136291 -0.082475" rpy="1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="back_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_left_wheel"/>
+    <origin xyz="-0.070244 0.141721 -0.082475" rpy="-1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <origin xyz="0.152244 0.141721 -0.082475" rpy="-1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <!-- ROS 2 control: generated generic system -->
+  <ros2_control name="Land_V2_Assembly_system" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+      <param name="cmd_topic">sim/Land_V2_Assembly_system/cmd</param>
+      <param name="state_topic">sim/Land_V2_Assembly_system/state</param>
+    </hardware>
+
+    <joint name="back_left_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="back_right_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_left_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+
+</robot>

@@ -1,0 +1,1917 @@
+{
+  "cache_version": 1,
+  "config": {
+    "collision_auto_method": "primitive",
+    "collision_format": "stl",
+    "export_collision_mesh": true,
+    "export_visual_mesh": true,
+    "frame_convention": "ros",
+    "frame_overrides_filename": "frame_overrides.csv",
+    "include_debug": true,
+    "include_docs": true,
+    "include_launch": true,
+    "include_readme": true,
+    "include_robot_data_yaml": true,
+    "include_ros2_control": true,
+    "include_rviz": true,
+    "include_screenshot": true,
+    "mesh_refinement": "medium",
+    "output_dir": "C:/Users/mvsue/OneDrive/Documents/Robotics/Land_V2_Assembly_description",
+    "override_explicit_collision": false,
+    "package_name": "Land_V2_Assembly_description",
+    "robot_prefix": "",
+    "ros2_control_command_interfaces": [
+      "position",
+      "velocity"
+    ],
+    "ros2_control_hardware_plugin": "mock_components/GenericSystem",
+    "ros2_control_update_rate": 100,
+    "use_xacro": false,
+    "verbosity": "verbose",
+    "visual_format": "dae",
+    "zip_name": "",
+    "zip_output": false
+  },
+  "model": {
+    "assemblies": {
+      "Camera_module_3_std_model_simple": {
+        "children_assemblies": [
+          "Pins",
+          "Shapes",
+          "Symbols"
+        ],
+        "depth": 0,
+        "global_offset": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "global_rotation": [
+          0.9999999999999879,
+          8.464555022909178e-15,
+          -2.9926475489587126e-15,
+          -1.77738432824352e-14,
+          0.9999999999999954,
+          2.7702490646674996e-11,
+          7.216965831297649e-16,
+          -2.770229755650149e-11,
+          0.999999999999994
+        ],
+        "joints": [],
+        "links": [],
+        "name": "Camera_module_3_std_model_simple",
+        "parent_assembly": null
+      },
+      "Land_V2_Assembly": {
+        "children_assemblies": [],
+        "depth": 0,
+        "global_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "global_rotation": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "joints": [
+          "Rigid_32",
+          "Rigid_33",
+          "Rigid_37",
+          "Rigid_41",
+          "Revolute_34",
+          "Revolute_35",
+          "Revolute_39",
+          "Revolute_40"
+        ],
+        "links": [
+          "imu_link",
+          "lidar_link"
+        ],
+        "name": "Land_V2_Assembly",
+        "parent_assembly": null
+      },
+      "Mecanum_Wheel_Assembly": {
+        "children_assemblies": [],
+        "depth": 0,
+        "global_offset": [
+          0.14406347744763406,
+          -0.17268758006550858,
+          0.21050734870881851
+        ],
+        "global_rotation": [
+          1.3109298183998096e-14,
+          -0.931582091804726,
+          0.36353102512555596,
+          1.0000000000001728,
+          1.0069615457519198e-11,
+          2.5789176124219876e-11,
+          -2.7695813064358292e-11,
+          0.36353102512568697,
+          0.9315820918047044
+        ],
+        "joints": [],
+        "links": [
+          "front_right_wheel",
+          "back_right_wheel",
+          "front_left_wheel",
+          "back_left_wheel"
+        ],
+        "name": "Mecanum_Wheel_Assembly",
+        "parent_assembly": null
+      },
+      "Pins": {
+        "children_assemblies": [],
+        "depth": 1,
+        "global_offset": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "global_rotation": [
+          0.9999999999999879,
+          8.464555022909178e-15,
+          -2.9926475489587126e-15,
+          -1.77738432824352e-14,
+          0.9999999999999954,
+          2.7702490646674996e-11,
+          7.216965831297649e-16,
+          -2.770229755650149e-11,
+          0.999999999999994
+        ],
+        "joints": [],
+        "links": [],
+        "name": "Pins",
+        "parent_assembly": "Camera_module_3_std_model_simple"
+      },
+      "Shapes": {
+        "children_assemblies": [],
+        "depth": 1,
+        "global_offset": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "global_rotation": [
+          0.9999999999999879,
+          8.464555022909178e-15,
+          -2.9926475489587126e-15,
+          -1.77738432824352e-14,
+          0.9999999999999954,
+          2.7702490646674996e-11,
+          7.216965831297649e-16,
+          -2.770229755650149e-11,
+          0.999999999999994
+        ],
+        "joints": [],
+        "links": [
+          "Dielectric"
+        ],
+        "name": "Shapes",
+        "parent_assembly": "Camera_module_3_std_model_simple"
+      },
+      "Suspension_Subassembly": {
+        "children_assemblies": [],
+        "depth": 1,
+        "global_offset": [
+          -0.07842502241430442,
+          -0.12928758006549454,
+          0.21050734870761503
+        ],
+        "global_rotation": [
+          1.0000000000003424,
+          1.069959459311208e-14,
+          -6.903373407581658e-15,
+          -8.15580402697831e-15,
+          1.0000000000004179,
+          2.7688916038652885e-11,
+          8.069423400604738e-15,
+          -2.7688968339624994e-11,
+          0.9999999999999871
+        ],
+        "joints": [],
+        "links": [],
+        "name": "Suspension_Subassembly",
+        "parent_assembly": "base_link"
+      },
+      "Symbols": {
+        "children_assemblies": [],
+        "depth": 1,
+        "global_offset": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "global_rotation": [
+          0.9999999999999879,
+          8.464555022909178e-15,
+          -2.9926475489587126e-15,
+          -1.77738432824352e-14,
+          0.9999999999999954,
+          2.7702490646674996e-11,
+          7.216965831297649e-16,
+          -2.770229755650149e-11,
+          0.999999999999994
+        ],
+        "joints": [],
+        "links": [],
+        "name": "Symbols",
+        "parent_assembly": "Camera_module_3_std_model_simple"
+      },
+      "base_link": {
+        "children_assemblies": [
+          "Suspension_Subassembly"
+        ],
+        "depth": 0,
+        "global_offset": [
+          0.0,
+          0.0,
+          0.18
+        ],
+        "global_rotation": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "joints": [],
+        "links": [
+          "base_link"
+        ],
+        "name": "base_link",
+        "parent_assembly": null
+      }
+    },
+    "closing_joints": {
+      "Rigid_33": {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "child_link": "lidar_link",
+        "closing_source": "auto_detected",
+        "fusion_source": "as_built",
+        "is_closing": true,
+        "is_mount": true,
+        "is_passive": true,
+        "joint_type": "fixed",
+        "limits": null,
+        "name": "Rigid_33",
+        "origin_global": [
+          0.03261922751665642,
+          0.006768805803020749,
+          0.3870820751027342
+        ],
+        "origin_method": "child_minus_parent",
+        "origin_rpy": [
+          1.1423248668298978e-16,
+          2.8624019653722936e-15,
+          1.5707963267948908
+        ],
+        "origin_xyz": [
+          -0.0027648955918869,
+          0.04180000000001909,
+          0.09409999999999683
+        ],
+        "parent_link": "base_link"
+      }
+    },
+    "errors": [],
+    "joints": {
+      "Revolute_34": {
+        "axis": [
+          -1.0,
+          6.2653729675346706e-15,
+          4.282532733625175e-15
+        ],
+        "child_link": "front_right_wheel",
+        "closing_source": "",
+        "fusion_source": "regular",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "continuous",
+        "limits": null,
+        "name": "Revolute_34",
+        "origin_global": [
+          0.14406347744763454,
+          -0.13228758006550162,
+          0.21050734870769955
+        ],
+        "origin_method": "joint_minus_parent",
+        "origin_rpy": [
+          0.37205545660944705,
+          -6.78860462415229e-15,
+          -3.1415926535897922
+        ],
+        "origin_xyz": [
+          0.13629149027180054,
+          0.15324424993103597,
+          -0.0824747263988887
+        ],
+        "parent_link": "base_link"
+      },
+      "Revolute_35": {
+        "axis": [
+          -1.0,
+          9.877959319896239e-15,
+          4.121867202310235e-15
+        ],
+        "child_link": "back_right_wheel",
+        "closing_source": "",
+        "fusion_source": "regular",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "continuous",
+        "limits": null,
+        "name": "Revolute_35",
+        "origin_global": [
+          -0.07842502241430492,
+          -0.1322875800654967,
+          0.21050734870769827
+        ],
+        "origin_method": "joint_minus_parent",
+        "origin_rpy": [
+          -1.4783022417594618,
+          -8.85890957256278e-15,
+          -3.1415926535897882
+        ],
+        "origin_xyz": [
+          0.13629149027179935,
+          -0.0692442499309794,
+          -0.08247472639888868
+        ],
+        "parent_link": "base_link"
+      },
+      "Revolute_39": {
+        "axis": [
+          -1.0,
+          2.816348296393115e-16,
+          1.9453199652132793e-16
+        ],
+        "child_link": "back_left_wheel",
+        "closing_source": "",
+        "fusion_source": "regular",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "continuous",
+        "limits": null,
+        "name": "Revolute_39",
+        "origin_global": [
+          -0.07942502241429714,
+          0.14572519166173886,
+          0.21050734869999568
+        ],
+        "origin_method": "joint_minus_parent",
+        "origin_rpy": [
+          0.8228115355449919,
+          -1.73638314098028e-14,
+          -4.453604114786039e-15
+        ],
+        "origin_xyz": [
+          -0.14172128145555302,
+          -0.07024424993097583,
+          -0.08247472639888959
+        ],
+        "parent_link": "base_link"
+      },
+      "Revolute_40": {
+        "axis": [
+          -1.0,
+          7.443454178233189e-15,
+          -3.714295693814684e-15
+        ],
+        "child_link": "front_left_wheel",
+        "closing_source": "",
+        "fusion_source": "regular",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "continuous",
+        "limits": null,
+        "name": "Revolute_40",
+        "origin_global": [
+          0.14306347744764378,
+          0.14572519166173226,
+          0.21050734870000046
+        ],
+        "origin_method": "joint_minus_parent",
+        "origin_rpy": [
+          1.8111215650434869,
+          -7.078748052607308e-15,
+          -2.362103486739507e-14
+        ],
+        "origin_xyz": [
+          -0.1417212814555501,
+          0.152244249931041,
+          -0.08247472639888612
+        ],
+        "parent_link": "base_link"
+      },
+      "Rigid_32": {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "child_link": "lidar_link",
+        "closing_source": "",
+        "fusion_source": "as_built",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "fixed",
+        "limits": null,
+        "name": "Rigid_32",
+        "origin_global": [
+          0.03261922751665642,
+          0.006768805803020749,
+          0.3870820751027342
+        ],
+        "origin_method": "child_minus_parent",
+        "origin_rpy": [
+          1.1423248668298978e-16,
+          2.8624019653722936e-15,
+          1.5707963267948908
+        ],
+        "origin_xyz": [
+          -0.0027648955918869,
+          0.04180000000001909,
+          0.09409999999999683
+        ],
+        "parent_link": "base_link"
+      },
+      "Rigid_37": {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "child_link": "imu_link",
+        "closing_source": "",
+        "fusion_source": "as_built",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "fixed",
+        "limits": null,
+        "name": "Rigid_37",
+        "origin_global": [
+          0.0739192275166562,
+          0.006518805801036597,
+          0.31552207510274344
+        ],
+        "origin_method": "child_minus_parent",
+        "origin_rpy": [
+          5.872133543234084e-17,
+          -1.7257103911324241e-15,
+          1.5707963267948957
+        ],
+        "origin_xyz": [
+          -0.002514895591885691,
+          0.08310000000003245,
+          0.022539999999999713
+        ],
+        "parent_link": "base_link"
+      },
+      "Rigid_41": {
+        "axis": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "child_link": "Dielectric",
+        "closing_source": "",
+        "fusion_source": "as_built",
+        "is_closing": false,
+        "is_mount": true,
+        "is_passive": false,
+        "joint_type": "fixed",
+        "limits": null,
+        "name": "Rigid_41",
+        "origin_global": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "origin_method": "child_minus_parent",
+        "origin_rpy": [
+          3.041124760431299e-16,
+          5.134170810215524e-15,
+          1.5707963267948954
+        ],
+        "origin_xyz": [
+          -0.0024648955918859837,
+          0.0810000000000315,
+          0.06469199951171631
+        ],
+        "parent_link": "base_link"
+      }
+    },
+    "links": {
+      "Dielectric": {
+        "area_m2": 0.006348592531716259,
+        "assembly": "Shapes",
+        "bbox_max": [
+          -5.4353228558083875e-17,
+          0.012499999999999959,
+          0.014399999999999852
+        ],
+        "bbox_min": [
+          -0.010244999999999857,
+          -0.012499999999999825,
+          -0.009461999511718647
+        ],
+        "bbox_size": [
+          0.010244999999999803,
+          0.024999999999999786,
+          0.0238619995117185
+        ],
+        "body_count": 1,
+        "clean_name": "Dielectric",
+        "collision": {
+          "mesh_path": "meshes/Shapes/Dielectric_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": [
+              0.0029696012490873862,
+              -0.006354226234895595,
+              -0.9999754023361661,
+              -0.7054362697691864,
+              0.708742639180775,
+              -0.006598537808144546,
+              0.7087671343696442,
+              0.7054385127110835,
+              -0.0023778186258215303
+            ],
+            "origin_rpy": [
+              1.5741670098208032,
+              -0.7877490228214085,
+              -1.5665867562987343
+            ],
+            "origin_xyz": [
+              -0.007312820749552808,
+              0.00013263270175789535,
+              0.0002898419913032326
+            ],
+            "shape": "box",
+            "size": [
+              0.027653120690511408,
+              0.028041741727578864,
+              0.0008654652076455051
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          -5.4353228558083875e-17,
+          0.012499999999999959,
+          0.014399999999999852
+        ],
+        "collision_bbox_min": [
+          -0.010244999999999857,
+          -0.012499999999999825,
+          -0.009461999511718647
+        ],
+        "collision_bbox_size": [
+          0.010244999999999803,
+          0.024999999999999786,
+          0.0238619995117185
+        ],
+        "collision_body_count": 590,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 1.0850016652892478e-06,
+        "color_rgb": [
+          0.9921568627450981,
+          1.0,
+          0.8431372549019608
+        ],
+        "com_link_local": [
+          -0.006421327185978482,
+          -3.9012114226137025e-05,
+          0.00035748036515817006
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          0.07181922751665565,
+          0.006468805802204643,
+          0.3576740746144619
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 5.759912489217871e-07,
+          "ixy": -1.073113811941534e-10,
+          "ixz": -1.5926922402786926e-08,
+          "iyy": 3.6295313536569e-07,
+          "iyz": 1.998784021062231e-09,
+          "izz": 3.0857642546971765e-07
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 0.00851726307252053,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "Camera_module_3_std_model_simple:1+Shapes:1+SILKSCREEN_TOP:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+HIROSE_DF37NC-30DS-04V:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+ATMEL_ATSHA204A_8UDFN:1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+PASTEMASK_BOTTOM:1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+Dielectric:1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+PASTEMASK_TOP:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND6:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (15):1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+SILKSCREEN_BOTTOM:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (4):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (18):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC1005X40N (4):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+ATMEL_ATSHA204A_SOIC8:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+FCI_SFW15R-1STE1LF:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+8:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (12):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (4):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+AGND:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MCLK:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DVDD/GPIO:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (8):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (6):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+OUTPUT:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (10):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (9):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (13):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (13):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (11):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND3:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN (5):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND8:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P1:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+LX:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1608X90N (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (4):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (5):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MD1N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VDD:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (24):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MD0N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (3):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND7:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC3 (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+OSC_2P5X2MM:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MCKN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+OE:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MD1P:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND9:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (16):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SCL (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SDA:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (16):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VA2V8:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MD0P:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC7:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND4:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC1:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC2:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (5):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+OUT (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC1005X40N (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (9):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+OUT:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (11):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (17):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (21):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC6:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (20):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P4 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VO1V8:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC1005X40N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P1 (2):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (11):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+4:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN (4):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (3):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (4):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+3:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+5:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (3):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+6:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (7):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+15:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P4:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN (3):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P3:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MCKP:1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+SOLDERMASK_BOTTOM:1",
+          "Camera_module_3_std_model_simple:1+Shapes:1+SOLDERMASK_TOP:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (15):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND1:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (22):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC0603 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SDA (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VCC (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (8):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC4:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+SOT50P160X60-6N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (14):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC2 (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+SOT95P280X145-5N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (5):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+AP3445:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1608:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+S2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+D2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC1 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+SOT95P280X145-5N (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SCL:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (8):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC1005X40N (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+G2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+EN (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+EN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (6):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC2 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+FB:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (19):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+BOURNS_SRN2512:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P4 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+D2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P1 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (7):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (3):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (9):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+IN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (19):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (18):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+IN (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (17):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+MURATA_DLP11SNXXXHL2 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (6):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+11:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (10):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+9:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+EXP_PAD:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+G2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (24):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC1005X40N (3):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+RESC0603:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+GND (5):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (14):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+S2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+13:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC7 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VIN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+PG:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+10:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+12:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1608X90N:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC3:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+VCC:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SCL (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P3 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+14:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (22):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+SDA (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+MURATA_DLP11SNXXXHL2:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (10):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+EN (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (21):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P3 (1):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+MURATA_DLP11SNXXXHL2 (1):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+NC1 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (23):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (23):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (6):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+/PWDN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DVDD:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+AFVDD:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+7:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+P2 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (20):1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC2012:1",
+          "Camera_module_3_std_model_simple:1+Symbols:1+CAPC1005X55N (7):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+DGND5:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+2 (2):1",
+          "Camera_module_3_std_model_simple:1+Pins:1+MECHANICAL PIN:1",
+          "Camera_module_3_std_model_simple:1+Pins:1+1 (12):1"
+        ],
+        "mesh_bake_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_collision": "meshes/Shapes/Dielectric_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Shapes/Dielectric.dae",
+        "needs_mesh_bake": false,
+        "occurrence_path": "Camera_module_3_std_model_simple:1+Shapes:1+Dielectric:1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "Rigid Group 1",
+        "source_world_rotation": [
+          0.9999999999999879,
+          8.464555022909178e-15,
+          -2.9926475489587126e-15,
+          -1.77738432824352e-14,
+          0.9999999999999954,
+          2.7702490646674996e-11,
+          7.216965831297649e-16,
+          -2.770229755650149e-11,
+          0.999999999999994
+        ],
+        "urdf_name": "Dielectric",
+        "volume_m3": 1.0850016652892478e-06,
+        "wants_accurate_collision": false
+      },
+      "back_left_wheel": {
+        "area_m2": 0.022460668149532972,
+        "assembly": "Mecanum_Wheel_Assembly",
+        "bbox_max": [
+          0.04040000000000756,
+          0.040000000000004365,
+          0.04000000000000776
+        ],
+        "bbox_min": [
+          -1.2048019256420884e-16,
+          -0.04000000000000439,
+          -0.04000000000000767
+        ],
+        "bbox_size": [
+          0.04040000000000768,
+          0.08000000000000876,
+          0.08000000000001542
+        ],
+        "body_count": 1,
+        "clean_name": "Mecanum_Wheel_80mm",
+        "collision": {
+          "mesh_path": "meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              0.020200000000003722,
+              -1.3877787807814457e-17,
+              4.5102810375396984e-17
+            ],
+            "shape": "box",
+            "size": [
+              0.04040000000000768,
+              0.08000000000000876,
+              0.08000000000001542
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.04040000000000756,
+          0.040000000000004365,
+          0.04000000000000776
+        ],
+        "collision_bbox_min": [
+          -1.2048019256420884e-16,
+          -0.04000000000000439,
+          -0.04000000000000767
+        ],
+        "collision_bbox_size": [
+          0.04040000000000768,
+          0.08000000000000876,
+          0.08000000000001542
+        ],
+        "collision_body_count": 2,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.00019010485204853594,
+        "color_rgb": [
+          0.6274509803921569,
+          0.6274509803921569,
+          0.6274509803921569
+        ],
+        "com_link_local": [
+          0.01983499955271279,
+          -3.7102239179288893e-08,
+          6.694597794902525e-08
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          -0.07942502241429636,
+          0.1861251916617426,
+          0.21050734869887586
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.001090286716082369,
+          "ixy": 9.172279547127236e-10,
+          "ixz": -1.6549256345736081e-09,
+          "iyy": 0.0007236930400454774,
+          "iyz": 1.6247517241494036e-10,
+          "izz": 0.0007236928851912928
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 1.492323088581007,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "Mecanum Wheel Assembly:4+Mecanum Wheel (80mm):1",
+          "Mecanum Wheel Assembly:4+Motor-Wheel Coupler:1"
+        ],
+        "mesh_bake_offset": [
+          -0.04040000000000747,
+          9.530481801514127e-17,
+          -8.203925671382022e-17
+        ],
+        "mesh_collision": "meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae",
+        "needs_mesh_bake": true,
+        "occurrence_path": "Mecanum Wheel Assembly:4+Mecanum Wheel (80mm):1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "back_left_wheel",
+        "source_world_rotation": [
+          -1.8438067956549985e-14,
+          0.680162871120832,
+          -0.7330610266197624,
+          -1.0000000000000924,
+          2.030860994880615e-11,
+          1.8865149494305934e-11,
+          2.771996550039002e-11,
+          0.7330610266196903,
+          0.6801628711208147
+        ],
+        "urdf_name": "back_left_wheel",
+        "volume_m3": 0.00019010485204853594,
+        "wants_accurate_collision": false
+      },
+      "back_right_wheel": {
+        "area_m2": 0.022460668149532972,
+        "assembly": "Mecanum_Wheel_Assembly",
+        "bbox_max": [
+          0.04040000000002102,
+          0.0400000000000202,
+          0.04000000000001164
+        ],
+        "bbox_min": [
+          -3.7061741752237897e-16,
+          -0.04000000000002038,
+          -0.04000000000001178
+        ],
+        "bbox_size": [
+          0.04040000000002139,
+          0.08000000000004058,
+          0.08000000000002341
+        ],
+        "body_count": 1,
+        "clean_name": "Mecanum_Wheel_80mm",
+        "collision": {
+          "mesh_path": "meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              0.020200000000010328,
+              -9.020562075079397e-17,
+              -7.28583859910259e-17
+            ],
+            "shape": "box",
+            "size": [
+              0.04040000000002139,
+              0.08000000000004058,
+              0.08000000000002341
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.04040000000002102,
+          0.0400000000000202,
+          0.04000000000001164
+        ],
+        "collision_bbox_min": [
+          -3.7061741752237897e-16,
+          -0.04000000000002038,
+          -0.04000000000001178
+        ],
+        "collision_bbox_size": [
+          0.04040000000002139,
+          0.08000000000004058,
+          0.08000000000002341
+        ],
+        "collision_body_count": 2,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.00019010485204853594,
+        "color_rgb": [
+          0.6274509803921569,
+          0.6274509803921569,
+          0.6274509803921569
+        ],
+        "com_link_local": [
+          0.01983499955271936,
+          -3.710223926644468e-08,
+          6.694597783492647e-08
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          -0.07842502241430532,
+          -0.1726875800655071,
+          0.21050734870881713
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.0010902867160830934,
+          "ixy": 9.172279470596253e-10,
+          "ixz": -1.6549256457792725e-09,
+          "iyy": 0.0007236930400458851,
+          "iyz": 1.6247550516764482e-10,
+          "izz": 0.0007236928851912884
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 1.492323088581007,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "Mecanum Wheel Assembly:2+Mecanum Wheel (80mm):1",
+          "Mecanum Wheel Assembly:2+Motor-Wheel Coupler:1"
+        ],
+        "mesh_bake_offset": [
+          -0.04040000000002084,
+          1.7990518239422468e-16,
+          1.929579941276889e-16
+        ],
+        "mesh_collision": "meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae",
+        "needs_mesh_bake": true,
+        "occurrence_path": "Mecanum Wheel Assembly:2+Mecanum Wheel (80mm):1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "back_right_wheel",
+        "source_world_rotation": [
+          9.171762328100578e-15,
+          -0.09236225788752835,
+          -0.9957254708593456,
+          1.0000000000002585,
+          -2.7579583261251085e-11,
+          2.5630631779636092e-12,
+          -2.7693742759412256e-11,
+          -0.9957254708594357,
+          0.09236225788734165
+        ],
+        "urdf_name": "back_right_wheel",
+        "volume_m3": 0.00019010485204853594,
+        "wants_accurate_collision": false
+      },
+      "base_link": {
+        "area_m2": 0.33652367181170284,
+        "assembly": "base_link",
+        "bbox_max": [
+          0.14229149027180438,
+          0.1757442499310565,
+          0.08399999999999704
+        ],
+        "bbox_min": [
+          -0.1477212814555561,
+          -0.09274424993099598,
+          -0.11001194523844059
+        ],
+        "bbox_size": [
+          0.2900127717273605,
+          0.2684884998620525,
+          0.19401194523843762
+        ],
+        "body_count": 1,
+        "clean_name": "Wheel_Chassis_Right",
+        "collision": {
+          "mesh_path": "meshes/base_link/base_link_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": [
+              -0.3125366962217903,
+              0.9417968936545904,
+              -0.12385243080913938,
+              -0.9492469810786023,
+              -0.304799100022345,
+              0.07763811910864697,
+              0.035369229959503375,
+              0.14183130729191243,
+              0.989258761823184
+            ],
+            "origin_rpy": [
+              0.14240088493778802,
+              -0.03537660849480807,
+              -1.8888646604670083
+            ],
+            "origin_xyz": [
+              -0.010142569754742335,
+              0.03811998142376725,
+              0.013856932638262967
+            ],
+            "shape": "box",
+            "size": [
+              0.30579389340087987,
+              0.28124161736255093,
+              0.14953205948802778
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.14229149027180438,
+          0.1757442499310565,
+          0.08399999999999704
+        ],
+        "collision_bbox_min": [
+          -0.1477212814555561,
+          -0.09274424993099598,
+          -0.11001194523844059
+        ],
+        "collision_bbox_size": [
+          0.2900127717273605,
+          0.2684884998620525,
+          0.19401194523843762
+        ],
+        "collision_body_count": 26,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.0006458170909746294,
+        "color_rgb": [
+          0.09803921568627451,
+          0.09803921568627451,
+          0.09803921568627451
+        ],
+        "com_link_local": [
+          -0.0027183162830980937,
+          0.04256026616910747,
+          -0.030887088854133972
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          -0.009180772483347812,
+          0.004003910208528941,
+          0.29298207510281266
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.052222585567275624,
+          "ixy": -6.739735764274752e-05,
+          "ixz": -3.110755873345864e-08,
+          "iyy": 0.04272560478229262,
+          "iyz": -0.00023282096620831015,
+          "izz": 0.07744377571318717
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 5.069664164150842,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "base_link:1+Frame:1",
+          "base_link:1+Wheel Chassis Left:1",
+          "base_link:1+Sensor Array:1",
+          "base_link:1+Electronics Hub:1",
+          "base_link:1+Battery Box:1",
+          "base_link:1+Wheel Chassis Right:1",
+          "base_link:1+Suspension Subassembly:1+Metal DC Geared Motor w/Encoder - 6V 210RPM 10Kg.cm:1",
+          "base_link:1+Suspension Subassembly:1+Motor Suspension Face Plate:1",
+          "base_link:1+Suspension Subassembly:1+Suspension Arm Lower:1",
+          "base_link:1+Suspension Subassembly:1+Suspension Arm Upper:1",
+          "base_link:1+Suspension Subassembly:2+Metal DC Geared Motor w/Encoder - 6V 210RPM 10Kg.cm:1",
+          "base_link:1+Suspension Subassembly:2+Motor Suspension Face Plate:1",
+          "base_link:1+Suspension Subassembly:2+Suspension Arm Lower:1",
+          "base_link:1+Suspension Subassembly:2+Suspension Arm Upper:1",
+          "base_link:1+Suspension Subassembly:3+Metal DC Geared Motor w/Encoder - 6V 210RPM 10Kg.cm:1",
+          "base_link:1+Suspension Subassembly:3+Motor Suspension Face Plate:1",
+          "base_link:1+Suspension Subassembly:3+Suspension Arm Lower:1",
+          "base_link:1+Suspension Subassembly:3+Suspension Arm Upper:1",
+          "base_link:1+Suspension Subassembly:4+Metal DC Geared Motor w/Encoder - 6V 210RPM 10Kg.cm:1",
+          "base_link:1+Suspension Subassembly:4+Motor Suspension Face Plate:1",
+          "base_link:1+Suspension Subassembly:4+Suspension Arm Lower:1",
+          "base_link:1+Suspension Subassembly:4+Suspension Arm Upper:1"
+        ],
+        "mesh_bake_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_collision": "meshes/base_link/base_link_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/base_link/base_link.dae",
+        "needs_mesh_bake": false,
+        "occurrence_path": "base_link:1+Wheel Chassis Right:1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "base_link",
+        "source_world_rotation": [
+          -1.664499684886065e-14,
+          1.000000000000341,
+          -5.85586739285297e-15,
+          -1.00000000000042,
+          -1.3984463841576635e-14,
+          2.770260166897735e-11,
+          2.7702071102866276e-11,
+          6.855191901435789e-15,
+          0.9999999999999888
+        ],
+        "urdf_name": "base_link",
+        "volume_m3": 0.0006458170909746294,
+        "wants_accurate_collision": false
+      },
+      "front_left_wheel": {
+        "area_m2": 0.022460668149532972,
+        "assembly": "Mecanum_Wheel_Assembly",
+        "bbox_max": [
+          0.04040000000002831,
+          0.04000000000001577,
+          0.04000000000002765
+        ],
+        "bbox_min": [
+          -4.595370131641386e-16,
+          -0.040000000000015926,
+          -0.04000000000002737
+        ],
+        "bbox_size": [
+          0.04040000000002877,
+          0.0800000000000317,
+          0.08000000000005503
+        ],
+        "body_count": 1,
+        "clean_name": "Mecanum_Wheel_80mm",
+        "collision": {
+          "mesh_path": "meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              0.020200000000013926,
+              -7.632783294297951e-17,
+              1.4224732503009818e-16
+            ],
+            "shape": "box",
+            "size": [
+              0.04040000000002877,
+              0.0800000000000317,
+              0.08000000000005503
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.04040000000002831,
+          0.04000000000001577,
+          0.04000000000002765
+        ],
+        "collision_bbox_min": [
+          -4.595370131641386e-16,
+          -0.040000000000015926,
+          -0.04000000000002737
+        ],
+        "collision_bbox_size": [
+          0.04040000000002877,
+          0.0800000000000317,
+          0.08000000000005503
+        ],
+        "collision_body_count": 2,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.00019010485204853594,
+        "color_rgb": [
+          0.6274509803921569,
+          0.6274509803921569,
+          0.6274509803921569
+        ],
+        "com_link_local": [
+          0.019834999552722905,
+          -3.710223922858931e-08,
+          6.69459780662935e-08
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          0.1430634774476453,
+          0.1861251916617463,
+          0.210507348698881
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.0010902867160834826,
+          "ixy": 9.172279490042095e-10,
+          "ixz": -1.65492562540551e-09,
+          "iyy": 0.0007236930400456564,
+          "iyz": 1.624749264809813e-10,
+          "izz": 0.0007236928851917608
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 1.492323088581007,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "Mecanum Wheel Assembly:3+Mecanum Wheel (80mm):1",
+          "Mecanum Wheel Assembly:3+Motor-Wheel Coupler:1"
+        ],
+        "mesh_bake_offset": [
+          -0.04040000000002809,
+          1.6359622392002854e-16,
+          -3.1794161960846654e-16
+        ],
+        "mesh_collision": "meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae",
+        "needs_mesh_bake": true,
+        "occurrence_path": "Mecanum Wheel Assembly:3+Mecanum Wheel (80mm):1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "front_left_wheel",
+        "source_world_rotation": [
+          -3.7605498709171836e-14,
+          -0.23801853011098614,
+          -0.9712606134936825,
+          -1.0000000000003477,
+          2.692623318916001e-11,
+          -6.5665549835598715e-12,
+          2.7709680417039898e-11,
+          0.9712606134935985,
+          -0.23801853011125218
+        ],
+        "urdf_name": "front_left_wheel",
+        "volume_m3": 0.00019010485204853594,
+        "wants_accurate_collision": false
+      },
+      "front_right_wheel": {
+        "area_m2": 0.022460668149532972,
+        "assembly": "Mecanum_Wheel_Assembly",
+        "bbox_max": [
+          0.04040000000001427,
+          0.04000000000001265,
+          0.040000000000007224
+        ],
+        "bbox_min": [
+          -7.136647160558349e-16,
+          -0.04000000000001304,
+          -0.04000000000000748
+        ],
+        "bbox_size": [
+          0.040400000000014986,
+          0.08000000000002569,
+          0.0800000000000147
+        ],
+        "body_count": 1,
+        "clean_name": "Mecanum_Wheel_80mm",
+        "collision": {
+          "mesh_path": "meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              0.02020000000000678,
+              -1.942890293094024e-16,
+              -1.2836953722228372e-16
+            ],
+            "shape": "box",
+            "size": [
+              0.040400000000014986,
+              0.08000000000002569,
+              0.0800000000000147
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.04040000000001427,
+          0.04000000000001265,
+          0.040000000000007224
+        ],
+        "collision_bbox_min": [
+          -7.136647160558349e-16,
+          -0.04000000000001304,
+          -0.04000000000000748
+        ],
+        "collision_bbox_size": [
+          0.040400000000014986,
+          0.08000000000002569,
+          0.0800000000000147
+        ],
+        "collision_body_count": 2,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.00019010485204853594,
+        "color_rgb": [
+          0.6274509803921569,
+          0.6274509803921569,
+          0.6274509803921569
+        ],
+        "com_link_local": [
+          0.019834999552715976,
+          -3.710223937842096e-08,
+          6.694597776934549e-08
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          0.14406347744763406,
+          -0.17268758006550858,
+          0.21050734870881851
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.0010902867160827196,
+          "ixy": 9.172279368827456e-10,
+          "ixz": -1.6549256511073015e-09,
+          "iyy": 0.0007236930400457007,
+          "iyz": 1.6247541699258593e-10,
+          "izz": 0.0007236928851912135
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": true,
+        "mass_kg": 1.492323088581007,
+        "material_name": "Steel",
+        "merged_member_paths": [
+          "Mecanum Wheel Assembly:1+Mecanum Wheel (80mm):1",
+          "Mecanum Wheel Assembly:1+Motor-Wheel Coupler:1"
+        ],
+        "mesh_bake_offset": [
+          -0.04040000000001394,
+          4.059659783280871e-16,
+          3.544701280702265e-16
+        ],
+        "mesh_collision": "meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae",
+        "needs_mesh_bake": true,
+        "occurrence_path": "Mecanum Wheel Assembly:1+Mecanum Wheel (80mm):1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": "front_right_wheel",
+        "source_world_rotation": [
+          1.3109298183998096e-14,
+          -0.931582091804726,
+          0.36353102512555596,
+          1.0000000000001728,
+          1.0069615457519198e-11,
+          2.5789176124219876e-11,
+          -2.7695813064358292e-11,
+          0.36353102512568697,
+          0.9315820918047044
+        ],
+        "urdf_name": "front_right_wheel",
+        "volume_m3": 0.00019010485204853594,
+        "wants_accurate_collision": false
+      },
+      "imu_link": {
+        "area_m2": 0.0006020921391001356,
+        "assembly": "Land_V2_Assembly",
+        "bbox_max": [
+          0.013900000000000001,
+          0.00545,
+          0.0005000000000000001
+        ],
+        "bbox_min": [
+          -0.0096,
+          -0.00529,
+          -0.00154
+        ],
+        "bbox_size": [
+          0.0235,
+          0.01074,
+          0.00204
+        ],
+        "body_count": 1,
+        "clean_name": "imu_link",
+        "collision": {
+          "mesh_path": "meshes/Land_V2_Assembly/imu_link_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              0.002150000000000001,
+              7.999999999999978e-05,
+              -0.0005199999999999998
+            ],
+            "shape": "box",
+            "size": [
+              0.0235,
+              0.01074,
+              0.00204
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.013900000000000001,
+          0.00545,
+          0.0005000000000000001
+        ],
+        "collision_bbox_min": [
+          -0.0096,
+          -0.00529,
+          -0.00154
+        ],
+        "collision_bbox_size": [
+          0.0235,
+          0.01074,
+          0.00204
+        ],
+        "collision_body_count": 1,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 2.3405760368027125e-07,
+        "color_rgb": [
+          0.6274509803921569,
+          0.6274509803921569,
+          0.6274509803921569
+        ],
+        "com_link_local": [
+          0.001769889473811517,
+          7.673420149145326e-05,
+          -0.0010173398945018336
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          0.0739192275166562,
+          0.006518805801036597,
+          0.31552207510274344
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 1.74719565093153e-08,
+          "ixy": 3.145141108731416e-11,
+          "ixz": 2.8255794337964805e-10,
+          "iyy": 7.622500608719037e-08,
+          "iyz": 4.860150280671448e-12,
+          "izz": 9.321176327364076e-08
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": false,
+        "mass_kg": 0.0018373521888901292,
+        "material_name": "Steel",
+        "merged_member_paths": [],
+        "mesh_bake_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_collision": "meshes/Land_V2_Assembly/imu_link_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Land_V2_Assembly/imu_link.dae",
+        "needs_mesh_bake": false,
+        "occurrence_path": "imu_link:1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": null,
+        "source_world_rotation": [
+          1.0000000000003313,
+          1.8233213916309293e-14,
+          -6.940233863362594e-15,
+          -1.75024432214421e-14,
+          1.000000000000415,
+          2.7702374726909526e-11,
+          7.581577784472282e-15,
+          -2.7702542947653723e-11,
+          0.9999999999999836
+        ],
+        "urdf_name": "imu_link",
+        "volume_m3": 2.3405760368027125e-07,
+        "wants_accurate_collision": false
+      },
+      "lidar_link": {
+        "area_m2": 0.014295100867991014,
+        "assembly": "Land_V2_Assembly",
+        "bbox_max": [
+          0.027800000000000002,
+          0.027800000000000002,
+          0.010199999999999996
+        ],
+        "bbox_min": [
+          -0.037001000000000006,
+          -0.027800000000000012,
+          -0.031099999999999996
+        ],
+        "bbox_size": [
+          0.06480100000000001,
+          0.05560000000000001,
+          0.04129999999999999
+        ],
+        "body_count": 1,
+        "clean_name": "lidar_link",
+        "collision": {
+          "mesh_path": "meshes/Land_V2_Assembly/lidar_link_collision.stl",
+          "origin_rpy": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "origin_xyz": null,
+          "primitive": {
+            "orientation_matrix": null,
+            "origin_rpy": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "origin_xyz": [
+              -0.004600500000000002,
+              -5.204170427930421e-18,
+              -0.010450000000000001
+            ],
+            "shape": "cylinder",
+            "size": [
+              0.030100250000000005,
+              0.0,
+              0.04129999999999999
+            ]
+          },
+          "source": "primitive"
+        },
+        "collision_bbox_max": [
+          0.027800000000000002,
+          0.027800000000000002,
+          0.010199999999999996
+        ],
+        "collision_bbox_min": [
+          -0.037001000000000006,
+          -0.027800000000000012,
+          -0.031099999999999996
+        ],
+        "collision_bbox_size": [
+          0.06480100000000001,
+          0.05560000000000001,
+          0.04129999999999999
+        ],
+        "collision_body_count": 1,
+        "collision_body_names": [],
+        "collision_excluded_body_names": [],
+        "collision_override": "",
+        "collision_volume_m3": 0.00010251155082797824,
+        "color_rgb": [
+          0.09803921568627451,
+          0.09803921568627451,
+          0.09803921568627451
+        ],
+        "com_link_local": [
+          -7.749741355290157e-05,
+          7.714283777998004e-08,
+          -0.012638452586382307
+        ],
+        "frame_rebase_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "frame_rule": "keep",
+        "global_position": [
+          0.03261922751665642,
+          0.006768805803020749,
+          0.3870820751027342
+        ],
+        "has_collision_exclusions": false,
+        "has_explicit_collision": false,
+        "has_visual_mesh": true,
+        "inertia_at_com": {
+          "ixx": 0.0002751605791011381,
+          "ixy": -2.4671414894138185e-09,
+          "ixz": -8.277243276972728e-07,
+          "iyy": 0.0002771976866060708,
+          "iyz": -3.475674458398792e-10,
+          "izz": 0.0003414675561610125
+        },
+        "inertial_origin_xyz": null,
+        "is_empty": false,
+        "is_frame_only": false,
+        "is_merged": false,
+        "mass_kg": 0.8047156739996291,
+        "material_name": "Steel",
+        "merged_member_paths": [],
+        "mesh_bake_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_collision": "meshes/Land_V2_Assembly/lidar_link_collision.stl",
+        "mesh_collision_input": "",
+        "mesh_origin_rpy": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "mesh_visual": "meshes/Land_V2_Assembly/lidar_link.dae",
+        "needs_mesh_bake": false,
+        "occurrence_path": "lidar_link:1",
+        "rigid_group_collision_offset": null,
+        "rigid_group_collision_path": null,
+        "rigid_group_name": null,
+        "source_world_rotation": [
+          1.0000000000000584,
+          1.8171981576345737e-14,
+          -3.71238777917446e-15,
+          -2.247531878843427e-14,
+          1.0000000000000706,
+          2.7702192150502085e-11,
+          2.9934654281036763e-15,
+          -2.770248743649293e-11,
+          0.9999999999999614
+        ],
+        "urdf_name": "lidar_link",
+        "volume_m3": 0.00010251155082797824,
+        "wants_accurate_collision": false
+      }
+    },
+    "name": "Land_V2_Assembly",
+    "root_link": "base_link",
+    "warnings": [
+      "Joint 'Revolute_2' is internal to a rigid group (both endpoints \u2192 base_link/Wheel_Chassis_Right).  Dropped \u2014 rigid groups represent one rigid body, joints between members are ignored.  Move this joint to assemble between rigid groups instead.",
+      "Joint 'Revolute_4' is internal to a rigid group (both endpoints \u2192 base_link/Wheel_Chassis_Right).  Dropped \u2014 rigid groups represent one rigid body, joints between members are ignored.  Move this joint to assemble between rigid groups instead.",
+      "Multi-parent link detected (child=lidar_link:1): keeping 'Rigid_32' as the URDF tree parent; routing ['Rigid_33'] to ``closing_joints`` (sidecar) \u2014 closed kinematic loop.  Tag the loop-closing joint(s) with prefix ``!closing_*`` in Fusion to make the choice explicit and avoid this warning."
+    ]
+  }
+}

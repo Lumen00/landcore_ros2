@@ -1,0 +1,281 @@
+<?xml version="1.0"?>
+<robot name="Land_V2_Assembly">
+
+  <!-- Materials -->
+  <material name="Steel">
+    <color rgba="0.627 0.627 0.627 1.0"/>
+  </material>
+
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0.042560 0.002718 -0.030887" rpy="0 0 0"/>
+      <mass value="5.069664"/>
+      <inertia ixx="4.272560e-02" ixy="6.739736e-05" ixz="-2.328210e-04"
+               iyy="5.222259e-02" iyz="3.110826e-08" izz="7.744378e-02"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="lidar_link">
+    <inertial>
+      <origin xyz="-0.000077 0.000000 -0.012638" rpy="0 0 0"/>
+      <mass value="0.804716"/>
+      <inertia ixx="2.751606e-04" ixy="-2.467141e-09" ixz="-8.277243e-07"
+               iyy="2.771977e-04" iyz="-3.475674e-10" izz="3.414676e-04"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="imu_link">
+    <inertial>
+      <origin xyz="0.001770 0.000077 -0.001017" rpy="0 0 0"/>
+      <mass value="0.001837"/>
+      <inertia ixx="1.000000e-06" ixy="3.145141e-11" ixz="2.825579e-10"
+               iyy="1.000000e-06" iyz="4.860150e-12" izz="1.000000e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="camera_link">
+    <inertial>
+      <origin xyz="-0.006421 -0.000039 0.000357" rpy="0 0 0"/>
+      <mass value="0.008517"/>
+      <inertia ixx="1.000000e-06" ixy="-1.073114e-10" ixz="-1.592692e-08"
+               iyy="1.000000e-06" iyz="1.998784e-09" izz="1.000000e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="front_right_wheel">
+    <inertial>
+      <origin xyz="0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+      <mass value="1.492323"/>
+      <inertia ixx="7.236931e-04" ixy="-2.045480e-11" ixz="0.000000e+00"
+               iyy="7.236928e-04" iyz="-1.892112e-09" izz="1.090287e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="back_right_wheel">
+    <inertial>
+      <origin xyz="0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+      <mass value="1.492323"/>
+      <inertia ixx="7.236931e-04" ixy="-2.045480e-11" ixz="0.000000e+00"
+               iyy="7.236928e-04" iyz="-1.892112e-09" izz="1.090287e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="back_left_wheel">
+    <inertial>
+      <origin xyz="-0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+      <mass value="1.492323"/>
+      <inertia ixx="7.236928e-04" ixy="2.045480e-11" ixz="-1.892112e-09"
+               iyy="7.236931e-04" iyz="0.000000e+00" izz="1.090287e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="front_left_wheel">
+    <inertial>
+      <origin xyz="-0.000000 -0.000000 0.020565" rpy="0 0 0"/>
+      <mass value="1.492323"/>
+      <inertia ixx="7.236928e-04" ixy="2.045479e-11" ixz="-1.892111e-09"
+               iyy="7.236931e-04" iyz="0.000000e+00" izz="1.090287e-03"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
+      </geometry>
+      <material name="Steel"/>
+    </visual>
+    <collision>
+      <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
+      <geometry>
+        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="lidar_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="lidar_link"/>
+    <origin xyz="0.041800 0.002765 0.094100" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.083100 0.002515 0.022540" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="camera_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.081000 0.002465 0.064692" rpy="-0.000000 0.000000 0.000000"/>
+  </joint>
+
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_right_wheel"/>
+    <origin xyz="0.153244 -0.136291 -0.082475" rpy="1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="back_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_right_wheel"/>
+    <origin xyz="-0.069244 -0.136291 -0.082475" rpy="1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="back_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="back_left_wheel"/>
+    <origin xyz="-0.070244 0.141721 -0.082475" rpy="-1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="front_left_wheel"/>
+    <origin xyz="0.152244 0.141721 -0.082475" rpy="-1.570796 0.000000 0.000000"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+    <limit effort="100.0" velocity="1.00"/>
+  </joint>
+
+  <!-- ROS 2 control: generated generic system -->
+  <ros2_control name="Land_V2_Assembly_system" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+      <param name="cmd_topic">sim/Land_V2_Assembly_system/cmd</param>
+      <param name="state_topic">sim/Land_V2_Assembly_system/state</param>
+    </hardware>
+
+    <joint name="back_left_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="back_right_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_left_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <command_interface name="position"/>
+      <command_interface name="velocity"/>
+      <state_interface name="position">
+        <param name="initial_value">0.0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="effort"/>
+    </joint>
+  </ros2_control>
+
+</robot>
