@@ -2,15 +2,15 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="Land_V2_Assembly">
 
   <!-- Materials (shared across all assemblies) -->
-  <material name="Steel">
-    <color rgba="0.627 0.627 0.627 1.0"/>
-  </material>
+  <!-- <material name="Steel"> -->
+    <!-- <color rgba="0.627 0.627 0.627 1.0"/> -->
+  <!-- </material> -->
 
   <!-- Assembly includes -->
-  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Mecanum_Wheel_Assembly.urdf.xacro"/>
-  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Shapes.urdf.xacro"/>
-  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/body.urdf.xacro"/>
-  <xacro:include filename="$(find Land_V2_Assembly_description)/urdf/assemblies/Land_V2_Assembly.urdf.xacro"/>
+  <xacro:include filename="$(find land_v2_description)/urdf/assemblies/Mecanum_Wheel_Assembly.urdf.xacro"/>
+  <xacro:include filename="$(find land_v2_description)/urdf/assemblies/Shapes.urdf.xacro"/>
+  <xacro:include filename="$(find land_v2_description)/urdf/assemblies/body.urdf.xacro"/>
+  <xacro:include filename="$(find land_v2_description)/urdf/assemblies/Land_V2_Assembly.urdf.xacro"/>
 
   <!-- Instantiate assemblies -->
   <xacro:Mecanum_Wheel_Assembly prefix=""/>
@@ -75,11 +75,11 @@
   </joint>
 
   <!-- ROS 2 control: generated generic system -->
-  <ros2_control name="Land_V2_Assembly_system" type="system">
+  <ros2_control name="land_v2_system" type="system">
     <hardware>
       <plugin>mock_components/GenericSystem</plugin>
-      <param name="cmd_topic">sim/Land_V2_Assembly_system/cmd</param>
-      <param name="state_topic">sim/Land_V2_Assembly_system/state</param>
+      <param name="cmd_topic">sim/land_v2_system/cmd</param>
+      <param name="state_topic">sim/land_v2_system/state</param>
     </hardware>
 
     <joint name="back_left_wheel_joint">

@@ -14,14 +14,14 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
         </geometry>
-        <material name="Steel"/>
+        <!-- <material name="Steel"/> -->
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -36,14 +36,14 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
         </geometry>
-        <material name="Steel"/>
+        <!-- <material name="Steel"/> -->
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -58,14 +58,14 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
         </geometry>
-        <material name="Steel"/>
+        <!-- <material name="Steel"/> -->
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>
@@ -80,14 +80,14 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
         </geometry>
-        <material name="Steel"/>
+        <!-- <material name="Steel"/> -->
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>

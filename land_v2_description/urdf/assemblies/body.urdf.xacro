@@ -14,14 +14,14 @@
       <visual>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link.dae" scale="1 1 1"/>
+          <mesh filename="package://land_v2_description/meshes/body/base_link.dae" scale="1 1 1"/>
         </geometry>
-        <material name="Steel"/>
+        <!-- <material name="Steel"/> -->
       </visual>
       <collision>
         <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
         <geometry>
-          <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link_collision.stl" scale="0.01 0.01 0.01"/>
+          <mesh filename="package://land_v2_description/meshes/body/base_link_collision.stl" scale="0.01 0.01 0.01"/>
         </geometry>
       </collision>
     </link>

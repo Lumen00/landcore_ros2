@@ -2,9 +2,9 @@
 <robot name="Land_V2_Assembly">
 
   <!-- Materials -->
-  <material name="Steel">
-    <color rgba="0.627 0.627 0.627 1.0"/>
-  </material>
+  <!-- <material name="Steel"> -->
+    <!-- <color rgba="0.627 0.627 0.627 1.0"/> -->
+  <!-- </material> -->
 
   <link name="base_link">
     <inertial>
@@ -16,14 +16,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/body/base_link.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 -0.000000 -1.570796"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/body/base_link_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/body/base_link_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -38,14 +38,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Land_V2_Assembly/lidar_link.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/lidar_link_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Land_V2_Assembly/lidar_link_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -60,14 +60,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Land_V2_Assembly/imu_link.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Land_V2_Assembly/imu_link_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Land_V2_Assembly/imu_link_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -82,14 +82,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Shapes/camera_link.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.000000" rpy="0.000000 0.000000 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Shapes/camera_link_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Shapes/camera_link_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -104,14 +104,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -126,14 +126,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.040400" rpy="1.064701 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_right_wheel_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -148,14 +148,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/back_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -170,14 +170,14 @@
     <visual>
       <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel.dae" scale="1 1 1"/>
       </geometry>
-      <material name="Steel"/>
+      <!-- <material name="Steel"/> -->
     </visual>
     <collision>
       <origin xyz="0.000000 0.000000 0.040400" rpy="2.635497 1.570796 0.000000"/>
       <geometry>
-        <mesh filename="package://Land_V2_Assembly_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://land_v2_description/meshes/Mecanum_Wheel_Assembly/front_left_wheel_collision.stl" scale="0.01 0.01 0.01"/>
       </geometry>
     </collision>
   </link>
@@ -233,11 +233,12 @@
   </joint>
 
   <!-- ROS 2 control: generated generic system -->
-  <ros2_control name="Land_V2_Assembly_system" type="system">
+  <!-- replace with old controls for land v1. -->
+  <ros2_control name="land_v2_system" type="system">
     <hardware>
       <plugin>mock_components/GenericSystem</plugin>
-      <param name="cmd_topic">sim/Land_V2_Assembly_system/cmd</param>
-      <param name="state_topic">sim/Land_V2_Assembly_system/state</param>
+      <param name="cmd_topic">sim/land_v2_system/cmd</param>
+      <param name="state_topic">sim/land_v2_system/state</param>
     </hardware>
 
     <joint name="back_left_wheel_joint">
